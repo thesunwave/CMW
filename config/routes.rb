@@ -1,7 +1,5 @@
 Cmw::Application.routes.draw do
-  get "users/new"
-
-
+  resources :users
   root  'static_pages#home'
   match '/static_pages', to: 'static_pages#home', via: 'get'
   match '/signup',       to: 'users#new',         via: 'get'
