@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_back_or @user
+      sign_in @user
     else
       render 'new'
     end
