@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def show
-  	@user = User.find(params[:id])
+  	@user = User.find_by_nikname(params[:nikname])
   end
 
   def new
@@ -21,11 +21,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	@user = User.find(params[:id])
+  	@user = User.find_by_nikname(params[:nikname])
   end
 
   def update
-  	@user = User.find(params[:id])
+  	@user = User.find_by_nikname(params[:nikname])
   	if @user.update_attributes(user_params)
   	  flash[:success] = "Профиль обновлен"
       redirect_to @user
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     end
 
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by_nikname(params[:nikname])
       redirect_to(root_url) unless current_user?(@user)
     end
 end
