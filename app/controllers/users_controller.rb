@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def show
-  	@user = User.find_by_nikname(params[:nikname])
+  	@user = User.find_by_nikname(params[:id])
   end
 
   def new
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   	def user_params
-  		params.require(:user).permit(:name, :nikname, :email, :description, :site, :password, 
+  		params.require(:user).permit(:name, :nikname, :email, :description, :site, :password,
   			                         :password_confirmation)
   	end
 
