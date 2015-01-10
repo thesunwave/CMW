@@ -8,8 +8,7 @@ Cmw::Application.routes.draw do
   match '/signin',       to: 'sessions#new',      via: 'get'
   match '/signout',      to: 'sessions#destroy',  via: 'delete'
 
-  get '/:nikname' =>      'users#show', as: :profile
-  get '/:nikname/edit' => 'users#edit', as: :edit
+  get '/:nikname' => 'users#show', as: :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
