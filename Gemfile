@@ -1,37 +1,39 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-#ruby-gemset=railstutorial_rails_4_0
+ruby '2.1.5'
 
-gem 'rails', '4.0.2'
-gem 'bootstrap-sass', '2.3.2.0' 
-gem 'sprockets', '2.11.0'
-gem 'bcrypt-ruby', '3.1.2'
+gem 'rails', '4.1.4'                            # Ruby on Rails gem
+gem 'sass-rails', '~> 4.0.0'                    # SASS support
+gem 'compass-rails'                             # use Compass for SASS
+gem 'uglifier', '>= 1.3.0'                      # JavaScript parser / mangler / compressor / beautifier
+gem 'coffee-rails', '~> 4.0.0'                  # CoffeeScript support
+gem 'cancan'                                    # authorization engine
+gem 'devise', '~> 3.3'                          # authentication engine
+gem 'devise-async', '~> 0.9.0'                  # provides an easy way to configure Devise to send its emails asynchronously using Delayed::Job gem 'mysql2'                                    # MySQL database support
+gem 'rolify'                                    # roles engine
+gem 'mysql2'                                    # mysql activerecord adapter
+gem 'paperclip', '~> 4.1'                       # file storage engine
+
+
+
+group :development do
+	gem 'better_errors'
+	gem 'quiet_assets'
+	gem 'oily_png'                              # speed up the pure Ruby ChunkyPNG library
+	gem 'sqlite3', '1.3.8'
+end
+
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails', '2.13.1'
-  gem 'guard-rspec', '2.5.0'
+	gem 'rspec-rails'
+	gem 'guard-rspec'
 end
 
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
-  gem 'libnotify', '0.8.0'
+	gem 'capybara'                               # test web applications by simulating how a real user would interact with your app
+	gem 'poltergeist'                            # poltergeist is a driver for Capybara. It allows you to run your Capybara tests on a headless WebKit browser, provided by PhantomJS
 end
 
-gem 'sass-rails', '4.0.1'
-gem 'uglifier', '2.1.1'
-gem 'coffee-rails', '4.0.1'
-gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.1.1'
-gem 'jbuilder', '1.0.2'
-
-group :doc do
-  gem 'sdoc', '0.3.20', require: false
-end
 
 group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+	
 end
-
