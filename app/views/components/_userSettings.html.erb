@@ -1,0 +1,32 @@
+<form>
+	<input type="text" name="name" value="" placeholder="<%= t('user_settings.first_name') %>" />
+	<input type="text" name="lastName" value="" placeholder="<%= t('user_settings.last_name') %>" />
+	<textarea name="biography"></textarea>
+	http://cmw.su/<input type="text" name="username" value="" placeholder="" />
+	<input type="text" name="email" value="" placeholder="" />
+	<input type="text" name="passowrd" value="" placeholder="<%= t('user_settings.new_password') %>" />
+	<input type="text" name="passoword_confirmation" value="" placeholder="<%= t('user_settings.new_password_confirmation') %>" />
+<% NotificationType.all.each do |notification| %>
+	<%= t('notifications.' + notification.name) %>:<input checked="<%= "checked" if current_user.has_notification? notification.name %>" name="<%= notification.name %>" type="checkbox" />
+<% end %>
+	<div class="vk">
+		<img src="./uploads/users/49x49.png" alt="" />
+		<%= t('controls.social.vk') %>
+		<a href="#" target="_blank">Vladimir Soulstar</a>
+		<input checked="checked" name="vk" type="checkbox" />
+	</div>
+	<div class="fb">
+		<img src="./uploads/users/49x49.png" alt="" />
+		<%= t('controls.social.fb') %>
+		<a href="#" target="_blank">Vladimir Soulstar</a>
+		<input checked="checked" name="fb" type="checkbox" />
+	</div>
+	<div class="tw">
+		<img src="./uploads/users/49x49.png" alt="" />
+		<%= t('controls.social.tw') %>
+		<a href="#" target="_blank">Vladimir Soulstar</a>
+		<input checked="checked" name="tw" type="checkbox" />
+	</div>
+	<a href="/profile">Посмотреть профиль</a>
+	<input type="submit" value="Сохранить" />
+</form>

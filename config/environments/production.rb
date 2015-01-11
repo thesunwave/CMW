@@ -24,7 +24,7 @@ Cmw::Application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -41,7 +41,6 @@ Cmw::Application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
-  config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
@@ -69,9 +68,34 @@ Cmw::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true
+  config.i18n.default_locale = :ru
+  I18n.enforce_available_locales = true
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  # ActionMailer Config
+  # Delivery method :smtp (default), :sendmail, :file and :test.
+  # All our mail sends trought yandex smtp servers
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.secrets.email_provider_smtp,
+    port:                 Rails.application.secrets.email_provider_port,
+    domain:               Rails.application.secrets.domain_name,
+    user_name:            Rails.application.secrets.email_provider_username,
+    password:             Rails.application.secrets.email_provider_password,
+    authentication:       Rails.application.secrets.email_authentication_type,
+    enable_starttls_auto: true
+  }
+  config.action_mailer.default_url_options = { 
+    host:       Rails.application.secrets.domain_name,
+    replay_to:  Rails.application.secrets.email_bot_address
+  }
+
+  # Send email
+  config.action_mailer.perform_deliveries = true
+  # Turn off errors in production
+  config.action_mailer.raise_delivery_errors = false
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false

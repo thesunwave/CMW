@@ -1,65 +1,72 @@
 Cmw::Application.routes.draw do
-  resources :users#, :path => '/'
-  resources :sessions, only: [:new, :create, :destroy]
-  root  'static_pages#home'
-  match '/static_pages', to: 'static_pages#home', via: 'get'
-  match '/signup',       to: 'users#new',         via: 'get'
-  match '/sessions',     to: 'sessions#new',      via: 'get'
-  match '/signin',       to: 'sessions#new',      via: 'get'
-  match '/signout',      to: 'sessions#destroy',  via: 'delete'
+  # переключить локаль
+  get '/lang/:locale' => 'api/v1/common_api#switch_locale'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      # проверить
+      scope '/check' do
+        post  'email'       => 'common_api#check_email'
+        post  'username'    => 'common_api#check_username'
+      end
+      # получить
+      scope '/get' do
+        get   'locale'      => 'common_api#get_locale'
+      end
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+      # список стран
+      resources :countries, only: [:index]
+      # список городов определенной страны
+      resources :cities, only: [:show], param: :country_id
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+      # пользователи
+      resources :users, except: [:new, :create] do
+        # создаст маршруты без параметра :id
+        collection do
+          get 'settings'  => 'users#settings'
+        end
+      end
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+    end   # v1
+  end   # api
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  # путь / (корень)
+  root to: 'root#index'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  # все вьюхи
+  scope '/views' do
+    # сцена
+    get 'index'     => 'index#index'
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    # пользователь
+    scope '/user' do
+      # профиль
+      get 'profile' => 'profile#index'
+      # новости
+      get 'feed' => 'feed#index'
+      # работы
+      scope '/works' do
+        # список
+        get '/list' => 'works#list'
+      end
+    end
+  end
+  
+  # devise
+  devise_for  :users, path: 'auth',
+    # переопределение контроллеров
+    controllers: { 
+      registrations:  'devise/extended_registrations', 
+      sessions:       'devise/extended_sessions',
+      confirmations:  'devise/extended_confirmations',
+      passwords:      'devise/extended_passwords'
+    }, 
+    # переопределение путей по умолчанию
+    path_names: { 
+      sign_in:        'login', 
+      sign_out:       'logout', 
+      confirmation:   'confirm', 
+      registration:   'settings' 
+    }
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-end
+end   # Cmw::Application.routes.draw

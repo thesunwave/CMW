@@ -26,11 +26,15 @@ end
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'guard-rspec'
+	gem 'factory_girl_rails', require: false
+	gem 'seed-fu', '~> 2.3'
 end
 
 group :test do
 	gem 'capybara'                               # test web applications by simulating how a real user would interact with your app
 	gem 'poltergeist'                            # poltergeist is a driver for Capybara. It allows you to run your Capybara tests on a headless WebKit browser, provided by PhantomJS
+	gem 'i18n-tasks', '~> 0.7.4'                 # helps you find and manage missing and unused translations
+	gem 'database_cleaner', '1.0.1'              # Database Cleaner is a set of strategies for cleaning your database in Ruby
 end
 
 

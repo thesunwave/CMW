@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Cmw::Application.config.secret_key_base = '56e01a294f833c4754f9407a81bc2481574800b80e77a0e56af0af758cd6f4f52e8e0637b9230951968521aee02e92eb42aaee4ac30f31bd8cfff48b0147ad25'
+Cmw::Application.config.secret_key_base = '41466a8d3db49ea3e25f5bdbe11ffe31c9f17b2403350a4ec642abb920b995a0350da9bd3796ca3795882394929107fb12ac64f4160b8e77eed11d9b90503ee8'

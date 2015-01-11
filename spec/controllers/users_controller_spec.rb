@@ -1,12 +1,13 @@
-require 'spec_helper'
+# require 'rails_helper'
 
-describe UsersController do
+# describe UsersController, type: :controller do
+  
+#   describe "GET index" do
+#     it "должен успешно загружаться со статусом 200" do
+#       get :user_widget
+#       expect(response).to be_success
+#       expect(response).to have_http_status(200)
+#     end
+#   end
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
-  end
-
-end
+# end

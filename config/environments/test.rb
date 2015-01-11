@@ -30,7 +30,21 @@ Cmw::Application.configure do
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { 
+    host: Rails.application.secrets.domain_name,
+    replay_to: Rails.application.secrets.bot_email_address
+  }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Save screenshots to
+  config.integration_test_render_dir = Rails.root.join("spec", "render")
+
+  # Speed up tests by lowering BCrypt's cost function.
+  require 'bcrypt'
+  silence_warnings do
+    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+  end
+  
 end

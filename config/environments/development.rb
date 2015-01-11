@@ -13,8 +13,28 @@ Cmw::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # ActionMailer Config
+  # Delivery method :smtp (default), :sendmail, :file and :test.
+  # All our mail sends trought yandex smtp servers
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.secrets.email_provider_smtp,
+    port:                 Rails.application.secrets.email_provider_port,
+    domain:               Rails.application.secrets.domain_name,
+    user_name:            Rails.application.secrets.email_provider_username,
+    password:             Rails.application.secrets.email_provider_password,
+    authentication:       Rails.application.secrets.email_authentication_type,
+    enable_starttls_auto: true
+  }
+  config.action_mailer.default_url_options = { 
+    host:       Rails.application.secrets.domain_name,
+    replay_to:  Rails.application.secrets.email_bot_address
+  }
+
+  # Send email
+  config.action_mailer.perform_deliveries = true
+  # Turn off errors in production
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -26,4 +46,9 @@ Cmw::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  config.i18n.default_locale = :ru
+  I18n.enforce_available_locales = true
+  
+  # Allow better_errors to work with this IP
+  BetterErrors::Middleware.allow_ip! Rails.application.secrets.developer_ip
 end
