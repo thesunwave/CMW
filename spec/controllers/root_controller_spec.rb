@@ -1,11 +1,12 @@
-describe RootController do
-  include_context 'devise'
-  
-  it 'возвращает шаблон' do
-    get :index
-    expect(response).to be_success
-    expect(response).to render_template(:index)
-    expect(response).to have_http_status(:ok)
+require 'rails_helper'
+
+RSpec.describe RootController, :type => :controller do
+
+  describe "GET index" do
+    it "Возвращает страницу" do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
   end
 
 end

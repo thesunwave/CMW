@@ -1,30 +1,41 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
-gem 'rails', '4.1.4'                            # Ruby on Rails gem
-gem 'sass-rails', '~> 4.0.0'                    # SASS support
+gem 'rails', '4.2.0'                            # Ruby on Rails gem
+gem 'sass-rails', '~> 4.0.3'                    # SASS support
 gem 'compass-rails'                             # use Compass for SASS
 gem 'uglifier', '>= 1.3.0'                      # JavaScript parser / mangler / compressor / beautifier
-gem 'coffee-rails', '~> 4.0.0'                  # CoffeeScript support
+gem 'coffee-rails', '~> 4.1.0'                  # CoffeeScript support
 gem 'cancan'                                    # authorization engine
 gem 'devise', '~> 3.3'                          # authentication engine
 gem 'devise-async', '~> 0.9.0'                  # provides an easy way to configure Devise to send its emails asynchronously using Delayed::Job gem 'mysql2'                                    # MySQL database support
 gem 'rolify'                                    # roles engine
 gem 'mysql2'                                    # mysql activerecord adapter
+gem 'execjs'                                    # js runtime gem
 gem 'paperclip', '~> 4.1'                       # file storage engine
+gem 'http_accept_language'                      # set locale from accept-language URL header
+gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
+gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 
 
 
 group :development do
 	gem 'better_errors'
+	gem 'binding_of_caller', :platforms=>[:mri_20]
+	gem 'capistrano', '~> 3.0.1'
+	gem 'capistrano-bundler'
+	gem 'capistrano-rails', '~> 1.1.0'
+	gem 'capistrano-rails-console'
+	gem 'capistrano-rvm', '~> 0.1.1'
 	gem 'quiet_assets'
+	gem 'rails_layout'
 	gem 'oily_png'                              # speed up the pure Ruby ChunkyPNG library
-	gem 'sqlite3', '1.3.8'
 end
 
 
 group :development, :test do
 	gem 'rspec-rails'
+	gem 'spring-commands-rspec'
 	gem 'guard-rspec'
 	gem 'factory_girl_rails', require: false
 	gem 'seed-fu', '~> 2.3'

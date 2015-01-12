@@ -1,9 +1,0 @@
-<%= render partial: "components/socialButtons" %>
-<form name="authForm">
-	<input class="inputText" name="email" placeholder="<%= t('auth.email') %>" type="email" />
-	<input class="inputText" name="password" placeholder="<%= t('auth.password') %>" type="password" />
-	<a href="/forget-password"><%= t('auth.forgot_password') %></a>
-	<%= t('auth.remember_me') %>
-	<input checked="checked" name="remember_me" type="checkbox" />
-	<input type="submit" value="<%= t('auth.login') %>" />
-</form>

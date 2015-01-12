@@ -1,4 +1,4 @@
-Cmw::Application.routes.draw do
+CMW::Application.routes.draw do
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
 
@@ -13,11 +13,6 @@ Cmw::Application.routes.draw do
       scope '/get' do
         get   'locale'      => 'common_api#get_locale'
       end
-
-      # список стран
-      resources :countries, only: [:index]
-      # список городов определенной страны
-      resources :cities, only: [:show], param: :country_id
 
       # пользователи
       resources :users, except: [:new, :create] do
@@ -43,7 +38,7 @@ Cmw::Application.routes.draw do
       # профиль
       get 'profile' => 'profile#index'
       # новости
-      get 'feed' => 'feed#index'
+      get 'feed'    => 'feed#index'
       # работы
       scope '/works' do
         # список
@@ -56,10 +51,10 @@ Cmw::Application.routes.draw do
   devise_for  :users, path: 'auth',
     # переопределение контроллеров
     controllers: { 
-      registrations:  'devise/extended_registrations', 
-      sessions:       'devise/extended_sessions',
-      confirmations:  'devise/extended_confirmations',
-      passwords:      'devise/extended_passwords'
+      registrations:  'devise/registrations', 
+      sessions:       'devise/sessions',
+      confirmations:  'devise/confirmations',
+      passwords:      'devise/passwords'
     }, 
     # переопределение путей по умолчанию
     path_names: { 
@@ -69,4 +64,4 @@ Cmw::Application.routes.draw do
       registration:   'settings' 
     }
 
-end   # Cmw::Application.routes.draw
+end   # CMW::Application.routes.draw
