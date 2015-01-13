@@ -1,25 +1,36 @@
-class [scope]::SessionsController < Devise::SessionsController
-# before_filter :configure_sign_in_params, only: [:create]
+class Devise::SessionsController < Devise::SessionsController
+  
+  def create
+    self.resource = warden.authenticate!(auth_options)
+    sign_in(resource_name, resource)
+    yield resource if block_given?
 
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+    user_roles = []
+    resource.roles.each do |role|
+      user_roles.push(role.name)
+    end
+    render json: { result: 1, user: resource.as_json.merge({ roles: user_roles.as_json }) } and return
+  end
 
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def destroy
+    signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
+    yield resource if block_given?
+    
+    render json: { result: (signed_out) ? 1 : 0 } and return
+  end
 
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+protected
+  # disable redirect
+  def require_no_authentication
+  end
 
-  # protected
+  # disable redirect
+  def after_sign_in_path_for(resource)
+  end
 
-  # You can put the params you want to permit in the empty array.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.for(:sign_in) << :attribute
-  # end
+private
+  def respond_to_on_destroy
+    render json: { result: 0 } and return
+  end
+
 end

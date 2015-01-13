@@ -1,60 +1,155 @@
-class [scope]::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
-
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+class Devise::RegistrationsController < Devise::RegistrationsController
+  before_filter :update_sanitized_params, if: :devise_controller?
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  # Регистрация нового пользователя
+  def create
+    build_resource(sign_up_params)
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+    if resource.save
+      yield resource if block_given?
+      if resource.active_for_authentication?
+        sign_up(resource_name, resource)
+
+        # refactor: DRY in sessions and registratios
+        user_roles = []
+        resource.roles.each do |role|
+          user_roles.push(role.name)
+        end
+        render json: { result: 1, user: resource.as_json.merge({ roles: user_roles.as_json }) } and return
+      else
+        expire_data_after_sign_in!
+        render json: { error_key: "#{resource.inactive_message}" } and return
+      end
+    else
+      clean_up_passwords resource
+      respond_with resource
+    end
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  # Обновление настроек пользователя
+  # Мы используем копию объекта пользователя, так как мы не хотим чтобы
+  # объект пользователя менялся сразу без проверок и подтверждений
+  def update
+    self.resource = resource_class.to_adapter.get!([current_user.id])
+    prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
+    
+    # определяем необходимость наличия текущего пароля:
+    # если изменены почта или пароль, текущий пароль обязателен
+    needs_password = false
+    if account_update_params[:password].present? || account_update_params[:email].present?
+      needs_password = true 
+    end
 
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
+    # удалить данные, которые не могут быть обновлены без текущего пароля
+    # или вернуть ошибку, если текущеий пароль не предоставлен
+    if needs_password
+      if account_update_params[:current_password].blank?
+        render json: { result: 0, needs_current_password: 1 } and return
+      end
+    else
+      # удалить данные, которые не могу быть обновлены без текущего пароля
+      unsafe_props = [:current_password, :password, :password_confirmation, :email]
+      unsafe_props.each do |prop|
+        account_update_params.delete(prop)
+      end
+    end
 
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+    #
+    # уведомления
+    #
+    if account_update_params[:notifications].present?
+      if account_update_params[:notifications].is_a? Hash
+        # обработать уведомления
+        account_update_params[:notifications].each do |notification, value|
+          if value.to_i == 1
+            current_user.add_notification notification.to_sym
+          else
+            current_user.remove_notification notification.to_sym
+          end
+        end
+        # удалить уведомления из объекта обновления настроек
+        account_update_params.delete(:notifications)
+      else
+        # ошибка формата
+        render json: { error_key: 'invalid_form', errors: { notifications: [t('errors.messages.invalid')] } }, status: :unprocessable_entity and return
+      end
+    end
 
-  # protected
+    #
+    # обновить данные пользователя
+    #
+    # обновляем в зависимости от того, требуется ли текущий пароль
+    if needs_password
+      resource_updated = resource.update_with_password(account_update_params)
+    else
+      resource_updated = resource.update_without_password(account_update_params)
+    end
+    yield resource if block_given?
 
-  # You can put the params you want to permit in the empty array.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+    # вернуть результат и применить изменения
+    if resource_updated
+      needs_confirmation = update_needs_confirmation?(resource, prev_unconfirmed_email) ? 1 : 0
+      sign_in resource_name, resource, bypass: true
+      # настройки обновлены, флаг needs_confirmation указывает необходимо ли пользователю подтверждать почту
+      render json: { result: 1, user: resource.get_settings, needs_confirmation: needs_confirmation } and return
+    else
+      clean_up_passwords resource
+      if resource.errors.blank?
+        # ничего не обновлено
+        render json: { result: 0 } and return
+      else
+        # возникли ошибки
+        render json: { error_key: 'invalid_form', errors: resource.errors.as_json }, status: :unprocessable_entity and return
+      end
+    end
+  end
 
-  # You can put the params you want to permit in the empty array.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+  # установить поля, которые могут придти в запросе
+  # если поле придёт в запросе, но его не окажется в этих списках
+  # оно не будет доступно в массиве параметров
+  def update_sanitized_params
+    # на регистрацию
+    devise_parameter_sanitizer.for(:sign_up) do |u| 
+      u.permit(:email, :password, :password_confirmation, :lang)
+    end
+    # на обновление настроек
+    # в конце указано поле links типом которого должен быть массив
+    # данное поле необходимо указывать в коцне
+    devise_parameter_sanitizer.for(:account_update) do |u| 
+      u.permit(:email, :password, :password_confirmation, 
+        :current_password, :lang)
+    # devise_parameter_sanitizer.for(:account_update) do |u| 
+    #   u.permit(:email, :first_name, :last_name, :password, :password_confirmation, 
+    #     :current_password, :city_id, :username, :description, :lang, 
+    #     :links => [])
+      # .tap do |while_listed|
+      #     while_listed[:notifications] = params[:user][:notifications]
+      #   end
+    end
+  end
 
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+protected
 
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  #disbale redirect
+  def require_no_authentication
+  end
+
+  #disbale redirect
+  def after_sign_in_path_for(resource)
+  end
+
+  #disbale redirect
+  def after_inactive_sign_up_path_for(resource)
+  end
+
+  #disbale redirect
+  def after_sign_up_path_for(resource)
+  end
+
+  #disbale redirect
+  def after_update_path_for(resource)
+  end
+
 end

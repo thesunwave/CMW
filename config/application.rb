@@ -11,11 +11,14 @@ module CMW
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
-      g.view_specs false
-      g.routing_specs false
-      g.helper_specs false
-      g.controller_specs true
-      g.request_specs true
+      g.test_framework :rspec,
+        fixtures: true,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        controller_specs: true,
+        request_specs: true
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
     # Settings in config/environments/* take precedence over those specified here.
