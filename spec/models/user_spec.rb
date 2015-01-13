@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User do
+describe User, :type => :model do
 
   @email = Faker::Internet.safe_email
   before(:each) { @user = User.new(email: @email) }
