@@ -37,4 +37,9 @@ RSpec.configure do |config|
     # a real object. This is generally recommended.
     mocks.verify_partial_doubles = true
   end
+
+  def log_test(message)
+    Rails.logger.info(message)
+    puts message
+  end
 end

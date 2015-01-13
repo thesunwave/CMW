@@ -11,7 +11,7 @@ describe Devise::RegistrationsController do
   end
 
   it 'возвращает шаблон изменения настроек пользователя' do
-    login_as FactoryGirl.create(:user), scope: :user
+    login_as FactoryGirl.build(:user), scope: :user
     get :edit
     expect(response).to be_success
     expect(response).to render_template(:edit)
