@@ -1,4 +1,6 @@
 CMW::Application.routes.draw do
+  get 'subscriptions/index'
+
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
 
@@ -8,10 +10,6 @@ CMW::Application.routes.draw do
       scope '/check' do
         post  'email'       => 'common_api#check_email'
         post  'username'    => 'common_api#check_username'
-      end
-      # получить
-      scope '/get' do
-        get   'locale'      => 'common_api#get_locale'
       end
 
       # пользователи
@@ -31,18 +29,20 @@ CMW::Application.routes.draw do
   # все вьюхи
   scope '/views' do
     # сцена
-    get 'index'     => 'index#index'
+    get 'index'           => 'root#index'
 
     # пользователь
     scope '/user' do
       # профиль
-      get 'profile' => 'profile#index'
+      get 'profile'       => 'profile#index'
       # новости
-      get 'feed'    => 'feed#index'
+      get 'feed'          => 'feed#index'
+      # подписки
+      get 'subscriptions' => 'subscriptions#index'
       # работы
       scope '/works' do
         # список
-        get '/list' => 'works#list'
+        get '/list'       => 'works#list'
       end
     end
   end

@@ -1,0 +1,50 @@
+namespace :delayed_job do
+
+  def args
+    fetch(:delayed_job_args, "")
+  end
+
+  def delayed_job_roles
+    fetch(:delayed_job_server_role, :app)
+  end
+
+  desc 'Stop the delayed_job process'
+  task :stop do
+    on roles(delayed_job_roles) do
+      within release_path do    
+        with rails_env: fetch(:rails_env) do
+          execute :bundle, :exec, :'bin/delayed_job', '-i=1', :stop
+          execute :bundle, :exec, :'bin/delayed_job', '-i=2', :stop
+          execute :bundle, :exec, :'bin/delayed_job', '-i=3', :stop
+        end
+      end
+    end
+  end
+
+  desc 'Start the delayed_job process'
+  task :start do
+    on roles(delayed_job_roles) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :bundle, :exec, :'bin/delayed_job', '--queue=mailer -i=1', :start
+          execute :bundle, :exec, :'bin/delayed_job', '--queue=transcode -i=2', :start
+          execute :bundle, :exec, :'bin/delayed_job', '--queue=air -i=3', :start
+        end
+      end
+    end
+  end
+
+  desc 'Restart the delayed_job process'
+  task :restart do
+    on roles(delayed_job_roles) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :bundle, :exec, :'bin/delayed_job', '--queue=mailer -i=1', :restart
+          execute :bundle, :exec, :'bin/delayed_job', '--queue=transcode -i=2', :restart
+          execute :bundle, :exec, :'bin/delayed_job', '--queue=air -i=3', :restart
+        end
+      end
+    end
+  end
+
+end
