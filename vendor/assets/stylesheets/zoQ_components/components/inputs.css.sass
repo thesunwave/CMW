@@ -1,0 +1,36 @@
+@if $zoQ_styles and $inputs
+
+	$inputDefaultNormalColor      : #4e4e4e
+	$inputDefaultNormalBorderColor: #949494
+	$inputDefaultFocusBorderColor : $blue
+	$inputSuccessNormalBorderColor: $green
+	$inputWarningNormalBorderColor: $red
+	$inputDisabledBorderColor     : #c8c8c8
+	$inputDisabledColor           : #777
+	$inputDisabledBackgroundColor : #f2f2f2
+
+	input
+		height: 30px
+		font-size: 14px
+		padding: 0 10px
+		font-weight: 300
+	input, textarea
+		margin-bottom: 10px
+		background: #fff
+		color: $inputDefaultNormalColor
+		border: 1px solid $inputDefaultNormalBorderColor
+		&:focus, &.primary, &.primary:focus
+			border-color: $inputDefaultFocusBorderColor
+		&.success, &.success:focus
+			border-color: $inputSuccessNormalBorderColor
+			color: $inputSuccessNormalBorderColor
+		&.warning, &.warning:focus
+			border-color: $inputWarningNormalBorderColor
+			color: $inputWarningNormalBorderColor
+		&:disabled, &.disabled
+			border-color: $inputDisabledBorderColor
+			color: $inputDisabledColor
+			background: $inputDisabledBackgroundColor
+			cursor: default
+	textarea
+		padding: 10px

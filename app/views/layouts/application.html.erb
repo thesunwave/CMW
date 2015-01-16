@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>CMW</title>
-  <%= stylesheet_link_tag    'application' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,500,400italic,500italic,700,700italic&subset=latin,cyrillic" />
+		<%= stylesheet_link_tag 'application' %>
+		<meta name="viewport" content="maximum-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="description" content="" />
+		<%= csrf_meta_tags %>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" async></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" async></script>
+		<![endif]-->
+		<!--[if lt IE 8]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js" async></script>
+		<![endif]-->
+	</head>
+	<body class="unloaded">
+		<section class="wrapper">
+			<header>
+				<div class="actionsWrapper">
+					<div class="alertsWrap"></div>
+					<div class="popupsWrap"></div>
+				</div>
+			</header>
+			<main>
+				<%= yield %>
+<!--<% if notice %>
+				  <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+				  <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<p class="navbar-text pull-right">
+				<p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+				  Logged in as <strong><%= current_user.email %></strong>.
+				  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+				  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-<%= yield %>
+				  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+				  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>-->
+			</main>
+			<footer>
 
-</body>
+			</footer>
+		</section>
+		<%= javascript_include_tag 'application' %>
+	</body>
 </html>

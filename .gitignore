@@ -74,3 +74,6 @@ pickle-email-*.html
 # Vagrant files
 /.vagrant
 /Vagrantfile
+
+# Node modules
+/etc/html/assets/node_modules

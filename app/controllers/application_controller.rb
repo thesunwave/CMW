@@ -2,9 +2,6 @@ class ApplicationController < ActionController::Base
   # turn devise to json
   respond_to :html, :json
 
-  # disbale layout rendering for templates
-  layout :set_layout
-
   # set locale in session or/and store it in db
   before_filter :set_locale
 
@@ -30,13 +27,6 @@ protected
   end
 
 private
-  def set_layout
-    if controller_name == 'root'
-      'application'
-    else
-      false
-    end
-  end
   
   def set_locale
     # сохранить локаль в сессии
