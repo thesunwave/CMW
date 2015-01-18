@@ -1,9 +1,16 @@
-class Devise::RegistrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :update_sanitized_params, if: :devise_controller?
+  before_filter :show_main_forms!, only: [:new, :create]
+  before_filter :instantiateUser, only: [:new, :create, :update]
+  
+  def new
+    render layout: "login"
+  end
 
   # POST /resource
   # Регистрация нового пользователя
   def create
+    super
     build_resource(sign_up_params)
 
     if resource.save
@@ -16,15 +23,20 @@ class Devise::RegistrationsController < Devise::RegistrationsController
         resource.roles.each do |role|
           user_roles.push(role.name)
         end
-        render json: { result: 1, user: resource.as_json.merge({ roles: user_roles.as_json }) } and return
+        return
       else
         expire_data_after_sign_in!
-        render json: { error_key: "#{resource.inactive_message}" } and return
+        render text: "#{resource.inactive_message}"
+        return
       end
     else
       clean_up_passwords resource
-      respond_with resource
+      # respond_with resource
     end
+  end
+
+  def cancel
+    super
   end
 
   # PUT /resource
@@ -32,6 +44,7 @@ class Devise::RegistrationsController < Devise::RegistrationsController
   # Мы используем копию объекта пользователя, так как мы не хотим чтобы
   # объект пользователя менялся сразу без проверок и подтверждений
   def update
+    super
     self.resource = resource_class.to_adapter.get!([current_user.id])
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
     
@@ -46,7 +59,7 @@ class Devise::RegistrationsController < Devise::RegistrationsController
     # или вернуть ошибку, если текущеий пароль не предоставлен
     if needs_password
       if account_update_params[:current_password].blank?
-        render json: { result: 0, needs_current_password: 1 } and return
+        return
       end
     else
       # удалить данные, которые не могу быть обновлены без текущего пароля
@@ -59,23 +72,23 @@ class Devise::RegistrationsController < Devise::RegistrationsController
     #
     # уведомления
     #
-    if account_update_params[:notifications].present?
-      if account_update_params[:notifications].is_a? Hash
-        # обработать уведомления
-        account_update_params[:notifications].each do |notification, value|
-          if value.to_i == 1
-            current_user.add_notification notification.to_sym
-          else
-            current_user.remove_notification notification.to_sym
-          end
-        end
-        # удалить уведомления из объекта обновления настроек
-        account_update_params.delete(:notifications)
-      else
-        # ошибка формата
-        render json: { error_key: 'invalid_form', errors: { notifications: [t('errors.messages.invalid')] } }, status: :unprocessable_entity and return
-      end
-    end
+    # if account_update_params[:notifications].present?
+    #   if account_update_params[:notifications].is_a? Hash
+    #     # обработать уведомления
+    #     account_update_params[:notifications].each do |notification, value|
+    #       if value.to_i == 1
+    #         current_user.add_notification notification.to_sym
+    #       else
+    #         current_user.remove_notification notification.to_sym
+    #       end
+    #     end
+    #     # удалить уведомления из объекта обновления настроек
+    #     account_update_params.delete(:notifications)
+    #   else
+    #     # ошибка формата
+    #     render json: { error_key: 'invalid_form', errors: { notifications: [t('errors.messages.invalid')] } }, status: :unprocessable_entity and return
+    #   end
+    # end
 
     #
     # обновить данные пользователя
@@ -93,15 +106,15 @@ class Devise::RegistrationsController < Devise::RegistrationsController
       needs_confirmation = update_needs_confirmation?(resource, prev_unconfirmed_email) ? 1 : 0
       sign_in resource_name, resource, bypass: true
       # настройки обновлены, флаг needs_confirmation указывает необходимо ли пользователю подтверждать почту
-      render json: { result: 1, user: resource.get_settings, needs_confirmation: needs_confirmation } and return
+      return
     else
       clean_up_passwords resource
       if resource.errors.blank?
         # ничего не обновлено
-        render json: { result: 0 } and return
+        return
       else
         # возникли ошибки
-        render json: { error_key: 'invalid_form', errors: resource.errors.as_json }, status: :unprocessable_entity and return
+        return
       end
     end
   end

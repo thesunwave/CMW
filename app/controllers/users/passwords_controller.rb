@@ -1,4 +1,4 @@
-class Devise::PasswordsController < Devise::PasswordsController
+class Users::PasswordsController < Devise::PasswordsController
 
   # POST /resource/password
   def create
@@ -7,16 +7,16 @@ class Devise::PasswordsController < Devise::PasswordsController
     yield resource if block_given?
     
     if successfully_sent?(resource)
-      render json: { result: 1 } and return
+      return
     else
-      render json: { error_key: 'invalid_form', errors: resource.errors.as_json }, status: :unprocessable_entity and return
+      return
     end
   end
 
   # PUT /resource/password
   def update
     if params[:user].blank? || params[:user][:reset_password_token].blank?
-      render json: { error_key: 'invalid_form', errors: { reset_password_token: [ t('errors.messages.blank') ] } }, status: :unprocessable_entity and return
+      return
     end
     
     self.resource = resource_class.new
@@ -28,12 +28,12 @@ class Devise::PasswordsController < Devise::PasswordsController
       resource.unlock_access! if unlockable?(resource)
       if resource.confirmed?
         sign_in(resource_name, resource)
-        render json: { result: 1, confirmed: 1 } and return
+        return
       else
-        render json: { result: 1, confirmed: 0 } and return
+        return
       end
     else
-      render json: { error_key: 'invalid_form', errors: resource.errors.as_json }, status: :unprocessable_entity and return
+      return
     end
   end
 

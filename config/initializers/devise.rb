@@ -236,9 +236,9 @@ Devise.setup do |config|
   #
   # Эта надстройка сделана для того, чтобы devise в случае ошибки отвечал ТОЛЬКО json
   # объектом, без проведения редиректов и прочего
-  config.warden do |manager|
-    manager.failure_app = ApiFailureApp
-  end
+  # config.warden do |manager|
+  #   manager.failure_app = ApiFailureApp
+  # end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '4.2.0'                            # Ruby on Rails gem
-gem 'sass-rails', '~> 4.0.3'                    # SASS support
+gem 'sass-rails', '~> 5.0.1'                    # SASS support
 gem 'compass-rails'                             # use Compass for SASS
 gem 'uglifier', '>= 1.3.0'                      # JavaScript parser / mangler / compressor / beautifier
 gem 'coffee-rails', '~> 4.1.0'                  # CoffeeScript support
 gem 'cancan'                                    # authorization engine
-gem 'devise', '~> 3.3'                          # authentication engine
+gem 'devise', '~> 3.4.1'                        # authentication engine
 gem 'devise-async', '~> 0.9.0'                  # provides an easy way to configure Devise to send its emails asynchronously using Delayed::Job gem 'mysql2'                                    # MySQL database support
 gem 'rolify'                                    # roles engine
 gem 'mysql2'                                    # mysql activerecord adapter

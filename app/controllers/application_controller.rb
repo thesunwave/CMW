@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # turn devise to json
-  respond_to :html, :json
+  # respond_to :html, :json
 
   # set locale in session or/and store it in db
   before_filter :set_locale
@@ -39,6 +39,16 @@ private
       session[:locale] = current_user.lang.to_sym unless current_user.lang.blank?
     end
     I18n.locale = session[:locale]
+  end
+
+  def show_main_forms!
+    if user_signed_in?
+      redirect_to root_path
+    end
+  end
+
+  def instantiateUser
+    @user = User.new
   end
 
 end

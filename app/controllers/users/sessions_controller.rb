@@ -1,22 +1,30 @@
-class Devise::SessionsController < Devise::SessionsController
-  
+class Users::SessionsController < Devise::SessionsController
+  before_filter :show_main_forms!, only: [:new, :create]
+  before_filter :instantiateUser
+
+  def new
+    render layout: "login"
+  end
+
   def create
+    super
     self.resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
+
     yield resource if block_given?
 
     user_roles = []
     resource.roles.each do |role|
       user_roles.push(role.name)
     end
-    render json: { result: 1, user: resource.as_json.merge({ roles: user_roles.as_json }) } and return
+    return
   end
 
   def destroy
+    super
     signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
     yield resource if block_given?
-    
-    render json: { result: (signed_out) ? 1 : 0 } and return
+    return
   end
 
 protected
@@ -26,11 +34,6 @@ protected
 
   # disable redirect
   def after_sign_in_path_for(resource)
-  end
-
-private
-  def respond_to_on_destroy
-    render json: { result: 0 } and return
   end
 
 end

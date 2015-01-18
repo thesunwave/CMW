@@ -1,5 +1,5 @@
 CMW::Application.routes.draw do
-  get 'subscriptions/index'
+  get 'subscriptions' => 'subscriptions#index'
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -46,22 +46,48 @@ CMW::Application.routes.draw do
       end
     end
   end
+
+  devise_scope :user do
+
+    scope '/auth' do
+
+      get  'register'    => 'users/registrations#new'
+      post 'register'    => 'users/registrations#create'
+
+      scope '/password' do
+        get  'new'       => 'root#index'
+      end
+      
+      authenticate :user do
+        get  'delete'    => 'users/registrations#cancel'
+        get  'settings'  => 'users/registrations#edit'
+
+        get  'forgot'      => 'users/passwords#new'
+        post 'forgot'      => 'users/passwords#create'
+
+      end
+
+    end
+  end
   
   # devise
   devise_for  :users, path: 'auth',
     # переопределение контроллеров
-    controllers: { 
-      registrations:  'devise/registrations', 
-      sessions:       'devise/sessions',
-      confirmations:  'devise/confirmations',
-      passwords:      'devise/passwords'
+    controllers: {
+      registrations:  'users/registrations',
+      sessions:       'users/sessions',
+      confirmations:  'users/confirmations',
+      passwords:      'users/passwords'
     }, 
     # переопределение путей по умолчанию
     path_names: { 
-      sign_in:        'login', 
-      sign_out:       'logout', 
-      confirmation:   'confirm', 
-      registration:   'settings' 
+      sign_in:        'login',
+      sign_out:       'logout',
+      confirmation:   'confirm',
+      registration:   'register',
+      cancel:         'delete'
     }
+
+  resources :users
 
 end   # CMW::Application.routes.draw

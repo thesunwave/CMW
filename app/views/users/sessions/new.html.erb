@@ -1,0 +1,9 @@
+<%= devise_error_messages! %>
+<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
+	<input name="utf8" type="hidden" value="&#x2713;" />
+	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+	<input name="user[email]" type="text" />
+	<input name="user[password]" type="password" />
+	<input name="user[remember_me]" type="checkbox" value="1" />
+	<input name="commit" type="submit" value="Войти" />
+</form>
