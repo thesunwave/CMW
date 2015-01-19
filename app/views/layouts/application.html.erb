@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
-		<title></title>
+		<title><%= content_for?(:title) ? yield(:title) : "CMW" %></title>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,500,400italic,500italic,700,700italic&subset=latin,cyrillic" />
 		<%= stylesheet_link_tag 'application' %>
 		<meta name="viewport" content="maximum-scale=1, user-scalable=no" />

@@ -29,6 +29,11 @@ $alertSuccessColor: $green
 	&.success
 		background: $alertSuccessColor
 
+@if $zoQ_styles and ($alerts or $popups)
+	.actionsWrapper
+		position: relative
+		z-index: 99999
+
 @if $zoQ_styles and $alerts
 
 	.actionsWrapper .alertsWrap

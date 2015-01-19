@@ -1,6 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
   before_filter :show_main_forms!, only: [:new, :create]
-  before_filter :instantiateUser
+  # before_filter :instantiateUser
 
   def new
     render layout: "login"

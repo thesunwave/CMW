@@ -1,9 +1,44 @@
-<%= devise_error_messages! %>
-<form action="<%= register_path %>" accept-charset="UTF-8" method="post">
-	<input name="utf8" type="hidden" value="&#x2713;" />
-	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-	<input name="user[email]" type="text" />
-	<input name="user[password]" type="password" />
-	<input name="user[password_confirmation]" type="password" />
-	<input name="commit" type="submit" value="Регистрация" />
-</form>
+<% content_for :alerts do %>
+	<% if notice %>
+<div class="alert info"><div class="message"><%= notice %></div><div class="close"></div></div>
+	<% end %>
+	<% if alert %>
+<div class="alert warning"><div class="message"><%= alert %></div><div class="close"></div></div>
+	<% end %>
+<% end %>
+<div class="authForm">
+	<div class="title">
+		Регистрация
+	</div>
+	<div class="social">
+		<span>С помощью</span>
+		<a href="#" class="socialIcon-vk">vk</a>
+		<a href="#" class="socialIcon-fb">facebook</a>
+		<a href="#" class="socialIcon-tw">twitter</a>
+	</div>
+	<div class="form">
+		<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
+			<input name="utf8" type="hidden" value="&#x2713;" />
+			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+			<div class="textFields">
+				<input name="user[firstname]" type="text" placeholder="Ваше имя" />
+				<input name="user[lastname]" type="text" placeholder="Ваша фамилия" />
+				<input name="user[username]" type="text" placeholder="Логин" />
+				<input name="user[email]" type="text" placeholder="Электронная почта" />
+				<input name="user[password]" type="password" placeholder="Пароль" />
+				<input name="user[password_confirmation]" type="password" placeholder="Подтверждение пароля" />
+			</div>
+			<div class="service">
+				<div class="agreement">
+					<input name="user[agree]" type="checkbox" />
+					<span>Я согласен с условиями <a href="#"><nobr>пользовательского соглашения</nobr></a></span>
+				</div>
+			</div>
+			<div class="clearfix commitButton">
+				<div class="right">
+					<input name="commit" type="submit" class="button expanded" value="Регистрация" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

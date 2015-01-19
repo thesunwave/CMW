@@ -1,0 +1,88 @@
+@import "socialIcon/*.png"
+
+.loginPage
+	&, header a
+		color: $whiteColor
+	header
+		position: relative
+		min-height: 203px
+	.logo
+		+translate(-50%, 0)
+		position: absolute
+		left: 50%
+		margin-top: 32px
+		text-align: center
+		.image
+			+boxModel(109px, 105px)
+			+inline-block
+			position: relative
+			.pointer
+				+boxModel(100%, 100%)
+				position: absolute
+				left: 0
+				top: 0
+		.text
+			font-weight: 100
+			font-size: 34px
+			display: block
+	.authForm
+		+translate(-50%, 0)
+		position: absolute
+		left: 50%
+		width: 666px
+		padding: 35px 156px 37px
+		margin-bottom: 57px
+		border: 2px solid $whiteColor
+		.title, .social
+			text-align: center
+		.title
+			font-size: 30px
+			font-weight: 600
+			margin-bottom: 25px
+		.social
+			+all-socialIcon-sprites
+			font-size: 0
+			margin-bottom: 29px
+			span, a
+				+inline-block
+			span
+				font-size: 20px
+				font-weight: 300
+				margin-right: 18px
+			a
+				+boxModel(36px, 36px)
+				+border-radius(100%)
+				overflow: hidden
+				color: transparent
+				&:not(:last-child)
+					margin-right: 7px
+		.form
+			.textFields input
+				height: 45px
+				font-size: 18px
+				font-weight: 500
+				color: $blackColor
+				margin-bottom: 20px
+				border: 2px solid $yellowColor
+			.service, .commitButton
+				.left, .right
+					width: 50%
+				.right
+					text-align: right
+			.service
+				margin-top: 13px
+				margin-bottom: 32px
+				.left, .agreement
+					font-size: 0
+					white-space: nowrap
+					input, span
+						+inline-block
+					input
+						margin-right: 14px
+					span
+						font-size: 16px
+						font-weight: 300
+						white-space: normal
+				.agreement
+					input, span
+						+inline-block(top)

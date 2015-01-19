@@ -2,9 +2,9 @@
 
 	$transitionDuration         : 250ms
 
-	$buttonDefaultNormal        : #e8e8e8
-	$buttonDefaultHover         : #f0f0f0
-	$buttonDefaultDisabled      : #b3b3b3
+	$buttonDefaultNormal        : #303030
+	$buttonDefaultHover         : #303030
+	$buttonDefaultDisabled      : #303030
 	$buttonDefaultBorderNormal  : #c1c1c1
 	$buttonDefaultBorderHover   : #e5e5e5
 	$buttonDefaultBorderDisabled: #9a9a9a
@@ -33,18 +33,15 @@
 	.button
 		+inline-block
 		+user-select(none)
-		+transition(background-color $transitionDuration ease, border-bottom-color $transitionDuration ease)
+		+transition(background-color $transitionDuration ease)
 		line-height: 1
 		text-align: center
-		border-bottom-width: 3px
-		border-bottom-style: solid
-		border-bottom-color: $buttonDefaultBorderNormal
 		background: $buttonDefaultNormal
 		cursor: pointer
 		font-weight: 300
-		font-size: 14px
-		padding: 15px 22px 12px
-		color: $black
+		font-size: 18px
+		padding: 14px 22px
+		color: $whiteColor
 		&.tiny
 			font-size: 9.5px
 			padding: 9px 16px 6px
@@ -62,43 +59,29 @@
 			+border-radius(3px)
 		&:hover, &:focus
 			background: $buttonDefaultHover
-			border-bottom-color: $buttonDefaultBorderHover
 		&:not(.disabled):not(:disabled):active
 			+transition(none)
-			border-bottom-color: transparent
 		&:disabled, &.disabled
 			background: $buttonDefaultDisabled
-			border-bottom-color: $buttonDefaultBorderDisabled
 			cursor: default
-			&:active
-				border-bottom-color: $buttonDefaultBorderDisabled
 		&.primary
-			border-bottom-color: $buttonPrimaryBorderNormal
 			background: $buttonPrimaryNormal
 			color: #fff
 			&:hover
 				background: $buttonPrimaryHover
-				border-bottom-color: $buttonPrimaryBorderHover
 			&:disabled, &.disabled
 				background: $buttonPrimaryDisabled
-				border-bottom-color: $buttonPrimaryBorderDisabled
 		&.success
-			border-bottom-color: $buttonSuccessBorderNormal
 			background: $buttonSuccessNormal
 			color: #fff
 			&:hover
 				background: $buttonSuccessHover
-				border-bottom-color: $buttonSuccessBorderHover
 			&:disabled, &.disabled
 				background: $buttonSuccessDisabled
-				border-bottom-color: $buttonSuccessBorderDisabled
 		&.warning
-			border-bottom-color: $buttonWarningBorderNormal
 			background: $buttonWarningNormal
 			color: #fff
 			&:hover
 				background: $buttonWarningHover
-				border-bottom-color: $buttonWarningBorderHover
 			&:disabled, &.disabled
 				background: $buttonWarningDisabled
-				border-bottom-color: $buttonWarningBorderDisabled
