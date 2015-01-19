@@ -321,7 +321,7 @@
       Alerts = params.Alerts || true;
       Popups = params.Popups || true;
       Ajax = {
-        enable: params.AjaxEnable || true,
+        enable: params.AjaxEnable,
         container: params.AjaxContainer || "body",
         callback: {
           done: params.AjaxDone || function() {},

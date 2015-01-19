@@ -6,7 +6,11 @@ class CMW.Initialize
 		@loader()
 
 	plugins: ->
-		FastClick.attach document.body
+		new zoQ.Init
+			Alerts    : true
+			Popups    : true
+			AjaxEnable: false
+
 		return
 		
 	loader: ->

@@ -1,9 +1,19 @@
-<% content_for :alerts do %>
+<% content_for :scripts do %>
 	<% if notice %>
-<div class="alert info"><div class="message"><%= notice %></div><div class="close"></div></div>
+		setTimeout(function(){
+			z_.alert({
+				type   : 'info',
+				message: '<%= notice %>'
+			});
+		}, 100);
 	<% end %>
 	<% if alert %>
-<div class="alert warning"><div class="message"><%= alert %></div><div class="close"></div></div>
+		setTimeout(function(){
+			z_.alert({
+				type   : 'warning',
+				message: '<%= alert %>'
+			});
+		}, 100);
 	<% end %>
 <% end %>
 <div class="authForm">
