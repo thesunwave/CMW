@@ -12,9 +12,9 @@
 	</div>
 	<div class="social">
 		<span>С помощью</span>
-		<a href="#" class="socialIcon-vk">vk</a>
-		<a href="#" class="socialIcon-fb">facebook</a>
-		<a href="#" class="socialIcon-tw">twitter</a>
+		<a href="#" class="vk">vk</a>
+		<a href="#" class="fb">facebook</a>
+		<a href="#" class="tw">twitter</a>
 	</div>
 	<div class="form">
 		<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
@@ -29,10 +29,10 @@
 				<input name="user[password_confirmation]" type="password" placeholder="Подтверждение пароля" />
 			</div>
 			<div class="service">
-				<div class="agreement">
+				<label class="agreement">
 					<input name="user[agree]" type="checkbox" />
 					<span>Я согласен с условиями <a href="#"><nobr>пользовательского соглашения</nobr></a></span>
-				</div>
+				</label>
 			</div>
 			<div class="clearfix commitButton">
 				<div class="right">

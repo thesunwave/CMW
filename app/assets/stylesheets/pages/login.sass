@@ -1,4 +1,4 @@
-@import "socialIcon/*.png"
+$socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 
 .loginPage
 	&, header a
@@ -27,12 +27,13 @@
 			display: block
 	.authForm
 		+translate(-50%, 0)
+		+border-radius(2px)
 		position: absolute
 		left: 50%
 		width: 666px
 		padding: 35px 156px 37px
 		margin-bottom: 57px
-		border: 2px solid $whiteColor
+		border: 1px solid rgba($whiteColor, 0.44)
 		.title, .social
 			text-align: center
 		.title
@@ -40,30 +41,34 @@
 			font-weight: 600
 			margin-bottom: 25px
 		.social
-			+all-socialIcon-sprites
+			.vk
+				+sprite($socialIcons, "vk")
+				margin-right: 13px
+			.fb
+				+sprite($socialIcons, "fb")
+				margin-right: 15px
+			.tw
+				+sprite($socialIcons, "tw")
 			font-size: 0
 			margin-bottom: 29px
 			span, a
-				+inline-block
+				+inline-block(baseline)
 			span
 				font-size: 20px
 				font-weight: 300
-				margin-right: 18px
+				margin-right: 13px
 			a
-				+boxModel(36px, 36px)
-				+border-radius(100%)
 				overflow: hidden
 				color: transparent
-				&:not(:last-child)
-					margin-right: 7px
 		.form
 			.textFields input
 				height: 45px
 				font-size: 18px
-				font-weight: 500
+				font-weight: 300
+				font-style: italic
 				color: $blackColor
 				margin-bottom: 20px
-				border: 2px solid $yellowColor
+				border: 1px solid $yellowColor
 			.service, .commitButton
 				.left, .right
 					width: 50%
@@ -72,6 +77,9 @@
 			.service
 				margin-top: 13px
 				margin-bottom: 32px
+				font-weight: 300
+				.remember
+					+user-select(none)
 				.left, .agreement
 					font-size: 0
 					white-space: nowrap
@@ -80,9 +88,9 @@
 					input
 						margin-right: 14px
 					span
-						font-size: 16px
-						font-weight: 300
 						white-space: normal
+				.left span, .agreement span, .right
+					font-size: 16px
 				.agreement
 					input, span
 						+inline-block(top)
