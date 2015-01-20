@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113225119) do
+ActiveRecord::Schema.define(version: 20150120195156) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -63,12 +63,12 @@ ActiveRecord::Schema.define(version: 20150113225119) do
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "email",                  limit: 255,   default: "", null: false
+    t.string   "encrypted_password",     limit: 255,   default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(version: 20150113225119) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "lang",                   limit: 255
+    t.text     "description",            limit: 65535
+    t.string   "website",                limit: 255
+    t.string   "vk",                     limit: 255
+    t.string   "facebook",               limit: 255
+    t.string   "twitter",                limit: 255
+    t.string   "username",               limit: 255
+    t.string   "behance",                limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
