@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
   # :director
   # :admin
   rolify after_add: :assign_default_notifications_for
-  # after_create :assign_default_role, :assign_default_notifications, :assign_default_username
-  after_create :assign_default_role, :assign_default_notifications
+  after_create :assign_default_role, :assign_default_notifications, :assign_default_username
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
@@ -19,49 +18,47 @@ class User < ActiveRecord::Base
   #
   # Связи
   #
-  # belongs_to  :avatar, dependent: :destroy
-  # has_many    :works, dependent: :destroy
-  # has_many    :notifications, dependent: :destroy
-  # has_many    :notification_types, through: :notifications
+  belongs_to  :avatar, dependent: :destroy
+  has_many    :works, dependent: :destroy
+  has_many    :notifications, dependent: :destroy
+  has_many    :notification_types, through: :notifications
   
   
   #
   # Валидации полей
   #  
   # почта проверяется на валидность в модели Devise
-	# validates_format_of :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('errors.messages.invalid')
+	validates_format_of :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('errors.messages.invalid')
 	
   #
   # Имя
   #
-  # validates_length_of :first_name, maximum: 30, allow_blank: true
-  # validates_format_of :first_name, 
-  #   with: /\A[\p{L}]*\Z/i, 
-  #   allow_blank: true,
-  #   message: I18n.t('errors.messages.invalid')
+  validates_length_of :first_name, maximum: 30
+  validates_format_of :first_name, 
+    with: /\A[\p{L}]*\Z/i, 
+    message: I18n.t('errors.messages.invalid')
 
   #
   # Фамилия
   #
-  # validates_length_of :last_name, maximum: 40, allow_blank: true
-  # validates_format_of :last_name, 
-  #   with: /\A[\p{L}]*\Z/i, 
-  #   allow_blank: true, 
-  #   message: I18n.t('errors.messages.invalid')
+  validates_length_of :last_name, maximum: 40
+  validates_format_of :last_name, 
+    with: /\A[\p{L}]*\Z/i, 
+    message: I18n.t('errors.messages.invalid')
 
   #
   # Язык
   #
-  # validates_presence_of :lang, inclusion: { 
-  #   in: I18n.available_locales.collect { |l| l.to_s }, 
-  #   message: I18n.t('errors.messages.invalid') 
-  # } 
+  validates_presence_of :lang, inclusion: { 
+    in: I18n.available_locales.collect { |l| l.to_s }, 
+    message: I18n.t('errors.messages.invalid') 
+  } 
 
   #
   # url (username)
   #
-  # validates_length_of :username, in: 3...25, allow_blank: true, allow_nil: true
-  # validate  :validate_username
+  validates_length_of :username, in: 3...25
+  validate  :validate_username
 
 
   #
@@ -69,14 +66,14 @@ class User < ActiveRecord::Base
   #
 
   # вычисляемое свойство name
-  # def name
-  #   if first_name.present? || last_name.present?
-  #     space = (first_name.present? && last_name.present?) ? ' ' : ''
-  #     first_name + space + last_name
-  #   else
-  #     id_to_s
-  #   end
-  # end
+  def name
+    if first_name.present? || last_name.present?
+      space = (first_name.present? && last_name.present?) ? ' ' : ''
+      first_name + space + last_name
+    else
+      id_to_s
+    end
+  end
 
   # возвращает роль с наивысшим приорететом
   def role
@@ -124,34 +121,34 @@ class User < ActiveRecord::Base
   #     common api -> check_username
   # в объекте instance передается экземпляр объекта, для которого вызывается валидация
   # если instance пуст, функция возвращает булево утверждение относительно валидности поля username
-  # def self.valid_username?(username, instance = nil)
-  #   unless username.blank?
-  #     # проверяет на валидность имя пользователя
-  #     unless (username =~ /^[a-zA-Z][a-zA-Z\-\_\.]/i)
-  #       instance.errors.add(:username, I18n.t('errors.messages.invalid')) and return unless instance.nil?
-  #       return false if instance.nil?
-  #     end
+  def self.valid_username?(username, instance = nil)
+    unless username.blank?
+      # проверяет на валидность имя пользователя
+      unless (username =~ /^[a-zA-Z][a-zA-Z\-\_\.]/i)
+        instance.errors.add(:username, I18n.t('errors.messages.invalid')) and return unless instance.nil?
+        return false if instance.nil?
+      end
 
-  #     # проверяет на наличие в black-листе
-  #     wrong_names = ['admin','administartion','administrator','help','adm','cmwsu','cmw.su','cmw_su','cmw-su','cmw']
-  #     if wrong_names.include?(username)
-  #       instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return unless instance.nil?
-  #       return false if instance.nil?
-  #     end
+      # проверяет на наличие в black-листе
+      wrong_names = ['admin','administartion','administrator','help','adm','cmwsu','cmw.su','cmw_su','cmw-su','cmw']
+      if wrong_names.include?(username)
+        instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return unless instance.nil?
+        return false if instance.nil?
+      end
 
-  #     # проверяет на уникальность сохраняемое имя пользователя
-  #     if exist = User.find_by_username(username)
-  #       unless instance.nil?
-  #         if exist.id != instance.id
-  #           instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return
-  #         end
-  #       else  
-  #         return false
-  #       end
-  #     end
-  #   end
-  #   return true if instance.nil?
-  # end
+      # проверяет на уникальность сохраняемое имя пользователя
+      if exist = User.find_by_username(username)
+        unless instance.nil?
+          if exist.id != instance.id
+            instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return
+          end
+        else  
+          return false
+        end
+      end
+    end
+    return true if instance.nil?
+  end
 
 
 private  
@@ -178,9 +175,9 @@ private
   end
 
   # Возвращает имя пользователя
-  # def assign_default_username
-  #   self.username = id_to_s if read_attribute(:username).blank?
-  # end
+  def assign_default_username
+    self.username = id_to_s if read_attribute(:username).blank?
+  end
 
   # Преобразовать идентификатор в строку
   def id_to_s
@@ -191,12 +188,12 @@ private
   #
   # Валидация имени пользователя
   #
-  # def validate_username
-  #   unless self.username.blank?
-  #     # перевести username в нижний регистр
-  #     self.username.downcase!
-  #     User.valid_username?(self.username, self)
-  #   end
-  # end
+  def validate_username
+    unless self.username.blank?
+      # перевести username в нижний регистр
+      self.username.downcase!
+      User.valid_username?(self.username, self)
+    end
+  end
 
 end   # class User

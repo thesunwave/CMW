@@ -15,39 +15,44 @@
 			});
 		}, 100);
 	<% end %>
+	<% if devise_error_messages! %>
+		<%= devise_error_messages! %>
+	<% end %>
 <% end %>
-<div class="authForm">
-	<div class="title">
-		Вход
-	</div>
-	<div class="social">
-		<span>С помощью</span>
-		<a href="#" class="vk">vk</a>
-		<a href="#" class="fb">facebook</a>
-		<a href="#" class="tw">twitter</a>
-	</div>
-	<div class="form">
-		<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
-			<input name="utf8" type="hidden" value="&#x2713;" />
-			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-			<div class="textFields">
-				<input name="user[email]" type="text" placeholder="Электронная почта" />
-				<input name="user[password]" type="password" placeholder="Пароль" />
-			</div>
-			<div class="service clearfix">
-				<label class="left remember">
-					<input name="user[remember_me]" type="checkbox" checked="checked" />
-					<span>Запомнить меня</span>
-				</label>
-				<div class="right">
-					<a href="<%= forgot_path %>">Забыли пароль?</a>
+<div class="loginPage">
+	<div class="authForm">
+		<div class="title">
+			Вход
+		</div>
+		<div class="social">
+			<span>С помощью</span>
+			<a href="#" class="vk">vk</a>
+			<a href="#" class="fb">facebook</a>
+			<a href="#" class="tw">twitter</a>
+		</div>
+		<div class="form">
+			<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
+				<input name="utf8" type="hidden" value="&#x2713;" />
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				<div class="textFields">
+					<input name="user[email]" type="text" placeholder="Электронная почта" />
+					<input name="user[password]" type="password" placeholder="Пароль" />
 				</div>
-			</div>
-			<div class="clearfix commitButton">
-				<div class="right">
-					<input name="commit" type="submit" class="button expanded" value="Вход" />
+				<div class="service clearfix">
+					<label class="left remember">
+						<input name="user[remember_me]" type="checkbox" checked="checked" />
+						<span>Запомнить меня</span>
+					</label>
+					<div class="right">
+						<a href="<%= forgot_path %>">Забыли пароль?</a>
+					</div>
 				</div>
-			</div>
-		</form>
+				<div class="clearfix commitButton">
+					<div class="right">
+						<input name="commit" type="submit" class="button expanded" value="Вход" />
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>

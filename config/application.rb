@@ -34,6 +34,7 @@ module CMW
     config.i18n.default_locale = :ru
     
     config.active_record.raise_in_transactional_callbacks = true
-
+    # Set the queue_adapter for delayed_job
+    config.active_job.queue_adapter = :delayed_job
   end
 end

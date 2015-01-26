@@ -12,7 +12,7 @@ ru:
       invalid: Ошибка! такой пользователь и/или пароль не найден
       not_found_in_database: Такой пользователь и/или пароль не найдены
       timeout: Ваша сессия истекла, войдите в систему повторно
-      # unauthenticated: -> moved to errors.messages
+      unauthenticated: Вы не авторизованы! Пожалуйста выполните вход
       unconfirmed: Ваш email не подтверждён, подтвердите email для входа в систему
     mailer:
       confirmation_instructions:

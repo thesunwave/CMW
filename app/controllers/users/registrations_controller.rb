@@ -1,12 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :update_sanitized_params, if: :devise_controller?
-  before_filter :show_main_forms!, only: [:new, :create]
-  before_filter :instantiateUser, only: [:new, :create, :update]
+  before_filter :show_main_forms!, :except => [:edit]
   
-  def new
-    render layout: "login"
-  end
-
   # POST /resource
   # Регистрация нового пользователя
   def create
@@ -125,7 +120,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_sanitized_params
     # на регистрацию
     devise_parameter_sanitizer.for(:sign_up) do |u| 
-      u.permit(:email, :password, :password_confirmation, :lang)
+      u.permit(:email, :password, :password_confirmation, :first_name, :last_name, :username, :lang)
     end
     # на обновление настроек
     # в конце указано поле links типом которого должен быть массив

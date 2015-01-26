@@ -1,16 +1,9 @@
 module DeviseHelper
   def devise_error_messages!
     if resource != nil
-      messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
-      sentence = I18n.t("errors.messages.not_saved",
-                        :count => resource.errors.count,
-                        :resource => resource.class.model_name.human.downcase)
+      messages = resource.errors.full_messages.map { |msg| "setTimeout(function(){z_.alert({type :'warning',message:'#{msg}'});},100);" }.join
 
-      html = <<-HTML
-        <div class="alert warning"><div class="message">#{sentence}. #{messages}</div><div class="close"></div></div>
-      HTML
-
-      html.html_safe
+      messages.html_safe
     else
       return ""
     end

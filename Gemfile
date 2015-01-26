@@ -13,9 +13,9 @@ gem 'rolify'                                    # roles engine
 gem 'mysql2'                                    # mysql activerecord adapter
 gem 'execjs'                                    # js runtime gem
 gem 'paperclip', '~> 4.1'                       # file storage engine
-gem 'http_accept_language'                      # set locale from accept-language URL header
 gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
 gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
+gem 'http_accept_language'                      # set locale from accept-language URL header
 
 
 
@@ -33,20 +33,20 @@ group :development do
 	gem 'oily_png'                              # speed up the pure Ruby ChunkyPNG library
 end
 
-
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'spring-commands-rspec'
-	gem 'guard-rspec'
+	gem 'spring'
 	gem 'factory_girl_rails', require: false
+	gem 'guard-rspec'
 	gem 'seed-fu', '~> 2.3'
 end
 
 group :test do
 	gem 'capybara'                               # test web applications by simulating how a real user would interact with your app
 	gem 'poltergeist'                            # poltergeist is a driver for Capybara. It allows you to run your Capybara tests on a headless WebKit browser, provided by PhantomJS
-	gem 'i18n-tasks', '~> 0.7.4'                 # helps you find and manage missing and unused translations
 	gem 'database_cleaner', '1.0.1'              # Database Cleaner is a set of strategies for cleaning your database in Ruby
+	gem 'i18n-tasks', '~> 0.7.4'                 # helps you find and manage missing and unused translations
 end
 
 

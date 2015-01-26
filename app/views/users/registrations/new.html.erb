@@ -1,44 +1,61 @@
-<% content_for :alerts do %>
+<% content_for :scripts do %>
 	<% if notice %>
-<div class="alert info"><div class="message"><%= notice %></div><div class="close"></div></div>
+		setTimeout(function(){
+			z_.alert({
+				type   : 'info',
+				message: '<%= notice %>'
+			});
+		}, 100);
 	<% end %>
 	<% if alert %>
-<div class="alert warning"><div class="message"><%= alert %></div><div class="close"></div></div>
+		setTimeout(function(){
+			z_.alert({
+				type   : 'warning',
+				message: '<%= alert %>'
+			});
+		}, 100);
+	<% end %>
+	<% if devise_error_messages! %>
+		<%= devise_error_messages! %>
 	<% end %>
 <% end %>
-<div class="authForm">
-	<div class="title">
-		Регистрация
-	</div>
-	<div class="social">
-		<span>С помощью</span>
-		<a href="#" class="vk">vk</a>
-		<a href="#" class="fb">facebook</a>
-		<a href="#" class="tw">twitter</a>
-	</div>
-	<div class="form">
-		<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
-			<input name="utf8" type="hidden" value="&#x2713;" />
-			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-			<div class="textFields">
-				<input name="user[firstname]" type="text" placeholder="Ваше имя" />
-				<input name="user[lastname]" type="text" placeholder="Ваша фамилия" />
-				<input name="user[username]" type="text" placeholder="Логин" />
-				<input name="user[email]" type="text" placeholder="Электронная почта" />
-				<input name="user[password]" type="password" placeholder="Пароль" />
-				<input name="user[password_confirmation]" type="password" placeholder="Подтверждение пароля" />
-			</div>
-			<div class="service">
-				<label class="agreement">
-					<input name="user[agree]" type="checkbox" />
-					<span>Я согласен с условиями <a href="#"><nobr>пользовательского соглашения</nobr></a></span>
-				</label>
-			</div>
-			<div class="clearfix commitButton">
-				<div class="right">
-					<input name="commit" type="submit" class="button expanded" value="Регистрация" />
+
+<div class="loginPage">
+	<div class="authForm">
+		<div class="title">
+			Регистрация
+		</div>
+		<div class="social">
+			<span>С помощью</span>
+			<a href="#" class="vk">vk</a>
+			<a href="#" class="fb">facebook</a>
+			<a href="#" class="tw">twitter</a>
+		</div>
+		<div class="form">
+			<form action="<%= register_path %>" accept-charset="UTF-8" method="post">
+				<input name="utf8" type="hidden" value="&#x2713;" />
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				<div class="textFields">
+					<input name="user[first_name]" type="text" placeholder="Ваше имя" />
+					<input name="user[last_name]" type="text" placeholder="Ваша фамилия" />
+					<input name="user[username]" type="text" placeholder="Логин" />
+					<input name="user[email]" type="text" placeholder="Электронная почта" />
+					<input name="user[password]" type="password" placeholder="Пароль" />
+					<input name="user[password_confirmation]" type="password" placeholder="Подтверждение пароля" />
+					<input name="user[lang]" type="hidden" value="ru" />
 				</div>
-			</div>
-		</form>
+				<div class="service">
+					<label class="agreement">
+						<input name="user[agree]" type="checkbox" />
+						<span>Я согласен с условиями <a href="#"><nobr>пользовательского соглашения</nobr></a></span>
+					</label>
+				</div>
+				<div class="clearfix commitButton">
+					<div class="right">
+						<input name="commit" type="submit" class="button expanded" value="Регистрация" />
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>

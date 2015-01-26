@@ -1,0 +1,53 @@
+$quoteColor: #cfcfcc
+
+.wrapper main
+	width: 1366px
+	margin: 0 auto
+	padding: 0 34px
+
+header a
+	color: $whiteColor
+
+header
+	position: relative
+	min-height: 330px
+	.logo
+		+translate(-50%, 0)
+		position: absolute
+		left: 50%
+		margin-top: 32px
+		text-align: center
+		.image
+			+boxModel(156px, 138px)
+			+inline-block
+			position: relative
+			.pointer
+				+boxModel(100%, 100%)
+				position: absolute
+				left: 0
+				top: 0
+		.text
+			font-weight: 100
+			font-size: 45px
+			display: block
+		.quote
+			font-style: italic
+			font-weight: 300
+			font-size: 18px
+			color: $quoteColor
+			margin-top: 16px
+			line-height: 1.2
+			span
+				font-style: normal
+				color: #fff
+	&.registrations, &.sessions
+		min-height: 195px
+		.logo
+			.text
+				font-size: 34px
+			.image
+				+boxModel(109px, 105px)
+
+.cover
+	background: $whiteColor
+	
