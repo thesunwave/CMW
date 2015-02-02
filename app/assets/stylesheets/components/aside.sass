@@ -1,0 +1,129 @@
+$topBtn: sprite-map("topBtn/*.png", $spacing: 0, $layout: smart)
+
+.b-cover
+	background: $whiteColor
+	padding: 20px
+	padding-left: 39px
+
+.b-content
+	width: 910px
+
+.b-aside
+	width: 289px
+	height: 1000px
+	position: relative
+
+.b-panel
+	width: 289px
+	padding: 18px
+	background: $blackColor
+	color: $whiteColor
+	margin-bottom: 20px
+	&__header
+		margin-bottom: 12px
+	&__image
+		&, img
+			+boxModel(70px, 70px)
+		img
+			border: 1px solid $yellowColor
+	&__info
+		+boxModel(180px, 70px)
+		position: relative
+		&-wrapper
+			+translate(-50%, -50%)
+			width: 100%
+			position: absolute
+			left: 50%
+			top: 50%
+			text-align: center
+		&_name
+			margin-bottom: 5px
+			a
+				color: $whiteColor
+				font-size: 16px
+				font-weight: 500
+		&_spec a
+			color: rgba($whiteColor, 0.3)
+			font-weight: 300
+	&__auth-text
+		line-height: 1.15
+		margin-bottom: 20px
+		font-weight: 300
+	&__or-devider
+		height: 31px
+		line-height: 22px
+		text-align: center
+		font-weight: 300
+		font-size: 14px
+	&__content
+		font-size: 0
+	&__link
+		+inline-block
+		width: 100%
+		background: $asideLinksColor
+		text-align: center
+		padding: 13px
+		padding-left: 42px
+		font-size: 16px
+		font-weight: 100
+		background-repeat: no-repeat
+		background-position: 13px center
+		margin-bottom: 6px
+		&:last-child
+			margin-bottom: 0
+		&_icon-notifs__count
+			+border-radius(100%)
+			+boxModel(15px, 15px)
+			display: block
+			text-align: center
+			line-height: 15px
+			font-size: 9px
+			font-weight: 500
+			background: $yellowColor
+			color: $blackColor
+			position: absolute
+			left: 20px
+			top: 9px
+		&_icon-login
+			background-image: asset-url("linkIcons/login.png")
+		&_icon-register
+			background-image: asset-url("linkIcons/register.png")
+		&_icon-notifs
+			+boxModel(40px, 42px)
+			background-image: asset-url("linkIcons/notifs.png")
+			background-position: center
+			margin-right: 9px
+			padding: 0
+			position: relative
+		&_icon-add-work
+			background-image: asset-url("linkIcons/add.png")
+			width: 204px
+		&_icon-settings
+			background-image: asset-url("linkIcons/settings.png")
+			background-position: 11px center
+		&_icon-favour
+			background-image: asset-url("linkIcons/favour.png")
+			background-position: 13px center
+		&_icon-subscriptions
+			background-image: asset-url("linkIcons/subscriptions.png")
+			background-position: 12px center
+		&_icon-logout
+			background-image: asset-url("linkIcons/logout.png")
+			margin-top: 9px
+			color: $redColor
+
+.b-top
+	+box-shadow(0 0 1px rgba($blackColor, 0.3))
+	height: 100px
+	cursor: pointer
+	position: relative
+	background: $topBtnColor
+	&__icon
+		+sprite($topBtn, "normal")
+		+translate(-50%, -50%)
+		position: absolute
+		left: 50%
+		top: 50%
+	&:hover &__icon
+		+sprite($topBtn, "hover")
+

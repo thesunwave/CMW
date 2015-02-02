@@ -1,0 +1,43 @@
+<% if user_signed_in? %>
+<div class="b-panel">
+	<div class="b-panel__header g-clearfix">
+		<div class="g-left b-panel__image">
+			<img src="/images/avatar70x70.png" alt="" />
+		</div>
+		<div class="g-right b-panel__info">
+			<div class="b-panel__info-wrapper">
+				<div class="b-panel__info_name">
+					<a href="#"><%= current_user.first_name + " " + current_user.last_name %></a>
+				</div>
+				<div class="b-panel__info_spec">
+					<a href="#">веб-дизайн</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="b-panel__content">
+		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs"><span class="b-panel__link_icon-notifs__count">2</span></a>
+		<a href="#" class="b-panel__link b-panel__link_icon-add-work">Добавить работу</a>
+		<a href="<%= settings_path %>" class="b-panel__link b-panel__link_icon-settings">Настройки профиля</a>
+		<a href="#" class="b-panel__link b-panel__link_icon-favour">Избранное</a>
+		<a href="<%= subscriptions_path %>" class="b-panel__link b-panel__link_icon-subscriptions">Подписки</a>
+		<a href="<%= destroy_user_session_path %>" class="b-panel__link b-panel__link_icon-logout">Выход</a>
+	</div>
+</div>
+<% else %>
+<div class="b-panel">
+	<div class="b-panel__auth-text">
+		Чтобы <a href="#">оценивать</a> работы других пользователей, <a href="#">комментировать</a> их и <a href="#">выкладывать</a> свои работы на рассмотрение профессионального сообщества дизайнеров - вам нужно
+	</div>
+	<div class="b-panel__content">
+		<a href="<%= new_user_session_path %>" class="b-panel__link b-panel__link_icon-login">Войти как пользователь</a>
+		<div class="b-panel__or-devider">
+			или
+		</div>
+		<a href="<%= new_user_registration_path %>" class="b-panel__link b-panel__link_icon-register">Зарегистрироваться</a>
+	</div>
+</div>
+<% end %>
+<div class="b-top" data-hook="scroll-top">
+	<div class="b-top__icon"></div>
+</div>

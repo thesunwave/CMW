@@ -30,7 +30,7 @@
 	$buttonWarningBorderHover   : #cc6666
 	$buttonWarningBorderDisabled: #9a4d4d
 
-	.button
+	.b-button
 		+inline-block
 		+user-select(none)
 		+transition(background-color $transitionDuration ease)
@@ -42,46 +42,47 @@
 		font-size: 18px
 		padding: 14px 22px
 		color: $whiteColor
-		&.tiny
+		outline: none
+		&_tiny
 			font-size: 9.5px
 			padding: 9px 16px 6px
-		&.small
+		&_small
 			font-size: 11px
 			padding: 11px 19px 9px
-		&.large
+		&_large
 			font-size: 17.7px
 			padding: 16px 43px 13px
-		&.expand, &.expanded
+		&_expand, &_expanded
 			width: 100%
-		&.round, &.rounded
+		&_round, &_rounded
 			+border-radius(1000px)
-		&.radius
+		&_radius
 			+border-radius(3px)
 		&:hover, &:focus
 			background: $buttonDefaultHover
-		&:not(.disabled):not(:disabled):active
+		&:not(.b-button_disabled):not(:disabled):active
 			+transition(none)
-		&:disabled, &.disabled
+		&:disabled, &_disabled
 			background: $buttonDefaultDisabled
 			cursor: default
-		&.primary
+		&_primary
 			background: $buttonPrimaryNormal
 			color: #fff
 			&:hover
 				background: $buttonPrimaryHover
-			&:disabled, &.disabled
+			&:disabled, &_disabled
 				background: $buttonPrimaryDisabled
-		&.success
+		&_success
 			background: $buttonSuccessNormal
 			color: #fff
 			&:hover
 				background: $buttonSuccessHover
-			&:disabled, &.disabled
+			&:disabled, &_disabled
 				background: $buttonSuccessDisabled
-		&.warning
+		&_warning
 			background: $buttonWarningNormal
 			color: #fff
 			&:hover
 				background: $buttonWarningHover
-			&:disabled, &.disabled
+			&:disabled, &_disabled
 				background: $buttonWarningDisabled

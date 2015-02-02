@@ -19,37 +19,40 @@
 		<%= devise_error_messages! %>
 	<% end %>
 <% end %>
-<div class="loginPage">
-	<div class="authForm">
-		<div class="title">
+<div class="b-page_login">
+	<div class="b-auth">
+		<div class="b-auth__title b-auth__title_with-link">
 			Вход
 		</div>
-		<div class="social">
-			<span>С помощью</span>
-			<a href="#" class="vk">vk</a>
-			<a href="#" class="fb">facebook</a>
-			<a href="#" class="tw">twitter</a>
+		<div class="b-auth__toRegister">
+			<a href="<%= new_user_registration_path %>">ещё не зарегистрированы?</a>
 		</div>
-		<div class="form">
+		<div class="b-auth__social">
+			<span class="b-auth__social__via">С помощью</span>
+			<a href="#" class="b-auth__social__link b-auth__social__link_vk">vk</a>
+			<a href="#" class="b-auth__social__link b-auth__social__link_fb">facebook</a>
+			<a href="#" class="b-auth__social__link b-auth__social__link_tw">twitter</a>
+		</div>
+		<div class="b-auth__form">
 			<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-				<div class="textFields">
-					<input name="user[email]" type="text" placeholder="Электронная почта" />
-					<input name="user[password]" type="password" placeholder="Пароль" />
+				<div>
+					<input name="user[email]" class="b-auth__form__fields_text" type="text" placeholder="Электронная почта" />
+					<input name="user[password]" class="b-auth__form__fields_text" type="password" placeholder="Пароль" />
 				</div>
-				<div class="service clearfix">
-					<label class="left remember">
-						<input name="user[remember_me]" type="checkbox" checked="checked" />
-						<span>Запомнить меня</span>
-					</label>
-					<div class="right">
+				<div class="b-auth__service g-clearfix">
+					<div class="g-left b-auth__remember">
+						<label class="b-checkbox"><input name="user[remember_me]" type="checkbox" checked="checked" /><span class="b-checkbox__handler"></span></label>
+						<span class="b-auth__remember__text">Запомнить меня</span>
+					</div>
+					<div class="g-right">
 						<a href="<%= forgot_path %>">Забыли пароль?</a>
 					</div>
 				</div>
-				<div class="clearfix commitButton">
-					<div class="right">
-						<input name="commit" type="submit" class="button expanded" value="Вход" />
+				<div class="g-clearfix b-auth__form-commit">
+					<div class="g-right">
+						<input name="commit" type="submit" class="b-button b-button_expanded" value="Вход" />
 					</div>
 				</div>
 			</form>

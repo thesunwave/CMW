@@ -20,39 +20,39 @@
 	<% end %>
 <% end %>
 
-<div class="loginPage">
-	<div class="authForm">
-		<div class="title">
+<div class="b-page_login">
+	<div class="b-auth">
+		<div class="b-auth__title">
 			Регистрация
 		</div>
-		<div class="social">
-			<span>С помощью</span>
-			<a href="#" class="vk">vk</a>
-			<a href="#" class="fb">facebook</a>
-			<a href="#" class="tw">twitter</a>
+		<div class="b-auth__social">
+			<span class="b-auth__social__via">С помощью</span>
+			<a href="#" class="b-auth__social__link b-auth__social__link_vk">vk</a>
+			<a href="#" class="b-auth__social__link b-auth__social__link_fb">facebook</a>
+			<a href="#" class="b-auth__social__link b-auth__social__link_tw">twitter</a>
 		</div>
-		<div class="form">
+		<div class="b-auth__form">
 			<form action="<%= register_path %>" accept-charset="UTF-8" method="post">
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-				<div class="textFields">
-					<input name="user[first_name]" type="text" placeholder="Ваше имя" />
-					<input name="user[last_name]" type="text" placeholder="Ваша фамилия" />
-					<input name="user[username]" type="text" placeholder="Логин" />
-					<input name="user[email]" type="text" placeholder="Электронная почта" />
-					<input name="user[password]" type="password" placeholder="Пароль" />
-					<input name="user[password_confirmation]" type="password" placeholder="Подтверждение пароля" />
+				<div>
+					<input name="user[first_name]" class="b-auth__form__fields_text" type="text" placeholder="Ваше имя" />
+					<input name="user[last_name]" class="b-auth__form__fields_text" type="text" placeholder="Ваша фамилия" />
+					<input name="user[username]" class="b-auth__form__fields_text" type="text" placeholder="Логин" />
+					<input name="user[email]" class="b-auth__form__fields_text" type="text" placeholder="Электронная почта" />
+					<input name="user[password]" class="b-auth__form__fields_text" type="password" placeholder="Пароль" />
+					<input name="user[password_confirmation]" class="b-auth__form__fields_text" type="password" placeholder="Подтверждение пароля" />
 					<input name="user[lang]" type="hidden" value="ru" />
 				</div>
-				<div class="service">
-					<label class="agreement">
-						<input name="user[agree]" type="checkbox" />
-						<span>Я согласен с условиями <a href="#"><nobr>пользовательского соглашения</nobr></a></span>
-					</label>
+				<div class="b-auth__service">
+					<div class="b-auth__agreement">
+						<label class="b-checkbox"><input name="user[agree]" type="checkbox" /><span class="b-checkbox__handler"></span></label>
+						<span class="b-auth__agreement__text">Я согласен с условиями <a href="#" class="b-auth__agreement__link"><nobr>пользовательского соглашения</nobr></a></span>
+					</div>
 				</div>
-				<div class="clearfix commitButton">
-					<div class="right">
-						<input name="commit" type="submit" class="button expanded" value="Регистрация" />
+				<div class="g-clearfix b-auth__form-commit">
+					<div class="g-right">
+						<input name="commit" type="submit" class="b-button b-button_expanded" value="Регистрация" />
 					</div>
 				</div>
 			</form>
