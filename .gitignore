@@ -21,6 +21,7 @@ db/*.sqlite3
 .sass-cache
 /config/secrets.yml
 /config/database.yml
+/config/initializers/secret_token.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
