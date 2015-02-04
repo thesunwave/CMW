@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  # devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
 
   #
@@ -85,9 +85,9 @@ class User < ActiveRecord::Base
     # получаем данные, исключаем ненужные поля
     settings = self.as_json(except: [:created_at, :updated_at])
     # добавить уведомления
-    # user_notifications = []
-    # self.notification_types.each { |n| user_notifications.push(n.name) } unless self.notification_types.nil?
-    # settings.merge!({ notifications: user_notifications })
+    user_notifications = []
+    self.notification_types.each { |n| user_notifications.push(n.name) } unless self.notification_types.nil?
+    settings.merge!({ notifications: user_notifications })
   end
 
   # добавить уведомление

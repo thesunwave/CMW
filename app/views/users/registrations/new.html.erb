@@ -1,25 +1,4 @@
-<% content_for :scripts do %>
-	<% if notice %>
-		setTimeout(function(){
-			z_.alert({
-				type   : 'info',
-				message: '<%= notice %>'
-			});
-		}, 100);
-	<% end %>
-	<% if alert %>
-		setTimeout(function(){
-			z_.alert({
-				type   : 'warning',
-				message: '<%= alert %>'
-			});
-		}, 100);
-	<% end %>
-	<% if devise_error_messages! %>
-		<%= devise_error_messages! %>
-	<% end %>
-<% end %>
-
+<%= render partial: "components/errors" %>
 <div class="b-page_login">
 	<div class="b-auth">
 		<div class="b-auth__title">
@@ -36,12 +15,12 @@
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				<div>
-					<input name="user[first_name]" class="b-auth__form__fields_text" type="text" placeholder="Ваше имя" />
-					<input name="user[last_name]" class="b-auth__form__fields_text" type="text" placeholder="Ваша фамилия" />
-					<input name="user[username]" class="b-auth__form__fields_text" type="text" placeholder="Логин" />
-					<input name="user[email]" class="b-auth__form__fields_text" type="text" placeholder="Электронная почта" />
-					<input name="user[password]" class="b-auth__form__fields_text" type="password" placeholder="Пароль" />
-					<input name="user[password_confirmation]" class="b-auth__form__fields_text" type="password" placeholder="Подтверждение пароля" />
+					<input name="user[first_name]" class="b-input_text b-input_text-login" type="text" placeholder="Ваше имя" />
+					<input name="user[last_name]" class="b-input_text b-input_text-login" type="text" placeholder="Ваша фамилия" />
+					<input name="user[username]" class="b-input_text b-input_text-login" type="text" placeholder="Логин" />
+					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="Электронная почта" />
+					<input name="user[password]" class="b-input_text b-input_text-login" type="password" placeholder="Пароль" />
+					<input name="user[password_confirmation]" class="b-input_text b-input_text-login" type="password" placeholder="Подтверждение пароля" />
 					<input name="user[lang]" type="hidden" value="ru" />
 				</div>
 				<div class="b-auth__service">

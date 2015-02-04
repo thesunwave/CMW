@@ -61,6 +61,7 @@ CMW::Application.routes.draw do
       authenticate :user do
         get  'delete'    => 'users/registrations#cancel'
         get  'settings'  => 'users/registrations#edit'
+        put  'settings'  => 'users/registrations#update'
 
         get  'forgot'    => 'users/passwords#new'
         post 'forgot'    => 'users/passwords#create'

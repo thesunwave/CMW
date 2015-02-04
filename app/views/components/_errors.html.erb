@@ -1,0 +1,21 @@
+<% content_for :scripts do %>
+	<% if notice %>
+		setTimeout(function(){
+			z_.alert({
+				type   : 'info',
+				message: '<%= notice %>'
+			});
+		}, 100);
+	<% end %>
+	<% if alert %>
+		setTimeout(function(){
+			z_.alert({
+				type   : 'warning',
+				message: '<%= alert %>'
+			});
+		}, 100);
+	<% end %>
+	<% if devise_error_messages! %>
+		<%= devise_error_messages! %>
+	<% end %>
+<% end %>

@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :update_sanitized_params, if: :devise_controller?
-  before_filter :show_main_forms!, :except => [:edit]
+  before_filter :show_main_forms!, :except => [:edit, :update]
   
   # POST /resource
   # Регистрация нового пользователя
@@ -42,12 +42,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     self.resource = resource_class.to_adapter.get!([current_user.id])
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
-    
+
     # определяем необходимость наличия текущего пароля:
     # если изменены почта или пароль, текущий пароль обязателен
     needs_password = false
     if account_update_params[:password].present? || account_update_params[:email].present?
-      needs_password = true 
+      needs_password = true
     end
 
     # удалить данные, которые не могут быть обновлены без текущего пароля
@@ -67,23 +67,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #
     # уведомления
     #
-    # if account_update_params[:notifications].present?
-    #   if account_update_params[:notifications].is_a? Hash
-    #     # обработать уведомления
-    #     account_update_params[:notifications].each do |notification, value|
-    #       if value.to_i == 1
-    #         current_user.add_notification notification.to_sym
-    #       else
-    #         current_user.remove_notification notification.to_sym
-    #       end
-    #     end
-    #     # удалить уведомления из объекта обновления настроек
-    #     account_update_params.delete(:notifications)
-    #   else
-    #     # ошибка формата
-    #     render json: { error_key: 'invalid_form', errors: { notifications: [t('errors.messages.invalid')] } }, status: :unprocessable_entity and return
-    #   end
-    # end
+    if account_update_params[:notifications].present?
+      if account_update_params[:notifications].is_a? Hash
+        # обработать уведомления
+        account_update_params[:notifications].each do |notification, value|
+          if value.to_i == 1
+            current_user.add_notification notification.to_sym
+          else
+            current_user.remove_notification notification.to_sym
+          end
+        end
+        # удалить уведомления из объекта обновления настроек
+        account_update_params.delete(:notifications)
+      else
+        # ошибка формата
+        return
+      end
+    end
 
     #
     # обновить данные пользователя
@@ -111,7 +111,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         # возникли ошибки
         return
       end
-    end
+    end  
   end
 
   # установить поля, которые могут придти в запросе
@@ -120,44 +120,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_sanitized_params
     # на регистрацию
     devise_parameter_sanitizer.for(:sign_up) do |u| 
-      u.permit(:email, :password, :password_confirmation, :first_name, :last_name, :username, :lang)
+      u.permit(:email, :password, :password_confirmation,
+        :first_name, :last_name, :username, :description, :lang)
     end
     # на обновление настроек
-    # в конце указано поле links типом которого должен быть массив
-    # данное поле необходимо указывать в коцне
+    # данное поле необходимо указывать в конце
     devise_parameter_sanitizer.for(:account_update) do |u| 
-      u.permit(:email, :password, :password_confirmation, 
-        :current_password, :lang)
-    # devise_parameter_sanitizer.for(:account_update) do |u| 
-    #   u.permit(:email, :first_name, :last_name, :password, :password_confirmation, 
-    #     :current_password, :city_id, :username, :description, :lang, 
-    #     :links => [])
-      # .tap do |while_listed|
-      #     while_listed[:notifications] = params[:user][:notifications]
-      #   end
+      u.permit(:email, :first_name, :last_name, :password,
+        :password_confirmation, :current_password,
+        :username, :description, :website, :vk, :behance, :dribble, :spec, :lang)
+    #   .tap do |while_listed|
+    #     while_listed[:notifications] = params[:user][:notifications]
+    #   end
     end
   end
 
 protected
 
-  #disbale redirect
+  #disable redirect
   def require_no_authentication
   end
 
-  #disbale redirect
+  #disable redirect
   def after_sign_in_path_for(resource)
   end
 
-  #disbale redirect
+  #disable redirect
   def after_inactive_sign_up_path_for(resource)
   end
 
-  #disbale redirect
+  #disable redirect
   def after_sign_up_path_for(resource)
   end
 
-  #disbale redirect
+  #disable redirect
   def after_update_path_for(resource)
+    settings_path
   end
 
 end

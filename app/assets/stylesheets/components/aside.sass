@@ -1,18 +1,5 @@
 $topBtn: sprite-map("topBtn/*.png", $spacing: 0, $layout: smart)
 
-.b-cover
-	background: $whiteColor
-	padding: 20px
-	padding-left: 39px
-
-.b-content
-	width: 910px
-
-.b-aside
-	width: 289px
-	height: 1000px
-	position: relative
-
 .b-panel
 	width: 289px
 	padding: 18px
@@ -111,6 +98,21 @@ $topBtn: sprite-map("topBtn/*.png", $spacing: 0, $layout: smart)
 			background-image: asset-url("linkIcons/logout.png")
 			margin-top: 9px
 			color: $redColor
+
+.b-search
+	background: $searchFieldBg
+	height: 30px
+	font-size: 0
+	&__commit
+		+boxModel(45px, 30px)
+		+inline-block
+		background-color: $searchCommitBg
+		background-image: asset-url("ui/search.png")
+		background-repeat: no-repeat
+		background-position: center
+		overflow: hidden
+		font-size: 0
+		cursor: pointer
 
 .b-top
 	+box-shadow(0 0 1px rgba($blackColor, 0.3))

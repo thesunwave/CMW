@@ -1,24 +1,4 @@
-<% content_for :scripts do %>
-	<% if notice %>
-		setTimeout(function(){
-			z_.alert({
-				type   : 'info',
-				message: '<%= notice %>'
-			});
-		}, 100);
-	<% end %>
-	<% if alert %>
-		setTimeout(function(){
-			z_.alert({
-				type   : 'warning',
-				message: '<%= alert %>'
-			});
-		}, 100);
-	<% end %>
-	<% if devise_error_messages! %>
-		<%= devise_error_messages! %>
-	<% end %>
-<% end %>
+<%= render partial: "components/errors" %>
 <div class="b-page_login">
 	<div class="b-auth">
 		<div class="b-auth__title b-auth__title_with-link">
@@ -38,8 +18,8 @@
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				<div>
-					<input name="user[email]" class="b-auth__form__fields_text" type="text" placeholder="Электронная почта" />
-					<input name="user[password]" class="b-auth__form__fields_text" type="password" placeholder="Пароль" />
+					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="Электронная почта" />
+					<input name="user[password]" class="b-input_text b-input_text-login" type="password" placeholder="Пароль" />
 				</div>
 				<div class="b-auth__service g-clearfix">
 					<div class="g-left b-auth__remember">

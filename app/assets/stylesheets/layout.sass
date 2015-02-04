@@ -1,5 +1,5 @@
 .b-wrapper__main
-	width: 1366px
+	width: 1297px
 	margin: 0 auto
 	padding: 0 34px
 
@@ -41,7 +41,7 @@
 			color: #fff
 
 .b-controller-name
-	&.registrations, &.sessions
+	&.registrations_new, &.sessions_new
 		min-height: 195px
 		.b-logo
 			&__text
@@ -49,3 +49,30 @@
 			&__image
 				+boxModel(109px, 105px)
 
+.b-cover
+	background: $whiteColor
+	padding: 20px
+	padding-left: 39px
+
+.b-content
+	width: 910px
+
+.b-aside
+	width: 289px
+	position: relative
+
+.b-page
+	&__cover
+		+box-shadow(0 0 1px rgba(#201600, 0.3))
+		background: #fff
+		padding: 28px
+		padding-bottom: 65px
+	&__title
+		text-align: center
+		margin: 0
+		&_1
+			font-size: 24px
+			margin-bottom: 17px
+		&_2
+			font-size: 20px
+			margin-bottom: 32px

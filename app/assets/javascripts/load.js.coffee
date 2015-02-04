@@ -11,7 +11,7 @@ class CMW.Initialize
 			Popups    : true
 			AjaxEnable: false
 
-		$.hook("panel").stick_in_parent()
+		$.hook("panel").sticky()
 
 		return
 		

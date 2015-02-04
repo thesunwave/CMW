@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123214344) do
+ActiveRecord::Schema.define(version: 20150204220120) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 20150123214344) do
     t.datetime "updated_at",                     null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "user_id",              limit: 4
+    t.integer  "notification_type_id", limit: 4
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.integer  "resource_id",   limit: 4
@@ -85,6 +92,12 @@ ActiveRecord::Schema.define(version: 20150123214344) do
     t.string   "behance",                limit: 255
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
+    t.string   "dribble",                limit: 255
+    t.string   "spec",                   limit: 255
+    t.string   "unconfirmed_email",      limit: 255
+    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at"
+    t.string   "confirmation_token",     limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

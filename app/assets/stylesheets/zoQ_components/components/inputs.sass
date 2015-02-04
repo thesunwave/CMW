@@ -11,32 +11,47 @@ $checkbox: sprite-map("ui/checkbox/*.png", $spacing: 0, $layout: smart)
 	$inputDisabledColor           : #777
 	$inputDisabledBackgroundColor : #f2f2f2
 
-	input[type="text"], input[type="password"]
+	.b-input_text
 		height: 33px
 		font-size: 14px
 		padding: 0 10px
 		color: $blackColor
 		font-style: italic
 		font-weight: 100
-	input[type="text"], input[type="password"], textarea
+	.b-input_text, .b-input_textarea
 		margin-bottom: 20px
 		background: #fff
 		color: $inputDefaultNormalColor
 		border: 1px solid rgba($blackColor, 0.5)
-		&:focus, &.primary, &.primary:focus
+		&:focus, &-primary, &-primary:focus
 			border-color: $yellowColor
-		&.success, &.success:focus
+		&-success, &-success:focus
 			border-color: $inputSuccessNormalBorderColor
 			color: $inputSuccessNormalBorderColor
-		&.warning, &.warning:focus
+		&-warning, &-warning:focus
 			border-color: $inputWarningNormalBorderColor
 			color: $inputWarningNormalBorderColor
-		&:disabled, &.disabled
+		&:disabled, &-disabled
 			border-color: $inputDisabledBorderColor
 			color: $inputDisabledColor
 			background: $inputDisabledBackgroundColor
 			cursor: default
-	textarea
+		&-search
+			+boxModel(207px, 30px)
+			+inline-block
+			background: transparent
+			padding-left: 12px
+			color: #fff
+			font-weight: 100
+			border: 1px solid rgba($blackColor, 0.5)
+			font-size: 14px
+			&:focus
+				border-color: $yellowColor
+		&-login
+			height: 45px
+			font-size: 18px
+			font-weight: 300
+	.b-input_textarea
 		padding: 10px
 	.b-checkbox
 		margin-right: 14px

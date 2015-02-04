@@ -1,4 +1,3 @@
-
 ru:
   # заголовки старниц, выводимые в topbar'е
   title:
@@ -47,8 +46,8 @@ ru:
   # уведомления
   notifications:
     email_notifications: Уведомления на электронную почту
-    new_comment_replay: Ответ на Ваш комментарий
-    new_work_comment: Новый комментарий к миксу
+    new_comment_replay: Ответы на мои комментарии
+    new_work_comment: Комментарии к моим работам
 
   # имена ролей (статусы)
   role:

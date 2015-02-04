@@ -1,3 +1,4 @@
+<% method = controller_name + "/" + controller.action_name %>
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
@@ -19,7 +20,7 @@
 	</head>
 	<body class="unloaded">
 		<section class="b-wrapper">
-			<header class="b-controller-name <%= controller_name %>">
+			<header class="b-controller-name <%= controller_name %>_<%= controller.action_name %>">
 				<div class="actionsWrapper">
 					<div class="alertsWrap"></div>
 					<div class="popupsWrap"></div>
@@ -36,7 +37,7 @@
 					<div>
 						<a href="/" class="b-logo__text">Criticize My Work</a>
 					</div>
-<% if controller_name != "sessions" and controller_name != "registrations" %>
+<% if method != "sessions/new" and method != "registrations/new" %>
 					<div class="b-logo__quote">
 						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr>
 					</div>
@@ -44,7 +45,20 @@
 				</div>
 			</header>
 			<main class="b-wrapper__main">
+<% if method != "sessions/new" and method != "registrations/new" %>
+				<div class="b-cover g-clearfix">
+					<div class="g-left b-content">
+						<%= yield %>
+					</div>
+					<div class="g-right b-aside">
+						<div class="b-fixed-aside" data-hook="panel">
+							<%= render partial: "components/aside" %>
+						</div>
+					</div>
+				</div>
+<% else %>
 				<%= yield %>
+<% end %>
 			</main>
 			<footer>
 
