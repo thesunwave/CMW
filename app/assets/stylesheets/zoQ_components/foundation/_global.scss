@@ -123,12 +123,12 @@ $cursor-text-value: text !default;
     }
 
     // Miscellaneous useful HTML classes
-    .left { float: left; }
-    .right { float: right; }
-    .clearfix { @include clearfix; }
+    .g-left { float: left; }
+    .g-right { float: right; }
+    .g-clearfix { @include clearfix; }
 
     // Hide visually and from screen readers
-    .hidden {
+    .g-hidden {
       display: none !important;
       visibility: hidden;
     }

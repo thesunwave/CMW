@@ -1,3 +1,17 @@
+// $icons: sprite-map("sprite/**/*.png", $spacing: 0, $layout: smart)
+
+// @mixin image-size($path)
+// 	+boxModel(image-width($path), image-height($path))
+
+@mixin sprite($map, $link)
+	+sprite-dimensions($map, $link)
+	background-image: sprite-url($map)
+	background-position: sprite-position($map, $link)
+	background-repeat: no-repeat
+
+// @mixin spriteHover($link)
+// 	background-position: sprite-position($icons, $link)
+
 @mixin boxModel($width, $height)
 	width: $width
 	height: $height

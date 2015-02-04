@@ -1,8 +1,8 @@
 $socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 
-.loginPage
+.b-page_login
 	color: $whiteColor
-	.authForm
+	.b-auth
 		+translate(-50%, 0)
 		+border-radius(2px)
 		position: absolute
@@ -11,63 +11,62 @@ $socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 		padding: 35px 156px 37px
 		margin-bottom: 57px
 		border: 1px solid rgba($whiteColor, 0.44)
-		.title, .social
+		&__title, &__social, &__toRegister
 			text-align: center
-		.title
+		&__title
 			font-size: 30px
 			font-weight: 600
 			margin-bottom: 25px
-		.social
-			.vk
-				+sprite($socialIcons, "vk")
-				margin-right: 13px
-			.fb
-				+sprite($socialIcons, "fb")
-				margin-right: 15px
-			.tw
-				+sprite($socialIcons, "tw")
+			&_with-link
+				margin-bottom: 15px
+		&__toRegister
+			margin-bottom: 10px
+		&__social
 			font-size: 0
 			margin-bottom: 29px
-			span, a
+			&__via, &__link
 				+inline-block(baseline)
-			span
+			&__via
 				font-size: 20px
 				font-weight: 300
 				margin-right: 13px
-			a
+			&__link
 				overflow: hidden
 				color: transparent
-		.form
-			.textFields input
-				height: 45px
-				font-size: 18px
-				font-weight: 300
-				font-style: italic
-				color: $blackColor
-				margin-bottom: 20px
-				border: 1px solid $yellowColor
-			.service, .commitButton
-				.left, .right
-					width: 50%
-				.right
-					text-align: right
-			.service
-				margin-top: 13px
-				margin-bottom: 32px
-				font-weight: 300
-				.remember
-					+user-select(none)
-				.left, .agreement
-					font-size: 0
-					white-space: nowrap
-					input, span
-						+inline-block
-					input
-						margin-right: 14px
-					span
-						white-space: normal
-				.left span, .agreement span, .right
-					font-size: 16px
-				.agreement
-					input, span
-						+inline-block(top)
+			&__link_vk
+				+sprite($socialIcons, "vk")
+				margin-right: 13px
+			&__link_fb
+				+sprite($socialIcons, "fb")
+				margin-right: 15px
+			&__link_tw
+				+sprite($socialIcons, "tw")
+		&__form__fields_text
+			height: 45px
+			font-size: 18px
+			font-weight: 300
+		&__service, &__form-commit
+			.g-left, .g-right
+				width: 50%
+			.g-right
+				text-align: right
+		&__service
+			margin-top: 13px
+			margin-bottom: 32px
+			font-weight: 300
+		&__agreement, &__remember
+			font-size: 0
+			&__text
+				font-size: 16px
+		&__agreement
+			&__link
+				+inline-block
+				margin-left: 29px
+		&__remember
+			+user-select(none)
+			.g-right
+				font-size: 16px
+
+.b-checkbox__handler
+	background-color: $whiteColor
+

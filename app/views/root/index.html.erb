@@ -1,18 +1,10 @@
-<div class="cover">
-
-	<%= current_user.email if current_user %>
-	<ul>
-		<li><a href="/users">Список пользователей</a></li>
-		<li><a href="/subscriptions">Подписки</a></li>
-		<li><a href="/auth/login">Вход</a></li>
-		<li><a href="/auth/register">Регистрация</a></li>
-		<li><a href="/auth/settings">Настройки</a></li>
-		<li><a href="/auth/forgot">Восстановление пароля (письмо еще не отправляется)</a></li>
-		<li><a href="<%= destroy_user_session_path %>">Выход</a></li>
-	</ul>
-	<form method="post" action="/auth/register/">
-		<input type="hidden" name="_method" value="delete" />
-		<input type="submit" value="Удалить аккаунт" />
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-	</form>
+<div class="b-cover g-clearfix">
+	<div class="g-left b-content">
+		
+	</div>
+	<div class="g-right b-aside">
+		<div class="b-fixed-aside" data-hook="panel">
+			<%= render partial: "components/aside" %>
+		</div>
+	</div>
 </div>

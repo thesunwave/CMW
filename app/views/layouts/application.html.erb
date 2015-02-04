@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title><%= content_for?(:title) ? yield(:title) : "CMW" %></title>
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,500,400italic,500italic,700,700italic&subset=latin,cyrillic" />
 		<%= stylesheet_link_tag 'application' %>
 		<meta name="viewport" content="maximum-scale=1, user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -19,28 +18,32 @@
 		<![endif]-->
 	</head>
 	<body class="unloaded">
-		<section class="wrapper">
-			<header class="<%= controller_name %>">
+		<section class="b-wrapper">
+			<header class="b-controller-name <%= controller_name %>">
 				<div class="actionsWrapper">
 					<div class="alertsWrap"></div>
 					<div class="popupsWrap"></div>
 				</div>
-				<div class="logo">
-					<a href="/" class="image">
-						<object data="/images/logo.svg">  
-						    <img src="/images/logo.png" />  
-						</object>
-						<div class="pointer"></div>
-					</a>
-					<a href="/" class="text">Criticize My Work</a>
+				<div class="b-logo">
+					<div>
+						<a href="/" class="b-logo__image">
+							<object data="/images/logo.svg">  
+							    <img src="/images/logo.png" />  
+							</object>
+							<div class="b-logo__pointer"></div>
+						</a>
+					</div>
+					<div>
+						<a href="/" class="b-logo__text">Criticize My Work</a>
+					</div>
 <% if controller_name != "sessions" and controller_name != "registrations" %>
-					<div class="quote">
-						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span>&mdash; Стив Джобс</span></nobr>
+					<div class="b-logo__quote">
+						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr>
 					</div>
 <% end %>
 				</div>
 			</header>
-			<main>
+			<main class="b-wrapper__main">
 				<%= yield %>
 			</main>
 			<footer>

@@ -1,53 +1,51 @@
-$quoteColor: #cfcfcc
-
-.wrapper main
+.b-wrapper__main
 	width: 1366px
 	margin: 0 auto
 	padding: 0 34px
 
-header a
+.b-logo__text
 	color: $whiteColor
 
-header
+.b-controller-name
 	position: relative
 	min-height: 330px
-	.logo
-		+translate(-50%, 0)
+
+.b-logo
+	+translate(-50%, 0)
+	position: absolute
+	left: 50%
+	margin-top: 32px
+	text-align: center
+	&__image
+		+boxModel(156px, 138px)
+		+inline-block
+		position: relative
+	&__pointer
+		+boxModel(100%, 100%)
 		position: absolute
-		left: 50%
-		margin-top: 32px
-		text-align: center
-		.image
-			+boxModel(156px, 138px)
-			+inline-block
-			position: relative
-			.pointer
-				+boxModel(100%, 100%)
-				position: absolute
-				left: 0
-				top: 0
-		.text
-			font-weight: 100
-			font-size: 45px
-			display: block
-		.quote
-			font-style: italic
-			font-weight: 300
-			font-size: 18px
-			color: $quoteColor
-			margin-top: 16px
-			line-height: 1.2
-			span
-				font-style: normal
-				color: #fff
+		left: 0
+		top: 0
+	&__text
+		+inline-block
+		font-weight: 100
+		font-size: 45px
+	&__quote
+		font-style: italic
+		font-weight: 300
+		font-size: 18px
+		color: $quoteColor
+		margin-top: 16px
+		line-height: 1.2
+		&-normal
+			font-style: normal
+			color: #fff
+
+.b-controller-name
 	&.registrations, &.sessions
 		min-height: 195px
-		.logo
-			.text
+		.b-logo
+			&__text
 				font-size: 34px
-			.image
+			&__image
 				+boxModel(109px, 105px)
 
-.cover
-	background: $whiteColor
-	
