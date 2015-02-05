@@ -18,6 +18,7 @@ class CMW.Initialize
 	loader: ->
 		new CMW.Common()
 		new CMW.Panel()
+		new CMW.Settings()
 		return
 
 $ ->

@@ -52,4 +52,7 @@ CMW::Application.configure do
   
   # Allow better_errors to work with this IP
   BetterErrors::Middleware.allow_ip! Rails.application.secrets.developer_ip
+
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.logger = Logger::Logger.new("Application Log")
 end

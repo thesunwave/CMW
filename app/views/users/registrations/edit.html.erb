@@ -1,71 +1,84 @@
 <%= render partial: "components/errors" %>
 <div class="b-page b-page__settings">
-	<h1 class="b-page__title b-page__title_1">Настройки аккаунта</h1>
+	<h1 class="b-page__title b-page__title_1"><%= t('title.user_settings') %></h1>
 	<div class="b-page__cover b-page__cover_settings">
 		<form action="/auth/settings" accept-charset="UTF-8" method="post">
-			<h2 class="b-page__title b-page__title_2">Основная информация</h2>
+			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.main_info') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
 					<label>
-						<span class="b-settings__input b-settings__input-title">Имя</span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help">(например, Джонатан)</span>
+						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.first_name') %></span><span class="b-required-star">*</span>
+						<span class="b-settings__input b-settings__input-help">(<%= t('user_settings.first_name_helper') %>)</span>
 						<input type="text" class="b-input_text" name="user[first_name]" value="<%= resource.first_name %>" placeholder="" />
 					</label>
 				</div>
 				<div class="g-right">
 					<label>
-						<span class="b-settings__input b-settings__input-title">Фамилия</span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help">(например, Айв)</span>
+						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.last_name') %></span><span class="b-required-star">*</span>
+						<span class="b-settings__input b-settings__input-help">(<%= t('user_settings.last_name_helper') %>)</span>
 						<input type="text" class="b-input_text" name="user[last_name]" value="<%= resource.last_name %>" placeholder="" />
 					</label>
 				</div>
 			</div>
 			<label>
-				<span class="b-settings__input b-settings__input-title">Спецификация</span><span class="b-required-star">*</span>
-				<span class="b-settings__input b-settings__input-help">(например, дизайн интерфейсов)</span>
+				<span class="b-settings__input b-settings__input-title"><%= t('user_settings.spec') %></span><span class="b-required-star">*</span>
+				<span class="b-settings__input b-settings__input-help">(<%= t('user_settings.spec_helper') %>)</span>
 				<input type="text" class="b-input_text" value="<%= resource.spec %>" name="user[spec]" placeholder="" />
 			</label>
 			<label>
 				<div class="b-settings__input b-settings__input-title b-settings__input_centered">
-					Краткая биография
+					<%= t('user_settings.description') %>
 				</div>
-				<textarea class="b-input_textarea" name="user[description]" placeholder=""><%= resource.description %></textarea>
+				<textarea class="b-input_textarea b-settings__input b-settings__input_textarea" name="user[description]" placeholder=""><%= resource.description %></textarea>
 			</label>
 			<div class="g-clearfix">
 				<div class="g-left">
 					<label>
-						<span class="b-settings__input b-settings__input-title">Behance</span>
-						<input type="text" class="b-input_text" name="user[behance]" value="<%= resource.behance %>" placeholder="https://behance.net/" />
+						<span class="b-settings__input b-settings__input-title"><%= t('social.vk') %></span>
+						<input type="text" class="b-input_text" name="user[vk]" value="<%= resource.vk %>" placeholder="https://vk.com/" />
 					</label>
 					<label>
-						<span class="b-settings__input b-settings__input-title">Dribble</span>
-						<input type="text" class="b-input_text" name="user[dribble]" value="<%= resource.dribble %>" placeholder="https://dribbble.com/" />
+						<span class="b-settings__input b-settings__input-title"><%= t('social.fb') %></span>
+						<input type="text" class="b-input_text" name="user[facebook]" value="<%= resource.facebook %>" placeholder="https://facebook.com/" />
+					</label>
+					<label>
+						<span class="b-settings__input b-settings__input-title"><%= t('social.tw') %></span>
+						<input type="text" class="b-input_text" name="user[twitter]" value="<%= resource.twitter %>" placeholder="https://twitter.com/" />
 					</label>
 				</div>
 				<div class="g-right">
 					<label>
-						<span class="b-settings__input b-settings__input-title">Вконтакте</span>
-						<input type="text" class="b-input_text" name="user[vk]" value="<%= resource.vk %>" placeholder="https://vk.com/" />
+						<span class="b-settings__input b-settings__input-title"><%= t('social.be') %></span>
+						<input type="text" class="b-input_text" name="user[behance]" value="<%= resource.behance %>" placeholder="https://behance.net/" />
 					</label>
 					<label>
-						<span class="b-settings__input b-settings__input-title">Личный сайт</span>
+						<span class="b-settings__input b-settings__input-title"><%= t('social.dribbble') %></span>
+						<input type="text" class="b-input_text" name="user[dribble]" value="<%= resource.dribble %>" placeholder="https://dribbble.com/" />
+					</label>
+					<label>
+						<span class="b-settings__input b-settings__input-title"><%= t('social.website') %></span>
 						<input type="text" class="b-input_text" name="user[website]" value="<%= resource.website %>" placeholder="http://" />
 					</label>
 				</div>
 			</div>
 			<div class="b-settings__commit">
-				<input type="submit" class="b-button b-button_yellow b-button_settings b-settings__commit-button" name="commit" value="Сохранить" />
+				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
 			</div>
-			<h2 class="b-page__title b-page__title_2">Настройки безопасности</h2>
+			<input type="hidden" name="utf8" value="&#x2713;" />
+			<input type="hidden" name="_method" value="put" />
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+		</form>
+		<form action="/auth/settings" accept-charset="UTF-8" method="post">
+			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.private_settings') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
 					<label>
-						<span class="b-settings__input b-settings__input-title">Email адрес</span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help b-settings__input-help_yellow">(<span class="b-settings__input-help__link">все могут писать через форму</span>)</span>
+						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.email') %></span><span class="b-required-star">*</span>
+						<span class="b-settings__input b-settings__input-help b-settings__input-help_yellow">(<span class="b-settings__input-help__link"><%= t('user_settings.email_helper') %></span>)</span>
 						<input type="text" class="b-input_text" name="user[email]" value="<%= resource.email %>" placeholder="" />
 					</label>
 					<div class="b-settings__input b-settings__input-title">
-						Оповещения на email
+						<%= t('notifications.email_notifications') %>
 					</div>
 					<div class="b-settings__notifs">
 <% NotificationType.all.each do |notification| %>
@@ -75,30 +88,38 @@
 						</div>
 <% end %>
 					</div>
-					<label>
-						<span class="b-settings__input b-settings__input-title">Логин</span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help b-settings__input-help_smaller">(используется в url вида http://cmw.su/username)</span>
-						<input type="text" class="b-input_text" name="user[username]" value="<%= resource.username %>" placeholder="" />
-					</label>
 				</div>
 				<div class="g-right">
 					<label>
-						<span class="b-settings__input b-settings__input-title">Пароль</span>
-						<span class="b-settings__input b-settings__input-help">(оставьте пустым, если не хотите менять)</span>
-						<input type="password" autocomplete="off" class="b-input_text" name="user[password]" placeholder="" />
+						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.login') %></span><span class="b-required-star">*</span>
+						<span class="b-settings__input b-settings__input-help b-settings__input-help_smaller">(<%= t('user_settings.login_helper') %>)</span>
+						<input type="text" class="b-input_text" name="user[username]" value="<%= resource.username %>" placeholder="" />
 					</label>
-					<label>
-						<span class="b-settings__input b-settings__input-title">Подтверждение пароля</span>
-						<input type="password" autocomplete="off" class="b-input_text" name="user[password_confirmation]" placeholder="" />
-					</label>
-					<label>
-						<span class="b-settings__input b-settings__input-title">Текущий пароль</span><span class="b-required-star">*</span>
+					<div class="g-clearfix">
+						<div class="g-left g-left_smaller">
+							<label>
+								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password') %></span>
+								<input type="password" autocomplete="off" class="b-input_text" name="user[password]" placeholder="" />
+							</label>
+						</div>
+						<div class="g-right g-right_smaller">
+							<label>
+								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password_confirmation') %></span>
+								<input type="password" autocomplete="off" class="b-input_text" name="user[password_confirmation]" placeholder="" />
+							</label>
+						</div>
+					</div>
+					<div class="b-settings__input b-settings__input-help b-settings__input-help_centered">
+						(<%= t('user_settings.new_password_helper') %>)
+					</div>
+<!-- 					<label>
+						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.current_password') %></span><span class="b-required-star">*</span>
 						<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
 					</label>
-				</div>
+ -->				</div>
 			</div>
-			<div class="b-settings__commit">
-				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="Сохранить" />
+			<div class="b-settings__commit b-settings__commit_last">
+				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
 			</div>
 			<input type="hidden" name="utf8" value="&#x2713;" />
 			<input type="hidden" name="_method" value="put" />

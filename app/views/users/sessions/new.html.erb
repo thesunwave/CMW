@@ -2,13 +2,13 @@
 <div class="b-page_login">
 	<div class="b-auth">
 		<div class="b-auth__title b-auth__title_with-link">
-			Вход
+			<%= t('auth.login') %>
 		</div>
 		<div class="b-auth__toRegister">
-			<a href="<%= new_user_registration_path %>">ещё не зарегистрированы?</a>
+			<a href="<%= new_user_registration_path %>"><%= t('auth.not_user_yet') %></a>
 		</div>
 		<div class="b-auth__social">
-			<span class="b-auth__social__via">С помощью</span>
+			<span class="b-auth__social__via"><%= t('auth.via') %></span>
 			<a href="#" class="b-auth__social__link b-auth__social__link_vk">vk</a>
 			<a href="#" class="b-auth__social__link b-auth__social__link_fb">facebook</a>
 			<a href="#" class="b-auth__social__link b-auth__social__link_tw">twitter</a>
@@ -18,21 +18,21 @@
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				<div>
-					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="Электронная почта" />
-					<input name="user[password]" class="b-input_text b-input_text-login" type="password" placeholder="Пароль" />
+					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.email') %>" />
+					<input name="user[password]" class="b-input_text b-input_text-login" type="password" placeholder="<%= t('auth.password') %>" />
 				</div>
 				<div class="b-auth__service g-clearfix">
 					<div class="g-left b-auth__remember">
 						<label class="b-checkbox"><input name="user[remember_me]" type="checkbox" checked="checked" /><span class="b-checkbox__handler"></span></label>
-						<span class="b-auth__remember__text">Запомнить меня</span>
+						<span class="b-auth__remember__text"><%= t('auth.remember_me') %></span>
 					</div>
 					<div class="g-right">
-						<a href="<%= forgot_path %>">Забыли пароль?</a>
+						<a href="<%= forgot_path %>"><%= t('auth.forgot_password') %></a>
 					</div>
 				</div>
 				<div class="g-clearfix b-auth__form-commit">
 					<div class="g-right">
-						<input name="commit" type="submit" class="b-button b-button_expanded" value="Вход" />
+						<input name="commit" type="submit" class="b-button b-button_expanded" value="<%= t('auth.login') %>" />
 					</div>
 				</div>
 			</form>

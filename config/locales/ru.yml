@@ -1,10 +1,22 @@
 ru:
-  # заголовки старниц, выводимые в topbar'е
+  activerecord:
+      attributes:
+        user:
+          current_password: "Текущий пароль"
+      errors:
+        models:
+          user:
+            attributes:
+              current_password:
+                invalid: "введен неверно"
+                blank: "не может быть пустым"
+
+  # заголовки страниц
   title:
     index: Главная
     registration: Регистрация
     login: Войти
-    user_settings: Обо мне
+    user_settings: Настройки аккаунта
     reset_password: Изменение пароля
     restore_password: Восстановление пароля
     profile: Профиль
@@ -17,35 +29,35 @@ ru:
     lang_to_en: Русский язык
     loading: Загрузка...
     write_to_us: напишите нам
+    to_save: Сохранить
 
   # главное меню
   # main_menu:
 
-  # виджет пользователя
-  # user_widget:
-
   # атрибуты модели User и текст страницы Настройки
   user_settings:
-    profile: Профиль
-    upload_avatar: Загрузить новую аватару
-    change_miniature: Изменить миниатюру
-    first_and_last_name: Имя и фамилия
+    main_info: Основная информация
+    private_settings: Настройки безопасности
+    social_accounts: Социальные сети
+    email: Email адрес
+    email_helper: все могут писать через форму
     first_name: Имя
+    first_name_helper: например, Джонатан
     last_name: Фамилия
-    geolocation: Ваше местоположение
-    url: Адрес вашего профиля
-    description: О себе
-    email_and_password: Почта и пароль
-    change_password: Изменить пароль
+    last_name_helper: например, Айв
+    login: Логин
+    login_helper: используется в url вида http://cmw.su/username
+    description: Краткая биография
+    spec: Спецификация
+    spec_helper: например, дизайн интерфейсов
     current_password: Текущий пароль
     new_password: Новый пароль
-    new_password_confirmation: Новый пароль ещё раз
-    for_status_change: чтобы изменить статус
-    social_accounts: Привязанные аккаунты социальных сетей
+    new_password_helper: оставьте пустыми, если не хотите менять
+    new_password_confirmation: Подтверждение
 
   # уведомления
   notifications:
-    email_notifications: Уведомления на электронную почту
+    email_notifications: Оповещения на email
     new_comment_replay: Ответы на мои комментарии
     new_work_comment: Комментарии к моим работам
 
@@ -57,34 +69,39 @@ ru:
 
   # авторизация и регистрация
   auth:
-    login: Войти
+    login: Вход
     register: Зарегистрироваться
     registration: Регистрация
     logout: Выйти
     signin: Вход
+    via: С помощью
     email: Электронная почта
     password: Пароль
-    password_confirmation: Пароль ещё раз
-    forgot_password: забыли пароль?
+    password_confirmation: Подтверждение пароля
+    forgot_password: Забыли пароль?
     password_reset: Изменить пароль
     new_password: Новый пароль
     repeat_password: Ещё раз
-    remember_me: запомнить
+    remember_me: Запомнить меня
     restore_password: Восстановить пароль
     restore_password_notice_html: На указанный вами адрес электронной почты будет<br /> выслана инструкция по восстановлению пароля
     password_reset_action: Изменить пароль
     restore_password_notice: На указанный вами адрес электронной почты будет выслана инструкция по восстановлению пароля
+    agreement_text: Я согласен с условиями 
+    agreement_link: пользовательского соглашения
+    first_name: Ваше имя
+    last_name: Ваша фамилия
+    username: Логин
+    not_user_yet: ещё не зарегистрированы?
 
-  # текст для элементов управления и компонентов
-  controls:
-    # во множественном числе используется в разделе "Настройки - уведомления"
-    ons: включены
-    offs: выключены
-    # социальные кнопки
-    social:
-      vk: Вконтакте
-      fb: Facebook
-      tw: Twitter
+  # социальные кнопки
+  social:
+    vk: Вконтакте
+    fb: Facebook
+    tw: Twitter
+    be: Behance
+    dribbble: Dribbble
+    website: Сайт
 
   # валидации
   validations: &validation
@@ -122,8 +139,7 @@ ru:
     unknown_error: неизвестная ошибка
     # это хак системы ошибок rails, предназначенный для интеграции системы ключей 
     # в сообщения об ошибках. Rails берет сообщения об ошибках валидации полей данных 
-    # модели из этого объекта. Данные сообщения обрабатываются angular и 
-    # локализуются в объекте errors, находящемся на уровень выше
+    # модели из этого объекта. Данные сообщения локализуются в объекте errors, находящемся на уровень выше
     # подробнее см. https://docs.google.com/document/d/1EfX639g17Dsc3HE160ZBnwjlMeCO5O2aXFuyujWmtaE/edit#heading=h.6c2kuw7dr82e
     messages:
       invalid: invalid

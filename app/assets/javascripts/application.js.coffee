@@ -9,5 +9,6 @@
 
 #= require components/common
 #= require components/panel
+#= require components/settingsPage
 
 #= require load
