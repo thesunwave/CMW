@@ -1,4 +1,4 @@
-$socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
+$socialIcons: sprite-map("png/socialIcon/*.png", $spacing: 0, $layout: smart)
 
 .b-page_login
 	color: $whiteColor
@@ -34,13 +34,28 @@ $socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 				overflow: hidden
 				color: transparent
 			&__link_vk
-				+sprite($socialIcons, "vk")
 				margin-right: 13px
+				.svg &
+					+boxModel(32px, 17px)
+					background: url("/assets/svg/socialIcon/vk.svg") no-repeat center
+					background-size: cover
+				.no-svg &
+					+sprite($socialIcons, "vk")
 			&__link_fb
-				+sprite($socialIcons, "fb")
 				margin-right: 15px
+				.svg &
+					+boxModel(15px, 25px)
+					background: url("/assets/svg/socialIcon/fb.svg") no-repeat center
+					background-size: cover
+				.no-svg &
+					+sprite($socialIcons, "fb")
 			&__link_tw
-				+sprite($socialIcons, "tw")
+				.svg &
+					+boxModel(26px, 20px)
+					background: url("/assets/svg/socialIcon/tw.svg") no-repeat center
+					background-size: cover
+				.no-svg &
+					+sprite($socialIcons, "tw")
 		&__service, &__form-commit
 			.g-left, .g-right
 				width: 50%

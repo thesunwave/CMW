@@ -644,3 +644,5 @@ D, [2015-02-06T01:25:28.710921 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  
 D, [2015-02-06T01:32:18.161906 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
 D, [2015-02-06T01:32:18.195486 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
 D, [2015-02-06T01:32:18.198803 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+D, [2015-02-06T01:48:28.948675 #40227] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-06T02:08:08.580108 #40925] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (22.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
