@@ -376,3 +376,4 @@ D, [2015-02-09T03:15:00.835384 #66735] DEBUG -- :   [1m[35mUser Load (0.8ms)[
 D, [2015-02-09T03:15:00.849803 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
 D, [2015-02-09T03:15:00.852353 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
 D, [2015-02-09T03:15:00.853874 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T20:04:39.008822 #73240] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
