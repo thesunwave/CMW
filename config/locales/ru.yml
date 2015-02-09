@@ -90,7 +90,7 @@ ru:
     new_password: Новый пароль
     repeat_password: Ещё раз
     remember_me: Запомнить меня
-    restore_password: Восстановить пароль
+    restore_password: Восстановление пароля
     restore_password_notice_html: На указанный вами адрес электронной почты будет<br /> выслана инструкция по восстановлению пароля
     password_reset_action: Изменить пароль
     restore_password_notice: На указанный вами адрес электронной почты будет выслана инструкция по восстановлению пароля
@@ -100,6 +100,7 @@ ru:
     last_name: Ваша фамилия
     username: Логин
     not_user_yet: ещё не зарегистрированы?
+    back_to_login: << назад ко входу
 
   # социальные кнопки
   social:
