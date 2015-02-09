@@ -377,3 +377,47 @@ D, [2015-02-09T03:15:00.849803 #66735] DEBUG -- :   [1m[36mNotificationType Lo
 D, [2015-02-09T03:15:00.852353 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
 D, [2015-02-09T03:15:00.853874 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
 D, [2015-02-09T20:04:39.008822 #73240] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-09T20:31:52.124896 #74250] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-09T21:19:42.897147 #74250] DEBUG -- :   [1m[35mUser Load (5.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T21:19:43.021645 #74250] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T21:19:43.028105 #74250] DEBUG -- :   [1m[35mSQL (2.1ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-08 23:48:23.000000', `current_sign_in_at` = '2015-02-09 18:19:43.016244', `sign_in_count` = 21, `updated_at` = '2015-02-09 18:19:43.022664' WHERE `users`.`id` = 1
+D, [2015-02-09T21:19:43.031154 #74250] DEBUG -- :   [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T21:19:43.050834 #74250] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T21:19:45.363772 #74250] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T21:19:45.401203 #74250] DEBUG -- :   [1m[35mNotificationType Load (1.8ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T21:19:45.448603 #74250] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T21:19:45.449503 #74250] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T22:54:51.879048 #78838] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (16.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-09T22:54:52.075852 #78838] DEBUG -- :   [1m[35mUser Load (6.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:16:40.439178 #78838] DEBUG -- :   [1m[36mUser Load (20.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:39:58.509925 #78838] DEBUG -- :   [1m[35mUser Load (30.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:40:03.921553 #78838] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:44:44.502763 #78838] DEBUG -- :   [1m[35mUser Load (1.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:45:38.752211 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:47:09.344182 #78838] DEBUG -- :   [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:47:54.604025 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:47:54.613675 #78838] DEBUG -- :   [1m[35m (1.4ms)[0m  BEGIN
+D, [2015-02-09T23:47:54.615939 #78838] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T23:48:02.961621 #78838] DEBUG -- :   [1m[35mUser Load (4.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:48:03.048251 #78838] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T23:48:03.064611 #78838] DEBUG -- :   [1m[35mSQL (12.6ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-09 18:19:43.000000', `current_sign_in_at` = '2015-02-09 20:48:03.045077', `sign_in_count` = 22, `updated_at` = '2015-02-09 20:48:03.048813' WHERE `users`.`id` = 1
+D, [2015-02-09T23:48:03.110692 #78838] DEBUG -- :   [1m[36m (44.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T23:48:03.128305 #78838] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:48:47.326537 #78838] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:48:58.645599 #78838] DEBUG -- :   [1m[35mUser Load (2.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:51:52.138706 #78838] DEBUG -- :   [1m[36mUser Load (1.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:52:44.755961 #78838] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:53:10.726739 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:53:31.476462 #78838] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:55:28.390866 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:56:43.702456 #78838] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:57:41.388319 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:58:43.897909 #78838] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:59:06.983177 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-10T00:02:48.956168 #78838] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-10T00:03:02.742580 #78838] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-10T00:03:10.244225 #78838] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-10T00:03:11.015899 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-10T00:03:13.467828 #78838] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-10T00:03:15.507573 #78838] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-10T00:03:17.712558 #78838] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1

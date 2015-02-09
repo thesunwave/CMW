@@ -4,11 +4,14 @@ $alertSuccessColor: $green
 
 @if $zoQ_styles and $alerts
 
-	.z-actions__alerts
-		position: absolute
-		left: 0
-		top: 0
-		width: 100%
+	.z-actions
+		position: relative
+		z-index: 99999
+		&__alerts
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
 
 	.z-alert
 		width: 100%

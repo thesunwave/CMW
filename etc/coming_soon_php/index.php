@@ -1,18 +1,13 @@
-<%
-page = controller_name + "/" + controller.action_name
-auth_layout = ["sessions/new", "registrations/new", "coming_soon/index"]
-%>
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
-		<title><%= content_for?(:title) ? yield(:title) : "CMW" %></title>
-		<%= stylesheet_link_tag 'application' %>
+		<title>Coming Soon</title>
+		<link rel="stylesheet" href="./stylesheets/application.css" />
 		<meta name="viewport" content="maximum-scale=1, user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 		<meta name="HandheldFriendly" content="true" />
 		<meta name="description" content="" />
-		<%= csrf_meta_tags %>
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" async></script>
 			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" async></script>
@@ -27,7 +22,7 @@ auth_layout = ["sessions/new", "registrations/new", "coming_soon/index"]
 			<div class="z-actions__popups"></div>
 		</div>
 		<section class="b-wrapper">
-			<header class="b-controller-name<%= " b-controller-name_auth" if auth_layout.include?(page) %>">
+			<header class="b-controller-name_auth">
 				<div class="b-logo">
 					<div>
 						<a href="/" class="b-logo__image">
@@ -40,36 +35,37 @@ auth_layout = ["sessions/new", "registrations/new", "coming_soon/index"]
 					<div>
 						<a href="/" class="b-logo__text">Criticize My Work</a>
 					</div>
-<% if !auth_layout.include?(page) %>
-					<div class="b-logo__quote">
-						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr>
-					</div>
-<% end %>
 				</div>
 			</header>
 			<main class="b-wrapper__main">
-<% if !auth_layout.include?(page) %>
-				<div class="b-cover g-clearfix">
-					<div class="g-left b-content">
-						<%= yield %>
-					</div>
-					<div class="g-right b-aside">
-						<div class="b-fixed-aside" data-hook="panel">
-							<%= render partial: "components/aside" %>
+				<div class="b-page_login">
+					<div class="b-auth">
+						<div class="b-auth__title b-auth__title_with-link">
+							В разработке
+						</div>
+						<div class="b-auth__welcome-text">
+							Оставьте нам свой e-mail, и мы напишем Вам, когда сайт будет готов
+						</div>
+						<div class="b-auth__form">
+							<form action="" data-hook="coming-soon" accept-charset="UTF-8" method="post">
+								<div>
+									<input name="email" data-hook="coming-soon-email" class="b-input_text b-input_text-login" type="text" placeholder="Email" />
+								</div>
+								<div class="g-clearfix b-auth__form-commit">
+									<div class="g-right">
+										<input name="commit" type="submit" class="b-button b-button_expanded" value="Подписаться" />
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
-<% else %>
-				<%= yield %>
-<% end %>
 			</main>
 			<footer>
 
 			</footer>
 		</section>
-		<%= javascript_include_tag 'application' %>
-		<script>
-			<%= yield :scripts %>
-		</script>
+		<script src="./javascripts/application.js"></script>
+		<script src="./javascripts/coming_soon.js"></script>
 	</body>
 </html>

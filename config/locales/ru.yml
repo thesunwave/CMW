@@ -35,6 +35,12 @@ ru:
   # главное меню
   # main_menu:
 
+  # Comming Soon page
+  coming_soon:
+    developing: В разработке
+    welcome: Оставьте нам свой e-mail, и мы напишем Вам, когда сайт будет готов
+    subscribe: Подписаться
+
   # атрибуты модели User и текст страницы Настройки
   user_settings:
     main_info: Основная информация

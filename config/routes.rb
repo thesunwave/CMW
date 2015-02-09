@@ -1,6 +1,6 @@
 CMW::Application.routes.draw do
   get 'subscriptions' => 'subscriptions#index'
-  get 'stub'          => 'stub#index'
+  get 'coming_soon'   => 'coming_soon#index'
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
