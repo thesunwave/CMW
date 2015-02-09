@@ -102,7 +102,7 @@ class User < ActiveRecord::Base
   def remove_notification(name)
     notification_type = NotificationType.find_by_name(name)
     if notification_type
-      self.notification_type.delete notification_type
+      self.notification_types.delete notification_type
     end
   end
 

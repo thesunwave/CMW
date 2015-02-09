@@ -104,31 +104,16 @@ protected
       if params[:notifications].is_a? Hash
         # обработать уведомления
         params[:notifications].each do |notification, value|
-          if value.to_i == 1
-            # current_user.add_notification notification.to_sym
+          if value == "on"
+            current_user.add_notification notification.to_sym
           else
-            # current_user.remove_notification notification.to_sym
+            current_user.remove_notification notification.to_sym
           end
         end
+        params.delete(:notifications)
       else
         # ошибка формата
         return
-      end
-    end
-
-    # определяем необходимость наличия текущего пароля:
-    # если изменены почта или пароль, текущий пароль обязателен
-    needs_password = false
-    if params[:password].present? || (params[:email] != current_user.email && params[:email].present?) || (params[:username] != current_user.username && params[:username].present?)
-      needs_password = true
-    end
-    # удалить данные, которые не могут быть обновлены без текущего пароля
-    # или вернуть ошибку, если текущеий пароль не предоставлен
-    if !needs_password
-      # удалить данные, которые не могу быть обновлены без текущего пароля
-      unsafe_props = [:current_password, :password, :password_confirmation, :email, :username]
-      unsafe_props.each do |prop|
-        params.delete(prop)
       end
     end
 
@@ -137,12 +122,7 @@ protected
     #
     # обновляем в зависимости от того, требуется ли текущий пароль
     # удалить уведомления из объекта обновления настроек
-    params.delete(:notifications)
-    if needs_password
-      resource.update_with_password(params)
-    else
-      resource.update_without_password(params)
-    end
+    resource.update_without_password(params)
   end
 
   #disable redirect

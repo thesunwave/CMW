@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204220120) do
+ActiveRecord::Schema.define(version: 20150209222018) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150204220120) do
     t.datetime "updated_at",                     null: false
     t.integer  "user_id",              limit: 4
     t.integer  "notification_type_id", limit: 4
+    t.integer  "notification_type",    limit: 4
   end
 
   create_table "roles", force: :cascade do |t|
