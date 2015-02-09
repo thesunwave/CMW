@@ -8,6 +8,7 @@ db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*
 /tmp/*
+Application Log
 
 # capistrano configs
 /config/deploy/*

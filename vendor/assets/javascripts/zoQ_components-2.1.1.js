@@ -13,7 +13,7 @@
 }).call(this);
 
 (function() {
-  var $body, disabledElements, hoverOff, unLoadHolder;
+  var $body, awaiter, disabledElements, hover;
 
   $.extend({
     hook: function(hookName) {
@@ -29,33 +29,33 @@
 
   $body = $("body");
 
-  hoverOff = function() {
+  hover = function() {
     var timer;
     timer = 0;
     $(window).on("scroll", function() {
       clearTimeout(timer);
-      if (!$body.hasClass("hoverOff")) {
-        $body.addClass("hoverOff");
+      if (!$body.hasClass("z-hover_no")) {
+        $body.addClass("z-hover_yes");
       }
       timer = setTimeout(function() {
-        $body.removeClass("hoverOff");
+        $body.removeClass("z-hover_no");
       }, 500);
     });
   };
 
-  unLoadHolder = function() {
-    return $body.removeClass("unloaded");
+  awaiter = function() {
+    $body.removeClass("z-unloaded");
   };
 
   disabledElements = function() {
-    return $(".disabled").on("click", function(event) {
-      return event.preventDefault();
+    $(".g-disabled, .z-disabled").on("click", function(event) {
+      event.preventDefault();
     });
   };
 
-  hoverOff();
+  hover();
 
-  unLoadHolder();
+  awaiter();
 
   disabledElements();
 
@@ -64,7 +64,7 @@
 (function() {
   "use strict";
   zoQ.Ajax = (function() {
-    var $body, self, _changeSymbol, _setTitle;
+    var $body, self, _callPage, _changeSymbol, _setTitle;
 
     $body = $("body");
 
@@ -76,15 +76,12 @@
       }
       self.container = $(params.container);
       $body.on("click", "a", function(event) {
-        var href;
         event.preventDefault();
-        $(this).addClass("unloaded");
-        href = this.href;
         self.prototype.setPage({
-          url: href,
+          link: $(this),
           callback: params.callback
         });
-        history.pushState("", "New URL: " + href, href);
+        self.prototype.history(this.href);
       });
       window.onpopstate = function() {
         self.prototype.setPage({
@@ -94,6 +91,23 @@
     }
 
     Ajax.prototype.setPage = function(params) {
+      var href;
+      if (params == null) {
+        params = {};
+      }
+      $body.addClass("z-unloaded");
+      href = params.link ? params.link.attr("href") : params.url;
+      _callPage({
+        url: href,
+        callback: params.callback
+      });
+    };
+
+    Ajax.prototype.history = function(url) {
+      return history.pushState("", "New URL: " + url, url);
+    };
+
+    _callPage = function(params) {
       if (params == null) {
         params = {};
       }
@@ -116,7 +130,7 @@
             params.callback.fail();
           }
         }).always(function() {
-          $body.removeClass("unloaded");
+          $body.removeClass("z-unloaded");
           if (params.callback && params.callback.always && typeof params.callback.always === "function") {
             params.callback.always();
           }
@@ -139,7 +153,7 @@
 
     _setTitle = function() {
       var $title;
-      $title = self.container.find("#title");
+      $title = self.container.find("#z-title");
       if ($title.length) {
         document.title = unescape($title.val().trim());
       }
@@ -168,8 +182,8 @@
         params = {};
       }
       alert = {
-        wrap: params.wrap || $(".alertsWrap"),
-        type: params.type || "info",
+        wrap: params.wrap || $(".z-actions__alerts"),
+        type: "z-alert_" + params.type || "z-alert_info",
         addClass: params.addClass || "",
         timeout: params.timeout || 30000,
         message: params.message || "",
@@ -177,8 +191,7 @@
         onRemove: params.onRemove || function() {}
       };
       close = {
-        target: params.closeTarget || ".close",
-        text: params.closeText || "",
+        target: params.closeTarget || ".z-alert__close",
         addClass: params.closeAddClass || ""
       };
       $alert = _add(alert, close);
@@ -211,7 +224,7 @@
 
     _add = function(alert, close) {
       var $alert;
-      $alert = $("<div class=\"alert " + alert.addClass + " " + alert.type + "\"><div class=\"message\">" + alert.message + "</div><div class=\"close " + close.addClass + "\">" + close.text + "</div></div>");
+      $alert = $("<div class=\"z-alert " + alert.addClass + " " + alert.type + "\"><div class=\"z-alert__message\">" + alert.message + "</div><div class=\"z-alert__close " + close.addClass + "\"></div></div>");
       alert.wrap.append($alert);
       self.alert = $alert;
       return $alert;
@@ -255,18 +268,17 @@
         params = {};
       }
       popup = {
-        wrap: params.wrap || $(".popupsWrap"),
+        wrap: params.wrap || $(".z-actions__popups"),
         addClass: params.addClass || "",
         title: params.title || "",
         content: params.content || "",
-        footer: params.footer || '<div class="button removePopup">Закрыть</div>',
+        footer: params.footer || '<div class="z-button z-popup__remove">Закрыть</div>',
         callback: params.callback || function() {}
       };
       _clickRemove(_add(popup));
     };
 
     Popups.prototype.remove = function($popup) {
-      $body.removeClass("noScroll");
       $popup.stop().fadeOut(function() {
         $popup.remove();
       });
@@ -282,8 +294,7 @@
 
     _add = function($popup) {
       var $popupView;
-      $body.addClass("noScroll");
-      $popupView = $("<div class=\"overlay\"><div class=\"popup unnessesary " + $popup.addClass + "\"><div class=\"header\">" + $popup.title + "</div><div class=\"content\"><div class=\"popupAlert\"></div>" + $popup.content + "</div><div class=\"footer\">" + $popup.footer + "</div></div></div>");
+      $popupView = $("<div class=\"z-overlay\"><div class=\"z-popup " + $popup.addClass + "\"><div class=\"z-popup__header\">" + $popup.title + "</div><div class=\"z-popup__content\"><div class=\"z-popup__alert\"></div>" + $popup.content + "</div><div class=\"z-popup__footer\">" + $popup.footer + "</div></div></div>");
       $popup.wrap.append($popupView);
       self.popup = $popupView;
       if ($popup.callback && typeof $popup.callback === "function") {
@@ -293,7 +304,7 @@
     };
 
     _clickRemove = function($popup) {
-      return $popup.on("click", ".removePopup", function() {
+      return $popup.on("click", ".z-popup__remove", function() {
         return self.prototype.remove($popup);
       });
     };
@@ -309,37 +320,35 @@
   zoQ.Core = (function() {
     var self, _components, _greeting;
 
-    Core.version = "2.0.2";
+    Core.version = "2.1.1";
 
     self = Core;
 
     function Core(params) {
-      var Ajax, Alerts, Popups;
       if (params == null) {
         params = {};
       }
-      Alerts = params.Alerts || true;
-      Popups = params.Popups || true;
-      Ajax = {
-        enable: params.AjaxEnable,
-        container: params.AjaxContainer || "body",
-        callback: {
-          done: params.AjaxDone || function() {},
-          fail: params.AjaxFail || function() {},
-          always: params.AjaxAlways || function() {},
-          start: params.AjaxStart || function() {},
-          end: params.AjaxEnd || function() {}
-        }
-      };
-      _components(Alerts, Popups, Ajax);
+      params.Alerts = params.Alerts !== "" ? params.Alerts : true;
+      params.Popups = params.Popups !== "" ? params.Popups : true;
+      if(params.Ajax){
+      params.Ajax.enable = params.Ajax.enable !== "" ? params.Ajax.enable : true;
+      params.Ajax.container = params.Ajax.container !== "" ? params.Ajax.container : "body";
+      params.Ajax.callback.done = params.Ajax.callback.done !== "" ? params.Ajax.callback.done : function() {};
+      params.Ajax.callback.fail = params.Ajax.callback.fail !== "" ? params.Ajax.callback.fail : function() {};
+      params.Ajax.callback.always = params.Ajax.callback.always !== "" ? params.Ajax.callback.always : function() {};
+      params.Ajax.callback.start = params.Ajax.callback.start !== "" ? params.Ajax.callback.start : function() {};
+      params.Ajax.callback.end = params.Ajax.callback.end !== "" ? params.Ajax.callback.end : function() {};
+    }
+      _components(params);
       _greeting();
     }
 
-    _components = function(Alerts, Popups, Ajax) {
-      if (Alerts) {
+    _components = function(params) {
+      var Ajax, Alerts, Popups;
+      if (params.Alerts) {
         Alerts = new zoQ.Alerts();
-        z_.alert = function(params) {
-          Alerts.add(params);
+        z_.alert = function(alert) {
+          Alerts.add(alert);
         };
         z_.alert_last = function() {
           return Alerts.getLastAlert();
@@ -348,10 +357,10 @@
           Alerts.remove(alert, onRemove);
         };
       }
-      if (Popups) {
+      if (params.Popups) {
         Popups = new zoQ.Popups();
-        z_.popup = function(params) {
-          Popups.add(params);
+        z_.popup = function(popup) {
+          Popups.add(popup);
         };
         z_.popup_last = function() {
           return Popups.getLastPopup();
@@ -360,16 +369,14 @@
           Popups.remove(popup);
         };
       }
-      if (Ajax.enable) {
+      if (params.Ajax && params.Ajax.enable) {
         Ajax = new zoQ.Ajax({
-          container: Ajax.container,
-          callback: Ajax.callback
+          container: params.Ajax.container,
+          callback: params.Ajax.callback
         });
-        z_.ajax_setPage = function(url, callback) {
-          Ajax.setPage({
-            url: url,
-            callback: callback
-          });
+        z_.ajax_setPage = function(ajaxParams) {
+          Ajax.setPage(ajaxParams);
+          Ajax.history(ajaxParams.url);
         };
       }
     };

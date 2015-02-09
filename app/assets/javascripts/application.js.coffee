@@ -1,9 +1,8 @@
 # Libs
 #= require jquery-2.1.1
 #= require fastclick-1.0.3
-#= require zoQ_components-2.0.2
+#= require zoQ_components-2.1.1
 #= require jquery.sticky-1.0.0
-#= require modernizr-2.8.3
 
 # Scripts
 #= require init
