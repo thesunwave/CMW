@@ -1,6 +1,6 @@
 module DeviseHelper
   def devise_error_messages!
-    if resource != nil
+    if resource.present?
       messages = resource.errors.full_messages.map { |msg| "setTimeout(function(){z_.alert({type :'warning',message:'#{msg}'});},100);" }.join
 
       messages.html_safe

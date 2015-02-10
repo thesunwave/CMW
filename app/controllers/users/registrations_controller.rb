@@ -2,6 +2,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :update_sanitized_params, if: :devise_controller?
   before_filter :show_main_forms!, :except => [:edit, :update]
   
+
+  def edit
+    super
+    
+  end
+
   # POST /resource
   # Регистрация нового пользователя
   def create
@@ -44,27 +50,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
 
-    #
-    # уведомления
-    #
-    if account_update_params[:notifications].present?
-      if account_update_params[:notifications].is_a? Hash
-        # обработать уведомления
-        account_update_params[:notifications].each do |notification, value|
-          if value.to_i == 1
-            current_user.add_notification notification.to_sym
-          else
-            current_user.remove_notification notification.to_sym
-          end
-        end
-        # удалить уведомления из объекта обновления настроек
-        account_update_params.delete(:notifications)
-      else
-        # ошибка формата
-        return
-      end
-    end
-
     # обновить данные пользователя
     resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
@@ -102,29 +87,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
       u.permit(:email, :first_name, :last_name, :password,
         :password_confirmation, :current_password,
         :username, :description, :website, :vk, :facebook,
-        :twitter, :behance, :dribble, :spec, :lang)
-    #   .tap do |while_listed|
-    #     while_listed[:notifications] = params[:user][:notifications]
-    #   end
+        :twitter, :behance, :dribble, :spec, :notifications, :lang)
+      .tap do |while_listed|
+        while_listed[:notifications] = params[:user][:notifications]
+      end
     end
   end
 
 protected
 
   def update_resource(resource, params)
-    # определяем необходимость наличия текущего пароля:
-    # если изменены почта или пароль, текущий пароль обязателен
-    needs_password = false
-    if params[:password].present? || (params[:email] != current_user.email && params[:email].present?) || (params[:username] != current_user.username && params[:username].present?)
-      needs_password = true
-    end
-    # удалить данные, которые не могут быть обновлены без текущего пароля
-    # или вернуть ошибку, если текущеий пароль не предоставлен
-    if !needs_password
-      # удалить данные, которые не могу быть обновлены без текущего пароля
-      unsafe_props = [:current_password, :password, :password_confirmation, :email, :username]
-      unsafe_props.each do |prop|
-        params.delete(prop)
+    #
+    # уведомления
+    #
+    if params[:notifications].present?
+      if params[:notifications].is_a? Hash
+        # обработать уведомления
+        params[:notifications].each do |notification, value|
+          if value == "on"
+            current_user.add_notification notification.to_sym
+          else
+            current_user.remove_notification notification.to_sym
+          end
+        end
+        params.delete(:notifications)
+      else
+        # ошибка формата
+        return
       end
     end
 
@@ -132,11 +121,7 @@ protected
     # обновить данные пользователя
     #
     # обновляем в зависимости от того, требуется ли текущий пароль
-    # if needs_password
-    #   resource.update_with_password(params)
-    # else
-    #   resource.update_without_password(params)
-    # end
+    # удалить уведомления из объекта обновления настроек
     resource.update_without_password(params)
   end
 

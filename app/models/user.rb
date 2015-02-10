@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   # :user
   # :director
   # :admin
+
   rolify after_add: :assign_default_notifications_for
   after_create :assign_default_role, :assign_default_notifications, :assign_default_username
 
@@ -23,7 +24,7 @@ class User < ActiveRecord::Base
   has_many    :notifications, dependent: :destroy
   has_many    :notification_types, through: :notifications
   
-  
+
   #
   # Валидации полей
   #  
@@ -97,7 +98,6 @@ class User < ActiveRecord::Base
       self.notification_types << notification_type
     end
   end
-
   # удалить уведомление
   def remove_notification(name)
     notification_type = NotificationType.find_by_name(name)

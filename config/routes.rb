@@ -1,5 +1,6 @@
 CMW::Application.routes.draw do
   get 'subscriptions' => 'subscriptions#index'
+  get 'coming_soon'   => 'coming_soon#index'
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -54,18 +55,13 @@ CMW::Application.routes.draw do
       get  'register'    => 'users/registrations#new'
       post 'register'    => 'users/registrations#create'
 
-      scope '/password' do
-        get  'new'       => 'root#index'
-      end
-      
+      get  'forgot'    => 'users/passwords#new'
+      post 'forgot'    => 'users/passwords#create'
+
       authenticate :user do
-        get  'delete'    => 'users/registrations#cancel'
+        # get  'delete'    => 'users/registrations#cancel'
         get  'settings'  => 'users/registrations#edit'
         put  'settings'  => 'users/registrations#update'
-
-        get  'forgot'    => 'users/passwords#new'
-        post 'forgot'    => 'users/passwords#create'
-
       end
 
     end

@@ -1,4 +1,10 @@
 class Users::PasswordsController < Devise::PasswordsController
+  before_filter :show_main_forms!, :except => [:new]
+
+
+  def new
+    super
+  end
 
   # POST /resource/password
   def create

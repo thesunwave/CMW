@@ -83,7 +83,7 @@
 					<div class="b-settings__notifs">
 <% NotificationType.all.each do |notification| %>
 						<div>
-							<label class="b-checkbox"><input name="<%= notification.name %>" type="checkbox" <%= "checked=\"checked\"" if current_user.has_notification? notification.name %> /><span class="b-checkbox__handler"></span></label>
+							<label class="b-checkbox"><input name="user[notifications][<%= notification.name %>]" type="checkbox" <%= "checked=\"checked\"" if current_user.has_notification? notification.name %> /><span class="b-checkbox__handler"></span></label>
 							<span><%= t('notifications.' + notification.name) %></span>
 						</div>
 <% end %>
@@ -112,11 +112,7 @@
 					<div class="b-settings__input b-settings__input-help b-settings__input-help_centered">
 						(<%= t('user_settings.new_password_helper') %>)
 					</div>
-<!-- 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.current_password') %></span><span class="b-required-star">*</span>
-						<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
-					</label>
- -->				</div>
+				</div>
 			</div>
 			<div class="b-settings__commit b-settings__commit_last">
 				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
