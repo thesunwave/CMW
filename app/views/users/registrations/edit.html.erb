@@ -80,10 +80,13 @@
 					<div class="b-settings__input b-settings__input-title">
 						<%= t('notifications.email_notifications') %>
 					</div>
-					<div class="b-settings__notifs">
+					<div class="b-settings__notifs b-in-work__wrap">
+						<div class="b-in-work"></div>
 <% NotificationType.all.each do |notification| %>
+<% checked = (current_user.has_notification? notification.name) ? (" checked=\"checked\"") : ("") %>
+<% value   = (current_user.has_notification? notification.name) ? (" value=\"0\"") : (" value=\"1\"") %>
 						<div>
-							<label class="b-checkbox"><input name="user[notifications][<%= notification.name %>]" type="checkbox" <%= "checked=\"checked\"" if current_user.has_notification? notification.name %> /><span class="b-checkbox__handler"></span></label>
+							<label class="b-checkbox"><input name="user[notifications][<%= notification.name %>]" type="checkbox"<%= checked.html_safe + value.html_safe %> /><span class="b-checkbox__handler"></span></label>
 							<span><%= t('notifications.' + notification.name) %></span>
 						</div>
 <% end %>

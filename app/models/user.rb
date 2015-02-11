@@ -113,7 +113,7 @@ class User < ActiveRecord::Base
     notification = NotificationType.find_by_name name
     return false if notification.nil?
 
-    self.notification_types.exists? notification
+    self.notification_types.exists? notification.id
   end
 
   # Валидация поля username

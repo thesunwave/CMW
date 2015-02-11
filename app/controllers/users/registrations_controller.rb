@@ -50,12 +50,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
 
-    # обновить данные пользователя
-    resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
 
+    # обновить данные пользователя
     # вернуть результат и применить изменения
-    if resource_updated
+    if update_resource(resource, account_update_params)
       needs_confirmation = update_needs_confirmation?(resource, prev_unconfirmed_email) ? 1 : 0
       sign_in resource_name, resource, bypass: true
       # настройки обновлены, флаг needs_confirmation указывает необходимо ли пользователю подтверждать почту
@@ -104,13 +103,18 @@ protected
       if params[:notifications].is_a? Hash
         # обработать уведомления
         params[:notifications].each do |notification, value|
-          if value == "on"
-            current_user.add_notification notification.to_sym
+          # включаем
+          if value == "1"
+            if !current_user.has_notification? notification
+              current_user.add_notification notification.to_sym
+            end
           else
-            current_user.remove_notification notification.to_sym
+            # отключаем
+            if current_user.has_notification? notification
+              current_user.remove_notification notification.to_sym
+            end
           end
         end
-        params.delete(:notifications)
       else
         # ошибка формата
         return
@@ -122,6 +126,7 @@ protected
     #
     # обновляем в зависимости от того, требуется ли текущий пароль
     # удалить уведомления из объекта обновления настроек
+    params.delete(:notifications)
     resource.update_without_password(params)
   end
 
