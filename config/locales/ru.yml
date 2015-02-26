@@ -3,11 +3,15 @@ ru:
       attributes:
         user:
           current_password: "Текущий пароль"
+          email: "Email"
       errors:
         models:
           user:
             attributes:
               current_password:
+                invalid: "введен неверно"
+                blank: "не может быть пустым"
+              email:
                 invalid: "введен неверно"
                 blank: "не может быть пустым"
 

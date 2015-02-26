@@ -5423,3 +5423,304 @@ D, [2015-02-12T01:16:30.991275 #748] DEBUG -- :   [1m[36mNotification Exists (
 D, [2015-02-12T01:16:30.991879 #748] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
 D, [2015-02-12T01:16:30.992456 #748] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
 D, [2015-02-12T01:16:30.992967 #748] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-19T12:53:31.338830 #84639] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-19T12:53:57.271416 #84654] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+I, [2015-02-19T12:53:57.280659 #84654]  INFO -- : Migrating to CreateQuotes (20150219093903)
+D, [2015-02-19T12:53:57.364183 #84654] DEBUG -- :   [1m[35m (81.4ms)[0m  CREATE TABLE `quotes` (`id` int(11) auto_increment PRIMARY KEY, `text_rus` varchar(255), `text_eng` varchar(255), `author_rus` varchar(255), `author_eng` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-02-19T12:53:57.366075 #84654] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+D, [2015-02-19T12:53:57.375426 #84654] DEBUG -- :   [1m[35mSQL (4.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150219093903')
+D, [2015-02-19T12:53:57.375995 #84654] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-19T12:53:57.385610 #84654] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+D, [2015-02-19T12:53:57.437929 #84654] DEBUG -- :   [1m[36m (4.8ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'delayed_jobs'
+[0m
+D, [2015-02-19T12:53:57.438292 #84654] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `delayed_jobs`
+D, [2015-02-19T12:53:57.439302 #84654] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'image_files'
+[0m
+D, [2015-02-19T12:53:57.439728 #84654] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `image_files`
+D, [2015-02-19T12:53:57.440322 #84654] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notification_types'
+[0m
+D, [2015-02-19T12:53:57.440934 #84654] DEBUG -- :   [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `notification_types`
+D, [2015-02-19T12:53:57.441741 #84654] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notification_types_roles'
+[0m
+D, [2015-02-19T12:53:57.442048 #84654] DEBUG -- :   [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_types_roles`
+D, [2015-02-19T12:53:57.442563 #84654] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notifications'
+[0m
+D, [2015-02-19T12:53:57.442857 #84654] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `notifications`
+D, [2015-02-19T12:53:57.443354 #84654] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'quotes'
+[0m
+D, [2015-02-19T12:53:57.443630 #84654] DEBUG -- :   [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `quotes`
+D, [2015-02-19T12:53:57.444134 #84654] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'roles'
+[0m
+D, [2015-02-19T12:53:57.444402 #84654] DEBUG -- :   [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roles`
+D, [2015-02-19T12:53:57.444897 #84654] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'users'
+[0m
+D, [2015-02-19T12:53:57.445187 #84654] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+D, [2015-02-19T12:53:57.445669 #84654] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'users_roles'
+[0m
+D, [2015-02-19T12:53:57.445959 #84654] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users_roles`
+D, [2015-02-19T12:53:57.446477 #84654] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'works'
+[0m
+D, [2015-02-19T12:53:57.446756 #84654] DEBUG -- :   [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `works`
+D, [2015-02-19T12:54:10.321375 #84658] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-19T13:14:49.371180 #84658] DEBUG -- :   [1m[35mQuote Load (2.2ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:15:02.436142 #84658] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:07.376379 #84658] DEBUG -- :   [1m[35mQuote Load (1.7ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:18.480408 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:28.517815 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:33.735052 #84658] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:34.655211 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:35.862344 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:36.872154 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:37.822796 #84658] DEBUG -- :   [1m[36mQuote Load (0.7ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:39.020672 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:40.379793 #84658] DEBUG -- :   [1m[36mQuote Load (3.1ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:42.245908 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:43.667462 #84658] DEBUG -- :   [1m[36mQuote Load (3.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:45.416839 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:18:47.117558 #84658] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:18:48.058642 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:19:30.603505 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:19:39.724880 #84658] DEBUG -- :   [1m[35mQuote Load (4.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:19:41.985341 #84658] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:19:46.075643 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:19:48.582947 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:20:04.222233 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:20:06.020062 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:20:07.828524 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:20:08.988254 #84658] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:20:10.132310 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:20:11.330106 #84658] DEBUG -- :   [1m[36mQuote Load (5.3ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:20:12.447445 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:21:05.057562 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:21:06.525100 #84658] DEBUG -- :   [1m[35mQuote Load (2.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:21:07.916759 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:28:42.466446 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:33:52.797620 #84658] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `quotes`[0m
+D, [2015-02-19T13:33:52.800572 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY `quotes`.`id` ASC LIMIT 1 OFFSET 6
+D, [2015-02-19T13:33:58.210495 #84658] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `quotes`[0m
+D, [2015-02-19T13:33:58.211710 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY `quotes`.`id` ASC LIMIT 1 OFFSET 7
+D, [2015-02-19T13:34:05.577722 #84658] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `quotes`[0m
+D, [2015-02-19T13:34:05.579363 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY `quotes`.`id` ASC LIMIT 1 OFFSET 10
+D, [2015-02-19T13:34:13.004906 #84658] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `quotes`[0m
+D, [2015-02-19T13:34:13.005987 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY `quotes`.`id` ASC LIMIT 1 OFFSET 9
+D, [2015-02-19T13:34:14.120945 #84658] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `quotes`[0m
+D, [2015-02-19T13:34:14.122218 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY `quotes`.`id` ASC LIMIT 1 OFFSET 2
+D, [2015-02-19T13:34:22.288160 #84658] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `quotes`[0m
+D, [2015-02-19T13:34:22.289224 #84658] DEBUG -- :   [1m[35mQuote Load (0.3ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY `quotes`.`id` ASC LIMIT 1 OFFSET 1
+D, [2015-02-19T13:37:30.659511 #84658] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:38:02.171795 #84658] DEBUG -- :   [1m[35mQuote Load (2.2ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:38:02.173142 #84658] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:38:04.203529 #84658] DEBUG -- :   [1m[35mQuote Load (0.7ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:38:04.204373 #84658] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:38:16.027992 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:38:18.142262 #84658] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:38:19.879125 #84658] DEBUG -- :   [1m[35mQuote Load (1.3ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:43:08.478383 #84658] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:43:52.162932 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:43:53.170512 #84658] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:46:30.251972 #84658] DEBUG -- :   [1m[35mQuote Load (25.7ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:46:34.813301 #84658] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T13:47:04.111943 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:47:09.431740 #84658] DEBUG -- :   [1m[36mUser Load (2.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:47:09.557304 #84658] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-19T13:47:09.565148 #84658] DEBUG -- :   [1m[36mSQL (3.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-14 21:26:04.000000', `current_sign_in_at` = '2015-02-19 10:47:09.554860', `sign_in_count` = 28, `updated_at` = '2015-02-19 10:47:09.557918' WHERE `users`.`id` = 1[0m
+D, [2015-02-19T13:47:09.568311 #84658] DEBUG -- :   [1m[35m (2.1ms)[0m  COMMIT
+D, [2015-02-19T13:47:09.586499 #84658] DEBUG -- :   [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:47:09.595941 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:29.783395 #84658] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:29.802598 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:30.897075 #84658] DEBUG -- :   [1m[36mUser Load (8.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:30.916637 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:32.045322 #84658] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:32.052538 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:33.069430 #84658] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:33.080236 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:34.229914 #84658] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:34.239864 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:50.112212 #84658] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:50.120355 #84658] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:50:54.101090 #84658] DEBUG -- :   [1m[36mUser Load (1.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:50:54.113380 #84658] DEBUG -- :   [1m[35mQuote Load (1.9ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:51:01.149979 #84658] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:51:01.157661 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:51:02.272387 #84658] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:51:02.280189 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:51:04.512060 #84658] DEBUG -- :   [1m[36mUser Load (5.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:51:04.521895 #84658] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T13:51:05.695155 #84658] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-19T13:51:05.703939 #84658] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T16:37:05.642100 #86629] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-19T16:37:05.759504 #86629] DEBUG -- :   [1m[35mQuote Load (0.7ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T16:37:08.523216 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T16:37:09.561706 #86629] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T16:37:10.531858 #86629] DEBUG -- :   [1m[36mQuote Load (3.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T16:37:11.406887 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T16:37:37.913393 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T16:37:39.301538 #86629] DEBUG -- :   [1m[35mQuote Load (0.9ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:13:53.229512 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:13:56.578980 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:13:59.864361 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:14:04.115590 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:14:08.812410 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:14:14.013856 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:14:16.613797 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:15:29.562170 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:15:30.540808 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:15:31.563209 #86629] DEBUG -- :   [1m[35mQuote Load (1.8ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:15:32.528577 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:15:33.638592 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:15:34.413220 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:15:35.778106 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:15:36.597767 #86629] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:15:37.486622 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:08.346283 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:09.441510 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:10.455213 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:11.568183 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:13.700340 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:15.379344 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:20.843567 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:23.219201 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:24.331191 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:25.054602 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:25.732620 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:27.034804 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:30.244544 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:31.690027 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:32.432324 #86629] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:33.634678 #86629] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:34.571302 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:54.312839 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:55.471934 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:56.394132 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:57.658129 #86629] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:16:58.370645 #86629] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:16:59.271418 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-19T17:17:00.167381 #86629] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-19T17:17:02.371624 #86629] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-22T00:36:00.714856 #91882] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-22T00:36:00.847223 #91882] DEBUG -- :   [1m[35mQuote Load (8.3ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T00:37:28.930017 #91882] DEBUG -- :   [1m[36mUser Load (9.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T00:37:29.038202 #91882] DEBUG -- :   [1m[35m (0.7ms)[0m  BEGIN
+D, [2015-02-22T00:37:29.048880 #91882] DEBUG -- :   [1m[36mSQL (8.3ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-19 10:47:09.000000', `current_sign_in_at` = '2015-02-21 21:37:29.035585', `sign_in_count` = 29, `updated_at` = '2015-02-21 21:37:29.038665' WHERE `users`.`id` = 1[0m
+D, [2015-02-22T00:37:29.096024 #91882] DEBUG -- :   [1m[35m (46.3ms)[0m  COMMIT
+D, [2015-02-22T00:37:29.109149 #91882] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T00:37:29.117568 #91882] DEBUG -- :   [1m[35mQuote Load (3.3ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T00:37:33.287404 #91882] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T00:37:33.329144 #91882] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-22T00:37:33.375291 #91882] DEBUG -- :   [1m[36mNotification Exists (3.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-22T00:37:33.376087 #91882] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-22T00:37:33.376661 #91882] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-22T00:37:33.377087 #91882] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-22T00:37:38.751831 #91882] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-22T00:37:38.766737 #91882] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-22T00:37:38.773499 #91882] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-22T00:37:38.774993 #91882] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-22T00:37:38.775746 #91882] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-22T00:37:38.776517 #91882] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-22T00:37:38.777089 #91882] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-22T00:37:38.780932 #91882] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:01:10.446085 #94770] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-22T01:01:10.560824 #94770] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:01:13.778502 #94770] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:01:13.888109 #94770] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-22T01:01:13.891795 #94770] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-21 21:37:29.000000', `current_sign_in_at` = '2015-02-21 22:01:13.884950', `sign_in_count` = 30, `updated_at` = '2015-02-21 22:01:13.888614' WHERE `users`.`id` = 1[0m
+D, [2015-02-22T01:01:13.925902 #94770] DEBUG -- :   [1m[35m (33.3ms)[0m  COMMIT
+D, [2015-02-22T01:01:13.940999 #94770] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:01:13.947498 #94770] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:10:25.753174 #94770] DEBUG -- :   [1m[36mUser Load (31.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:10:25.788593 #94770] DEBUG -- :   [1m[35mQuote Load (9.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:12:08.994501 #94770] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:12:09.002752 #94770] DEBUG -- :   [1m[35mQuote Load (0.8ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:13:48.598032 #94770] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:13:48.605391 #94770] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:17:09.170897 #94770] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:17:09.177359 #94770] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:32:15.673883 #94770] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:32:15.682698 #94770] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-22T01:32:19.313395 #94770] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-22T01:32:19.320209 #94770] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:08:40.685242 #8726] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (18.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-26T21:08:40.835913 #8726] DEBUG -- :   [1m[35mQuote Load (4.2ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:08:45.121932 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:09:45.425841 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:09:45.456128 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:09:47.496748 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:09:55.184511 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:10:03.978568 #8726] DEBUG -- :   [1m[35mQuote Load (0.8ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:10:06.631986 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:10:17.508564 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:13:35.320073 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:13:51.048465 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:14:06.614469 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:14:08.745645 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1

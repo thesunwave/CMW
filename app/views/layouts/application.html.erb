@@ -42,7 +42,16 @@ auth_layout = ["sessions/new", "registrations/new", "coming_soon/index", "passwo
 					</div>
 <% if !auth_layout.include?(page) %>
 					<div class="b-logo__quote">
-						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr>
+	<% Quote.get_random_quote.each do |quote| %>
+						«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
+<!-- 						<div class="b-logo__quote_text">
+							«<%= quote.text_rus %>»
+						</div>
+						<div class="b-logo__quote-normal">
+							<%= quote.author_rus %>
+						</div>
+ -->	<% end %>
+						<!-- <nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr> -->
 					</div>
 <% end %>
 				</div>

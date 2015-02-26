@@ -29,8 +29,11 @@ class User < ActiveRecord::Base
   # Валидации полей
   #  
   # почта проверяется на валидность в модели Devise
-	validates_format_of :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('errors.messages.invalid')
-	
+  validates_format_of :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('errors.messages.invalid')
+  
+  # пароли проверяются на валидность в модели Devise
+  validates_confirmation_of :password
+  	
   #
   # Имя
   #
