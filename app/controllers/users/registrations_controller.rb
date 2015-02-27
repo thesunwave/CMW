@@ -12,12 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       yield resource if block_given?
       if resource.active_for_authentication?
         sign_up(resource_name, resource)
-
-        # refactor: DRY in sessions and registratios
-        user_roles = []
-        resource.roles.each do |role|
-          user_roles.push(role.name)
-        end
         return
       else
         expire_data_after_sign_in!
@@ -120,8 +114,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # на регистрацию
     devise_parameter_sanitizer.for(:sign_up) do |u| 
       u.permit(:email, :password, :password_confirmation,
-        :first_name, :last_name, :username, :description, :lang)
+        :first_name, :last_name, :username, :description, :lang, :terms_of_service)
     end
+
     # на обновление настроек
     # данное поле необходимо указывать в конце
     devise_parameter_sanitizer.for(:account_update) do |u|
@@ -148,6 +143,7 @@ protected
 
   #disable redirect
   def after_sign_up_path_for(resource)
+    settings_path
   end
 
   #disable redirect

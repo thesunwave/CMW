@@ -5724,3 +5724,924 @@ D, [2015-02-26T21:13:35.320073 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[
 D, [2015-02-26T21:13:51.048465 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
 D, [2015-02-26T21:14:06.614469 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
 D, [2015-02-26T21:14:08.745645 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:16:53.003586 #8726] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:16:53.108017 #8726] DEBUG -- :   [1m[35m (0.7ms)[0m  BEGIN
+D, [2015-02-26T21:16:53.115370 #8726] DEBUG -- :   [1m[36mSQL (5.0ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-21 22:01:13.000000', `current_sign_in_at` = '2015-02-26 18:16:53.105763', `sign_in_count` = 31, `updated_at` = '2015-02-26 18:16:53.108435' WHERE `users`.`id` = 1[0m
+D, [2015-02-26T21:16:53.117804 #8726] DEBUG -- :   [1m[35m (1.7ms)[0m  COMMIT
+D, [2015-02-26T21:16:53.131469 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:16:53.138649 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:17:01.796516 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:17:01.844065 #8726] DEBUG -- :   [1m[35mNotificationType Load (1.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-26T21:17:01.884981 #8726] DEBUG -- :   [1m[36mNotification Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-26T21:17:01.885797 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-26T21:17:01.886434 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-26T21:17:01.886923 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-26T21:17:01.891468 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:17:04.671778 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:17:04.680259 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-26T21:17:04.682117 #8726] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-26T21:17:04.682926 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-26T21:17:04.683732 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-26T21:17:04.684482 #8726] DEBUG -- :   [1m[36mCACHE (0.1ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-26T21:17:04.689722 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:17:10.973309 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:17:10.980994 #8726] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-26T21:17:10.982181 #8726] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-26T21:17:10.982636 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-26T21:17:10.983354 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-26T21:17:10.983817 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-26T21:17:10.987830 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:19:26.956131 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:19:26.965156 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-26T21:19:26.966478 #8726] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-26T21:19:26.967445 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-26T21:19:26.979030 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-26T21:19:26.979473 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-26T21:19:26.984152 #8726] DEBUG -- :   [1m[35mQuote Load (0.8ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:19:32.590641 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:30:28.590649 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:30:35.104328 #8726] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:30:41.214080 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:31:08.216506 #8726] DEBUG -- :   [1m[36mUser Load (3.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:31:10.994312 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:31:11.008492 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:31:41.977843 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:31:43.925085 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:31:46.937680 #8726] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:31:46.949376 #8726] DEBUG -- :   [1m[36mQuote Load (0.9ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:31:48.625872 #8726] DEBUG -- :   [1m[35mUser Load (2.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:31:48.638920 #8726] DEBUG -- :   [1m[36mQuote Load (3.7ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:31:57.883448 #8726] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:31:57.891781 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T21:32:00.747420 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:32:01.599113 #8726] DEBUG -- :   [1m[36mUser Load (1.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:38:41.608995 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:38:47.871566 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:38:52.955941 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:38:57.858459 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:39:01.875094 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:39:29.078851 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:39:29.092006 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T21:40:10.632453 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:40:16.682620 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:40:26.582360 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:40:31.003201 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:42:17.184814 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:42:24.852131 #8726] DEBUG -- :   [1m[35mUser Load (8.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:53:40.258601 #8726] DEBUG -- :   [1m[36mUser Load (10.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:55:52.805251 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:56:00.422977 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:56:02.720751 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:56:07.169550 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:56:11.076644 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:56:18.816512 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:58:45.049038 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:58:56.054114 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T21:59:14.430688 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T21:59:57.921593 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:00:11.218702 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:00:27.120106 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:06:54.366469 #8726] DEBUG -- :   [1m[35mUser Load (2.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:07:39.421781 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:07:51.073679 #8726] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:07:51.236903 #8726] DEBUG -- :   [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:07:51.263512 #8726] DEBUG -- :   [1m[35mQuote Load (5.2ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:07:53.649848 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:08:12.891307 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:08:12.900202 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:08:15.943303 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:08:15.949428 #8726] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:08:15.951212 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
+D, [2015-02-26T22:08:15.973907 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:08:18.925000 #8726] DEBUG -- :   [1m[35mQuote Load (26.0ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:14:09.145842 #8726] DEBUG -- :   [1m[36mQuote Load (2.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:14:42.790297 #8726] DEBUG -- :   [1m[35mQuote Load (0.9ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:14:44.055183 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:14:56.154166 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:14:59.040735 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:17:54.272593 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:19:36.773813 #8726] DEBUG -- :   [1m[36mQuote Load (0.8ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:19:40.559651 #8726] DEBUG -- :   [1m[35mUser Load (16.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:19:40.663960 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:19:40.672545 #8726] DEBUG -- :   [1m[35mSQL (6.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 18:16:53.000000', `current_sign_in_at` = '2015-02-26 19:19:40.661813', `sign_in_count` = 32, `updated_at` = '2015-02-26 19:19:40.664358' WHERE `users`.`id` = 1
+D, [2015-02-26T22:19:40.716153 #8726] DEBUG -- :   [1m[36m (42.8ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T22:19:40.737028 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:19:40.747261 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:19:41.691283 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:20:32.680709 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:20:33.673449 #8726] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:20:49.471455 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:20:53.139297 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:20:53.145992 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:21:06.288838 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:21:06.310897 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:21:06.317255 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:21:29.076347 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:21:33.377810 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:21:33.397609 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:21:33.405954 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:21:48.183970 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:21:48.203933 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:21:48.210699 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:21:55.638325 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:21:55.657071 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:21:55.664220 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:22:20.262256 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:22:22.042396 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:22:22.131056 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:22:22.149759 #8726] DEBUG -- :   [1m[35mQuote Load (0.7ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:22:25.530904 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:22:25.548547 #8726] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:22:25.557488 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:22:30.452948 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:22:30.470728 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:22:30.478891 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:23:02.247322 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:02.288426 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:23:03.450875 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:06.395595 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:23:06.412338 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:06.420400 #8726] DEBUG -- :   [1m[35mQuote Load (1.8ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:23:28.310935 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:28.343801 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:23:29.640373 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:30.539387 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T22:23:30.556698 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:30.566380 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:23:48.700156 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T22:23:48.712192 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:23:48.715309 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T22:23:48.748429 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:24:07.355605 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:29:26.229315 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:29:26.246088 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:29:26.283780 #8726] DEBUG -- :   [1m[35mQuote Load (2.0ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T22:29:37.573417 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:29:37.577963 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T22:29:37.591608 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T22:30:11.181539 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:30:11.185587 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:31:42.616279 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:31:42.622657 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:31:47.794369 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:31:47.801227 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:32:04.877051 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T22:32:04.882736 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:32:17.880445 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  BEGIN
+D, [2015-02-26T22:32:17.885107 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:32:22.349118 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T22:32:22.362902 #8726] DEBUG -- :   [1m[36mUser Exists (5.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru1' LIMIT 1[0m
+D, [2015-02-26T22:32:22.366972 #8726] DEBUG -- :   [1m[35m (1.7ms)[0m  ROLLBACK
+D, [2015-02-26T22:32:48.719498 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:32:48.722648 #8726] DEBUG -- :   [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1
+D, [2015-02-26T22:32:48.724421 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:41:47.148502 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:41:47.153938 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1[0m
+D, [2015-02-26T22:41:47.157163 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T22:46:07.342443 #8726] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:46:07.351497 #8726] DEBUG -- :   [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1
+D, [2015-02-26T22:46:07.357600 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:46:33.053800 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:46:33.061226 #8726] DEBUG -- :   [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1[0m
+D, [2015-02-26T22:46:33.065310 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T22:48:53.106135 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:48:53.113133 #8726] DEBUG -- :   [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1
+D, [2015-02-26T22:48:53.116454 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:49:23.686607 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:49:23.692498 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1[0m
+D, [2015-02-26T22:49:23.695494 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T22:50:11.269129 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:50:11.275360 #8726] DEBUG -- :   [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1
+D, [2015-02-26T22:50:11.278374 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:50:25.065426 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:50:25.070430 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1[0m
+D, [2015-02-26T22:50:25.074362 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  ROLLBACK
+D, [2015-02-26T22:50:30.329452 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T22:50:30.333056 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1
+D, [2015-02-26T22:50:30.335924 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T22:56:40.034780 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T22:56:40.038845 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandexw.ru' LIMIT 1[0m
+D, [2015-02-26T22:56:40.041424 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:01:30.834389 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:01:30.843316 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T23:13:52.938293 #8726] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-26T23:13:55.866011 #8726] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+D, [2015-02-26T23:14:20.131791 #8726] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-26T23:14:32.754849 #13637] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+I, [2015-02-26T23:14:32.772540 #13637]  INFO -- : Migrating to CreateSoonUsers (20150226200938)
+D, [2015-02-26T23:14:32.882486 #13637] DEBUG -- :   [1m[35m (106.5ms)[0m  CREATE TABLE `soon_users` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-02-26T23:14:32.883766 #13637] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:14:32.891160 #13637] DEBUG -- :   [1m[35mSQL (2.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150226200938')
+D, [2015-02-26T23:14:32.891725 #13637] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+I, [2015-02-26T23:14:32.891809 #13637]  INFO -- : Migrating to AddEmailToSoonUsers (20150226201014)
+D, [2015-02-26T23:14:32.913251 #13637] DEBUG -- :   [1m[35m (20.4ms)[0m  ALTER TABLE `soon_users` ADD `email` varchar(255)
+D, [2015-02-26T23:14:32.913849 #13637] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:14:32.914539 #13637] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150226201014')
+D, [2015-02-26T23:14:32.915107 #13637] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:14:32.926988 #13637] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+D, [2015-02-26T23:14:33.006202 #13637] DEBUG -- :   [1m[36m (1.8ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'delayed_jobs'
+[0m
+D, [2015-02-26T23:14:33.014865 #13637] DEBUG -- :   [1m[35m (8.3ms)[0m  SHOW CREATE TABLE `delayed_jobs`
+D, [2015-02-26T23:14:33.034058 #13637] DEBUG -- :   [1m[36m (11.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'image_files'
+[0m
+D, [2015-02-26T23:14:33.072636 #13637] DEBUG -- :   [1m[35m (38.3ms)[0m  SHOW CREATE TABLE `image_files`
+D, [2015-02-26T23:14:33.074329 #13637] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notification_types'
+[0m
+D, [2015-02-26T23:14:33.076958 #13637] DEBUG -- :   [1m[35m (2.3ms)[0m  SHOW CREATE TABLE `notification_types`
+D, [2015-02-26T23:14:33.079420 #13637] DEBUG -- :   [1m[36m (1.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notification_types_roles'
+[0m
+D, [2015-02-26T23:14:33.081720 #13637] DEBUG -- :   [1m[35m (2.0ms)[0m  SHOW CREATE TABLE `notification_types_roles`
+D, [2015-02-26T23:14:33.082950 #13637] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notifications'
+[0m
+D, [2015-02-26T23:14:33.083606 #13637] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `notifications`
+D, [2015-02-26T23:14:33.084503 #13637] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'quotes'
+[0m
+D, [2015-02-26T23:14:33.089526 #13637] DEBUG -- :   [1m[35m (4.8ms)[0m  SHOW CREATE TABLE `quotes`
+D, [2015-02-26T23:14:33.092980 #13637] DEBUG -- :   [1m[36m (2.8ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'roles'
+[0m
+D, [2015-02-26T23:14:33.093724 #13637] DEBUG -- :   [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `roles`
+D, [2015-02-26T23:14:33.095161 #13637] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'soon_users'
+[0m
+D, [2015-02-26T23:14:33.095726 #13637] DEBUG -- :   [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `soon_users`
+D, [2015-02-26T23:14:33.097109 #13637] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'users'
+[0m
+D, [2015-02-26T23:14:33.097785 #13637] DEBUG -- :   [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `users`
+D, [2015-02-26T23:14:33.100314 #13637] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'users_roles'
+[0m
+D, [2015-02-26T23:14:33.101722 #13637] DEBUG -- :   [1m[35m (1.0ms)[0m  SHOW CREATE TABLE `users_roles`
+D, [2015-02-26T23:14:33.103447 #13637] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'works'
+[0m
+D, [2015-02-26T23:14:33.108754 #13637] DEBUG -- :   [1m[35m (5.0ms)[0m  SHOW CREATE TABLE `works`
+D, [2015-02-26T23:15:09.151210 #8726] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+D, [2015-02-26T23:22:13.814438 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:22:13.818657 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:22:17.120040 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:22:17.121683 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T23:22:22.747672 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:22:22.756079 #8726] DEBUG -- :   [1m[35mSQL (3.9ms)[0m  INSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandesx.ru', '2015-02-26 20:22:22.748312', '2015-02-26 20:22:22.748312')
+D, [2015-02-26T23:22:22.760041 #8726] DEBUG -- :   [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:25:40.502305 #8726] DEBUG -- :   [1m[35mQuote Load (4.3ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:25:59.433577 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:25:59.441032 #8726] DEBUG -- :   [1m[35mUser Exists (3.2ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yande2x.ru' LIMIT 1
+D, [2015-02-26T23:25:59.451582 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qewewe' LIMIT 1[0m
+D, [2015-02-26T23:25:59.457328 #8726] DEBUG -- :   [1m[35mSQL (4.0ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yande2x.ru', '$2a$10$Jo.XqNVhi6EJY15eYWwIru68vWlKKwWJeBsad5Kl119fu9bF08FYa', 'qww', 'qwee', 'qewewe', 'ru', '2015-02-26 20:25:59.451980', '2015-02-26 20:25:59.451980')
+D, [2015-02-26T23:25:59.471341 #8726] DEBUG -- :   [1m[36mRole Load (2.0ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`name` = 'user' AND `roles`.`resource_type` IS NULL AND `roles`.`resource_id` IS NULL  ORDER BY `roles`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T23:25:59.500823 #8726] DEBUG -- :   [1m[35mRole Exists (1.4ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2 AND `roles`.`id` = 1
+D, [2015-02-26T23:25:59.501886 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT `roles`.id FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2[0m
+D, [2015-02-26T23:25:59.502668 #8726] DEBUG -- :   [1m[35mRole Load (0.3ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+D, [2015-02-26T23:25:59.504127 #8726] DEBUG -- :   [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2[0m
+D, [2015-02-26T23:25:59.517351 #8726] DEBUG -- :   [1m[35mSQL (2.4ms)[0m  INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES (2, 1)
+D, [2015-02-26T23:25:59.591325 #8726] DEBUG -- :   [1m[36m (54.5ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:28:27.525289 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T23:28:27.530763 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yande2x.ru' LIMIT 1[0m
+D, [2015-02-26T23:28:27.532522 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qewewe' LIMIT 1
+D, [2015-02-26T23:28:27.534264 #8726] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yande2x.ru', '$2a$10$tStBcHC66BWWfqSN0yTh1OMdnQw6q7duh317MdOwnbBFWRUJOv4Oa', 'qww', 'qwee', 'qewewe', 'ru', '2015-02-26 20:28:27.532792', '2015-02-26 20:28:27.532792')[0m
+D, [2015-02-26T23:28:27.547597 #8726] DEBUG -- :   [1m[35mRole Load (0.5ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`name` = 'user' AND `roles`.`resource_type` IS NULL AND `roles`.`resource_id` IS NULL  ORDER BY `roles`.`id` ASC LIMIT 1
+D, [2015-02-26T23:28:27.559247 #8726] DEBUG -- :   [1m[36mRole Exists (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 3 AND `roles`.`id` = 1[0m
+D, [2015-02-26T23:28:27.560110 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  SELECT `roles`.id FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 3
+D, [2015-02-26T23:28:27.560794 #8726] DEBUG -- :   [1m[36mRole Load (0.2ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+D, [2015-02-26T23:28:27.561986 #8726] DEBUG -- :   [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 3
+D, [2015-02-26T23:28:27.565571 #8726] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users_roles` (`user_id`, `role_id`) VALUES (3, 1)[0m
+D, [2015-02-26T23:28:27.581757 #8726] DEBUG -- :   [1m[35m (0.6ms)[0m  ROLLBACK
+D, [2015-02-26T23:29:12.462848 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:29:12.466953 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yande2x.ru' LIMIT 1
+D, [2015-02-26T23:29:12.468913 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qewewe' LIMIT 1[0m
+D, [2015-02-26T23:29:12.470761 #8726] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yande2x.ru', '$2a$10$1NLQsHmDqlFLfvZnh1FVcee0.bmAlFN8qaVHsN4Uz901NkIxE9f.6', 'qww', 'qwee', 'qewewe', 'ru', '2015-02-26 20:29:12.469218', '2015-02-26 20:29:12.469218')
+D, [2015-02-26T23:29:12.471578 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:29:41.352771 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  BEGIN
+D, [2015-02-26T23:29:41.357833 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yande2x.ru' LIMIT 1[0m
+D, [2015-02-26T23:29:41.359721 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qewewe' LIMIT 1
+D, [2015-02-26T23:29:41.362440 #8726] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yande2x.ru', '$2a$10$fw22OueSYbSUoqs/QqnKYOAxtrAYEe33dub9QLQFOZ3oYxCNVVU2O', 'qww', 'qwee', 'qewewe', 'ru', '2015-02-26 20:29:41.359998', '2015-02-26 20:29:41.359998')[0m
+D, [2015-02-26T23:29:41.363516 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-26T23:29:41.366724 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:29:41.370384 #8726] DEBUG -- :   [1m[35mSQL (2.1ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 20:29:41.365427', `current_sign_in_at` = '2015-02-26 20:29:41.365427', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 20:29:41.366966' WHERE `users`.`id` = 5
+D, [2015-02-26T23:29:41.371229 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:29:41.469808 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:29:41.472833 #8726] DEBUG -- :   [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yande2x.ru' LIMIT 1[0m
+D, [2015-02-26T23:29:41.478352 #8726] DEBUG -- :   [1m[35mUser Load (3.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qewewe' LIMIT 1
+D, [2015-02-26T23:29:41.479368 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:29:41.507014 #8726] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:29:41.509208 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+D, [2015-02-26T23:29:41.526130 #8726] DEBUG -- :   [1m[35mQuote Load (0.7ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:29:49.318030 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T23:29:49.339970 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:29:49.349144 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T23:30:03.033277 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:30:03.043640 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T23:30:18.097212 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:30:18.099065 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:30:18.100113 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-26T23:30:18.121572 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T23:30:25.223504 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:30:25.224913 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:30:28.170698 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:30:28.173085 #8726] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 20:30:28.171097', '2015-02-26 20:30:28.171097')[0m
+D, [2015-02-26T23:30:28.187076 #8726] DEBUG -- :   [1m[35m (13.5ms)[0m  COMMIT
+D, [2015-02-26T23:30:49.578578 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:30:49.580741 #8726] DEBUG -- :   [1m[35mSQL (1.2ms)[0m  INSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 20:30:49.578750', '2015-02-26 20:30:49.578750')
+D, [2015-02-26T23:30:49.581460 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:35:30.778630 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:35:30.785155 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@ysandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:35:30.789710 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwer' LIMIT 1
+D, [2015-02-26T23:35:30.793128 #8726] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqwerty@ysandex.ru', '$2a$10$Qj/xh0fVdYHOHvRHVNkCj.EbXXck1AW6xHoWjaWgefAlP5TB0P//a', 'йцук', 'йцук', 'qwer', 'ru', '2015-02-26 20:35:30.790124', '2015-02-26 20:35:30.790124')[0m
+D, [2015-02-26T23:35:30.794659 #8726] DEBUG -- :   [1m[35m (0.6ms)[0m  COMMIT
+D, [2015-02-26T23:35:30.796310 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:35:30.798016 #8726] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 20:35:30.795219', `current_sign_in_at` = '2015-02-26 20:35:30.795219', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 20:35:30.796514' WHERE `users`.`id` = 6
+D, [2015-02-26T23:35:30.798776 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:35:30.890018 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:35:30.891884 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@ysandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:35:30.893370 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwer' LIMIT 1
+D, [2015-02-26T23:35:30.893962 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:35:30.914318 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 6  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:35:30.915460 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+D, [2015-02-26T23:35:30.928515 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:42:28.132108 #8726] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 6  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T23:42:28.158523 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:42:28.159572 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:42:28.204810 #8726] DEBUG -- :   [1m[35mQuote Load (1.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:43:17.717517 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:43:17.724677 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '22zombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:43:17.728975 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ifgii' LIMIT 1[0m
+D, [2015-02-26T23:43:17.729481 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:43:17.742622 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T23:43:17.833257 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:43:17.834928 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '22zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:43:17.840063 #8726] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ifgii' LIMIT 1  [["username", "ifgii"]]
+D, [2015-02-26T23:43:17.840751 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:45:59.994522 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:46:00.000994 #8726] DEBUG -- :   [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombddiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:46:00.003556 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ddgdg' LIMIT 1
+D, [2015-02-26T23:46:00.007391 #8726] DEBUG -- :   [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombddiqwerty@yandex.ru', '$2a$10$g.MMYmY8BaV4/risn3TJi.y5dr/5Z1Px7w5EElxneKmOVnEnqvkl2', 'fgf', 'sfdg', 'ddgdg', 'ru', '2015-02-26 20:46:00.003891', '2015-02-26 20:46:00.003891')[0m
+D, [2015-02-26T23:46:00.010352 #8726] DEBUG -- :   [1m[35m (2.0ms)[0m  COMMIT
+D, [2015-02-26T23:46:00.012762 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:46:00.015589 #8726] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 20:46:00.011070', `current_sign_in_at` = '2015-02-26 20:46:00.011070', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 20:46:00.013180' WHERE `users`.`id` = 7
+D, [2015-02-26T23:46:00.016442 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:46:00.105615 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:46:00.107241 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombddiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:46:00.108523 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ddgdg' LIMIT 1
+D, [2015-02-26T23:46:00.109131 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:46:00.129755 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 7  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:46:00.131661 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+D, [2015-02-26T23:46:00.146078 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:46:03.136972 #8726] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 7  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T23:46:03.139794 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T23:46:03.141254 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:46:03.184953 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:46:44.699066 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:46:44.702912 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kojkjh@uhb.uf' LIMIT 1
+D, [2015-02-26T23:46:44.705950 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kjbkjb' LIMIT 1[0m
+D, [2015-02-26T23:46:44.706369 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:46:44.812397 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:46:44.813875 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kojkjh@uhb.uf' LIMIT 1
+D, [2015-02-26T23:46:44.814950 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kjbkjb' LIMIT 1[0m  [["username", "kjbkjb"]]
+D, [2015-02-26T23:46:44.815301 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:47:12.794884 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:47:12.796605 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:47:12.800696 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:47:12.907731 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:47:12.909046 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:47:12.912854 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T23:47:21.770390 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:47:21.771996 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:47:21.774718 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:47:21.877656 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T23:47:21.878950 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:47:21.882065 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:47:29.368467 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:47:29.372149 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:47:29.377575 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:47:29.486529 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:47:29.488285 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:47:29.490935 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:50:26.460145 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:50:26.465070 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:50:26.470892 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:50:26.604306 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:50:26.607928 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:50:26.614770 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-26T23:51:47.876701 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:51:47.882778 #8726] DEBUG -- :   [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ijzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:51:47.887026 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kbk' LIMIT 1[0m
+D, [2015-02-26T23:51:47.891867 #8726] DEBUG -- :   [1m[35mSQL (2.7ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('ijzombiqwerty@yandex.ru', '$2a$10$662/FP530S9zuzXhrPIFFO0tivIKEGMM4UlXiOQ7RMnabbTS7yETC', 'ajfhb', 'hbkhb', 'kbk', 'ru', '2015-02-26 20:51:47.887501', '2015-02-26 20:51:47.887501')
+D, [2015-02-26T23:51:47.893544 #8726] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:51:47.895958 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T23:51:47.899392 #8726] DEBUG -- :   [1m[36mSQL (1.9ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 20:51:47.894430', `current_sign_in_at` = '2015-02-26 20:51:47.894430', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 20:51:47.896190' WHERE `users`.`id` = 8[0m
+D, [2015-02-26T23:51:47.900222 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-26T23:51:47.989825 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:51:47.991936 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ijzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:51:47.994741 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kbk' LIMIT 1[0m
+D, [2015-02-26T23:51:47.995479 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:51:48.018742 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T23:51:48.023794 #8726] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 8 LIMIT 1
+D, [2015-02-26T23:51:48.038017 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T23:51:50.969785 #8726] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:51:50.972272 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:51:50.973144 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-26T23:51:51.004528 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-26T23:52:03.310966 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:52:03.313499 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:52:15.230406 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:52:15.232167 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kbh@juh.oh' LIMIT 1[0m
+D, [2015-02-26T23:52:15.233766 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kj' LIMIT 1
+D, [2015-02-26T23:52:15.234131 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:52:15.331140 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:52:15.332364 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kbh@juh.oh' LIMIT 1[0m
+D, [2015-02-26T23:52:15.333374 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kj' LIMIT 1  [["username", "kj"]]
+D, [2015-02-26T23:52:15.333663 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:52:27.704127 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:52:27.705914 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqeewerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:52:27.706793 #8726] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kkjhkjhkjhg' LIMIT 1
+D, [2015-02-26T23:52:27.713182 #8726] DEBUG -- :   [1m[36mSQL (4.8ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqeewerty@yandex.ru', '$2a$10$U6N1nd5uDiXwk1Pm/kRrZO2JzSbrGOZ84sw7xAoHWiRv8K8ZLTpQ.', 'ihgsfhigkhg', 'khgkhgkjh', 'kkjhkjhkjhg', 'ru', '2015-02-26 20:52:27.707005', '2015-02-26 20:52:27.707005')[0m
+D, [2015-02-26T23:52:27.714733 #8726] DEBUG -- :   [1m[35m (0.6ms)[0m  COMMIT
+D, [2015-02-26T23:52:27.716955 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:52:27.720033 #8726] DEBUG -- :   [1m[35mSQL (1.6ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 20:52:27.715269', `current_sign_in_at` = '2015-02-26 20:52:27.715269', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 20:52:27.717249' WHERE `users`.`id` = 9
+D, [2015-02-26T23:52:27.720930 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:52:27.808193 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:52:27.810095 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqeewerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:52:27.811402 #8726] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kkjhkjhkjhg' LIMIT 1
+D, [2015-02-26T23:52:27.811915 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:52:27.829579 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 9  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-26T23:52:27.830387 #8726] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 9 LIMIT 1[0m
+D, [2015-02-26T23:52:27.837739 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:52:30.629540 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 9  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-26T23:52:30.630785 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-26T23:52:30.631721 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:52:30.654033 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-26T23:53:59.913358 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:53:59.917163 #8726] DEBUG -- :   [1m[35mUser Exists (2.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'вгрzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:53:59.918014 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:54:00.018160 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:54:00.019409 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'вгрzombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:54:00.020156 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:54:14.825033 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:54:14.829285 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'вгрzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:54:14.830532 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-26T23:54:14.956249 #8726] DEBUG -- :   [1m[35m (0.5ms)[0m  BEGIN
+D, [2015-02-26T23:54:14.958446 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'вгрzombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-26T23:54:14.959196 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:56:40.293669 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:56:40.299513 #8726] DEBUG -- :   [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:56:40.301826 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-26T23:56:40.305424 #8726] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('ddzombiqwerty@yandex.ru', '$2a$10$lO55mN7yiCVoKybIwmdZ9OEYtN4EqfjKDfVnvQ0EfEEArdpat0nhi', 'uyfuu', 'qwertyhj', 'qwertyu', 'ru', '2015-02-26 20:56:40.302252', '2015-02-26 20:56:40.302252')
+D, [2015-02-26T23:56:40.307091 #8726] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+D, [2015-02-26T23:56:40.309410 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-26T23:56:40.311656 #8726] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 20:56:40.307965', `current_sign_in_at` = '2015-02-26 20:56:40.307965', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 20:56:40.309654' WHERE `users`.`id` = 10[0m
+D, [2015-02-26T23:56:40.312588 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  COMMIT
+D, [2015-02-26T23:56:40.405346 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:56:40.407137 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:56:40.409217 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-26T23:56:40.410005 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:59:09.761580 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:59:09.765690 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:59:09.768443 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-26T23:59:09.769042 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-26T23:59:09.877998 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-26T23:59:09.879368 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-26T23:59:09.880580 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-26T23:59:09.881018 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:03:42.546216 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:03:42.557135 #8726] DEBUG -- :   [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:03:42.563113 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:03:42.564277 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:03:42.685357 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:03:42.686835 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:03:42.687938 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:03:42.690319 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:07:09.624138 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:07:09.630431 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:07:09.636189 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:07:09.637274 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:07:09.759366 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:07:09.760855 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:07:09.761907 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:07:09.762356 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:08:41.127927 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:08:41.135981 #8726] DEBUG -- :   [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:08:41.140449 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:08:41.141413 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:08:41.263520 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:08:41.265557 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:08:41.267544 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:08:41.268171 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:10:56.891181 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:10:56.897580 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:10:56.900548 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:10:56.901178 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:10:57.008919 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:10:57.011261 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:10:57.016683 #8726] DEBUG -- :   [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:10:57.017395 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:19.557809 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:19.564774 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:19.569187 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:11:19.570339 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:19.699479 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:19.700967 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:19.702045 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:11:19.702639 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:32.812127 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:32.818055 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:32.822469 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:11:32.823437 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:32.947859 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:32.950167 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:32.952139 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:11:32.952898 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:47.925034 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:47.930301 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:47.933694 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:11:47.934477 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:48.048314 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:48.049902 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:48.051261 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:11:48.051981 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:55.705959 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:55.707825 #8726] DEBUG -- :   [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:55.709557 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:11:55.710407 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:11:55.809796 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:11:55.811501 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:11:55.812772 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:11:55.813288 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:12:10.053944 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:12:10.055980 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzsombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:12:10.056856 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m
+D, [2015-02-27T00:12:10.057327 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:12:10.162047 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:12:10.163538 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzsombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:12:10.164186 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu' LIMIT 1[0m  [["username", "qwertyu"]]
+D, [2015-02-27T00:12:10.164660 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:12:21.415323 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:12:21.416932 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzsombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:12:21.417701 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu2' LIMIT 1[0m
+D, [2015-02-27T00:12:21.419884 #8726] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('ddzsombiqwerty@yandex.ru', '$2a$10$nYkPbAAPibAUOrPJXunrPOVnYo/tckY2IkVu0PcWQ7cVrnR//kq3C', 'uyfuu', 'qwertyhj', 'qwertyu2', 'ru', '2015-02-26 21:12:21.417979', '2015-02-26 21:12:21.417979')
+D, [2015-02-27T00:12:21.423942 #8726] DEBUG -- :   [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:12:21.426008 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:12:21.428344 #8726] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:12:21.424674', `current_sign_in_at` = '2015-02-26 21:12:21.424674', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:12:21.426261' WHERE `users`.`id` = 11[0m
+D, [2015-02-27T00:12:21.429281 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-27T00:12:21.520895 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:12:21.522575 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ddzsombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:12:21.523996 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyu2' LIMIT 1[0m
+D, [2015-02-27T00:12:21.524452 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:12:21.544534 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 11  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:12:21.545734 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 11 LIMIT 1
+D, [2015-02-27T00:12:21.560923 #8726] DEBUG -- :   [1m[36mQuote Load (0.8ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:12:24.482244 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 11  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:12:26.428089 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-27T00:12:26.443370 #8726] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 11 LIMIT 1
+D, [2015-02-27T00:12:26.444188 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 11 LIMIT 1[0m  [["user_id", 11]]
+D, [2015-02-27T00:12:26.444741 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 11 LIMIT 1  [["user_id", 11]]
+D, [2015-02-27T00:12:26.445333 #8726] DEBUG -- :   [1m[36mCACHE (0.1ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 11 LIMIT 1[0m  [["user_id", 11]]
+D, [2015-02-27T00:12:26.449918 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:12:39.789337 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 11  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:12:39.790903 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:12:39.791778 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:12:39.824106 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:13:15.915174 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:13:15.917711 #8726] DEBUG -- :   [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiddqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:13:15.919119 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ytrewertyu' LIMIT 1[0m
+D, [2015-02-27T00:13:15.922298 #8726] DEBUG -- :   [1m[35mSQL (1.1ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiddqwerty@yandex.ru', '$2a$10$36S1wwGQDehtCSTrHOA1T.mXMVgF29qgpQz1/FMTQO6CE5BFVny1K', 'wertyu', 'trewerty', 'ytrewertyu', 'ru', '2015-02-26 21:13:15.919477', '2015-02-26 21:13:15.919477')
+D, [2015-02-27T00:13:15.923701 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:13:15.925862 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:13:15.927873 #8726] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:13:15.924311', `current_sign_in_at` = '2015-02-26 21:13:15.924311', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:13:15.926129' WHERE `users`.`id` = 12[0m
+D, [2015-02-27T00:13:15.928759 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  COMMIT
+D, [2015-02-27T00:13:16.016504 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:13:16.018101 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiddqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:13:16.019739 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ytrewertyu' LIMIT 1[0m
+D, [2015-02-27T00:13:16.021042 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  ROLLBACK
+D, [2015-02-27T00:13:16.037863 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:13:16.039172 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 LIMIT 1
+D, [2015-02-27T00:13:16.046288 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:13:20.098720 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 12  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:13:20.100201 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:13:20.101128 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-27T00:13:20.127703 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:13:36.677399 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:13:36.679099 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiddqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:13:36.680425 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ertyu' LIMIT 1
+D, [2015-02-27T00:13:36.680766 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:13:36.785160 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:13:36.787364 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiddqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:13:36.788675 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ertyu' LIMIT 1  [["username", "ertyu"]]
+D, [2015-02-27T00:13:36.789319 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:13:45.192325 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:13:45.193906 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombsiddqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:13:45.194735 #8726] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ertyu' LIMIT 1
+D, [2015-02-27T00:13:45.196272 #8726] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombsiddqwerty@yandex.ru', '$2a$10$JeUbb8CzQBAqF7zUw/.Shulg19isAJAVY7.nQmgQ5phioC4wGGN3u', 'qwerty', 'trewq', 'ertyu', 'ru', '2015-02-26 21:13:45.194948', '2015-02-26 21:13:45.194948')[0m
+D, [2015-02-27T00:13:45.197498 #8726] DEBUG -- :   [1m[35m (0.5ms)[0m  COMMIT
+D, [2015-02-27T00:13:45.199566 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:13:45.201440 #8726] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:13:45.198268', `current_sign_in_at` = '2015-02-26 21:13:45.198268', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:13:45.199826' WHERE `users`.`id` = 13
+D, [2015-02-27T00:13:45.202559 #8726] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:13:45.296086 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:13:45.297724 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombsiddqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:13:45.299174 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ertyu' LIMIT 1
+D, [2015-02-27T00:13:45.299742 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:13:45.318336 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 13  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:13:45.321255 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+D, [2015-02-27T00:13:45.328182 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:14:33.685875 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 13  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:14:33.687757 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:14:33.688833 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:14:33.710753 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:15:45.569533 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:15:45.574209 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombsiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:15:45.576225 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ererfugihkbjjk' LIMIT 1[0m
+D, [2015-02-27T00:15:45.580087 #8726] DEBUG -- :   [1m[35mSQL (1.8ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombsiqwerty@yandex.ru', '$2a$10$eAoe2Ac0K7qmXE.lvamkyu2ObCRQZ0NbV91OTvODLsz.jjJJSi2Ru', 'Павел', 'йцукен', 'ererfugihkbjjk', 'ru', '2015-02-26 21:15:45.576566', '2015-02-26 21:15:45.576566')
+D, [2015-02-27T00:15:45.581874 #8726] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:15:45.584903 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:15:45.587341 #8726] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:15:45.583109', `current_sign_in_at` = '2015-02-26 21:15:45.583109', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:15:45.585251' WHERE `users`.`id` = 14[0m
+D, [2015-02-27T00:15:45.588242 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-27T00:15:45.680871 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:15:45.682944 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombsiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:15:45.685825 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ererfugihkbjjk' LIMIT 1[0m
+D, [2015-02-27T00:15:45.686667 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:15:45.703954 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 14  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:15:45.722941 #8726] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-27T00:15:45.735709 #8726] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 14 LIMIT 1[0m
+D, [2015-02-27T00:15:45.736639 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 14 LIMIT 1  [["user_id", 14]]
+D, [2015-02-27T00:15:45.738301 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 14 LIMIT 1[0m  [["user_id", 14]]
+D, [2015-02-27T00:15:45.739013 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 14 LIMIT 1  [["user_id", 14]]
+D, [2015-02-27T00:15:45.746332 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:15:54.982468 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 14  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:15:54.984535 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:15:54.985449 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-27T00:15:55.017555 #8726] DEBUG -- :   [1m[36mQuote Load (0.4ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:16:21.201039 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:16:21.202788 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwcwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:16:21.203627 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ihkbknb' LIMIT 1
+D, [2015-02-27T00:16:21.206424 #8726] DEBUG -- :   [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('zombiqwcwerty@yandex.ru', '$2a$10$scnCzprQGAnUXDF9PjuWkOJLNn2eT223vzXfmwVS8aYxNI0TimA2O', 'Павел', 'hbkhb', 'ihkbknb', 'ru', '2015-02-26 21:16:21.203835', '2015-02-26 21:16:21.203835')[0m
+D, [2015-02-27T00:16:21.207597 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-27T00:16:21.209681 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:16:21.211407 #8726] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:16:21.208210', `current_sign_in_at` = '2015-02-26 21:16:21.208210', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:16:21.209917' WHERE `users`.`id` = 15
+D, [2015-02-27T00:16:21.212213 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:16:21.300014 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:16:21.301576 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwcwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:16:21.302870 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'ihkbknb' LIMIT 1
+D, [2015-02-27T00:16:21.303353 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:16:21.317123 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 15  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:16:21.324387 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-27T00:16:21.325637 #8726] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 15 LIMIT 1
+D, [2015-02-27T00:16:21.326098 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 15 LIMIT 1[0m  [["user_id", 15]]
+D, [2015-02-27T00:16:21.326577 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 15 LIMIT 1  [["user_id", 15]]
+D, [2015-02-27T00:16:21.326963 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 15 LIMIT 1[0m  [["user_id", 15]]
+D, [2015-02-27T00:16:21.331541 #8726] DEBUG -- :   [1m[35mQuote Load (0.6ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:16:58.272709 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:16:58.274222 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:16:58.275229 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:16:58.299166 #8726] DEBUG -- :   [1m[35mQuote Load (0.5ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:17:21.217873 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:17:21.220382 #8726] DEBUG -- :   [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'igigkhg@uh.fr' LIMIT 1
+D, [2015-02-27T00:17:21.221859 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'igihgkg' LIMIT 1[0m
+D, [2015-02-27T00:17:21.223488 #8726] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('igigkhg@uh.fr', '$2a$10$Yq5465FTJ4hud3iqv7IPsui5D05kA72H8nY3N8pbwAKYsaOUnfNOy', 'khbk', 'hbih', 'igihgkg', 'ru', '2015-02-26 21:17:21.222127', '2015-02-26 21:17:21.222127')
+D, [2015-02-27T00:17:21.224579 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:17:21.226805 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:17:21.228797 #8726] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:17:21.225187', `current_sign_in_at` = '2015-02-26 21:17:21.225187', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:17:21.227109' WHERE `users`.`id` = 16[0m
+D, [2015-02-27T00:17:21.229717 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  COMMIT
+D, [2015-02-27T00:17:21.316724 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:17:21.318366 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'igigkhg@uh.fr' LIMIT 1
+D, [2015-02-27T00:17:21.319620 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'igihgkg' LIMIT 1[0m
+D, [2015-02-27T00:17:21.320133 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:17:21.340911 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:17:21.347252 #8726] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-27T00:17:21.352600 #8726] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 16 LIMIT 1[0m
+D, [2015-02-27T00:17:21.353830 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 16 LIMIT 1  [["user_id", 16]]
+D, [2015-02-27T00:17:21.354848 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 16 LIMIT 1[0m  [["user_id", 16]]
+D, [2015-02-27T00:17:21.355678 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 16 LIMIT 1  [["user_id", 16]]
+D, [2015-02-27T00:17:21.359836 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:17:36.840116 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 16  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:17:36.842239 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:17:36.843444 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
+D, [2015-02-27T00:17:36.920898 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:17:47.557879 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:17:47.559574 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:17:47.561282 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK
+D, [2015-02-27T00:17:47.668859 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:17:47.670099 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:17:47.671569 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:17:58.819471 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:17:58.821169 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwderty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:17:58.822302 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:17:58.923205 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:17:58.924580 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwderty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:17:58.925727 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:06.176629 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:18:06.178582 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwderty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:06.180407 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1
+D, [2015-02-27T00:18:06.180876 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:06.200304 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:18:06.202692 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwderty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:06.203963 #8726] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1  [["username", "qwertyuio"]]
+D, [2015-02-27T00:18:06.204470 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:14.559975 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:18:14.561683 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:14.562968 #8726] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1
+D, [2015-02-27T00:18:14.563281 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:14.803023 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:18:14.805009 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:14.806929 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1  [["username", "qwertyuio"]]
+D, [2015-02-27T00:18:14.807511 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:24.180792 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:18:24.182451 #8726] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:24.184754 #8726] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1
+D, [2015-02-27T00:18:24.185075 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:24.285628 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:18:24.286979 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:24.289051 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1  [["username", "qwertyuio"]]
+D, [2015-02-27T00:18:24.289379 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:33.275750 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:18:33.277644 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:33.279159 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1
+D, [2015-02-27T00:18:33.279515 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:18:34.257395 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:18:34.260051 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:18:34.261648 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'qwertyuio' LIMIT 1  [["username", "qwertyuio"]]
+D, [2015-02-27T00:18:34.262297 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:20:02.647436 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:20:02.653460 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'fjobjbnzombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:20:02.655662 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'kjbkjbk' LIMIT 1
+D, [2015-02-27T00:20:02.657539 #8726] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('fjobjbnzombiqwerty@yandex.ru', '$2a$10$iOHf3PTJAHY/LlrAa/./l.od3AKx6SIOnPi2tE7j/8UZW4WRwqnAC', 'dskjbskjbgk', 'kjbkjfgbkjb', 'kjbkjbk', 'ru', '2015-02-26 21:20:02.655977', '2015-02-26 21:20:02.655977')[0m
+D, [2015-02-27T00:20:02.659730 #8726] DEBUG -- :   [1m[35m (0.8ms)[0m  COMMIT
+D, [2015-02-27T00:20:02.661782 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:20:02.663689 #8726] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:20:02.660433', `current_sign_in_at` = '2015-02-26 21:20:02.660433', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:20:02.662025' WHERE `users`.`id` = 17
+D, [2015-02-27T00:20:02.664510 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:20:02.786833 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 17  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:20:02.805654 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-27T00:20:02.823285 #8726] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1
+D, [2015-02-27T00:20:02.824647 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1[0m  [["user_id", 17]]
+D, [2015-02-27T00:20:02.826015 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1  [["user_id", 17]]
+D, [2015-02-27T00:20:02.826837 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1[0m  [["user_id", 17]]
+D, [2015-02-27T00:20:02.833537 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:20:29.294755 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 17  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:20:29.373219 #8726] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-27T00:20:29.387982 #8726] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1[0m
+D, [2015-02-27T00:20:29.388684 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1  [["user_id", 17]]
+D, [2015-02-27T00:20:29.389252 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1[0m  [["user_id", 17]]
+D, [2015-02-27T00:20:29.389679 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 17 LIMIT 1  [["user_id", 17]]
+D, [2015-02-27T00:20:29.396391 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:20:33.525837 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 17  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:20:33.527563 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:20:33.528469 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-27T00:20:33.601087 #8726] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:20:43.567016 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:20:43.572249 #8726] DEBUG -- :   [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'foufhgzombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:20:43.575045 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'uyfgugfoug' LIMIT 1
+D, [2015-02-27T00:20:43.578305 #8726] DEBUG -- :   [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('foufhgzombiqwerty@yandex.ru', '$2a$10$/2g7elvsiy0IUIYIYNBQPuCaOLJTL9DqXKo14pB5Wop4EbBq3ZB0m', 'jhbkb', 'kjbkjbkj', 'uyfgugfoug', 'ru', '2015-02-26 21:20:43.575404', '2015-02-26 21:20:43.575404')[0m
+D, [2015-02-27T00:20:43.580302 #8726] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+D, [2015-02-27T00:20:43.582310 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:20:43.584147 #8726] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:20:43.580966', `current_sign_in_at` = '2015-02-26 21:20:43.580966', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:20:43.582545' WHERE `users`.`id` = 18
+D, [2015-02-27T00:20:43.584883 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:20:43.674266 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:20:43.676205 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'foufhgzombiqwerty@yandex.ru' LIMIT 1[0m
+D, [2015-02-27T00:20:43.678373 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'uyfgugfoug' LIMIT 1
+D, [2015-02-27T00:20:43.678951 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:20:43.697050 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 18  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:20:43.706207 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-27T00:20:43.708535 #8726] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 18 LIMIT 1
+D, [2015-02-27T00:20:43.709186 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 18 LIMIT 1[0m  [["user_id", 18]]
+D, [2015-02-27T00:20:43.709772 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 18 LIMIT 1  [["user_id", 18]]
+D, [2015-02-27T00:20:43.710194 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 18 LIMIT 1[0m  [["user_id", 18]]
+D, [2015-02-27T00:20:43.714656 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:21:01.578878 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 18  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:21:01.604725 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:21:01.605785 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:21:01.651004 #8726] DEBUG -- :   [1m[35mQuote Load (2.2ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:21:10.820281 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:21:10.824555 #8726] DEBUG -- :   [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dgjbzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:21:10.827291 #8726] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'jbkjbkjbkb' LIMIT 1[0m
+D, [2015-02-27T00:21:10.831326 #8726] DEBUG -- :   [1m[35mSQL (1.7ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('dgjbzombiqwerty@yandex.ru', '$2a$10$6EplBhyCJGvAmzEyQpv/..iydNUzlVG7epCqTRgTluZEenqmkHSeO', 'dkbkjnljnk', 'ojbkjbfkjb', 'jbkjbkjbkb', 'ru', '2015-02-26 21:21:10.827653', '2015-02-26 21:21:10.827653')
+D, [2015-02-27T00:21:10.832722 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:21:10.834650 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:21:10.836567 #8726] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:21:10.833386', `current_sign_in_at` = '2015-02-26 21:21:10.833386', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:21:10.834872' WHERE `users`.`id` = 19[0m
+D, [2015-02-27T00:21:10.837642 #8726] DEBUG -- :   [1m[35m (0.4ms)[0m  COMMIT
+D, [2015-02-27T00:21:10.927893 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:21:10.929656 #8726] DEBUG -- :   [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dgjbzombiqwerty@yandex.ru' LIMIT 1
+D, [2015-02-27T00:21:10.931469 #8726] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'jbkjbkjbkb' LIMIT 1[0m
+D, [2015-02-27T00:21:10.931992 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
+D, [2015-02-27T00:21:10.950851 #8726] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 19  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:21:10.973246 #8726] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-27T00:21:10.992196 #8726] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 19 LIMIT 1[0m
+D, [2015-02-27T00:21:10.993533 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 19 LIMIT 1  [["user_id", 19]]
+D, [2015-02-27T00:21:10.994825 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 19 LIMIT 1[0m  [["user_id", 19]]
+D, [2015-02-27T00:21:10.995586 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 19 LIMIT 1  [["user_id", 19]]
+D, [2015-02-27T00:21:11.002438 #8726] DEBUG -- :   [1m[36mQuote Load (0.8ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:21:27.065710 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 19  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:21:27.094646 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:21:27.095563 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-27T00:21:27.137266 #8726] DEBUG -- :   [1m[36mQuote Load (1.8ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:21:38.051970 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:21:38.057072 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ouhouhou@uh.ff' LIMIT 1[0m
+D, [2015-02-27T00:21:38.059183 #8726] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'iubijb' LIMIT 1
+D, [2015-02-27T00:21:38.062670 #8726] DEBUG -- :   [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `first_name`, `last_name`, `username`, `lang`, `created_at`, `updated_at`) VALUES ('ouhouhou@uh.ff', '$2a$10$qZJDstSw85ZhA2YsepkZVeIrSbz596eNkgazwZ34bKNcD9Yjrqpe2', 'ojngojn', 'oojho', 'iubijb', 'ru', '2015-02-26 21:21:38.059485', '2015-02-26 21:21:38.059485')[0m
+D, [2015-02-27T00:21:38.064412 #8726] DEBUG -- :   [1m[35m (0.6ms)[0m  COMMIT
+D, [2015-02-27T00:21:38.066780 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:21:38.069457 #8726] DEBUG -- :   [1m[35mSQL (0.8ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-26 21:21:38.065214', `current_sign_in_at` = '2015-02-26 21:21:38.065214', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2015-02-26 21:21:38.067026' WHERE `users`.`id` = 20
+D, [2015-02-27T00:21:38.070342 #8726] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:21:38.159284 #8726] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-27T00:21:38.161073 #8726] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ouhouhou@uh.ff' LIMIT 1[0m
+D, [2015-02-27T00:21:38.163718 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'iubijb' LIMIT 1
+D, [2015-02-27T00:21:38.164716 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:21:38.181964 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 20  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:21:38.387823 #8726] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-27T00:21:38.397290 #8726] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 20 LIMIT 1
+D, [2015-02-27T00:21:38.398466 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 20 LIMIT 1[0m  [["user_id", 20]]
+D, [2015-02-27T00:21:38.399533 #8726] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 20 LIMIT 1  [["user_id", 20]]
+D, [2015-02-27T00:21:38.399988 #8726] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 20 LIMIT 1[0m  [["user_id", 20]]
+D, [2015-02-27T00:21:38.404213 #8726] DEBUG -- :   [1m[35mQuote Load (0.4ms)[0m  SELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1
+D, [2015-02-27T00:23:51.615124 #8726] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 20  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-27T00:23:51.690886 #8726] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 20  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:23:51.716037 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:23:54.068875 #8726] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 20  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-27T00:23:54.070866 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:23:54.072243 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-27T00:23:54.091793 #8726] DEBUG -- :   [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  `quotes`.* FROM `quotes`  ORDER BY RAND() LIMIT 1[0m
+D, [2015-02-27T00:24:00.374545 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:24:00.376894 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-27T00:24:02.776419 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:24:02.780746 #8726] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 21:24:02.776797', '2015-02-26 21:24:02.776797')[0m
+D, [2015-02-27T00:24:02.823264 #8726] DEBUG -- :   [1m[35m (41.9ms)[0m  COMMIT
+D, [2015-02-27T00:24:08.396171 #8726] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:24:08.399684 #8726] DEBUG -- :   [1m[35mSQL (1.7ms)[0m  INSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 21:24:08.396761', '2015-02-26 21:24:08.396761')
+D, [2015-02-27T00:24:08.400589 #8726] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+D, [2015-02-27T00:24:24.724710 #8726] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-27T00:24:24.727246 #8726] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 21:24:24.725167', '2015-02-26 21:24:24.725167')[0m
+D, [2015-02-27T00:24:24.727952 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
+D, [2015-02-27T00:25:34.098977 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-27T00:25:34.102423 #8726] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  INSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 21:25:34.099724', '2015-02-26 21:25:34.099724')
+D, [2015-02-27T00:25:34.103497 #8726] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m

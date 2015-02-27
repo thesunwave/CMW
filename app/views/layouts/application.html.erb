@@ -1,6 +1,6 @@
 <%
 page = controller_name + "/" + controller.action_name
-auth_layout = ["sessions/new", "registrations/new", "coming_soon/index", "passwords/new"]
+auth_layout = ["sessions/new", "registrations/new", "registrations/create", "registrations/coming_soon", "coming_soon/index", "passwords/new"]
 %>
 <!DOCTYPE html>
 <html lang="ru">
@@ -27,7 +27,7 @@ auth_layout = ["sessions/new", "registrations/new", "coming_soon/index", "passwo
 			<div class="z-actions__popups"></div>
 		</div>
 		<section class="b-wrapper">
-			<header class="b-controller-name<%= " b-controller-name_auth" if auth_layout.include?(page) %>">
+			<header class="b-controller-name<%= " b-controller-name_auth" if auth_layout.include?(page) %><%= " b-controller_" + controller.controller_name + "-" + controller.action_name %>">
 				<div class="b-logo">
 					<div>
 						<a href="/" class="b-logo__image">

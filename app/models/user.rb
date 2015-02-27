@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   # :director
   # :admin
 
-  rolify after_add: :assign_default_notifications_for
-  after_create :assign_default_role, :assign_default_notifications, :assign_default_username
+  # rolify after_add: :assign_default_notifications_for
+  # after_create :assign_default_role, :assign_default_notifications, :assign_default_username
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   # почта проверяется на валидность в модели Devise
   validates_format_of :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('errors.messages.invalid')
   
+  # соглашение с условиями
+  validates :terms_of_service, :acceptance => { :accept => 'on' }
+
   # пароли проверяются на валидность в модели Devise
   validates_confirmation_of :password
   	

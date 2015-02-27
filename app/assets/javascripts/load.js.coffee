@@ -19,6 +19,7 @@ class CMW.Initialize
 		new CMW.Common()
 		new CMW.Panel()
 		new CMW.Settings()
+		new CMW.Coming_soon()
 		return
 
 $ ->
