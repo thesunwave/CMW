@@ -1,8 +1,21 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
+set :rvm_ruby_string, '2.2.0'
+
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
+use_recipes :git, :rails, :bundle, :unicorn
+
+server '188.225.77.3', :web, :app, :db, :primary => true
+set :user, 'cmw'
+set :deploy_to, '/home/cmw/web-app'
+set :repository, 'git@bitbucket.org:zoqteam/cmw.git'
+
+after 'deploy:update', 'bundle:install'
+after 'deploy:restart', 'unicorn:stop'
 
 # Includes tasks from other gems included in your Gemfile
 #
