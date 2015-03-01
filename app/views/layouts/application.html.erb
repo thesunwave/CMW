@@ -31,8 +31,8 @@ auth_layout = ["sessions/new", "registrations/new", "registrations/create", "reg
 				<div class="b-logo">
 					<div>
 						<a href="/" class="b-logo__image">
-							<object data="/images/logo.svg">  
-							    <img src="/images/logo.png" />  
+							<object data="/images/logo.svg">
+							    <img src="/images/logo.png" />
 							</object>
 							<div class="b-logo__pointer"></div>
 						</a>
@@ -42,15 +42,18 @@ auth_layout = ["sessions/new", "registrations/new", "registrations/create", "reg
 					</div>
 <% if !auth_layout.include?(page) %>
 					<div class="b-logo__quote">
-	<% Quote.get_random_quote.each do |quote| %>
-						«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
+						<% if Quote.present? %>
+							<% Quote.get_random_quote.each do |quote| %>
+								«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
 <!-- 						<div class="b-logo__quote_text">
 							«<%= quote.text_rus %>»
 						</div>
 						<div class="b-logo__quote-normal">
 							<%= quote.author_rus %>
 						</div>
+
  -->	<% end %>
+ <% end %>
 						<!-- <nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr> -->
 					</div>
 <% end %>

@@ -6645,3 +6645,108 @@ D, [2015-02-27T00:24:24.727952 #8726] DEBUG -- :   [1m[35m (0.3ms)[0m  COMMIT
 D, [2015-02-27T00:25:34.098977 #8726] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
 D, [2015-02-27T00:25:34.102423 #8726] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  INSERT INTO `soon_users` (`email`, `created_at`, `updated_at`) VALUES ('zombiqwerty@yandex.ru', '2015-02-26 21:25:34.099724', '2015-02-26 21:25:34.099724')
 D, [2015-02-27T00:25:34.103497 #8726] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+D, [2015-03-01T18:32:06.230891 #27926] DEBUG -- :   [1m[36m (116.2ms)[0m  [1mCREATE TABLE "delayed_jobs" ("id" serial primary key, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying(255), "queue" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+D, [2015-03-01T18:32:06.297171 #27926] DEBUG -- :   [1m[35m (50.5ms)[0m  CREATE  INDEX  "delayed_jobs_priority" ON "delayed_jobs" USING btree ("priority", "run_at")
+D, [2015-03-01T18:32:06.386802 #27926] DEBUG -- :   [1m[36m (87.1ms)[0m  [1mCREATE TABLE "image_files" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp) [0m
+D, [2015-03-01T18:32:06.453802 #27926] DEBUG -- :   [1m[35m (64.5ms)[0m  CREATE TABLE "notification_types" ("id" serial primary key, "name" character varying(255) NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+D, [2015-03-01T18:32:06.509603 #27926] DEBUG -- :   [1m[36m (52.3ms)[0m  [1mCREATE TABLE "notification_types_roles" ("id" serial primary key, "notification_type_id" integer NOT NULL, "role_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+D, [2015-03-01T18:32:06.565607 #27926] DEBUG -- :   [1m[35m (52.9ms)[0m  CREATE TABLE "notifications" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer, "notification_type_id" integer, "notification_type" integer) 
+D, [2015-03-01T18:32:06.665890 #27926] DEBUG -- :   [1m[36m (96.7ms)[0m  [1mCREATE TABLE "quotes" ("id" serial primary key, "text_rus" character varying(255), "text_eng" character varying(255), "author_rus" character varying(255), "author_eng" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+D, [2015-03-01T18:32:06.777220 #27926] DEBUG -- :   [1m[35m (107.9ms)[0m  CREATE TABLE "roles" ("id" serial primary key, "name" character varying(255), "resource_id" integer, "resource_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+D, [2015-03-01T18:32:06.843657 #27926] DEBUG -- :   [1m[36m (60.9ms)[0m  [1mCREATE  INDEX  "index_roles_on_name_and_resource_type_and_resource_id" ON "roles" USING btree ("name", "resource_type", "resource_id")[0m
+D, [2015-03-01T18:32:06.899073 #27926] DEBUG -- :   [1m[35m (52.3ms)[0m  CREATE  INDEX  "index_roles_on_name" ON "roles" USING btree ("name")
+D, [2015-03-01T18:32:06.955028 #27926] DEBUG -- :   [1m[36m (53.5ms)[0m  [1mCREATE TABLE "soon_users" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(255)) [0m
+D, [2015-03-01T18:32:07.055633 #27926] DEBUG -- :   [1m[35m (93.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp, "lang" character varying(255), "description" text, "website" character varying(255), "vk" character varying(255), "facebook" character varying(255), "twitter" character varying(255), "username" character varying(255), "behance" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "dribble" character varying(255), "spec" character varying(255), "unconfirmed_email" character varying(255), "confirmation_sent_at" timestamp, "confirmed_at" timestamp, "confirmation_token" character varying(255)) 
+D, [2015-03-01T18:32:07.133123 #27926] DEBUG -- :   [1m[36m (62.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+D, [2015-03-01T18:32:07.188827 #27926] DEBUG -- :   [1m[35m (50.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+D, [2015-03-01T18:32:07.199938 #27926] DEBUG -- :   [1m[36m (8.3ms)[0m  [1mCREATE TABLE "users_roles" ("user_id" integer, "role_id" integer) [0m
+D, [2015-03-01T18:32:07.311031 #27926] DEBUG -- :   [1m[35m (105.3ms)[0m  CREATE  INDEX  "index_users_roles_on_user_id_and_role_id" ON "users_roles" USING btree ("user_id", "role_id")
+D, [2015-03-01T18:32:07.948815 #27926] DEBUG -- :   [1m[36m (632.9ms)[0m  [1mCREATE TABLE "works" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer, "image_file_id" integer, "title" character varying(255), "views_count" integer DEFAULT 0, "favs_count" integer DEFAULT 0, "description" text, "tags" text) [0m
+D, [2015-03-01T18:32:08.044157 #27926] DEBUG -- :   [1m[35m (62.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+D, [2015-03-01T18:32:08.099416 #27926] DEBUG -- :   [1m[36m (49.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+D, [2015-03-01T18:32:08.100760 #27926] DEBUG -- :   [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+D, [2015-03-01T18:32:08.110495 #27926] DEBUG -- :   [1m[36m (8.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150226201014')[0m
+D, [2015-03-01T18:32:08.121749 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113223144')
+D, [2015-03-01T18:32:08.132813 #27926] DEBUG -- :   [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120195156')[0m
+D, [2015-03-01T18:32:08.143782 #27926] DEBUG -- :   [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113225119')
+D, [2015-03-01T18:32:08.154804 #27926] DEBUG -- :   [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120194714')[0m
+D, [2015-03-01T18:32:08.166000 #27926] DEBUG -- :   [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150203210515')
+D, [2015-03-01T18:32:08.177123 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150204215520')[0m
+D, [2015-03-01T18:32:08.188197 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150226200938')
+D, [2015-03-01T18:32:08.199304 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113191540')[0m
+D, [2015-03-01T18:32:08.210390 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150204215735')
+D, [2015-03-01T18:32:08.221569 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113180325')[0m
+D, [2015-03-01T18:32:08.232583 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120194908')
+D, [2015-03-01T18:32:08.243698 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120195109')[0m
+D, [2015-03-01T18:32:08.254771 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150219093903')
+D, [2015-03-01T18:32:08.265872 #27926] DEBUG -- :   [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120195044')[0m
+D, [2015-03-01T18:32:08.276924 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150204210121')
+D, [2015-03-01T18:32:08.288034 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150112221008')[0m
+D, [2015-03-01T18:32:08.299159 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113180536')
+D, [2015-03-01T18:32:08.310255 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120194837')[0m
+D, [2015-03-01T18:32:08.321385 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150204220120')
+D, [2015-03-01T18:32:08.332550 #27926] DEBUG -- :   [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150123214344')[0m
+D, [2015-03-01T18:32:08.343634 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113175336')
+D, [2015-03-01T18:32:08.354759 #27926] DEBUG -- :   [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120195014')[0m
+D, [2015-03-01T18:32:08.365859 #27926] DEBUG -- :   [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150111224551')
+D, [2015-03-01T18:32:08.376953 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113215115')[0m
+D, [2015-03-01T18:32:08.535913 #27926] DEBUG -- :   [1m[35m (103.7ms)[0m  CREATE TABLE "delayed_jobs" ("id" serial primary key, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying(255), "queue" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+D, [2015-03-01T18:32:08.602349 #27926] DEBUG -- :   [1m[36m (51.7ms)[0m  [1mCREATE  INDEX  "delayed_jobs_priority" ON "delayed_jobs" USING btree ("priority", "run_at")[0m
+D, [2015-03-01T18:32:08.702898 #27926] DEBUG -- :   [1m[35m (98.4ms)[0m  CREATE TABLE "image_files" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp) 
+D, [2015-03-01T18:32:08.747904 #27926] DEBUG -- :   [1m[36m (43.2ms)[0m  [1mCREATE TABLE "notification_types" ("id" serial primary key, "name" character varying(255) NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+D, [2015-03-01T18:32:08.803775 #27926] DEBUG -- :   [1m[35m (53.3ms)[0m  CREATE TABLE "notification_types_roles" ("id" serial primary key, "notification_type_id" integer NOT NULL, "role_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+D, [2015-03-01T18:32:08.870720 #27926] DEBUG -- :   [1m[36m (64.3ms)[0m  [1mCREATE TABLE "notifications" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer, "notification_type_id" integer, "notification_type" integer) [0m
+D, [2015-03-01T18:32:08.982254 #27926] DEBUG -- :   [1m[35m (108.0ms)[0m  CREATE TABLE "quotes" ("id" serial primary key, "text_rus" character varying(255), "text_eng" character varying(255), "author_rus" character varying(255), "author_eng" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+D, [2015-03-01T18:32:09.681723 #27926] DEBUG -- :   [1m[36m (695.8ms)[0m  [1mCREATE TABLE "roles" ("id" serial primary key, "name" character varying(255), "resource_id" integer, "resource_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+D, [2015-03-01T18:32:09.748102 #27926] DEBUG -- :   [1m[35m (63.3ms)[0m  CREATE  INDEX  "index_roles_on_name_and_resource_type_and_resource_id" ON "roles" USING btree ("name", "resource_type", "resource_id")
+D, [2015-03-01T18:32:09.814579 #27926] DEBUG -- :   [1m[36m (63.5ms)[0m  [1mCREATE  INDEX  "index_roles_on_name" ON "roles" USING btree ("name")[0m
+D, [2015-03-01T18:32:09.881524 #27926] DEBUG -- :   [1m[35m (64.8ms)[0m  CREATE TABLE "soon_users" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(255)) 
+D, [2015-03-01T18:32:09.982086 #27926] DEBUG -- :   [1m[36m (94.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp, "lang" character varying(255), "description" text, "website" character varying(255), "vk" character varying(255), "facebook" character varying(255), "twitter" character varying(255), "username" character varying(255), "behance" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "dribble" character varying(255), "spec" character varying(255), "unconfirmed_email" character varying(255), "confirmation_sent_at" timestamp, "confirmed_at" timestamp, "confirmation_token" character varying(255)) [0m
+D, [2015-03-01T18:32:10.048695 #27926] DEBUG -- :   [1m[35m (53.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+D, [2015-03-01T18:32:10.115391 #27926] DEBUG -- :   [1m[36m (61.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+D, [2015-03-01T18:32:10.126301 #27926] DEBUG -- :   [1m[35m (8.7ms)[0m  CREATE TABLE "users_roles" ("user_id" integer, "role_id" integer) 
+D, [2015-03-01T18:32:10.193135 #27926] DEBUG -- :   [1m[36m (61.4ms)[0m  [1mCREATE  INDEX  "index_users_roles_on_user_id_and_role_id" ON "users_roles" USING btree ("user_id", "role_id")[0m
+D, [2015-03-01T18:32:10.282217 #27926] DEBUG -- :   [1m[35m (85.4ms)[0m  CREATE TABLE "works" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer, "image_file_id" integer, "title" character varying(255), "views_count" integer DEFAULT 0, "favs_count" integer DEFAULT 0, "description" text, "tags" text) 
+D, [2015-03-01T18:32:10.337929 #27926] DEBUG -- :   [1m[36m (54.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+D, [2015-03-01T18:32:10.393602 #27926] DEBUG -- :   [1m[35m (53.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+D, [2015-03-01T18:32:10.394674 #27926] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-01T18:32:10.404507 #27926] DEBUG -- :   [1m[35m (8.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150226201014')
+D, [2015-03-01T18:32:10.415801 #27926] DEBUG -- :   [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113223144')[0m
+D, [2015-03-01T18:32:10.427204 #27926] DEBUG -- :   [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120195156')
+D, [2015-03-01T18:32:10.437876 #27926] DEBUG -- :   [1m[36m (10.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113225119')[0m
+D, [2015-03-01T18:32:10.448962 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120194714')
+D, [2015-03-01T18:32:10.460049 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150203210515')[0m
+D, [2015-03-01T18:32:10.471130 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150204215520')
+D, [2015-03-01T18:32:10.482232 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150226200938')[0m
+D, [2015-03-01T18:32:10.493185 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113191540')
+D, [2015-03-01T18:32:10.504543 #27926] DEBUG -- :   [1m[36m (11.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150204215735')[0m
+D, [2015-03-01T18:32:10.515652 #27926] DEBUG -- :   [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113180325')
+D, [2015-03-01T18:32:10.526618 #27926] DEBUG -- :   [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150120194908')[0m
+D, [2015-03-01T18:32:10.537783 #27926] DEBUG -- :   [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120195109')
+D, [2015-03-01T18:32:10.548921 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150219093903')[0m
+D, [2015-03-01T18:32:10.559974 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120195044')
+D, [2015-03-01T18:32:10.571125 #27926] DEBUG -- :   [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150204210121')[0m
+D, [2015-03-01T18:32:10.582168 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150112221008')
+D, [2015-03-01T18:32:10.593463 #27926] DEBUG -- :   [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113180536')[0m
+D, [2015-03-01T18:32:10.604668 #27926] DEBUG -- :   [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120194837')
+D, [2015-03-01T18:32:10.648996 #27926] DEBUG -- :   [1m[36m (43.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150204220120')[0m
+D, [2015-03-01T18:32:10.696011 #27926] DEBUG -- :   [1m[35m (46.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150123214344')
+D, [2015-03-01T18:32:10.751698 #27926] DEBUG -- :   [1m[36m (55.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113175336')[0m
+D, [2015-03-01T18:32:10.791688 #27926] DEBUG -- :   [1m[35m (39.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150120195014')
+D, [2015-03-01T18:32:10.826875 #27926] DEBUG -- :   [1m[36m (34.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150111224551')[0m
+D, [2015-03-01T18:32:10.930780 #27926] DEBUG -- :   [1m[35m (103.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113215115')
+D, [2015-03-01T18:32:11.008116 #27926] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2015-03-01T18:32:22.408559 #27939] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2015-03-01T18:32:26.131781 #27939] DEBUG -- :   [1m[35mQuote Load (0.8ms)[0m  SELECT  "quotes".* FROM "quotes"  ORDER BY RAND() LIMIT 1
+E, [2015-03-01T18:32:26.131939 #27939] ERROR -- : PG::UndefinedFunction: ERROR:  function rand() does not exist
+LINE 1: SELECT  "quotes".* FROM "quotes"  ORDER BY RAND() LIMIT 1
+                                                   ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+: SELECT  "quotes".* FROM "quotes"  ORDER BY RAND() LIMIT 1
+D, [2015-03-01T18:36:02.382196 #27939] DEBUG -- :   [1m[36mQuote Load (0.5ms)[0m  [1mSELECT  "quotes".* FROM "quotes"  ORDER BY RAND() LIMIT 1[0m
+E, [2015-03-01T18:36:02.382304 #27939] ERROR -- : PG::UndefinedFunction: ERROR:  function rand() does not exist
+LINE 1: SELECT  "quotes".* FROM "quotes"  ORDER BY RAND() LIMIT 1
+                                                   ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+: SELECT  "quotes".* FROM "quotes"  ORDER BY RAND() LIMIT 1
+D, [2015-03-01T18:39:44.013795 #27939] DEBUG -- :   [1m[35mQuote Load (0.8ms)[0m  SELECT  "quotes".* FROM "quotes"  ORDER BY random() LIMIT 1
