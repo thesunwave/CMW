@@ -1,7 +1,9 @@
 CMW::Application.routes.draw do
   get  'subscriptions' => 'subscriptions#index'
   get  'coming_soon'   => 'coming_soon#index'
-  post 'coming_soon'   => 'coming_soon#index'
+  post 'coming_soon'   => 'coming_soon#create'
+
+  root to: 'coming_soon#index', as: "invite"
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -26,7 +28,7 @@ CMW::Application.routes.draw do
   end   # api
 
   # путь / (корень)
-  root to: 'root#index'
+  #root to: 'root#index'
 
   # все вьюхи
   scope '/views' do
@@ -67,7 +69,7 @@ CMW::Application.routes.draw do
 
     end
   end
-  
+
   # devise
   devise_for  :users, path: 'auth',
     # переопределение контроллеров
@@ -76,9 +78,9 @@ CMW::Application.routes.draw do
       sessions:       'users/sessions',
       confirmations:  'users/confirmations',
       passwords:      'users/passwords'
-    }, 
+    },
     # переопределение путей по умолчанию
-    path_names: { 
+    path_names: {
       sign_in:        'login',
       sign_out:       'logout',
       confirmation:   'confirm',
