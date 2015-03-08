@@ -8,7 +8,11 @@
 			<%= t('coming_soon.welcome') %>
 		</div>
 		<div class="b-auth__form">
-			<form action="<%= coming_soon_path %>" accept-charset="UTF-8" method="post" data-hook="coming-soon1">
+			<%#= form_for @soon_user, url: {action: "create"}, remote: :true, format: :js do |f| %>
+			<%#= f.text_field :email %>
+			<%#= f.submit %>
+			<%# end %>
+			<form action="<%= coming_soon_path %>" data-remote="true" accept-charset="UTF-8" method="post" data-hook="coming-soon1">
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				<div>
