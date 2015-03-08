@@ -1,6 +1,6 @@
 class ComingSoonController < ApplicationController
 
-  layout 'layouts/soonLayout'
+  # layout 'layouts/soonLayout'
 
   before_filter :show_main_forms!
 
@@ -13,10 +13,10 @@ class ComingSoonController < ApplicationController
 
     respond_to do |format|
       if @soon_user.save
-        format.html { render action: :index }
+        # format.html { render action: :index }
         format.json { render json: @soon_user.notice }
       else
-        format.html { render action: :index }
+        # format.html { render action: :index }
         format.json { render json: @soon_user.errors, status: :unprocessable_entity }
       end
     end

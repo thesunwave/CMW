@@ -3,16 +3,16 @@
 class CMW.Coming_soon
 
 	constructor: ->
-		_validator()
+		_sender()
 
-	_validator = ->
+	_sender = ->
 		$form = $.hook "coming-soon"
 		$form.on "submit", (event) ->
 			event.preventDefault()
 			coming_soon_email_val = $.hook("coming-soon-email").val().trim()
 			if _validateEmail(coming_soon_email_val)
 				$.ajax
-					url: "/coming_soon/create/"
+					url: "/coming_soon/"
 					type: "POST"
 					data: $form.serialize()
 				.done (data) ->
@@ -28,6 +28,8 @@ class CMW.Coming_soon
 				.fail ->
 					_unknownError()
 					return
+				.always (data) ->
+					console.log data.responseText
 			else
 				z_.alert
 					timeout: 10000

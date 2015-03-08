@@ -10,8 +10,8 @@ gem 'cancan'                                    # authorization engine
 gem 'devise', '~> 3.4.1'                        # authentication engine
 gem 'devise-async', '~> 0.9.0'                  # provides an easy way to configure Devise to send its emails asynchronously using Delayed::Job gem 'mysql2'                                    # MySQL database support
 gem 'rolify'                                    # roles engine
-gem 'pg'																									# postgres adapter
-gem 'slim', github: 'slim-template/slim'								# better template engine
+gem 'pg'                                        # postgres adapter
+gem 'slim', github: 'slim-template/slim'        # better template engine
 gem 'execjs'                                    # js runtime gem
 gem 'paperclip', '~> 4.1'                       # file storage engine
 gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
@@ -32,7 +32,7 @@ group :development do
 	gem 'rails_layout'
 	gem 'faker'
 	gem 'oily_png'
-	gem 'rubocop', require: false    											#static code analyzer
+	gem 'rubocop', require: false                           #static code analyzer
 	gem 'rubocop-rspec', require: false                     # speed up the pure Ruby ChunkyPNG library
 end
 
