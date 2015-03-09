@@ -9,6 +9,10 @@ module DeviseHelper
     end
   end
 
+  def resource
+    @soon_user ||= SoonUser.new
+  end
+
   def devise_error_messages?
     resource.errors.empty? ? false : true
   end

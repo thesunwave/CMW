@@ -1,6 +1,6 @@
 <%
 page = controller_name + "/" + controller.action_name
-auth_layout = ["sessions/new", "registrations/new", "registrations/create", "coming_soon/index", "coming_soon/create", "passwords/new"]
+auth_layout = ["sessions/new", "registrations/new", "registrations/create", "registrations/coming_soon", "coming_soon/index", "passwords/new"]
 %>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,11 +14,11 @@ auth_layout = ["sessions/new", "registrations/new", "registrations/create", "com
 		<meta name="description" content="" />
 		<%= csrf_meta_tags %>
 		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" async></script>
-			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" async></script>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" async></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" async></script>
 		<![endif]-->
 		<!--[if lt IE 8]>
-			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js" async></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js" async></script>
 		<![endif]-->
 	</head>
 	<body class="z-unloaded">
@@ -32,7 +32,7 @@ auth_layout = ["sessions/new", "registrations/new", "registrations/create", "com
 					<div>
 						<a href="/" class="b-logo__image">
 							<object data="/images/logo.svg">
-							    <img src="/images/logo.png" />
+							<img src="/images/logo.png" />
 							</object>
 							<div class="b-logo__pointer"></div>
 						</a>
@@ -40,44 +40,27 @@ auth_layout = ["sessions/new", "registrations/new", "registrations/create", "com
 					<div>
 						<a href="/" class="b-logo__text">Criticize My Work</a>
 					</div>
-<% if !auth_layout.include?(page) %>
+					<% if !auth_layout.include?(page) %>
 					<div class="b-logo__quote">
 						<% if Quote.present? %>
-							<% Quote.get_random_quote.each do |quote| %>
-								«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
-<!-- 						<div class="b-logo__quote_text">
+						<% Quote.get_random_quote.each do |quote| %>
+						«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
+						<!-- 						<div class="b-logo__quote_text">
 							«<%= quote.text_rus %>»
 						</div>
 						<div class="b-logo__quote-normal">
 							<%= quote.author_rus %>
 						</div>
-
- -->	<% end %>
- <% end %>
+						-->	<% end %>
+						<% end %>
 						<!-- <nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr> -->
 					</div>
-<% end %>
+					<% end %>
 				</div>
 			</header>
 			<main class="b-wrapper__main">
-<% if !auth_layout.include?(page) %>
-				<div class="b-cover g-clearfix">
-					<div class="g-left b-content">
-						<%= yield %>
-					</div>
-					<div class="g-right b-aside">
-						<div class="b-fixed-aside" data-hook="panel">
-							<%= render partial: "components/aside" %>
-						</div>
-					</div>
-				</div>
-<% else %>
-				<%= yield %>
-<% end %>
+			<%= yield %>
 			</main>
-			<footer>
-
-			</footer>
 		</section>
 		<%= javascript_include_tag 'application' %>
 		<script>
