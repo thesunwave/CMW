@@ -2,6 +2,8 @@
 
 class CMW.Coming_soon
 
+	PATH = "/coming_soon/"
+
 	constructor: ->
 		_sender()
 
@@ -12,30 +14,23 @@ class CMW.Coming_soon
 			coming_soon_email_val = $.hook("coming-soon-email").val().trim()
 			if _validateEmail(coming_soon_email_val)
 				$.ajax
-					url: "/coming_soon/"
+					url : PATH
 					type: "POST"
 					data: $form.serialize()
-				.done (data) ->
-					try
-						#json = JSON.parse(data)
+				.done (data, textStatus, jqXHR) ->
+					if jqXHR.status == 200
 						z_.alert
 							timeout: 10000
-							type: "success"
+							type   : "success"
 							message: "Ваш email добавлен в базу. Спасибо, что Вы с нами :)"
-					catch e
-						_unknownError()
-						console.log e
+					else
+						_error "Непредвиденная ошибка. Не волнуйтесь, мы уже знаем о ней."
 					return
 				.fail ->
-					_invalid()
+					_error "Email уже зарегистрирован."
 					return
-				.always (data) ->
-					console.log data.responseText
 			else
-				z_.alert
-					timeout: 5000
-					type   : "warning"
-					message: "Похоже, вы допустили ошибку."
+				_error "Похоже, вы допустили ошибку."
 			return
 		return
 
@@ -43,16 +38,9 @@ class CMW.Coming_soon
 		re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 		re.test email
 
-	_unknownError = ->
+	_error = (message) ->
 		z_.alert
 			timeout: 5000
-			type: "warning"
-			message: "Непредвиденная ошибка. Не волнуйтесь, мы уже знаем о ней."
+			type   : "warning"
+			message: message
 		return
-
-	_invalid = ->
-		z_.alert
-			timeout: 5000
-			type: 'warning'
-			message: 'Email уже зарегистрирован'
-
