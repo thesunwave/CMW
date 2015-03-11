@@ -21,6 +21,6 @@ test:
 
 production:
   <<: *default
-  database: cmw_development
+  database: cmw_prod
   username: cmw
-  password: cwm_user
+  password: cmwdeploy
