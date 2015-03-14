@@ -47,6 +47,7 @@ group :test do
 	gem 'poltergeist'                            # poltergeist is a driver for Capybara. It allows you to run your Capybara tests on a headless WebKit browser, provided by PhantomJS
 	gem 'database_cleaner', '1.0.1'              # Database Cleaner is a set of strategies for cleaning your database in Ruby
 	gem 'i18n-tasks', '~> 0.7.4'                 # helps you find and manage missing and unused translations
+	gem 'selenium-webdriver', '~> 2.44.0'
 end
 
 
