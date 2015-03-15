@@ -3,7 +3,7 @@
 	$transitionDuration         : 250ms
 
 	$buttonDefaultNormal        : #303030
-	$buttonDefaultHover         : #303030
+	$buttonDefaultHover         : $yellowColor
 	$buttonDefaultDisabled      : #303030
 	$buttonDefaultBorderNormal  : #c1c1c1
 	$buttonDefaultBorderHover   : #e5e5e5
@@ -69,6 +69,7 @@
 			margin-bottom: 0
 		&:hover, &:focus
 			background: $buttonDefaultHover
+			color: $asideLinksColor
 		&:not(.b-button_disabled):not(:disabled):active
 			+transition(none)
 		&:disabled, &_disabled

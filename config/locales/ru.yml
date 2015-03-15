@@ -3,11 +3,15 @@ ru:
       attributes:
         user:
           current_password: "Текущий пароль"
+          email: "Email"
       errors:
         models:
           user:
             attributes:
               current_password:
+                invalid: "введен неверно"
+                blank: "не может быть пустым"
+              email:
                 invalid: "введен неверно"
                 blank: "не может быть пустым"
 
@@ -34,6 +38,12 @@ ru:
 
   # главное меню
   # main_menu:
+
+  # Comming Soon page
+  coming_soon:
+    developing: В разработке
+    welcome: Оставьте нам свой e-mail, и мы напишем Вам, когда сайт будет готов
+    subscribe: Подписаться
 
   # атрибуты модели User и текст страницы Настройки
   user_settings:
@@ -84,16 +94,17 @@ ru:
     new_password: Новый пароль
     repeat_password: Ещё раз
     remember_me: Запомнить меня
-    restore_password: Восстановить пароль
+    restore_password: Восстановление пароля
     restore_password_notice_html: На указанный вами адрес электронной почты будет<br /> выслана инструкция по восстановлению пароля
     password_reset_action: Изменить пароль
     restore_password_notice: На указанный вами адрес электронной почты будет выслана инструкция по восстановлению пароля
-    agreement_text: Я согласен с условиями 
+    agreement_text: Я согласен с условиями
     agreement_link: пользовательского соглашения
     first_name: Ваше имя
     last_name: Ваша фамилия
     username: Логин
     not_user_yet: ещё не зарегистрированы?
+    back_to_login: << назад ко входу
 
   # социальные кнопки
   social:
@@ -138,8 +149,8 @@ ru:
     blank: пустой # возможно не нужно: удалить, через тестирование
     #   другие ошибки
     unknown_error: неизвестная ошибка
-    # это хак системы ошибок rails, предназначенный для интеграции системы ключей 
-    # в сообщения об ошибках. Rails берет сообщения об ошибках валидации полей данных 
+    # это хак системы ошибок rails, предназначенный для интеграции системы ключей
+    # в сообщения об ошибках. Rails берет сообщения об ошибках валидации полей данных
     # модели из этого объекта. Данные сообщения локализуются в объекте errors, находящемся на уровень выше
     # подробнее см. https://docs.google.com/document/d/1EfX639g17Dsc3HE160ZBnwjlMeCO5O2aXFuyujWmtaE/edit#heading=h.6c2kuw7dr82e
     messages:

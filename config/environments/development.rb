@@ -26,14 +26,14 @@ CMW::Application.configure do
     authentication:       Rails.application.secrets.email_authentication_type,
     enable_starttls_auto: true
   }
-  config.action_mailer.default_url_options = { 
+  config.action_mailer.default_url_options = {
     host:       Rails.application.secrets.domain_name,
     replay_to:  Rails.application.secrets.email_bot_address
   }
 
   # Send email
   config.action_mailer.perform_deliveries = true
-  
+
   # Turn off errors in production
   config.action_mailer.raise_delivery_errors = true
 
@@ -49,10 +49,10 @@ CMW::Application.configure do
   config.assets.debug = true
   config.i18n.default_locale = :ru
   I18n.enforce_available_locales = true
-  
+
   # Allow better_errors to work with this IP
   BetterErrors::Middleware.allow_ip! Rails.application.secrets.developer_ip
 
   ActiveRecord::Base.logger = Logger.new(STDOUT)
-  ActiveRecord::Base.logger = Logger::Logger.new("Application Log")
+  ActiveRecord::Base.logger = Logger.new("application.log")
 end

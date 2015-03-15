@@ -46,6 +46,7 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 		font-size: 0
 	&__link
 		+inline-block
+		+transition(background-color 250ms ease)
 		width: 100%
 		background: $asideLinksColor
 		text-align: center
@@ -56,6 +57,9 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 		background-repeat: no-repeat
 		background-position: 13px center
 		margin-bottom: 6px
+		&:hover, &:focus
+			background-color: $yellowColor
+			color: $asideLinksColor
 		&:last-child
 			margin-bottom: 0
 		&_icon-notifs__count
@@ -98,6 +102,8 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 			background-image: asset-url("@1x/linkIcons/logout.png")
 			margin-top: 9px
 			color: $redColor
+			&:hover
+				color: $redColor
 
 .b-search
 	background: $searchFieldBg

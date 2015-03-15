@@ -1,7 +1,25 @@
-<%= devise_error_messages! %>
-<form action="<%=  forgot_path  %>" accept-charset="UTF-8" method="post">
-	<input name="utf8" type="hidden" value="&#x2713;" />
-	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-	<input name="user[email]" type="text" placeholder="Email" />
-	<input name="commit" type="submit" value="Отправить инструкции по восстановлению на почту на почту" />
-</form>
+<%= render partial: "components/errors" %>
+<div class="b-page_login">
+	<div class="b-auth b-auth_restore">
+		<div class="b-auth__title b-auth__title_with-link">
+			<%= t('auth.restore_password') %>
+		</div>
+		<div class="b-auth__form">
+			<form action="<%=  forgot_path  %>" accept-charset="UTF-8" method="post">
+				<input name="utf8" type="hidden" value="&#x2713;" />
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				<div>
+					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.email') %>" />
+				</div>
+				<div class="g-clearfix b-auth__form-commit">
+					<div class="g-left b-auth__form-commit__link">
+						<a href="<%= new_user_session_path %>"><%= t('auth.back_to_login') %></a>
+					</div>
+					<div class="g-right">
+						<input name="commit" type="submit" class="b-button b-button_expanded" value="<%= t('auth.login') %>" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -2,40 +2,28 @@
 
 class CMW.Settings
 	constructor: ->
-		_privateSettings()
-
-	_privateSettings = ->
-		$.hook("private-settings-modal").on "click", (event) ->
-			event.preventDefault();
+		_save()
+	_save = ->
+		$.hook("save-settings").on "submit", (event) ->
+			event.preventDefault()
+			$form = $ @
 			z_.popup
-				title   : "Проверить значение"
-				content : '<div>Значение в инпуте должно быть "Test"</div><input type="text" value="Test" data-hook="myPopup-watch-input" />'
-				footer  : '<div class="b-button" data-hook="myPopup-test-value">Проверить</div>'
+				title   : "Введите пароль"
+				content : '<h2>для изменения настроек безопасности нужно повторно ввести пароль</h2><div><input type="password" value="" class="b-input_text" data-hook="settings-current-password" /></div>'
+				footer  : '<div class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" data-hook="settings-go">Подтвердить</div><div class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" data-hook="settings-close">Назад</div>'
 				callback: ->
 					$thisPopup = z_.popup_last()
-					$.hook("myPopup-test-value").on "click", ->
-						# Проверка на значение
-						if $.hook("myPopup-watch-input").val() is "Test"
-							# Добавляем класс success к кнопке и удаляем класс warning, если он есть
-							$(@).removeClass("z-button_warning").addClass "z-button_success"
-							# Если значение совпадает с нужным, вызываем вложенный алерт с сообщением об успехе
-							z_.alert
-								wrap   : $thisPopup.find ".z-popup__alert"
-								type   : "success"
-								message: "Успех! Можно продолжать"
-							# И уничтожаем попап через 1 секунду
-							setTimeout ->
-								z_.popup_remove $thisPopup
-								return
-							, 1000
-							return
+					$.hook("settings-go").on "click", ->
+						currentPassword = $.hook("settings-current-password")[0].val()
+						if currentPassword
+							$.hook("settings-current").value currentPassword
+							$form.submit()
 						else
-							# Добавляем класс warning к кнопке
 							$(@).addClass "z-button_warning"
-							# Если значение не совпадает с нужным, то вызываем вложенный алерт с сообщением об ошибке
 							z_.alert
 								wrap   : z_.popup_last().find ".z-popup__alert"
 								type   : "warning"
-								message: "Значение в поле должно быть \"Test\""
+								message: "Пароль не введен."
 							return
 					return
+
