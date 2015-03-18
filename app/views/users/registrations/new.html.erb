@@ -15,18 +15,25 @@
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				<div>
-					<input name="user[first_name]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.first_name') %>" />
-					<input name="user[last_name]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.last_name') %>" />
-					<input name="user[username]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.username') %>" />
-					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.email') %>" />
-					<input name="user[password]" class="b-input_text b-input_text-login" type="password" placeholder="<%= t('auth.password') %>" />
-					<input name="user[password_confirmation]" class="b-input_text b-input_text-login" type="password" placeholder="<%= t('auth.password_confirmation') %>" />
+					<input name="user[first_name]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.first_name') %>" value="<%= resource.first_name %>" />
+					<input name="user[last_name]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.last_name') %>" value="<%= resource.last_name %>" />
+					<input name="user[username]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.username') %>" value="<%= resource.username %>" />
+					<input name="user[email]" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.email') %>" value="<%= resource.email %>" />
+					<input name="user[password]" class="b-input_text b-input_text-login" type="password" placeholder="<%= t('auth.password') %>" value="<%= resource.password %>" />
+					<input name="user[password_confirmation]" class="b-input_text b-input_text-login" type="password" placeholder="<%= t('auth.password_confirmation') %>" value="<%= resource.password_confirmation %>" />
 					<input name="user[lang]" type="hidden" value="ru" />
 				</div>
 				<div class="b-auth__service">
 					<div class="b-auth__agreement">
-						<label class="b-checkbox"><input name="user[agree]" type="checkbox" /><span class="b-checkbox__handler"></span></label>
+						<label class="b-checkbox">
+							<input name="user[terms_of_service]" type="hidden" value="0">
+							<input type="checkbox" value="1" name="user[terms_of_service]" id="user_terms_of_service" />
+							<span class="b-checkbox__handler"></span>
+						</label>
 						<span class="b-auth__agreement__text"><%= t('auth.agreement_text') %> <a href="#" class="b-auth__agreement__link"><nobr><%= t('auth.agreement_link') %></nobr></a></span>
+						<%#= form_for @user, url: { action: "create" } do |f| %>
+							<%#= check_box_tag :terms_of_service %>
+						<%# end %>
 					</div>
 				</div>
 				<div class="g-clearfix b-auth__form-commit">

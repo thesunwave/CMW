@@ -1,13 +1,11 @@
-.g-hover
-	&_disabled
+.z-hover
+	&_no
 		pointer-events: none
-	&_enabled
+	&_yes
 		pointer-events: auto
 
-.noScroll
-	overflow: hidden
+.z-unloaded
+	+opacity(0)
 
 body
 	+transition(opacity 1s ease)
-	&.unloaded
-		+opacity(0)

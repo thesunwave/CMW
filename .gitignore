@@ -8,10 +8,11 @@ db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*
 /tmp/*
+*.log
 
 # capistrano configs
-/config/deploy/*
-/config/deploy.rb
+#/config/deploy/*
+#/config/deploy.rb
 
 # various artifacts
 **.war
@@ -19,9 +20,9 @@ db/*.sqlite3
 *.sassc
 .redcar/
 .sass-cache
-/config/secrets.yml
-/config/database.yml
-/config/initializers/secret_token.yml
+#/config/secrets.yml
+#/config/database.yml
+#/config/initializers/secret_token.yml
 /coverage.data
 /coverage/
 /db/*.javadb/

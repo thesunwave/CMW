@@ -1,646 +1,549 @@
-# Logfile created on 2015-02-05 23:21:26 +0300 by logger.rb/44203
-D, [2015-02-05T23:21:34.457137 #33422] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
-D, [2015-02-05T23:21:34.523830 #33422] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:21:34.647498 #33422] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:21:34.701319 #33422] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:21:34.702518 #33422] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:21:39.551197 #33422] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:21:39.574241 #33422] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:21:39.667245 #33422] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-05T23:21:39.673138 #33422] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:21:39.674398 #33422] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
-D, [2015-02-05T23:21:39.681671 #33422] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:21:39.776476 #33422] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-05T23:21:39.781857 #33422] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:21:39.783234 #33422] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-05T23:21:39.933376 #33422] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:21:39.943508 #33422] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:21:39.944796 #33422] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:21:39.945354 #33422] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:22:45.787056 #33459] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
-D, [2015-02-05T23:22:45.838101 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:22:45.918619 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:25:22.868405 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:25:22.998116 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:28:21.786985 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:28:21.862453 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:29:00.183492 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:29:12.973710 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:29:22.511956 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:41:12.969884 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:41:13.125296 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:41:13.224876 #33459] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:41:13.278002 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:41:13.280412 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:41:13.322063 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:41:47.859162 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:41:47.961536 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:41:48.061467 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:41:48.068784 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:41:48.070735 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:41:48.079579 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:41:48.185657 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:41:48.192117 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:41:48.193757 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:41:48.244950 #33459] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:41:48.271018 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:41:48.323548 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:41:48.324565 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:41:54.208386 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:41:54.921518 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:41:55.020149 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:41:55.037610 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:41:55.039784 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:41:55.041044 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:41:55.053766 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:44:24.583270 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:44:24.700157 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:44:24.718849 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:44:24.823030 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:44:24.825046 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:44:34.772164 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:44:34.785598 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:44:34.801723 #33459] DEBUG -- :   [1m[35mNotification Exists (0.7ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:44:34.803155 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:44:36.557287 #33459] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:44:41.077657 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:44:41.086588 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:44:41.231318 #33459] DEBUG -- :   [1m[36mUser Load (4.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:44:41.233973 #33459] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:44:43.556571 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:44:43.569162 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:44:43.571526 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:44:43.572600 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:44:50.079252 #33459] DEBUG -- :   [1m[36mUser Load (2.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:44:56.764242 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:44:56.771450 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:44:56.793721 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:44:56.795060 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:44:59.222358 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:44:59.232335 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:44:59.234343 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:44:59.235075 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:46:20.306189 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:46:22.598114 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:46:22.684369 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-05T23:46:22.690391 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:46:22.705757 #33459] DEBUG -- :   [1m[35mSQL (12.3ms)[0m  UPDATE `users` SET `first_name` = 'Павелe', `updated_at` = '2015-02-05 20:46:22.691075' WHERE `users`.`id` = 1
-D, [2015-02-05T23:46:22.748668 #33459] DEBUG -- :   [1m[36m (42.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:46:22.752942 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:46:22.838681 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:46:22.842360 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:46:22.843368 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:46:22.857768 #33459] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:46:22.863730 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:46:22.865076 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:46:22.865690 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:46:27.919127 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:46:32.664907 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:46:32.671924 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:46:32.689845 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:46:32.691446 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:46:34.580409 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:46:34.587353 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:46:34.589222 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:46:34.590383 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:47:59.313913 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:47:59.552227 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:47:59.565306 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:47:59.588701 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:47:59.590083 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:49:19.274900 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:49:21.046009 #33459] DEBUG -- :   [1m[36mUser Load (1.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:49:21.061179 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:49:21.100643 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:49:21.101819 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:50:02.412443 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:50:02.510764 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:50:02.528779 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:50:02.529633 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:50:03.942303 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:50:12.608596 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:50:12.610825 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:50:12.619955 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:50:12.622146 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:50:12.628464 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:50:12.631840 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:50:12.637510 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:50:12.639078 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:50:12.659130 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:50:12.668675 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:50:12.670841 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:50:12.672015 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:50:15.829669 #33459] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:50:22.927497 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:50:22.929591 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-05T23:50:22.936198 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:50:22.939687 #33459] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `first_name` = 'Павел', `updated_at` = '2015-02-05 20:50:22.937006' WHERE `users`.`id` = 1
-D, [2015-02-05T23:50:22.941175 #33459] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:50:22.946746 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:50:22.949123 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:50:22.954764 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:50:22.956408 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:50:22.975807 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:50:22.985134 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:50:22.986615 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:50:22.987630 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:50:28.918994 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:50:33.016389 #33459] DEBUG -- :   [1m[36mUser Load (8.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:50:33.024467 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:50:33.069338 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:50:33.070781 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:50:49.980541 #33459] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:50:50.063188 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:50:50.084430 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:50:50.085847 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:50:52.198277 #33459] DEBUG -- :   [1m[36mUser Load (5.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:50:52.211586 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:50:52.213464 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:50:52.214329 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:50:58.034724 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:51:00.991745 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:51:00.994357 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:51:01.004494 #33459] DEBUG -- :   [1m[35mUser Load (1.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:51:01.010605 #33459] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:51:01.017170 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:51:01.021619 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:51:01.025950 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:51:01.027670 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:51:01.140830 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:51:01.151695 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:51:01.154496 #33459] DEBUG -- :   [1m[35mNotification Exists (0.5ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:51:01.156138 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:51:27.060664 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:51:27.161371 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:51:27.178805 #33459] DEBUG -- :   [1m[35mNotification Exists (1.5ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:51:27.180485 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:51:30.229409 #33459] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:51:30.255080 #33459] DEBUG -- :   [1m[36mUser Load (1.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:51:30.271552 #33459] DEBUG -- :   [1m[35m (13.8ms)[0m  BEGIN
-D, [2015-02-05T23:51:30.278887 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:51:30.280969 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
-D, [2015-02-05T23:51:30.286794 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:51:30.297673 #33459] DEBUG -- :   [1m[35m (3.2ms)[0m  BEGIN
-D, [2015-02-05T23:51:30.303838 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:51:30.305356 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-05T23:51:30.329758 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:51:30.340561 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:51:30.342486 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:51:30.343648 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:52:33.890144 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:52:33.982092 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:52:33.996899 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:52:33.998104 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:52:42.709968 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:52:42.727437 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:52:42.734995 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:52:42.762768 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:52:42.763795 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:52:52.329005 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:52:52.330749 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:54:59.968289 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:55:07.762299 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:55:07.775735 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:55:07.812496 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:55:07.813850 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:55:09.427843 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:55:09.429154 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:55:38.969999 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:55:39.047962 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:55:39.064681 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:55:39.066173 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:55:42.136880 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:55:42.147048 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:55:42.150647 #33459] DEBUG -- :   [1m[36mNotification Exists (1.8ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:55:42.151889 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:55:45.723726 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:55:45.742373 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:55:45.751568 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:55:45.790935 #33459] DEBUG -- :   [1m[35mUser Load (2.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:55:45.793520 #33459] DEBUG -- :   [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:56:50.665960 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:56:50.696747 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:56:52.720274 #33459] DEBUG -- :   [1m[35mUser Load (2.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:56:52.755017 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:56:52.771686 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:56:52.773160 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:56:55.030319 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:56:55.043099 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:56:55.048620 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:56:55.049880 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:56:58.499418 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:56:58.518084 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:56:58.634944 #33459] DEBUG -- :   [1m[35mUser Exists (10.6ms)[0m  SELECT  1 AS one FROM `users` WHERE (`users`.`email` = BINARY 'zombiqwerty1@yandex.ru' AND `users`.`id` != 1) LIMIT 1
-D, [2015-02-05T23:56:58.637677 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:56:58.652537 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:56:58.654414 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:56:58.655517 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:56:58.668645 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:56:58.784543 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `users` WHERE (`users`.`email` = BINARY 'zombiqwerty1@yandex.ru' AND `users`.`id` != 1) LIMIT 1
-D, [2015-02-05T23:56:58.785171 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:57:05.023754 #33459] DEBUG -- :   [1m[35mUser Load (2.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:05.034093 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:57:05.036127 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:57:05.037463 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:57:15.253813 #33459] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:15.280072 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:57:15.282572 #33459] DEBUG -- :   [1m[35m (0.4ms)[0m  BEGIN
-D, [2015-02-05T23:57:15.291238 #33459] DEBUG -- :   [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:57:15.292865 #33459] DEBUG -- :   [1m[35m (1.0ms)[0m  ROLLBACK
-D, [2015-02-05T23:57:15.306609 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:57:15.308900 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:57:15.309976 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:57:15.319135 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-05T23:57:15.322847 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:57:15.329226 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:57:15.329862 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-D, [2015-02-05T23:57:21.816655 #33459] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:21.837293 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:57:21.838982 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-05T23:57:21.843903 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:57:21.846683 #33459] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `first_name` = 'Павелй', `updated_at` = '2015-02-05 20:57:21.844482' WHERE `users`.`id` = 1
-D, [2015-02-05T23:57:21.847855 #33459] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:57:21.852086 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:57:21.855081 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:57:21.859218 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:57:21.860380 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:57:21.879029 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:21.885391 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:57:21.886711 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:57:21.887430 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:57:25.547151 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:25.559913 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:57:25.562768 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-05T23:57:25.566894 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:57:25.568968 #33459] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `first_name` = 'Павел', `updated_at` = '2015-02-05 20:57:25.567393' WHERE `users`.`id` = 1
-D, [2015-02-05T23:57:25.569820 #33459] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:57:25.573943 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-05T23:57:25.576213 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-05T23:57:25.580495 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-05T23:57:25.582397 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-05T23:57:25.598537 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:25.606109 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-05T23:57:25.607568 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-05T23:57:25.608358 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-05T23:57:28.025550 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-05T23:57:30.259491 #33459] DEBUG -- :   [1m[36mUser Load (2.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:57:30.262312 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-05T23:57:30.269370 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-05T23:57:30.271399 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-05T23:57:30.275450 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-05T23:57:30.278052 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-05T23:57:30.281497 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-05T23:57:30.282989 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-05T23:57:30.295054 #33459] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:57:30.301443 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:57:30.302783 #33459] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:57:30.303638 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-05T23:59:27.507702 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-05T23:59:27.609446 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-05T23:59:27.629059 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-05T23:59:27.630180 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:00:05.461938 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:00:05.474476 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:00:05.477161 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:00:05.478228 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:01:16.248277 #33459] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:01:16.260742 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:01:16.263741 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:01:16.264688 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:02:50.461074 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:02:50.498885 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:02:50.500532 #33459] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:02:50.501271 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:02:52.520988 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:02:52.531115 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:02:52.533660 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:02:52.535292 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:02:55.059191 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:02:55.063040 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:02:55.158188 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T00:02:55.168673 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:02:55.170004 #33459] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:02:55.170667 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:02:55.178317 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-06T00:02:55.278146 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:03:01.031830 #33459] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:03:01.042677 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.8ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:03:01.045056 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:03:01.046467 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:03:06.462539 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:03:06.466588 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:03:06.557108 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T00:03:06.567215 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:03:06.569113 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:03:06.569793 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:03:06.576973 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-06T00:03:06.667068 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:03:10.813809 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:03:11.713408 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:03:11.715693 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:03:11.718790 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T00:03:11.721013 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T00:03:11.727318 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-06T00:03:11.729872 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:03:11.732628 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:03:11.734065 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T00:03:11.748318 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:03:11.756133 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:03:11.757435 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:03:11.758456 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:03:14.746139 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:03:21.748489 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:03:21.845108 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T00:03:21.858742 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:03:21.860446 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:03:21.861206 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:03:21.878720 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-06T00:03:21.985212 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:03:48.703412 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:03:50.495927 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:03:50.497974 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:03:50.589893 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T00:03:50.605282 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-06T00:03:50.694551 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:03:56.767196 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:03:56.776605 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:03:56.778182 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:03:56.779032 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:04:22.916972 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:04:22.998860 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:04:23.026882 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:04:23.028808 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:04:24.682265 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:04:24.685844 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:04:24.687738 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-06T00:04:24.693008 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T00:04:24.694804 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-06T00:04:24.698800 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-06T00:04:24.700824 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-06T00:04:24.704586 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:04:24.705591 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
-D, [2015-02-06T00:04:24.723022 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:04:24.730440 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:04:24.731940 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:04:24.732682 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:04:38.166497 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:04:38.176870 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:04:38.178977 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:04:38.180309 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:04:39.371999 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:04:39.375734 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:04:39.378326 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:04:39.387367 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T00:04:39.388182 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-D, [2015-02-06T00:04:39.403185 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:04:39.405177 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:04:39.406173 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:04:39.413396 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-06T00:04:39.415501 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-06T00:04:39.420340 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:04:39.420848 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK
-D, [2015-02-06T00:04:42.767592 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:04:42.777417 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:04:42.779601 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:04:42.780844 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:04:45.565218 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:04:45.575865 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:04:45.577842 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:04:45.578934 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:04:49.832955 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:04:49.836898 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:04:49.840107 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:04:49.846128 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T00:04:49.847823 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T00:04:49.853271 #33459] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-06T00:04:49.855798 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:04:49.859246 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:04:49.860401 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T00:04:49.882864 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:04:49.892925 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:04:49.895198 #33459] DEBUG -- :   [1m[35mNotification Exists (0.5ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:04:49.896198 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:05:56.255607 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:05:56.326750 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:05:56.344962 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:05:56.346074 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:05:59.555190 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:05:59.558283 #33459] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:05:59.657277 #33459] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwertyq' LIMIT 1
-D, [2015-02-06T00:05:59.670285 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:05:59.671794 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:05:59.672429 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T00:05:59.680579 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-06T00:05:59.773843 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwertyq' LIMIT 1[0m  [["username", "zombiqwertyq"]]
-D, [2015-02-06T00:06:03.210302 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:06:07.284495 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:06:07.286946 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-06T00:06:07.289851 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T00:06:07.291714 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-06T00:06:07.297637 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-06T00:06:07.300197 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
-D, [2015-02-06T00:06:07.304274 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:06:07.305844 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
-D, [2015-02-06T00:06:07.324603 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:06:07.336262 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.7ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:06:07.338257 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:06:07.339290 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:19:06.195922 #33459] DEBUG -- :   [1m[36mUser Load (6.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:19:06.343250 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:19:06.357746 #33459] DEBUG -- :   [1m[36mNotification Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:19:06.358726 #33459] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:20:30.293167 #33459] DEBUG -- :   [1m[36mUser Load (3.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:20:30.313753 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:20:30.318541 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:20:30.320640 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:21:56.672724 #33459] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:21:56.721847 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:21:56.729160 #33459] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:21:56.730227 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:22:26.685892 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:22:26.702469 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:22:26.706465 #33459] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:22:26.707897 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:23:33.851492 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:23:33.863888 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:23:33.865952 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:23:33.866706 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:23:47.123889 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:23:47.134272 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:23:47.136563 #33459] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:23:47.137617 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:23:48.267619 #33459] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:23:48.278969 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:23:48.282431 #33459] DEBUG -- :   [1m[36mNotification Exists (1.6ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:23:48.284220 #33459] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:24:10.187308 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:24:10.202388 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:24:10.206374 #33459] DEBUG -- :   [1m[36mNotification Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:24:10.208118 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:24:12.045855 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:24:12.061916 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:24:12.064253 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:24:12.065548 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:24:24.628184 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:24:24.639275 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:24:24.641728 #33459] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:24:24.642707 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:24:30.749692 #33459] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:24:30.761187 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:24:30.762650 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:24:30.763639 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:24:41.865999 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:24:41.883946 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T00:24:41.885792 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T00:24:41.887391 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T00:25:04.094066 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T00:25:04.099895 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T00:25:04.103232 #33459] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:25:04.111852 #33459] DEBUG -- :   [1m[35mUser Load (2.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T00:25:04.114023 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T00:25:04.121381 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
-D, [2015-02-06T00:25:04.123252 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T00:25:04.124854 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
-D, [2015-02-06T00:25:04.125824 #33459] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T00:25:04.138900 #33459] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T00:25:04.148319 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T00:25:04.149841 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T00:25:04.150952 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:07:04.464019 #33459] DEBUG -- :   [1m[35mUser Load (14.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:07:04.527097 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:07:04.537114 #33459] DEBUG -- :   [1m[35mNotification Exists (1.9ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:07:04.539093 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:08:26.884068 #33459] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:08:26.898124 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:08:26.900862 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:08:26.902191 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:08:28.350995 #33459] DEBUG -- :   [1m[35mUser Load (2.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:08:28.360375 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:08:28.495832 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:08:28.496945 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:09:06.723043 #33459] DEBUG -- :   [1m[35mUser Load (1.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:09:06.734793 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:09:06.736744 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:09:06.737528 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:10:15.685916 #33459] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:10:15.703921 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:10:15.706039 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:10:15.707344 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:10:36.732060 #33459] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:10:36.746846 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:10:36.749389 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:10:36.750776 #33459] DEBUG -- :   [1m[36mCACHE (0.1ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:10:56.962686 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:10:57.102015 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:10:57.122211 #33459] DEBUG -- :   [1m[35mNotification Exists (0.5ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:10:57.123706 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:11:02.980096 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:11:02.988144 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:11:02.990037 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:11:02.991248 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:11:20.030456 #33459] DEBUG -- :   [1m[35mUser Load (4.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:11:20.045606 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:11:20.047029 #33459] DEBUG -- :   [1m[35mNotification Exists (0.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:11:20.048070 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:12:30.320096 #33459] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:12:30.336712 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:12:30.338853 #33459] DEBUG -- :   [1m[35mNotification Exists (0.6ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:12:30.339967 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:12:50.115874 #33459] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:12:50.129599 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:12:50.132342 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:12:50.133758 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:13:03.957082 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:13:03.970187 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:13:03.972824 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:13:03.974216 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:13:36.027968 #33459] DEBUG -- :   [1m[35mUser Load (3.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:13:36.054168 #33459] DEBUG -- :   [1m[36mNotificationType Load (2.0ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:13:36.058882 #33459] DEBUG -- :   [1m[35mNotification Exists (1.2ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:13:36.060420 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:14:04.222888 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:14:04.311318 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:14:04.326862 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:14:04.327929 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:19:26.204028 #33459] DEBUG -- :   [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:19:26.262506 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:19:26.270200 #33459] DEBUG -- :   [1m[35mNotification Exists (0.6ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:19:26.272764 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:19:31.400228 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:19:31.409184 #33459] DEBUG -- :   [1m[36mUser Load (2.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:19:31.418054 #33459] DEBUG -- :   [1m[35m (5.7ms)[0m  BEGIN
-D, [2015-02-06T01:19:31.437082 #33459] DEBUG -- :   [1m[36mUser Load (8.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T01:19:31.440503 #33459] DEBUG -- :   [1m[35m (0.4ms)[0m  COMMIT
-D, [2015-02-06T01:19:31.450742 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-D, [2015-02-06T01:19:31.454254 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-06T01:19:31.456044 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
-D, [2015-02-06T01:19:31.457426 #33459] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
-D, [2015-02-06T01:19:31.486854 #33459] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:19:31.495047 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:19:31.497768 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:19:31.499009 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:19:35.377565 #33459] DEBUG -- :   [1m[36mUser Load (1.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:19:35.392242 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:19:35.394665 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:19:35.395847 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:20:03.170044 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:20:03.182142 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:20:03.183731 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:20:03.184796 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:20:10.910616 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:20:10.920112 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:20:10.922542 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:20:10.923759 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:23:21.334964 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:23:21.347892 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:23:21.350104 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:23:21.351071 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:23:37.692505 #33459] DEBUG -- :   [1m[36mUser Load (8.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:23:37.706437 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:23:37.708995 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:23:37.710016 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:25:12.417610 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:25:12.528427 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:25:12.548251 #33459] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:25:12.549274 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:25:20.453391 #33459] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:25:20.457958 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T01:25:20.460465 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T01:25:20.475964 #33459] DEBUG -- :   [1m[35mUser Exists (6.0ms)[0m  SELECT  1 AS one FROM `users` WHERE (`users`.`email` = BINARY 'zombiqwerty@yandex1.ru' AND `users`.`id` != 1) LIMIT 1
-D, [2015-02-06T01:25:20.479444 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T01:25:20.491950 #33459] DEBUG -- :   [1m[35mSQL (9.2ms)[0m  UPDATE `users` SET `email` = 'zombiqwerty@yandex1.ru', `updated_at` = '2015-02-05 22:25:20.480293' WHERE `users`.`id` = 1
-D, [2015-02-06T01:25:20.531088 #33459] DEBUG -- :   [1m[36m (38.3ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T01:25:20.539033 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
-D, [2015-02-06T01:25:20.543936 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-D, [2015-02-06T01:25:20.547853 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T01:25:20.549762 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
-D, [2015-02-06T01:25:20.567288 #33459] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:25:20.574004 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:25:20.576181 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:25:20.577352 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:25:22.902148 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:25:22.912682 #33459] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:25:22.915423 #33459] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:25:22.916704 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:25:24.242075 #33459] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:25:24.257234 #33459] DEBUG -- :   [1m[36mNotificationType Load (1.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
-D, [2015-02-06T01:25:24.259823 #33459] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
-D, [2015-02-06T01:25:24.260930 #33459] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
-D, [2015-02-06T01:25:28.650564 #33459] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
-D, [2015-02-06T01:25:28.654553 #33459] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:25:28.656795 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-06T01:25:28.660257 #33459] DEBUG -- :   [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE (`users`.`email` = BINARY 'zombiqwerty@yandex.ru' AND `users`.`id` != 1) LIMIT 1[0m
-D, [2015-02-06T01:25:28.661694 #33459] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
-D, [2015-02-06T01:25:28.665503 #33459] DEBUG -- :   [1m[36mSQL (0.7ms)[0m  [1mUPDATE `users` SET `email` = 'zombiqwerty@yandex.ru', `updated_at` = '2015-02-05 22:25:28.662533' WHERE `users`.`id` = 1[0m
-D, [2015-02-06T01:25:28.667223 #33459] DEBUG -- :   [1m[35m (0.7ms)[0m  COMMIT
-D, [2015-02-06T01:25:28.672742 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:25:28.675089 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-06T01:25:28.678137 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
-D, [2015-02-06T01:25:28.679756 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
-D, [2015-02-06T01:25:28.699212 #33459] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:25:28.708415 #33459] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
-D, [2015-02-06T01:25:28.710171 #33459] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
-D, [2015-02-06T01:25:28.710921 #33459] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
-D, [2015-02-06T01:32:18.161906 #33459] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
-D, [2015-02-06T01:32:18.195486 #33459] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
-D, [2015-02-06T01:32:18.198803 #33459] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+# Logfile created on 2015-02-09 01:44:58 +0300 by logger.rb/44203
+D, [2015-02-09T01:45:21.988570 #66735] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (11.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-09T01:57:10.973549 #66735] DEBUG -- :   [1m[35mUser Load (20.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T01:57:11.089044 #66735] DEBUG -- :   [1m[36m (2.4ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T01:57:11.103502 #66735] DEBUG -- :   [1m[35mSQL (10.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-07 05:47:34.000000', `current_sign_in_at` = '2015-02-08 22:57:11.084388', `sign_in_count` = 19, `updated_at` = '2015-02-08 22:57:11.089724' WHERE `users`.`id` = 1
+D, [2015-02-09T01:57:11.158947 #66735] DEBUG -- :   [1m[36m (54.6ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T01:57:11.177307 #66735] DEBUG -- :   [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T01:57:19.000011 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:19.063296 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:19.119238 #66735] DEBUG -- :   [1m[36mNotification Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:19.120276 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:23.919705 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:23.937945 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:23.939988 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:23.941392 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:23.981272 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:24.003672 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:24.005508 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:24.006237 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:29.900321 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:29.913594 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:29.915164 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:29.916278 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:29.979705 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:29.998278 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:30.001935 #66735] DEBUG -- :   [1m[36mNotification Exists (1.8ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:30.002821 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:30.085923 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:30.105172 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:30.107225 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:30.108296 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:43.969383 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:43.984148 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:43.986379 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:43.987339 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:44.040836 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:44.123605 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:44.126059 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:44.127235 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:44.174011 #66735] DEBUG -- :   [1m[36mUser Load (1.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:44.195794 #66735] DEBUG -- :   [1m[35mNotificationType Load (3.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:44.197587 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:44.198436 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:44.274723 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:44.293172 #66735] DEBUG -- :   [1m[35mNotificationType Load (3.1ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:44.295306 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:44.296647 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:45.992391 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:46.018157 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:46.019757 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:46.020483 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:46.071882 #66735] DEBUG -- :   [1m[36mUser Load (2.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:46.086946 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:46.088816 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:46.089688 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:46.161958 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:46.179482 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:46.183135 #66735] DEBUG -- :   [1m[36mNotification Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:46.184550 #66735] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:46.274439 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:46.293621 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:46.295050 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:46.296213 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:46.378113 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:46.396216 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:46.398579 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:46.401569 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:52.449349 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:52.461500 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:52.463588 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:52.464460 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:52.496565 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:52.511921 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.7ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:52.513501 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:52.514200 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:52.598389 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:52.613294 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:52.614689 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:52.615523 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:56.972729 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:56.984443 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:56.985945 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:56.986767 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:57.052137 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:57.071424 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:57.073916 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:57.075187 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:57:57.134670 #66735] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:57:57.151219 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:57:57.152844 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:57:57.153578 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:58:23.630651 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:58:23.646966 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:58:23.650264 #66735] DEBUG -- :   [1m[36mNotification Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:58:23.651526 #66735] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:58:26.663193 #66735] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:58:26.681805 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:58:26.684045 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:58:26.685246 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:58:34.697249 #66735] DEBUG -- :   [1m[36mUser Load (17.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:58:34.754769 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:58:34.763472 #66735] DEBUG -- :   [1m[36mNotification Exists (6.9ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:58:34.764976 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T01:58:34.838148 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T01:58:34.860752 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T01:58:34.863464 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T01:58:34.864833 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:06:21.807798 #66735] DEBUG -- :   [1m[36mUser Load (12.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:06:21.850441 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.7ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:06:21.861118 #66735] DEBUG -- :   [1m[36mNotification Exists (2.7ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:06:21.862750 #66735] DEBUG -- :   [1m[35mCACHE (0.1ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:20.632201 #66735] DEBUG -- :   [1m[36mUser Load (2.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:20.683713 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.7ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:20.691175 #66735] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:20.692064 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:27.110543 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:27.122030 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.6ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:27.125803 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:27.127556 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:30.240076 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:30.255218 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.7ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:30.257191 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:30.258120 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:31.604894 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:31.616441 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:31.618622 #66735] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:31.619732 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:31.674086 #66735] DEBUG -- :   [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:31.698696 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:31.701273 #66735] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:31.702164 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:35.689435 #66735] DEBUG -- :   [1m[36mUser Load (1.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:35.704073 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:35.707184 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:35.708288 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:35.738200 #66735] DEBUG -- :   [1m[36mUser Load (1.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:35.754212 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:35.756007 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:35.756878 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:35.806231 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:35.823597 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:45:35.825440 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:45:35.826410 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:45:45.933932 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:45.991387 #66735] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:45:46.046091 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:45:48.507227 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:47:43.174846 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:47:45.800656 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:47:45.809129 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T02:47:45.811547 #66735] DEBUG -- :   [1m[35mNotification Exists (0.6ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T02:47:45.812524 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T02:47:47.744172 #66735] DEBUG -- :   [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:47:49.216281 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:47:49.224430 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:47:49.226069 #66735] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:47:49.227301 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:47:55.269235 #66735] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:47:55.282603 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:47:55.285305 #66735] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:47:55.286689 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:47:58.269163 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:47:58.282204 #66735] DEBUG -- :   [1m[35mNotificationType Load (2.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:47:58.284195 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:47:58.284946 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:47:59.912285 #66735] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:47:59.925986 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:47:59.927693 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:47:59.929070 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:48:05.119749 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:48:05.129430 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:48:05.130726 #66735] DEBUG -- :   [1m[36mNotification Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:48:05.131301 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:48:07.870755 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:48:09.868111 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:48:09.878328 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T02:48:09.881196 #66735] DEBUG -- :   [1m[35mNotification Exists (1.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T02:48:09.882534 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T02:48:13.343034 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:48:13.358062 #66735] DEBUG -- :   [1m[36m (1.6ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T02:48:13.359682 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-09T02:48:23.379142 #66735] DEBUG -- :   [1m[36mUser Load (3.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zombiqwerty@yandex.ru'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:48:23.467543 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T02:48:23.480716 #66735] DEBUG -- :   [1m[36mSQL (10.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-02-08 22:57:11.000000', `current_sign_in_at` = '2015-02-08 23:48:23.465586', `sign_in_count` = 20, `updated_at` = '2015-02-08 23:48:23.467898' WHERE `users`.`id` = 1[0m
+D, [2015-02-09T02:48:23.482630 #66735] DEBUG -- :   [1m[35m (1.1ms)[0m  COMMIT
+D, [2015-02-09T02:48:23.498667 #66735] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:48:28.892896 #66735] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:48:28.905240 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T02:48:28.906857 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T02:48:28.907631 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T02:48:38.201387 #66735] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:48:38.240155 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:48:38.242476 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T02:48:38.246511 #66735] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:50:42.574668 #66735] DEBUG -- :   [1m[35mUser Load (10.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:50:42.703572 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:50:42.705204 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-09T02:50:42.710946 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:51:13.318763 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:51:13.388907 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:51:13.390897 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-09T02:51:13.397967 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:52:20.244466 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:52:20.303656 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:52:20.305399 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-09T02:52:20.312875 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:52:44.431542 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:52:44.504283 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:52:44.505881 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-09T02:52:44.511396 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:53:42.911556 #66735] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:53:42.977958 #66735] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:53:42.979587 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-09T02:53:42.985601 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:54:20.300743 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:54:20.303141 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:54:20.305107 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T02:54:20.308581 #66735] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:56:08.276388 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:56:08.345906 #66735] DEBUG -- :   [1m[36mUser Load (2.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:56:08.349739 #66735] DEBUG -- :   [1m[35m (0.7ms)[0m  BEGIN
+D, [2015-02-09T02:56:08.358259 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:56:51.900766 #66735] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:56:51.961490 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:56:51.963201 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T02:56:51.971489 #66735] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:56:54.947603 #66735] DEBUG -- :   [1m[35mUser Load (5.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:56:54.951263 #66735] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:56:54.952773 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-02-09T02:56:54.955337 #66735] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T02:57:41.725931 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:57:41.784286 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:57:41.786314 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T02:57:41.792331 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m
+D, [2015-02-09T02:57:41.794054 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  COMMIT
+D, [2015-02-09T02:57:41.804637 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+D, [2015-02-09T02:57:41.806250 #66735] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T02:57:41.810341 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1[0m  [["username", "zombiqwerty"]]
+D, [2015-02-09T02:57:41.811626 #66735] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+D, [2015-02-09T02:57:41.828067 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:57:41.842831 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:57:41.862883 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:57:41.864119 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:58:23.213653 #66735] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:58:23.289437 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:58:23.304628 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:58:23.306079 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:58:25.591308 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:58:25.595598 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+D, [2015-02-09T02:58:25.597881 #66735] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T02:58:25.606824 #66735] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1
+D, [2015-02-09T02:58:25.608712 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T02:58:25.615596 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+D, [2015-02-09T02:58:25.617898 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T02:58:25.623681 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'zombiqwerty' LIMIT 1  [["username", "zombiqwerty"]]
+D, [2015-02-09T02:58:25.625112 #66735] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T02:58:25.643709 #66735] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:58:25.651796 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T02:58:25.653425 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T02:58:25.655270 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T02:58:35.668660 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T02:58:38.126575 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:58:38.134377 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:58:38.136379 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:58:38.137784 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T02:58:43.441452 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T02:58:43.450420 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T02:58:43.452572 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T02:58:43.453768 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:01:53.367932 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:01:53.376559 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:01:53.378108 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:01:53.379526 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:01:55.598568 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:01:55.610246 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:01:55.612411 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:01:55.613886 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:02:00.689788 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:02:00.698545 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:02:00.700982 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:02:00.702304 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:02:28.180630 #66735] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:02:28.190450 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:02:28.192486 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:02:28.193425 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:02:30.290704 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:02:30.302802 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:02:30.305538 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:02:30.306835 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:02:38.350634 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:02:38.360292 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:02:38.362626 #66735] DEBUG -- :   [1m[36mNotification Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:02:38.364034 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:04:04.581526 #66735] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:04:04.594539 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:04:04.597120 #66735] DEBUG -- :   [1m[36mNotification Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:04:04.598641 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:04:07.350937 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:04:07.359506 #66735] DEBUG -- :   [1m[35mNotificationType Load (0.4ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T03:04:07.362896 #66735] DEBUG -- :   [1m[36mNotification Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m
+D, [2015-02-09T03:04:07.368830 #66735] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1  [["user_id", 1]]
+D, [2015-02-09T03:04:10.520762 #66735] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T03:07:36.657099 #66735] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:07:36.667334 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:07:36.669577 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:07:36.670316 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:07:55.964891 #66735] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:07:55.977389 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:07:55.979515 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:07:55.980856 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:08:38.301058 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:08:38.312177 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:08:38.314613 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:08:38.315973 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:09:49.725169 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:09:49.737678 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:09:49.740010 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:09:49.741116 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:10:40.060953 #66735] DEBUG -- :   [1m[35mUser Load (4.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:10:40.075122 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:10:40.077361 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:10:40.078545 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:10:59.360290 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:10:59.368419 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:10:59.370382 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:10:59.371373 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:11:32.256975 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:11:32.265096 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:11:32.266767 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:11:32.267615 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:01.211620 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:01.222415 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:01.224410 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:01.225787 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:06.340482 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:06.347565 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:06.349983 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:06.351280 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:09.139251 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:09.150675 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:09.152898 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:09.154485 #66735] DEBUG -- :   [1m[36mCACHE (0.1ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:38.519298 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:38.530916 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:38.533366 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:38.534851 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:42.054968 #66735] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:42.070614 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:42.074253 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:42.075843 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:43.994833 #66735] DEBUG -- :   [1m[35mUser Load (1.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:44.009899 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.5ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:44.012661 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:44.013942 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:45.889726 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:45.898177 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.6ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:45.900497 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:45.901849 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:12:57.956087 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:12:57.967765 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:12:57.970995 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:12:57.972023 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:13:02.951152 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:13:02.965540 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.9ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:13:02.967984 #66735] DEBUG -- :   [1m[35mNotification Exists (0.3ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:13:02.969244 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:13:45.178660 #66735] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:13:45.195295 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:13:45.197118 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:13:45.197921 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:14:48.534693 #66735] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:14:48.543185 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.4ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:14:48.544964 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:14:48.546271 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T03:15:00.835384 #66735] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T03:15:00.849803 #66735] DEBUG -- :   [1m[36mNotificationType Load (0.3ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T03:15:00.852353 #66735] DEBUG -- :   [1m[35mNotification Exists (0.4ms)[0m  SELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1
+D, [2015-02-09T03:15:00.853874 #66735] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `notifications` WHERE `notifications`.`user_id` = 1 LIMIT 1[0m  [["user_id", 1]]
+D, [2015-02-09T18:54:17.923940 #4836] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-09T18:54:52.967093 #5024] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+I, [2015-02-09T18:54:52.972094 #5024]  INFO -- : Migrating to AddDribbleToUsers (20150203210515)
+D, [2015-02-09T18:54:53.197746 #5024] DEBUG -- :   [1m[35m (225.0ms)[0m  ALTER TABLE `users` ADD `dribble` varchar(255)
+D, [2015-02-09T18:54:53.199221 #5024] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T18:54:53.216685 #5024] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150203210515')
+D, [2015-02-09T18:54:53.256031 #5024] DEBUG -- :   [1m[36m (39.1ms)[0m  [1mCOMMIT[0m
+I, [2015-02-09T18:54:53.256114 #5024]  INFO -- : Migrating to AddSpecToUsers (20150204210121)
+D, [2015-02-09T18:54:53.458007 #5024] DEBUG -- :   [1m[35m (201.3ms)[0m  ALTER TABLE `users` ADD `spec` varchar(255)
+D, [2015-02-09T18:54:53.458776 #5024] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T18:54:53.459555 #5024] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150204210121')
+D, [2015-02-09T18:54:53.491317 #5024] DEBUG -- :   [1m[36m (31.5ms)[0m  [1mCOMMIT[0m
+I, [2015-02-09T18:54:53.491422 #5024]  INFO -- : Migrating to AddServiceFieldsToUsers (20150204215520)
+D, [2015-02-09T18:54:53.726484 #5024] DEBUG -- :   [1m[35m (234.5ms)[0m  ALTER TABLE `users` ADD `unconfirmed_email` varchar(255)
+D, [2015-02-09T18:54:53.969752 #5024] DEBUG -- :   [1m[36m (242.9ms)[0m  [1mALTER TABLE `users` ADD `confirmation_sent_at` datetime[0m
+D, [2015-02-09T18:54:54.180596 #5024] DEBUG -- :   [1m[35m (210.3ms)[0m  ALTER TABLE `users` ADD `confirmed_at` datetime
+D, [2015-02-09T18:54:54.407321 #5024] DEBUG -- :   [1m[36m (226.4ms)[0m  [1mALTER TABLE `users` ADD `confirmation_token` varchar(255)[0m
+D, [2015-02-09T18:54:54.408317 #5024] DEBUG -- :   [1m[35m (0.3ms)[0m  BEGIN
+D, [2015-02-09T18:54:54.409382 #5024] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150204215520')[0m
+D, [2015-02-09T18:54:54.440613 #5024] DEBUG -- :   [1m[35m (30.9ms)[0m  COMMIT
+I, [2015-02-09T18:54:54.440763 #5024]  INFO -- : Migrating to CreateNotifications (20150204215735)
+D, [2015-02-09T18:54:54.499879 #5024] DEBUG -- :   [1m[36m (56.7ms)[0m  [1mCREATE TABLE `notifications` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2015-02-09T18:54:54.500838 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T18:54:54.501892 #5024] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150204215735')[0m
+D, [2015-02-09T18:54:54.533268 #5024] DEBUG -- :   [1m[35m (31.0ms)[0m  COMMIT
+I, [2015-02-09T18:54:54.533425 #5024]  INFO -- : Migrating to AddFieldsToNotifications (20150204220120)
+D, [2015-02-09T18:54:54.701443 #5024] DEBUG -- :   [1m[36m (167.0ms)[0m  [1mALTER TABLE `notifications` ADD `user_id` int(11)[0m
+D, [2015-02-09T18:54:54.919581 #5024] DEBUG -- :   [1m[35m (217.6ms)[0m  ALTER TABLE `notifications` ADD `notification_type_id` int(11)
+D, [2015-02-09T18:54:54.920633 #5024] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T18:54:54.921672 #5024] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150204220120')
+D, [2015-02-09T18:54:54.961284 #5024] DEBUG -- :   [1m[36m (39.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T18:54:54.967986 #5024] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+D, [2015-02-09T18:54:54.993544 #5024] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'delayed_jobs'
+[0m
+D, [2015-02-09T18:54:54.993978 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `delayed_jobs`
+D, [2015-02-09T18:54:54.994672 #5024] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'image_files'
+[0m
+D, [2015-02-09T18:54:54.995086 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `image_files`
+D, [2015-02-09T18:54:54.995737 #5024] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notification_types'
+[0m
+D, [2015-02-09T18:54:54.996133 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `notification_types`
+D, [2015-02-09T18:54:54.996843 #5024] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notification_types_roles'
+[0m
+D, [2015-02-09T18:54:54.997235 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `notification_types_roles`
+D, [2015-02-09T18:54:54.997897 #5024] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'notifications'
+[0m
+D, [2015-02-09T18:54:54.998285 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `notifications`
+D, [2015-02-09T18:54:54.998993 #5024] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'roles'
+[0m
+D, [2015-02-09T18:54:54.999408 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `roles`
+D, [2015-02-09T18:54:55.000152 #5024] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'users'
+[0m
+D, [2015-02-09T18:54:55.000574 #5024] DEBUG -- :   [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `users`
+D, [2015-02-09T18:54:55.001048 #5024] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'users_roles'
+[0m
+D, [2015-02-09T18:54:55.001371 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users_roles`
+D, [2015-02-09T18:54:55.001885 #5024] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'cmw_development'
+  AND fk.table_name = 'works'
+[0m
+D, [2015-02-09T18:54:55.002211 #5024] DEBUG -- :   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `works`
+D, [2015-02-09T18:55:05.473101 #5032] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-09T18:55:43.291448 #5032] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-02-09T18:55:43.357824 #5032] DEBUG -- :   [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'adraduga@gmail.com' LIMIT 1[0m
+D, [2015-02-09T18:55:43.377734 #5032] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'raduga' LIMIT 1
+D, [2015-02-09T18:55:43.378377 #5032] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T18:55:43.489269 #5032] DEBUG -- :   [1m[35m (0.3ms)[0m  BEGIN
+D, [2015-02-09T18:55:43.490576 #5032] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'adraduga@gmail.com' LIMIT 1[0m
+D, [2015-02-09T18:55:43.491373 #5032] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`username` = 'raduga' LIMIT 1  [["username", "raduga"]]
+D, [2015-02-09T18:55:43.491912 #5032] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+D, [2015-02-09T18:55:52.826317 #5032] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'adraduga@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T18:55:52.893547 #5032] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-09T18:55:52.896011 #5032] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-08 17:54:44.000000', `current_sign_in_at` = '2015-02-09 15:55:52.891915', `sign_in_count` = 6, `updated_at` = '2015-02-09 15:55:52.893902' WHERE `users`.`id` = 1
+D, [2015-02-09T18:55:52.932921 #5032] DEBUG -- :   [1m[36m (36.3ms)[0m  [1mCOMMIT[0m
+D, [2015-02-09T18:55:53.028619 #5032] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T18:55:56.560791 #5032] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T18:55:56.568413 #5032] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-09T18:56:17.277706 #5032] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T18:56:22.426678 #5032] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T18:56:22.431313 #5032] DEBUG -- :   [1m[36mNotificationType Load (0.1ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m
+D, [2015-02-09T18:56:27.718637 #5032] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T18:56:32.095977 #5032] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:01:19.948786 #5032] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-09T23:01:21.851975 #5032] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-09T23:01:21.878929 #5032] DEBUG -- :   [1m[35m (0.3ms)[0m  BEGIN
+D, [2015-02-09T23:01:21.879987 #5032] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+D, [2015-02-14T13:06:17.903991 #6615] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-02-14T13:46:33.391359 #6615] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'adraduga@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-14T13:46:33.479260 #6615] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+D, [2015-02-14T13:46:33.518652 #6615] DEBUG -- :   [1m[35mSQL (37.6ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-09 15:55:52.000000', `current_sign_in_at` = '2015-02-14 10:46:33.477681', `sign_in_count` = 7, `updated_at` = '2015-02-14 10:46:33.479556' WHERE `users`.`id` = 1
+D, [2015-02-14T13:46:33.577855 #6615] DEBUG -- :   [1m[36m (58.7ms)[0m  [1mCOMMIT[0m
+D, [2015-02-14T13:46:33.696253 #6615] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-14T13:46:37.946900 #6615] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-14T13:46:37.992453 #6615] DEBUG -- :   [1m[35mNotificationType Load (0.3ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-14T13:46:44.705605 #6615] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-14T13:46:50.780454 #6615] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-02-14T13:46:52.994477 #6615] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-02-14T13:46:52.998549 #6615] DEBUG -- :   [1m[35mNotificationType Load (0.1ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-02-14T13:46:54.484964 #6615] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-03-14T13:00:26.097436 #3411] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+D, [2015-03-14T13:00:39.033834 #3411] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'adraduga@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-03-14T13:00:39.118844 #3411] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-03-14T13:00:39.130994 #3411] DEBUG -- :   [1m[35mSQL (10.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-02-14 10:46:33.000000', `current_sign_in_at` = '2015-03-14 10:00:39.117362', `sign_in_count` = 8, `updated_at` = '2015-03-14 10:00:39.119135' WHERE `users`.`id` = 1
+D, [2015-03-14T13:00:39.161604 #3411] DEBUG -- :   [1m[36m (30.1ms)[0m  [1mCOMMIT[0m
+D, [2015-03-14T13:00:39.177316 #3411] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-03-14T13:00:46.080695 #3411] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-03-14T13:00:46.138151 #3411] DEBUG -- :   [1m[35mNotificationType Load (0.5ms)[0m  SELECT `notification_types`.* FROM `notification_types`
+D, [2015-03-14T13:03:26.167276 #3411] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-03-14T13:09:12.923846 #3411] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-03-14T13:09:12.928153 #3411] DEBUG -- :   [1m[36mNotificationType Load (0.2ms)[0m  [1mSELECT `notification_types`.* FROM `notification_types`[0m

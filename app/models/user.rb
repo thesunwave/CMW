@@ -1,19 +1,23 @@
 class User < ActiveRecord::Base
-  # 
+  #
   # Роли
   #
   # :guset
   # :user
   # :director
   # :admin
-  rolify after_add: :assign_default_notifications_for
-  after_create :assign_default_role, :assign_default_notifications, :assign_default_username
+
+  # rolify after_add: :assign_default_notifications_for
+  # after_create :assign_default_role, :assign_default_notifications, :assign_default_username
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable,
+        :recoverable, :rememberable, :trackable, :validatable
   # devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
+  #Удаляем перед валидацией пробелы с начала и конца имени и фамилии
+  before_validation :trim
 
   #
   # Связи
@@ -22,37 +26,41 @@ class User < ActiveRecord::Base
   has_many    :works, dependent: :destroy
   has_many    :notifications, dependent: :destroy
   has_many    :notification_types, through: :notifications
-  
-  
+
+
   #
   # Валидации полей
-  #  
+  #
   # почта проверяется на валидность в модели Devise
-	validates_format_of :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('errors.messages.invalid')
-	
+  validates_format_of  :email, presence: true,
+                    with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
+                    message: I18n.t('errors.messages.invalid')
+
+  # соглашение с условиями
+  validates :terms_of_service, acceptance: true
+
+  # пароли проверяются на валидность в модели Devise
+  validates_confirmation_of :password
+
   #
   # Имя
   #
-  validates_length_of :first_name, maximum: 30
-  validates_format_of :first_name, 
-    with: /\A[\p{L}]*\Z/i, 
-    message: I18n.t('errors.messages.invalid')
+  validates :first_name, presence: true, length: { maximum: 30 },
+          format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
 
   #
   # Фамилия
   #
-  validates_length_of :last_name, maximum: 40
-  validates_format_of :last_name, 
-    with: /\A[\p{L}]*\Z/i, 
-    message: I18n.t('errors.messages.invalid')
+  validates :last_name, presence: true, length: { maximum: 40 },
+          format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
 
   #
   # Язык
   #
-  validates_presence_of :lang, inclusion: { 
-    in: I18n.available_locales.collect { |l| l.to_s }, 
-    message: I18n.t('errors.messages.invalid') 
-  } 
+  validates_presence_of :lang, inclusion: {
+    in: I18n.available_locales.collect { |l| l.to_s },
+    message: I18n.t('errors.messages.invalid')
+  }
 
   #
   # url (username)
@@ -97,7 +105,6 @@ class User < ActiveRecord::Base
       self.notification_types << notification_type
     end
   end
-
   # удалить уведомление
   def remove_notification(name)
     notification_type = NotificationType.find_by_name(name)
@@ -113,11 +120,11 @@ class User < ActiveRecord::Base
     notification = NotificationType.find_by_name name
     return false if notification.nil?
 
-    self.notification_types.exists? notification
+    self.notification_types.exists? notification.id
   end
 
   # Валидация поля username
-  # метод класса, вынесен в public, так как используется в: 
+  # метод класса, вынесен в public, так как используется в:
   #     common api -> check_username
   # в объекте instance передается экземпляр объекта, для которого вызывается валидация
   # если instance пуст, функция возвращает булево утверждение относительно валидности поля username
@@ -142,7 +149,7 @@ class User < ActiveRecord::Base
           if exist.id != instance.id
             instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return
           end
-        else  
+        else
           return false
         end
       end
@@ -151,8 +158,13 @@ class User < ActiveRecord::Base
   end
 
 
-private  
-  
+private
+
+  def trim
+    self.first_name.strip!
+    self.last_name.strip!
+  end
+
   #
   # Присвоения по умолчанию после создания объекта
   #
@@ -168,7 +180,7 @@ private
       assign_default_notifications_for role
     end
   end
-  
+
   # Присвоить уведомления по умолчанию согласно роли
   def assign_default_notifications_for(role)
     self.notification_types += role.default_notifications
@@ -183,8 +195,8 @@ private
   def id_to_s
     "id#{id.to_s}" if self.persisted?
   end
-  
-  
+
+
   #
   # Валидация имени пользователя
   #

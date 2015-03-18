@@ -1,4 +1,4 @@
-$checkbox: sprite-map("ui/checkbox/*.png", $spacing: 0, $layout: smart)
+$checkbox: sprite-map("@1x/ui/checkbox/*.png", $spacing: 0, $layout: smart)
 
 @if $zoQ_styles and $inputs
 
@@ -11,14 +11,14 @@ $checkbox: sprite-map("ui/checkbox/*.png", $spacing: 0, $layout: smart)
 	$inputDisabledColor           : #777
 	$inputDisabledBackgroundColor : #f2f2f2
 
-	.b-input_text
+	input.b-input_text
 		height: 33px
 		font-size: 14px
 		padding: 0 10px
 		color: $blackColor
 		font-style: italic
 		font-weight: 100
-	.b-input_text, .b-input_textarea
+	input.b-input_text, textarea.b-input_textarea
 		margin-bottom: 20px
 		background: #fff
 		color: $inputDefaultNormalColor
@@ -37,13 +37,13 @@ $checkbox: sprite-map("ui/checkbox/*.png", $spacing: 0, $layout: smart)
 			background: $inputDisabledBackgroundColor
 			cursor: default
 		&-search
-			+boxModel(207px, 30px)
+			+box-model(207px, 30px)
 			+inline-block
 			background: transparent
 			padding-left: 12px
 			color: #fff
 			font-weight: 100
-			border: 1px solid rgba($blackColor, 0.5)
+			border: 1px solid transparent
 			font-size: 14px
 			&:focus
 				border-color: $yellowColor
@@ -51,13 +51,13 @@ $checkbox: sprite-map("ui/checkbox/*.png", $spacing: 0, $layout: smart)
 			height: 45px
 			font-size: 18px
 			font-weight: 300
-	.b-input_textarea
+	textarea.b-input_textarea
 		padding: 10px
 	.b-checkbox
 		margin-right: 14px
 		&, &__handler
 			+inline-block(top)
-			+boxModel(15px, 15px)
+			+box-model(15px, 15px)
 		input[type="checkbox"]
 			display: none
 		input[type="checkbox"] + .b-checkbox__handler

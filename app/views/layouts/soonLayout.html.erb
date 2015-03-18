@@ -1,0 +1,70 @@
+<%
+page = controller_name + "/" + controller.action_name
+auth_layout = ["sessions/new", "registrations/new", "registrations/create", "registrations/coming_soon", "coming_soon/index", "passwords/new"]
+%>
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title><%= content_for?(:title) ? yield(:title) : "CMW" %></title>
+		<%= stylesheet_link_tag 'application' %>
+		<meta name="viewport" content="maximum-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="description" content="" />
+		<%= csrf_meta_tags %>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" async></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" async></script>
+		<![endif]-->
+		<!--[if lt IE 8]>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js" async></script>
+		<![endif]-->
+	</head>
+	<body class="z-unloaded">
+		<div class="z-actions">
+			<div class="z-actions__alerts"></div>
+			<div class="z-actions__popups"></div>
+		</div>
+		<section class="b-wrapper">
+			<header class="b-controller-name<%= " b-controller-name_auth" if auth_layout.include?(page) %><%= " b-controller_" + controller.controller_name + "-" + controller.action_name %>">
+				<div class="b-logo">
+					<div>
+						<a href="/" class="b-logo__image">
+							<object data="/images/logo.svg">
+							<img src="/images/logo.png" />
+							</object>
+							<div class="b-logo__pointer"></div>
+						</a>
+					</div>
+					<div>
+						<a href="/" class="b-logo__text">Criticize My Work</a>
+					</div>
+					<% if !auth_layout.include?(page) %>
+					<div class="b-logo__quote">
+						<% if Quote.present? %>
+						<% Quote.get_random_quote.each do |quote| %>
+						«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
+						<!-- 						<div class="b-logo__quote_text">
+							«<%= quote.text_rus %>»
+						</div>
+						<div class="b-logo__quote-normal">
+							<%= quote.author_rus %>
+						</div>
+						-->	<% end %>
+						<% end %>
+						<!-- <nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr> -->
+					</div>
+					<% end %>
+				</div>
+			</header>
+			<main class="b-wrapper__main">
+			<%= yield %>
+			</main>
+		</section>
+		<%= javascript_include_tag 'application' %>
+		<script>
+			<%= yield :scripts %>
+		</script>
+	</body>
+</html>

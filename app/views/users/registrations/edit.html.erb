@@ -2,7 +2,7 @@
 <div class="b-page b-page__settings">
 	<h1 class="b-page__title b-page__title_1"><%= t('title.user_settings') %></h1>
 	<div class="b-page__cover b-page__cover_settings">
-		<form action="/auth/settings" accept-charset="UTF-8" method="post">
+		<form action="/auth/settings" accept-charset="UTF-8" method="post" data-hook="save-settings">
 			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.main_info') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
@@ -68,7 +68,7 @@
 			<input type="hidden" name="_method" value="put" />
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 		</form>
-		<form action="/auth/settings" accept-charset="UTF-8" method="post">
+		<form action="/auth/settings" accept-charset="UTF-8" method="post" data-hook="save-settings">
 			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.private_settings') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
@@ -82,8 +82,11 @@
 					</div>
 					<div class="b-settings__notifs">
 <% NotificationType.all.each do |notification| %>
+<% checked = (current_user.has_notification? notification.name) ? (" checked=\"checked\"") : ("") %>
+<% value   = (current_user.has_notification? notification.name) ? ("") : (" value=\"1\"") %>
 						<div>
-							<label class="b-checkbox"><input name="<%= notification.name %>" type="checkbox" <%= "checked=\"checked\"" if current_user.has_notification? notification.name %> /><span class="b-checkbox__handler"></span></label>
+							<input type="hidden" name="user[notifications][<%= notification.name %>]" value="0" />
+							<label class="b-checkbox"><input name="user[notifications][<%= notification.name %>]" type="checkbox"<%= checked.html_safe + value.html_safe %> /><span class="b-checkbox__handler"></span></label>
 							<span><%= t('notifications.' + notification.name) %></span>
 						</div>
 <% end %>
@@ -107,20 +110,21 @@
 								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password_confirmation') %></span>
 								<input type="password" autocomplete="off" class="b-input_text" name="user[password_confirmation]" placeholder="" />
 							</label>
+							<label>
+								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password_confirmation') %></span>
+								<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
+							</label>
 						</div>
 					</div>
 					<div class="b-settings__input b-settings__input-help b-settings__input-help_centered">
 						(<%= t('user_settings.new_password_helper') %>)
 					</div>
-<!-- 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.current_password') %></span><span class="b-required-star">*</span>
-						<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
-					</label>
- -->				</div>
+				</div>
 			</div>
 			<div class="b-settings__commit b-settings__commit_last">
 				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
 			</div>
+			<input type="password" name="user[current_password]" data-hook="settings-current" />
 			<input type="hidden" name="utf8" value="&#x2713;" />
 			<input type="hidden" name="_method" value="put" />
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />

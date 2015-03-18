@@ -3,6 +3,10 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
+require 'capistrano/rails'
+
+set :rvm_type, :user
+set :rvm_ruby_version, '2.1.5'
 
 # Includes tasks from other gems included in your Gemfile
 #
@@ -15,10 +19,10 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails/tree/master/assets
 #   https://github.com/capistrano/rails/tree/master/migrations
 #
-# require 'capistrano/rvm'
+require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
-# require 'capistrano/bundler'
+require 'capistrano/bundler'
 # require 'capistrano/rails/assets'
 # require 'capistrano/rails/migrations'
 

@@ -1,4 +1,4 @@
-$socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
+$socialIcons: sprite-map("@1x/socialIcon/*.png", $spacing: 0, $layout: smart)
 
 .b-page_login
 	color: $whiteColor
@@ -11,6 +11,12 @@ $socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 		padding: 35px 156px 37px
 		margin-bottom: 57px
 		border: 1px solid rgba($whiteColor, 0.44)
+		&_restore
+			.b-auth__title
+				margin-bottom: 40px
+				font-size: 29px
+		&__form-commit__link
+			padding-top: 12px
 		&__title, &__social, &__toRegister
 			text-align: center
 		&__title
@@ -21,6 +27,11 @@ $socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 				margin-bottom: 15px
 		&__toRegister
 			margin-bottom: 10px
+		&__welcome-text
+			margin-top: 35px
+			margin-bottom: 20px
+			font-size: 16px
+			font-weight: 300
 		&__social
 			font-size: 0
 			margin-bottom: 29px
@@ -65,4 +76,3 @@ $socialIcons: sprite-map("socialIcon/*.png", $spacing: 0, $layout: smart)
 
 .b-checkbox__handler
 	background-color: $whiteColor
-
