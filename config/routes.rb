@@ -72,6 +72,8 @@ CMW::Application.routes.draw do
 
   # devise
   devise_for  :users, path: 'auth',
+    # прячем стандартные роуты для регистрации
+    skip: ['registrations'],
     # переопределение контроллеров
     controllers: {
       registrations:  'users/registrations',
