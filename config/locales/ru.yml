@@ -4,6 +4,12 @@ ru:
         user:
           current_password: "Текущий пароль"
           email: "Email"
+          password: "Пароль"
+          terms_of_service: "Правила сайта:"
+          first_name: "Имя"
+          last_name: "Фамилия"
+          username: "Имя пользователя"
+          password_confirmation: ""
       errors:
         models:
           user:
@@ -14,6 +20,24 @@ ru:
               email:
                 invalid: "введен неверно"
                 blank: "не может быть пустым"
+              terms_of_service:
+                accepted: "Необходимо согласиться с правилами"
+              password:
+                invalid: "введён не верно"
+                blank: "не может быть пустым"
+                too_short: "слишком короткий"
+              password_confirmation:
+                confirmation: "Пароли не совпадают"
+              first_name:
+                invalid: "введено не верно"
+                blank: "не может быть пустым"
+              last_name:
+                invalid: "введена не верно"
+                blank: "не может быть пустой"
+              username:
+                invalid: "введено не верно"
+                blank: "не может быть пустым"
+                too_short: "слишком короткое"
 
   # заголовки страниц
   title:

@@ -25,8 +25,15 @@
 				</div>
 				<div class="b-auth__service">
 					<div class="b-auth__agreement">
-						<label class="b-checkbox"><input name="user[terms_of_service]" type="checkbox" /><span class="b-checkbox__handler"></span></label>
+						<label class="b-checkbox">
+							<input name="user[terms_of_service]" type="hidden" value="0">
+							<input type="checkbox" value="1" name="user[terms_of_service]" id="user_terms_of_service" />
+							<span class="b-checkbox__handler"></span>
+						</label>
 						<span class="b-auth__agreement__text"><%= t('auth.agreement_text') %> <a href="#" class="b-auth__agreement__link"><nobr><%= t('auth.agreement_link') %></nobr></a></span>
+						<%#= form_for @user, url: { action: "create" } do |f| %>
+							<%#= check_box_tag :terms_of_service %>
+						<%# end %>
 					</div>
 				</div>
 				<div class="g-clearfix b-auth__form-commit">

@@ -11,6 +11,7 @@ module DeviseHelper
 
   def resource
     @soon_user ||= SoonUser.new
+    @user ||= User.new
   end
 
   def devise_error_messages?
