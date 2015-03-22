@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226201014) do
+ActiveRecord::Schema.define(version: 20150322193508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,15 +130,19 @@ ActiveRecord::Schema.define(version: 20150226201014) do
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   create_table "works", force: :cascade do |t|
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.integer  "user_id"
     t.integer  "image_file_id"
-    t.string   "title",         limit: 255
-    t.integer  "views_count",               default: 0
-    t.integer  "favs_count",                default: 0
+    t.string   "title",              limit: 255
+    t.integer  "views_count",                    default: 0
+    t.integer  "favs_count",                     default: 0
     t.text     "description"
     t.text     "tags"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

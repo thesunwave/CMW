@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+Dotenv::Railtie.load
+
 module CMW
   class Application < Rails::Application
 
@@ -32,7 +34,7 @@ module CMW
     # The default locale is :ru and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
-    
+
     config.active_record.raise_in_transactional_callbacks = true
     # Set the queue_adapter for delayed_job
     config.active_job.queue_adapter = :delayed_job

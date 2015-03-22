@@ -15,7 +15,7 @@
 		<div class="g-right b-panel__info">
 			<div class="b-panel__info-wrapper">
 				<div class="b-panel__info_name">
-					<a href="#"><%= "#{current_user.first_name} #{current_user.last_name}" %></a>
+					<a href="<%= list_path %>"><%= "#{current_user.first_name} #{current_user.last_name}" %></a>
 				</div>
 				<div class="b-panel__info_spec">
 					<a href="#">веб-дизайн</a>
@@ -25,7 +25,7 @@
 	</div>
 	<div class="b-panel__content">
 		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs"><span class="b-panel__link_icon-notifs__count">2</span></a>
-		<a href="#" class="b-panel__link b-panel__link_icon-add-work">Добавить работу</a>
+		<a href="<%= add_work_path %>" class="b-panel__link b-panel__link_icon-add-work">Добавить работу</a>
 		<a href="<%= settings_path %>" class="b-panel__link b-panel__link_icon-settings">Настройки профиля</a>
 		<a href="#" class="b-panel__link b-panel__link_icon-favour">Избранное</a>
 		<a href="<%= subscriptions_path %>" class="b-panel__link b-panel__link_icon-subscriptions">Подписки</a>
@@ -42,7 +42,7 @@
 		<div class="b-panel__or-devider">
 			или
 		</div>
-		<a href="<%= new_user_registration_path %>" class="b-panel__link b-panel__link_icon-register">Зарегистрироваться</a>
+		<a href="<%= register_path %>" class="b-panel__link b-panel__link_icon-register">Зарегистрироваться</a>
 	</div>
 </div>
 <% end %>

@@ -9,6 +9,7 @@ db/*.sqlite3
 /log/*
 /tmp/*
 *.log
+.env
 
 # capistrano configs
 #/config/deploy/*

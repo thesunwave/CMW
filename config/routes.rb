@@ -34,20 +34,26 @@ CMW::Application.routes.draw do
   scope '/views' do
     # сцена
     get 'index'           => 'root#index'
+  end
 
-    # пользователь
-    scope '/user' do
+  get '/user' => 'works#list'
+      # пользователь
+  scope '/user' do
       # профиль
-      get 'profile'       => 'profile#index'
-      # новости
-      get 'feed'          => 'feed#index'
-      # подписки
-      get 'subscriptions' => 'subscriptions#index'
-      # работы
-      scope '/works' do
-        # список
-        get '/list'       => 'works#list'
-      end
+    get 'profile'       => 'profile#index'
+    # новости
+    get 'feed'          => 'feed#index'
+    # подписки
+    get 'subscriptions' => 'subscriptions#index'
+    # работы
+    scope '/works' do
+      # список
+      get '/list'       => 'works#list'
+      # добавить новую
+      get '/new' => 'works#new', as: "add_work"
+      post '/new' => 'works#create', as: "create_work"
+      # просмотр работы
+      get '/:id' => 'works#show', as: "show_work"
     end
   end
 
