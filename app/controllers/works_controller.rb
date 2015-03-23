@@ -1,8 +1,9 @@
 class WorksController < ApplicationController
+  
   def list
     @works = Work.where(user_id: current_user.id)
   end
-
+  
   def new
     @work = Work.new
   end
@@ -14,11 +15,11 @@ class WorksController < ApplicationController
   def create
     @work = Work.new work_params
     @work.user_id = current_user.id
-    @work.save!
     if @work.save
       redirect_to show_work_path(@work), notice: 'Work was successfully created.'
      else
-       render action: 'new'
+      flash[:alert] = @work.errors.full_messages
+      render action: 'new'
     end
   end
 
@@ -27,5 +28,4 @@ class WorksController < ApplicationController
   def work_params
     params.require(:work).permit(:title, :description, :tags, :image)
   end
-
 end

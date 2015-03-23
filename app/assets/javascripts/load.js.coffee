@@ -12,7 +12,6 @@ class CMW.Initialize
 			AjaxEnable: false
 
 		$.hook("panel").sticky()
-
 		return
 		
 	loader: ->
@@ -20,6 +19,7 @@ class CMW.Initialize
 		new CMW.Panel()
 		new CMW.Settings()
 		new CMW.Coming_soon()
+		new CMW.Add_work()
 		return
 
 $ ->

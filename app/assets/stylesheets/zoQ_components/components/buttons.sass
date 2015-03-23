@@ -44,11 +44,8 @@
 		color: $whiteColor
 		outline: none
 		&_tiny
-			font-size: 9.5px
-			padding: 9px 16px 6px
-		&_small
 			font-size: 11px
-			padding: 11px 19px 9px
+			padding: 9px 16px 6px
 		&_large
 			font-size: 17.7px
 			padding: 16px 43px 13px
@@ -60,14 +57,26 @@
 			+border-radius(3px)
 		&_yellow
 			color: $yellowColor
-		&_settings
+		&_long
 			padding: 10px 56px
 			font-weight: 100
 			font-size: 16px
+		&_small
+			padding: 9px 25px
+		&_margined
 			margin-bottom: 37px
+		&_bold
+			font-weight: 500
+		&_bordered
+			background: #fff
+			border: 2px solid $buttonDefaultNormal
+			color: $buttonDefaultNormal
+			&:hover
+				color: #fff
+				background: $buttonDefaultNormal
 		&_last
 			margin-bottom: 0
-		&:hover, &:focus
+		&:not(.b-button_bordered):hover, &:not(.b-button_bordered):focus
 			background: $buttonDefaultHover
 			color: $asideLinksColor
 		&:not(.b-button_disabled):not(:disabled):active

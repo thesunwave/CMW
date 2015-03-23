@@ -3,7 +3,8 @@ CMW::Application.routes.draw do
   get  'coming_soon'   => 'coming_soon#index'
   post 'coming_soon'   => 'coming_soon#create'
 
-  root to: 'coming_soon#index', as: "invite"
+  # root to: 'coming_soon#index', as: "invite"
+  root to: 'works#add'
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -46,6 +47,13 @@ CMW::Application.routes.draw do
     # подписки
     get 'subscriptions' => 'subscriptions#index'
     # работы
+        scope '/works' do
+      #TODO
+      # не забыть это удалить!
+      authenticate :user do
+        get  '/add'  => 'works#add'
+      end
+    end
     scope '/works' do
       # список
       get '/list'       => 'works#list'
@@ -73,7 +81,6 @@ CMW::Application.routes.draw do
         get  'settings'  => 'users/registrations#edit'
         put  'settings'  => 'users/registrations#update'
       end
-
     end
   end
 

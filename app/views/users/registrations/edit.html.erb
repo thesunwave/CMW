@@ -7,62 +7,62 @@
 			<div class="g-clearfix">
 				<div class="g-left">
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.first_name') %></span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help">(<%= t('user_settings.first_name_helper') %>)</span>
+						<span class="b-input__title b-input__title_bold"><%= t('user_settings.first_name') %></span><span class="b-required-star">*</span>
+						<span class="b-input__title_bold b-input__title_help">(<%= t('user_settings.first_name_helper') %>)</span>
 						<input type="text" class="b-input_text" name="user[first_name]" value="<%= resource.first_name %>" placeholder="" />
 					</label>
 				</div>
 				<div class="g-right">
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.last_name') %></span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help">(<%= t('user_settings.last_name_helper') %>)</span>
+						<span class="b-input__title b-input__title_bold"><%= t('user_settings.last_name') %></span><span class="b-required-star">*</span>
+						<span class="b-input__title_bold b-input__title_help">(<%= t('user_settings.last_name_helper') %>)</span>
 						<input type="text" class="b-input_text" name="user[last_name]" value="<%= resource.last_name %>" placeholder="" />
 					</label>
 				</div>
 			</div>
 			<label>
-				<span class="b-settings__input b-settings__input-title"><%= t('user_settings.spec') %></span><span class="b-required-star">*</span>
-				<span class="b-settings__input b-settings__input-help">(<%= t('user_settings.spec_helper') %>)</span>
+				<span class="b-input__title b-input__title_bold"><%= t('user_settings.spec') %></span><span class="b-required-star">*</span>
+				<span class="b-input__title_bold b-input__title_help">(<%= t('user_settings.spec_helper') %>)</span>
 				<input type="text" class="b-input_text" value="<%= resource.spec %>" name="user[spec]" placeholder="" />
 			</label>
 			<label>
-				<div class="b-settings__input b-settings__input-title b-settings__input_centered">
+				<div class="b-input__title b-input__title_bold b-input__title_centred">
 					<%= t('user_settings.description') %>
 				</div>
-				<textarea class="b-input_textarea b-settings__input b-settings__input_textarea" name="user[description]" placeholder=""><%= resource.description %></textarea>
+				<textarea class="b-input_textarea b-input__title_bold b-settings__input_textarea" name="user[description]" placeholder=""><%= resource.description %></textarea>
 			</label>
 			<div class="g-clearfix">
 				<div class="g-left">
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('social.vk') %></span>
+						<span class="b-input__title b-input__title_bold"><%= t('social.vk') %></span>
 						<input type="text" class="b-input_text" name="user[vk]" value="<%= resource.vk %>" placeholder="https://vk.com/" />
 					</label>
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('social.fb') %></span>
+						<span class="b-input__title b-input__title_bold"><%= t('social.fb') %></span>
 						<input type="text" class="b-input_text" name="user[facebook]" value="<%= resource.facebook %>" placeholder="https://facebook.com/" />
 					</label>
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('social.tw') %></span>
+						<span class="b-input__title b-input__title_bold"><%= t('social.tw') %></span>
 						<input type="text" class="b-input_text" name="user[twitter]" value="<%= resource.twitter %>" placeholder="https://twitter.com/" />
 					</label>
 				</div>
 				<div class="g-right">
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('social.be') %></span>
+						<span class="b-input__title b-input__title_bold"><%= t('social.be') %></span>
 						<input type="text" class="b-input_text" name="user[behance]" value="<%= resource.behance %>" placeholder="https://behance.net/" />
 					</label>
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('social.dribbble') %></span>
+						<span class="b-input__title b-input__title_bold"><%= t('social.dribbble') %></span>
 						<input type="text" class="b-input_text" name="user[dribble]" value="<%= resource.dribble %>" placeholder="https://dribbble.com/" />
 					</label>
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('social.website') %></span>
+						<span class="b-input__title b-input__title_bold"><%= t('social.website') %></span>
 						<input type="text" class="b-input_text" name="user[website]" value="<%= resource.website %>" placeholder="http://" />
 					</label>
 				</div>
 			</div>
 			<div class="b-settings__commit">
-				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
+				<input type="submit" class="b-button b-button_yellow b-button_last b-button_long b-button_margined b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
 			</div>
 			<input type="hidden" name="utf8" value="&#x2713;" />
 			<input type="hidden" name="_method" value="put" />
@@ -73,11 +73,11 @@
 			<div class="g-clearfix">
 				<div class="g-left">
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.email') %></span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help b-settings__input-help_yellow">(<span class="b-settings__input-help__link"><%= t('user_settings.email_helper') %></span>)</span>
+						<span class="b-input__title b-input__title_bold"><%= t('user_settings.email') %></span><span class="b-required-star">*</span>
+						<span class="b-input__title_bold b-input__title_help b-settings__input-help_yellow">(<span class="b-settings__input-help__link"><%= t('user_settings.email_helper') %></span>)</span>
 						<input type="text" class="b-input_text" name="user[email]" value="<%= resource.email %>" placeholder="" />
 					</label>
-					<div class="b-settings__input b-settings__input-title">
+					<div class="b-input__title b-input__title_bold">
 						<%= t('notifications.email_notifications') %>
 					</div>
 					<div class="b-settings__notifs">
@@ -94,35 +94,35 @@
 				</div>
 				<div class="g-right">
 					<label>
-						<span class="b-settings__input b-settings__input-title"><%= t('user_settings.login') %></span><span class="b-required-star">*</span>
-						<span class="b-settings__input b-settings__input-help b-settings__input-help_smaller">(<%= t('user_settings.login_helper') %>)</span>
+						<span class="b-input__title b-input__title_bold"><%= t('user_settings.login') %></span><span class="b-required-star">*</span>
+						<span class="b-input__title_bold b-input__title_help b-settings__input-help_smaller">(<%= t('user_settings.login_helper') %>)</span>
 						<input type="text" class="b-input_text" name="user[username]" value="<%= resource.username %>" placeholder="" />
 					</label>
 					<div class="g-clearfix">
 						<div class="g-left g-left_smaller">
 							<label>
-								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password') %></span>
+								<span class="b-input__title b-input__title_bold"><%= t('user_settings.new_password') %></span>
 								<input type="password" autocomplete="off" class="b-input_text" name="user[password]" placeholder="" />
 							</label>
 						</div>
 						<div class="g-right g-right_smaller">
 							<label>
-								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password_confirmation') %></span>
+								<span class="b-input__title b-input__title_bold"><%= t('user_settings.new_password_confirmation') %></span>
 								<input type="password" autocomplete="off" class="b-input_text" name="user[password_confirmation]" placeholder="" />
 							</label>
 							<label>
-								<span class="b-settings__input b-settings__input-title"><%= t('user_settings.new_password_confirmation') %></span>
+								<span class="b-input__title b-input__title_bold"><%= t('user_settings.new_password_confirmation') %></span>
 								<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
 							</label>
 						</div>
 					</div>
-					<div class="b-settings__input b-settings__input-help b-settings__input-help_centered">
+					<div class="b-input__title_bold b-input__title_help b-settings__input-help_centered">
 						(<%= t('user_settings.new_password_helper') %>)
 					</div>
 				</div>
 			</div>
 			<div class="b-settings__commit b-settings__commit_last">
-				<input type="submit" class="b-button b-button_yellow b-button_last b-button_settings b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
+				<input type="submit" class="b-button b-button_yellow b-button_last b-button_long b-button_margined b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
 			</div>
 			<input type="password" name="user[current_password]" data-hook="settings-current" />
 			<input type="hidden" name="utf8" value="&#x2713;" />
