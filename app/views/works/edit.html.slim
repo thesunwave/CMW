@@ -2,7 +2,7 @@
 .b-page.b-page__add-work
   h1.b-page__title.b-page__title_1 = t('title.add_work')
   .b-page__cover.b-page__cover_settings      
-    = form_for @work, url: { action: "create" }, multipart: true do |f|
+    = form_for @work, url: { action: "update" }, multipart: true do |f|
       .g-clearfix
         .g-left
           label

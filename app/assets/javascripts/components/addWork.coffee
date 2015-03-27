@@ -9,6 +9,7 @@ class CMW.Add_work
 			"tag-box-class"           : "b-input_text b-input_tag"
 			"close-class"             : "b-tag_remove"
 			"tag-char"                : ""
+			"tags-input-name"         : "tags"
 			"close-char"              : ""
 			"no-duplicate-callback"   : ->
 				_error "Вы уже ввели этот тег."

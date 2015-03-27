@@ -33,6 +33,7 @@ group :development do
 	gem 'rails_layout'
 	gem 'faker'
 	gem 'oily_png'
+	gem 'puma'
 	gem 'rubocop', require: false                           #static code analyzer
 	gem 'rubocop-rspec', require: false                     # speed up the pure Ruby ChunkyPNG library
 end
