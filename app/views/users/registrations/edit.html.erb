@@ -81,15 +81,15 @@
 						<%= t('notifications.email_notifications') %>
 					</div>
 					<div class="b-settings__notifs">
-<% NotificationType.all.each do |notification| %>
-<% checked = (current_user.has_notification? notification.name) ? (" checked=\"checked\"") : ("") %>
-<% value   = (current_user.has_notification? notification.name) ? ("") : (" value=\"1\"") %>
+<%# NotificationType.all.each do |notification| %>
+<%# checked = (current_user.has_notification? notification.name) ? (" checked=\"checked\"") : ("") %>
+<%# value   = (current_user.has_notification? notification.name) ? ("") : (" value=\"1\"") %>
 						<div>
-							<input type="hidden" name="user[notifications][<%= notification.name %>]" value="0" />
-							<label class="b-checkbox"><input name="user[notifications][<%= notification.name %>]" type="checkbox"<%= checked.html_safe + value.html_safe %> /><span class="b-checkbox__handler"></span></label>
-							<span><%= t('notifications.' + notification.name) %></span>
+							<input type="hidden" name="user[notifications][<%#= notification.name %>]" value="0" />
+							<label class="b-checkbox"><input name="user[notifications][<%#= notification.name %>]" type="checkbox"<%#= checked.html_safe + value.html_safe %> /><span class="b-checkbox__handler"></span></label>
+							<span><%#= t('notifications.' + notification.name) %></span>
 						</div>
-<% end %>
+<%# end %>
 					</div>
 				</div>
 				<div class="g-right">

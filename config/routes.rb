@@ -59,6 +59,7 @@ CMW::Application.routes.draw do
 
   devise_scope :user do
 
+    get '/auth' => redirect('/auth/login')
     scope '/auth' do
 
       get  'register'    => 'users/registrations#new'
