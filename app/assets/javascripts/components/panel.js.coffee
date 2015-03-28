@@ -1,6 +1,7 @@
 "use strict"
 
 class CMW.Panel
+	
 	constructor: ->
 		_top()
 

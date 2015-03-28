@@ -8,8 +8,10 @@
 #= require init
 
 #= require components/common
+#= require components/prompts
 #= require components/panel
 #= require components/settingsPage
 #= require components/comingSoon
+#= require components/worksList
 
 #= require load

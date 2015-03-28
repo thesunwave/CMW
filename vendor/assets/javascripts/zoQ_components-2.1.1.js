@@ -35,7 +35,7 @@
     $(window).on("scroll", function() {
       clearTimeout(timer);
       if (!$body.hasClass("z-hover_no")) {
-        $body.addClass("z-hover_yes");
+        $body.addClass("z-hover_no");
       }
       timer = setTimeout(function() {
         $body.removeClass("z-hover_no");

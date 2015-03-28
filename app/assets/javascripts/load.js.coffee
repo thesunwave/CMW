@@ -1,6 +1,7 @@
 "use strict"
 
 class CMW.Initialize
+	
 	constructor: ->
 		@plugins()
 		@loader()
@@ -16,9 +17,10 @@ class CMW.Initialize
 		return
 		
 	loader: ->
-		new CMW.Common()
+		new CMW.Prompts_handlers()
 		new CMW.Panel()
 		new CMW.Settings()
+		new CMW.Works_list()
 		new CMW.Coming_soon()
 		return
 

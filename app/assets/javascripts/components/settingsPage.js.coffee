@@ -1,8 +1,10 @@
 "use strict"
 
 class CMW.Settings
+	
 	constructor: ->
 		_save()
+
 	_save = ->
 		$.hook("save-settings").on "submit", (event) ->
 			event.preventDefault()
