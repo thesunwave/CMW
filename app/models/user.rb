@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   #
   belongs_to  :avatar, dependent: :destroy
   has_many    :works, dependent: :destroy
+  #has_many    :images, through: :image_file
   has_many    :notifications, dependent: :destroy
   has_many    :notification_types, through: :notifications
 

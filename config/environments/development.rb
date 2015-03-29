@@ -66,6 +66,6 @@ CMW::Application.configure do
 
   Paperclip.options[:command_path] = "/usr/bin/convert"
 
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
-  ActiveRecord::Base.logger = Logger.new("application.log")
+  #ActiveRecord::Base.logger = Logger.new(STDOUT)
+  #ActiveRecord::Base.logger = Logger.new("application.log")
 end

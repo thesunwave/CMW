@@ -38,8 +38,9 @@ class WorksController < ApplicationController
   
   def destroy
     @work = Work.find(params[:id])
-    @work.destroy
+    if @work.destroy
       redirect_to list_path, notice: 'Work was successfully deleted.'
+    end
   end
 
   private

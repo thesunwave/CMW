@@ -3,6 +3,6 @@
 = image_tag @work.image(:medium)
 - if @work.user_id == current_user.id
   = link_to "Edit user work", edit_work_path(@work)
-  //= link_to "Delete user work", destroy_work_path(@work), method: :delete,
+  = link_to "Delete user work", destroy_work_path(@work), method: :delete,
               data: { confirm: 'Are you sure?' }
-  a(href="#{destroy_work_path(@work)}" method="delete") "Delete user work"
+  //a(href="#{destroy_work_path(@work)}" method="delete") "Delete user work"
