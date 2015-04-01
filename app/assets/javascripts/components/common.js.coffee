@@ -11,3 +11,7 @@ class CMW.Common
 
 	urlSegment: (segment) ->
 		self::urlSegments()[segment]
+
+	historyPush: (url) ->
+		history.pushState "", "New URL: " + url, url
+		return

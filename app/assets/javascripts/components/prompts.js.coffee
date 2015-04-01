@@ -47,22 +47,26 @@ class CMW.Prompts_handlers
 
 	Common = new CMW.Common()
 
-	PATH = "/views/index/"
+	PATH = "/views/index"
 
 	constructor: ->
-		self::what  = new CMW.Prompts $.hook("prompt-what"), _what
-		self::where = new CMW.Prompts $.hook("prompt-where"), _where
-		$.hook("prompt-default").trigger "click"
+		if location.pathname is PATH
+			self::what  = new CMW.Prompts $.hook("prompt-what"), _what
+			self::where = new CMW.Prompts $.hook("prompt-where"), _where
+			$.hook("prompt-default").trigger "click"
 
 	_what = (what) ->
-		url = self::what.getState $.hook("prompt-what")
-		url = PATH + url + "/" + (Common.urlSegment(4) || "")
+		url = self::what.getState $.hook "prompt-what"
+		if Common.urlSegment(4)
+			url = "#{PATH}/#{url}/#{Common.urlSegment(4)}/#{(location.hash || "")}"
+		else
+			url = "#{PATH}/#{url}/#{(location.hash || "")}"
 		_changeOther url
 		return
 
 	_where = (where) ->
-		url = self::where.getState $.hook("prompt-where")
-		url = PATH + Common.urlSegment(3) + "/" + url
+		url = self::where.getState $.hook "prompt-where"
+		url = "#{PATH}/#{(Common.urlSegment(3) || "")}/#{url}/#{(location.hash || "")}"
 		_changeOther url
 		return
 
@@ -72,6 +76,7 @@ class CMW.Prompts_handlers
 
 	_changeOther = (url) ->
 		$body = $ "body"
+		Common.historyPush url
 		$(document)
 			.on "ajaxSend", ->
 				$body.addClass "z-unloaded"
@@ -83,9 +88,11 @@ class CMW.Prompts_handlers
 			url : url
 			type: "GET"
 		.done (data) ->
-			history.pushState "", "New URL: " + url, url
 			return
 		.fail ->
+			z_.alert
+				type   : "warning"
+				message: "Ошибка, связанная со страницей cmw.su#{url}."
 			return
 		.always ->
 			return
