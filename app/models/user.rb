@@ -132,7 +132,7 @@ class User < ActiveRecord::Base
   def self.valid_username?(username, instance = nil)
     unless username.blank?
       # проверяет на валидность имя пользователя
-      unless (username =~ /^[a-zA-Z][a-zA-Z\-\_\.]/i)
+      unless (username =~ /\A[a-z0-9][-a-z0-9]{2,24}\z/i)
         instance.errors.add(:username, I18n.t('errors.messages.invalid')) and return unless instance.nil?
         return false if instance.nil?
       end
