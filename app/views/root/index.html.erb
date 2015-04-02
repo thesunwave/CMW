@@ -37,8 +37,16 @@
 		<div class="b-news__view_change__item b-news__view_change__item_list b-news__view_active"></div>
 		<div class="b-news__view_change__item b-news__view_change__item_grid"></div>
 	</div>
-	<div class="b-page__cover b-page__cover_news b-page__cover_news-last b-news_list">
-<% 4.times do %>
+<%
+@type = "list" # list or grid. For manual testing. Rendering via server
+if @type == "grid"
+	@times = 12
+else
+	@times = 4
+end
+%>
+	<div class="b-page__cover b-page__cover_news b-page__cover_news-last b-news-wrapper b-news_<%=@type%>">
+<% @times.times do %>
 		<div class="b-new g-clearfix">
 			<div class="g-left b-new__image">
 				<a href="#"><img src="/images/news/270x270.png" alt="" /></a>
@@ -48,7 +56,7 @@
 				<div class="b-new__author">
 					<a href="#" class="b-new__author__link">Павел Зиновьев</a>
 				</div>
-				<div class="g-clearfix">
+				<div class="g-clearfix b-new__description-wrapper">
 					<div class="g-left b-new__description">
 						Краткое описание этой херни на картинке слева. Поставленная перед исполнителем задача, бюджет заказчика и вообще всё, что дизайнер может посчитать нужным включить в описание работы, вроде средств, с помощью которых он это делал, названия того, под чем он над этим трудился и прочую гадость. Вроде всё. А вообще, эту фигню можно и пошире сделать. Да-да, точно. А картинка пусть будет квадратная. Потому что всякие материалы бывают - и прямоугольные, и квадратные, и большие, и маленькие. Пусть лучше пользователь, как на бехансе, или в вк выберет КВАДРАТНУЮ миниатюру, 270х270. Всё.
 					</div>
@@ -62,7 +70,7 @@
 						<div class="b-new__service__item">
 							<div class="b-new__service__item__icon b-new__service__item__icon_comments"></div>
 							<div class="b-new__service__item__content b-new__service__item__content_comments">
-								<a href="#">15 комментариев</a>
+								<a href="#">15 <span>комментариев</span></a>
 							</div>
 						</div>
 						<div class="b-new__service__item b-new__service__item_tags">
@@ -75,14 +83,14 @@
 						</div>
 						<div class="b-new__service__item">
 							<div class="b-new__service__item__icon b-new__service__item__icon_rating"></div>
-							<div class="b-new__service__item__content">
-								4,4 / 5,0
+							<div class="b-new__service__item__content b-new__service__item__content_rating">
+								4,4 <span>/ 5,0</span>
 							</div>
 						</div>
 						<div class="b-new__service__item b-new__service__item_favourites-state b-new__service__item_favourites">
 							<div class="b-new__service__item__icon b-new__service__item__icon_favourites"></div>
-							<div class="b-new__service__item__content">
-								В избранное!
+							<div class="b-new__service__item__content b-new__service__item__content_favourites">
+								<span>В избранное!</span>
 							</div>
 						</div>
 					</div>
@@ -90,5 +98,6 @@
 			</div>
 		</div>
 <% end %>
+		<div class="b-button b-button_expanded b-news__load-more">Загрузить ещё</div>
 	</div>
 </div>
