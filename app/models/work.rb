@@ -13,13 +13,17 @@ class Work < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type =>  /^image\/(png|gif|jpeg|jpg)/
 
   validates :title, :description, :image, presence: true
-  
-  Paperclip.interpolates :normalized_filename do |attachment, style|
-    attachment.instance.normalized_filename
-  end
-  
-  def normalized_filename
-    "#{user.username}-#{self.id}"
+
+  before_create :normalize_filename
+
+  def normalize_filename
+    Paperclip.interpolates :normalized_filename do |attachment, style|
+      attachment.instance.normalized_filename
+    end
+
+    def normalized_filename
+      "#{user.username}-#{self.id}"
+    end
   end
 
 end
