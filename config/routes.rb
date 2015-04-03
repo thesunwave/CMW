@@ -1,7 +1,9 @@
 CMW::Application.routes.draw do
   get  'subscriptions' => 'subscriptions#index'
   get  'coming_soon'   => 'coming_soon#index'
-  post 'coming_soon'   => 'coming_soon#index'
+  post 'coming_soon'   => 'coming_soon#create'
+
+  # root to: 'coming_soon#index', as: "invite"
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -32,25 +34,35 @@ CMW::Application.routes.draw do
   scope '/views' do
     # сцена
     get 'index'           => 'root#index'
+  end
 
-    # пользователь
-    scope '/user' do
+  get '/user' => 'works#list'
+      # пользователь
+  scope '/user' do
       # профиль
-      get 'profile'       => 'profile#index'
-      # новости
-      get 'feed'          => 'feed#index'
-      # подписки
-      get 'subscriptions' => 'subscriptions#index'
-      # работы
-      scope '/works' do
-        # список
-        get '/list'       => 'works#list'
-      end
+    get 'profile'       => 'profile#index'
+    # новости
+    get 'feed'          => 'feed#index'
+    # подписки
+    get 'subscriptions' => 'subscriptions#index'
+    # работы
+    scope '/works' do
+      # список
+      get '/list'       => 'works#list'
+      # добавить новую
+      get '/new' => 'works#new', as: "add_work"
+      patch ':id/edit' => 'works#update', as: "update_work"
+      get ':id/edit' => 'works#edit', as: "edit_work"
+      post '/new' => 'works#create', as: "create_work"
+      delete '/:id' => 'works#destroy', as: "destroy_work"
+      # просмотр работы
+      get '/:id' => 'works#show', as: "show_work"
     end
   end
 
   devise_scope :user do
 
+    get '/auth' => redirect('/auth/login')
     scope '/auth' do
 
       get  'register'    => 'users/registrations#new'
@@ -64,21 +76,22 @@ CMW::Application.routes.draw do
         get  'settings'  => 'users/registrations#edit'
         put  'settings'  => 'users/registrations#update'
       end
-
     end
   end
-  
+
   # devise
   devise_for  :users, path: 'auth',
+    # прячем стандартные роуты для регистрации
+    skip: ['registrations'],
     # переопределение контроллеров
     controllers: {
       registrations:  'users/registrations',
       sessions:       'users/sessions',
       confirmations:  'users/confirmations',
       passwords:      'users/passwords'
-    }, 
+    },
     # переопределение путей по умолчанию
-    path_names: { 
+    path_names: {
       sign_in:        'login',
       sign_out:       'logout',
       confirmation:   'confirm',

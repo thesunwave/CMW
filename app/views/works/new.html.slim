@@ -1,0 +1,32 @@
+= render partial: "components/errors"
+.b-page.b-page__add-work
+  h1.b-page__title.b-page__title_1 = t('title.add_work')
+  .b-page__cover.b-page__cover_settings      
+    = form_for @work, url: { action: "create" }, multipart: true do |f|
+      .g-clearfix
+        .g-left
+          label
+            span.b-input__title.b-input__title_bold = t('works.name')
+            span.b-required-star *
+            span.b-input__title.b-input__title_bold.b-input__title_help == " (" + t('works.name_helper') + ")"
+          = f.text_field :title, :class => "b-input_text"
+        .g-right
+          label
+            span.b-input__title.b-input__title_bold = t('works.tags')
+            span.b-required-star *
+            span.b-input__title.b-input__title_bold.b-input__title_help = " (" + t('works.tags_helper') + ")"
+          #tagBox
+      label
+        span.b-input__title.b-input__title_bold = t('works.upload')
+        span.b-required-star *
+        span.b-input__title.b-input__title_bold.b-input__title_help = " (" + t('works.upload_helper') + ")"
+      .b-upload-wrapper.dropzone.dz-clickable 
+        = f.file_field :image, :class => "b-input b-input_file"
+        .b-upload-wrapper__description == t('works.upload_description')
+      label
+        span.b-input__title.b-input__title_bold = t('works.description')
+        span.b-required-star *
+        = f.text_area :description, :class => "b-input_textarea b-input__title_bold b-settings__input_textarea"
+      .b-submit-wrapper
+        .b-button.b-button_small.b-button_long.b-button_bordered.b-button_bold = t('works.view')
+        = f.submit t('works.send') , :class => "b-button b-button_yellow b-button_long"

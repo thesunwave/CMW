@@ -1,0 +1,35 @@
+/* Tagging Basic Style */
+.tag {
+	@include inline-block();
+	background: #f1c40f;
+	color: #fff;
+	cursor: default;
+	position: relative;
+	white-space: nowrap;
+	font-size: 12px;
+	font-weight: 500;
+	padding: 2px 25px 3px 7px;
+	margin: 5px 8px;
+	margin-left: 0;
+}
+
+.tag span {
+	display: none;
+}
+
+.b-tag_remove:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.type-zone {
+	@include inline-block();
+	border: 0 none;
+	height: 32px;
+	width: 50px;
+	min-width: 20px;
+}
+
+.type-zone:focus {
+	outline: none;
+}

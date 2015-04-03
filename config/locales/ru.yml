@@ -4,6 +4,12 @@ ru:
         user:
           current_password: "Текущий пароль"
           email: "Email"
+          password: "Пароль"
+          terms_of_service: "Правила сайта:"
+          first_name: "Имя"
+          last_name: "Фамилия"
+          username: "Имя пользователя"
+          password_confirmation: ""
       errors:
         models:
           user:
@@ -14,6 +20,25 @@ ru:
               email:
                 invalid: "введен неверно"
                 blank: "не может быть пустым"
+                already_in_use: "уже занят"
+              terms_of_service:
+                accepted: "Необходимо согласиться с правилами"
+              password:
+                invalid: "введён не верно"
+                blank: "не может быть пустым"
+                too_short: "слишком короткий"
+              password_confirmation:
+                confirmation: "Пароли не совпадают"
+              first_name:
+                invalid: "введено не верно"
+                blank: "не может быть пустым"
+              last_name:
+                invalid: "введена не верно"
+                blank: "не может быть пустой"
+              username:
+                invalid: "введено не верно"
+                blank: "не может быть пустым"
+                too_short: "слишком короткое"
 
   # заголовки страниц
   title:
@@ -25,6 +50,7 @@ ru:
     restore_password: Восстановление пароля
     profile: Профиль
     feed: Новости
+    add_work: Добавить работу
 
   # общие языковые элементы интерфейса
   common:
@@ -98,7 +124,7 @@ ru:
     restore_password_notice_html: На указанный вами адрес электронной почты будет<br /> выслана инструкция по восстановлению пароля
     password_reset_action: Изменить пароль
     restore_password_notice: На указанный вами адрес электронной почты будет выслана инструкция по восстановлению пароля
-    agreement_text: Я согласен с условиями 
+    agreement_text: Я согласен с условиями
     agreement_link: пользовательского соглашения
     first_name: Ваше имя
     last_name: Ваша фамилия
@@ -125,6 +151,18 @@ ru:
     email_not_found: электронная почта не найдена
     email_invalid: ошибка в адресе электронной почты
 
+  works:
+    name: Название работы
+    tags: Теги
+    name_helper: Например, &laquo;Мишки в лесу&raquo;
+    tags_helper: Через запятую
+    upload: Загрузить работу
+    upload_helper: В формате PNG, JPG или GIF
+    description: Краткое описание работы
+    view: Предварительный просмотр
+    send: Отправить
+    upload_description: <nobr>Просто перетащите файлы работы</nobr> <nobr>в эту область</nobr>
+
   # сообщения об ошибках
   errors: &errors
     # error keys
@@ -149,8 +187,8 @@ ru:
     blank: пустой # возможно не нужно: удалить, через тестирование
     #   другие ошибки
     unknown_error: неизвестная ошибка
-    # это хак системы ошибок rails, предназначенный для интеграции системы ключей 
-    # в сообщения об ошибках. Rails берет сообщения об ошибках валидации полей данных 
+    # это хак системы ошибок rails, предназначенный для интеграции системы ключей
+    # в сообщения об ошибках. Rails берет сообщения об ошибках валидации полей данных
     # модели из этого объекта. Данные сообщения локализуются в объекте errors, находящемся на уровень выше
     # подробнее см. https://docs.google.com/document/d/1EfX639g17Dsc3HE160ZBnwjlMeCO5O2aXFuyujWmtaE/edit#heading=h.6c2kuw7dr82e
     messages:

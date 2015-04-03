@@ -1,4 +1,4 @@
-<%#= render partial: "components/errors" %>
+<%= render partial: "components/errors" %>
 <div class="b-page_login">
 	<div class="b-auth">
 		<div class="b-auth__title b-auth__title_with-link">
@@ -8,11 +8,15 @@
 			<%= t('coming_soon.welcome') %>
 		</div>
 		<div class="b-auth__form">
-			<form action="<%= coming_soon_path %>" accept-charset="UTF-8" method="post" data-hook="coming-soon1">
+			<%#= form_for @soon_user, url: {action: "create"}, remote: :true, format: :js do |f| %>
+			<%#= f.text_field :email %>
+			<%#= f.submit %>
+			<%# end %>
+			<form action="<%= coming_soon_path %>" data-remote="true" accept-charset="UTF-8" method="post" data-hook="coming-soon">
 				<input name="utf8" type="hidden" value="&#x2713;" />
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				<div>
-					<input name="email" data-hook="coming-soon-email" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.email') %>" />
+					<input name="soon_user[email]" data-hook="coming-soon-email" class="b-input_text b-input_text-login" type="text" placeholder="<%= t('auth.email') %>" />
 				</div>
 				<div class="g-clearfix b-auth__form-commit">
 					<div class="g-right">

@@ -1,0 +1,47 @@
+<%=render partial: "components/errors" %>
+  <div class="b-page b-page__add-work">
+    <h1 class="b-page__title b-page__title_1"><%= t('title.add_work') %></h1>
+    <div class="b-page__cover b-page__cover_settings">
+      <form action="/works/add" accept-charset="UTF-8" method="post" data-hook="add-work">
+        <div class="g-clearfix">
+          <div class="g-left">
+            <label>
+              <span class="b-input__title b-input__title_bold"><%= t('works.name') %></span><span class="b-required-star">*</span>
+              <span class="b-input__title b-input__title_bold b-input__title_help">(<%= t('works.name_helper').html_safe %>)</span>
+              <input type="text" class="b-input_text" name="" value="" placeholder="" />
+            </label>
+          </div>
+          <div class="g-right">
+            <label>
+              <span class="b-input__title b-input__title_bold"><%= t('works.tags') %></span><span class="b-required-star">*</span>
+              <span class="b-input__title b-input__title_bold b-input__title_help">(<%= t('works.tags_helper') %>)</span>
+              <div id="tagBox"></div>
+            </label>
+          </div>
+        </div>
+        <label>
+          <span class="b-input__title b-input__title_bold"><%= t('works.upload') %></span><span class="b-required-star">*</span>
+          <span class="b-input__title b-input__title_bold b-input__title_help">(<%= t('works.upload_helper') %>)</span>
+          <div class="b-upload-wrapper">
+            <input type="file" class="b-input b-input_file" value="" name="" />
+            <div class="b-upload-wrapper__description">
+              <%=t ( 'works.upload_description').html_safe %>
+            </div>
+          </div>
+        </label>
+        <label>
+          <span class="b-input__title b-input__title_bold"><%= t('works.description') %></span><span class="b-required-star">*</span>
+          <textarea class="b-input_textarea b-input__title_bold b-settings__input_textarea" name="" placeholder=""></textarea>
+        </label>
+        <div class="b-submit-wrapper">
+          <div class="b-button b-button_small b-button_long b-button_bordered b-button_bold">
+            <%=t ( 'works.view') %>
+          </div>
+          <input type="submit" class="b-button b-button_yellow b-button_long" name="commit" value="<%= t('works.send') %>" />
+        </div>
+        <input type="hidden" name="utf8" value="&#x2713;" />
+        <input type="hidden" name="_method" value="put" />
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      </form>
+    </div>
+  </div>

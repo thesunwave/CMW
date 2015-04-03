@@ -10,9 +10,11 @@ gem 'cancan'                                    # authorization engine
 gem 'devise', '~> 3.4.1'                        # authentication engine
 gem 'devise-async', '~> 0.9.0'                  # provides an easy way to configure Devise to send its emails asynchronously using Delayed::Job gem 'mysql2'                                    # MySQL database support
 gem 'rolify'                                    # roles engine
-gem 'mysql2'                                    # mysql activerecord adapter
+gem 'pg'                                        # postgres adapter
+gem 'slim', github: 'slim-template/slim'        # better template engine
 gem 'execjs'                                    # js runtime gem
 gem 'paperclip', '~> 4.1'                       # file storage engine
+gem 'aws-sdk', '< 2.0'
 gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
 gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 gem 'http_accept_language'                      # set locale from accept-language URL header
@@ -21,7 +23,7 @@ gem 'http_accept_language'                      # set locale from accept-languag
 
 group :development do
 	gem 'better_errors'
-	gem 'binding_of_caller', :platforms=>[:mri_20]
+	gem 'binding_of_caller'
 	gem 'capistrano', '~> 3.0.1'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rails', '~> 1.1.0'
@@ -30,7 +32,10 @@ group :development do
 	gem 'quiet_assets'
 	gem 'rails_layout'
 	gem 'faker'
-	gem 'oily_png'                              # speed up the pure Ruby ChunkyPNG library
+	gem 'oily_png'
+	gem 'puma'
+	gem 'rubocop', require: false                           #static code analyzer
+	gem 'rubocop-rspec', require: false                     # speed up the pure Ruby ChunkyPNG library
 end
 
 group :development, :test do
@@ -40,6 +45,7 @@ group :development, :test do
 	gem 'factory_girl_rails', require: false
 	gem 'guard-rspec'
 	gem 'seed-fu', '~> 2.3'
+	gem 'dotenv-rails'
 end
 
 group :test do
@@ -47,6 +53,7 @@ group :test do
 	gem 'poltergeist'                            # poltergeist is a driver for Capybara. It allows you to run your Capybara tests on a headless WebKit browser, provided by PhantomJS
 	gem 'database_cleaner', '1.0.1'              # Database Cleaner is a set of strategies for cleaning your database in Ruby
 	gem 'i18n-tasks', '~> 0.7.4'                 # helps you find and manage missing and unused translations
+	gem 'selenium-webdriver', '~> 2.44.0'
 end
 
 

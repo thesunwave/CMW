@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
   before_filter :show_main_forms!, :except => [:destroy]
 
   def new
-    
+    super
   end
 
   def create
