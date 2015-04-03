@@ -1,0 +1,27 @@
+$uploadWrapperBg : #f9f9f9
+$uploadDescrColor: rgba(#383838, 0.3)
+
+
+.b-page__add-work
+	.b-upload-wrapper
+		min-height: 217px
+		background: $uploadWrapperBg
+		position: relative
+		margin-top: 20px
+		margin-bottom: 30px
+		padding: 10px
+		&__description
+			+translate(-50%, -50%)
+			+user-select(none)
+			position: absolute
+			left: 50%
+			top: 50%
+			text-align: center
+			font-weight: 900
+			font-size: 30px
+			color: $uploadDescrColor
+	.b-submit-wrapper
+		font-size: 0
+		text-align: center
+		.b-button:first-child
+			margin-right: 68px

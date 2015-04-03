@@ -50,6 +50,7 @@ ru:
     restore_password: Восстановление пароля
     profile: Профиль
     feed: Новости
+    add_work: Добавить работу
 
   # общие языковые элементы интерфейса
   common:
@@ -149,6 +150,18 @@ ru:
     email_already_in_use: этот адрес уже зарегистрирован
     email_not_found: электронная почта не найдена
     email_invalid: ошибка в адресе электронной почты
+
+  works:
+    name: Название работы
+    tags: Теги
+    name_helper: Например, &laquo;Мишки в лесу&raquo;
+    tags_helper: Через запятую
+    upload: Загрузить работу
+    upload_helper: В формате PNG, JPG или GIF
+    description: Краткое описание работы
+    view: Предварительный просмотр
+    send: Отправить
+    upload_description: <nobr>Просто перетащите файлы работы</nobr> <nobr>в эту область</nobr>
 
   # сообщения об ошибках
   errors: &errors

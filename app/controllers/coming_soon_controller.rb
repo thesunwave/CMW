@@ -1,7 +1,5 @@
 class ComingSoonController < ApplicationController
 
-  # layout 'layouts/soonLayout'
-
   before_filter :show_main_forms!
 
   def index

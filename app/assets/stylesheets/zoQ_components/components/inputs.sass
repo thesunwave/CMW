@@ -11,14 +11,39 @@ $checkbox: sprite-map("@1x/ui/checkbox/*.png", $spacing: 0, $layout: smart)
 	$inputDisabledColor           : #777
 	$inputDisabledBackgroundColor : #f2f2f2
 
-	input.b-input_text
+	.b-input
+		display: block
+		&__title
+			font-size: 18px
+			&_help
+				font-size: 12px
+				color: $settingsHelps
+			&_centered
+				text-align: center
+				margin-top: 5px
+			&_bold
+				font-weight: 300
+	input.b-input_text, .b-input_text
 		height: 33px
 		font-size: 14px
 		padding: 0 10px
 		color: $blackColor
 		font-style: italic
 		font-weight: 100
-	input.b-input_text, textarea.b-input_textarea
+	.b-input_tag
+		height: auto
+		min-height: 33px
+		cursor: text
+		overflow-y: scroll
+		white-space: nowrap
+	.b-tag_remove
+		+box-model(7px, 7px)
+		background: asset-url("@1x/ui/tagClose.png") no-repeat center
+		cursor: pointer
+		position: absolute
+		top: 5px
+		right: 5px
+	input.b-input_text, .b-input_text, textarea.b-input_textarea
 		margin-bottom: 20px
 		background: #fff
 		color: $inputDefaultNormalColor

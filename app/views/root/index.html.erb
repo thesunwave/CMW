@@ -1,3 +1,4 @@
+<%= render partial: "components/errors" %>
 <div class="b-page b-page__news b-page__news_last">
 	<h1 class="b-page__title b-page__title_2">Показаны <span class="">свежие</span> материалы за <span class="">всё время</span></h1>
 	<div class="b-page__news__view_change">
@@ -8,6 +9,13 @@
 		<div class="b-page__cover_news__new g-clearfix">
 			<div class="g-left b-page__cover_news__new__image">
 				<img src="/uploads/news/270x270.png" alt="" />
+				<% if @works.present? %>
+					<% @works.each do |work| %>
+    				<%= link_to image_tag(work.image(:thumb)), show_work_path(work) %>
+    				<% end %>
+				<% else %>
+  					h2 Пользователь пока не загрузил ни одной работы :(
+  				<% end %>
 			</div>
 			<div class="g-left b-page__cover_news__new__content">
 				

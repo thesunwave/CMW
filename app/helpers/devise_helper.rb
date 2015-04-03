@@ -16,5 +16,9 @@ module DeviseHelper
   def devise_error_messages?
     resource.errors.empty? ? false : true
   end
+  
+  def signed_in?
+    !current_user.nil?
+  end
 
 end
