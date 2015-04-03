@@ -1,7 +1,9 @@
 "use strict"
 
 class CMW.Add_work
+
 	constructor: ->
+		Dropzone.autoDiscover = false
 		_tags()
 		_upload()
 
@@ -18,13 +20,12 @@ class CMW.Add_work
 				_error "Нельзя вводить этот символ."
 		return
 	
-	Dropzone.autoDiscover = false;	
 	_upload = ->
 		$("#work_image").dropzone
-			maxFilesize: 5,
-			paramName: "work[image]",
-			addRemoveLinks: true,
-			url: location.href
+			maxFilesize   : 5
+			paramName     : "work[image]"
+			addRemoveLinks: true
+			url           : location.href
 		return
 
 	_error = (text) ->

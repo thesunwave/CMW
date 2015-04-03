@@ -47,7 +47,7 @@ class CMW.Prompts_handlers
 
 	Common = new CMW.Common()
 
-	PATH = "/views/index"
+	PATH = "/"
 
 	constructor: ->
 		if location.pathname is PATH
@@ -57,16 +57,16 @@ class CMW.Prompts_handlers
 
 	_what = (what) ->
 		url = self::what.getState $.hook "prompt-what"
-		if Common.urlSegment(4)
-			url = "#{PATH}/#{url}/#{Common.urlSegment(4)}/#{(location.hash || "")}"
+		if Common.urlSegment(2)
+			url = "#{PATH}#{url}/#{Common.urlSegment(2)}/#{(location.hash || "")}"
 		else
-			url = "#{PATH}/#{url}/#{(location.hash || "")}"
+			url = "#{PATH}#{url}/#{(location.hash || "")}"
 		_changeOther url
 		return
 
 	_where = (where) ->
 		url = self::where.getState $.hook "prompt-where"
-		url = "#{PATH}/#{(Common.urlSegment(3) || "")}/#{url}/#{(location.hash || "")}"
+		url = "#{PATH}#{(Common.urlSegment(1) || "")}/#{url}/#{(location.hash || "")}"
 		_changeOther url
 		return
 
@@ -76,7 +76,9 @@ class CMW.Prompts_handlers
 
 	_changeOther = (url) ->
 		$body = $ "body"
+		url = url.replace "//", "/"
 		Common.historyPush url
+		Common.showLoading()
 		$(document)
 			.on "ajaxSend", ->
 				$body.addClass "z-unloaded"
@@ -95,6 +97,7 @@ class CMW.Prompts_handlers
 				message: "Ошибка, связанная со страницей cmw.su#{url}."
 			return
 		.always ->
+			Common.showLoading()
 			return
 		return
 

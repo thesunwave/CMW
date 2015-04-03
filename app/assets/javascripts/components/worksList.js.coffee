@@ -1,7 +1,7 @@
 "use strict"
 
 class CMW.Works_list
-
+	
 	Common = new CMW.Common()
 
 	constructor: ->

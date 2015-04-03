@@ -19,9 +19,9 @@ class CMW.Initialize
 		new CMW.Prompts_handlers()
 		new CMW.Panel()
 		new CMW.Settings()
-		new CMW.Works_list()
 		new CMW.Coming_soon()
 		new CMW.Add_work()
+		new CMW.Works_list()
 		return
 
 $ ->
