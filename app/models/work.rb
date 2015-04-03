@@ -15,6 +15,7 @@ class Work < ActiveRecord::Base
   validates :title, :description, :image, presence: true
 
   before_create :normalize_filename
+  before_create :capitalize
 
   def normalize_filename
     Paperclip.interpolates :normalized_filename do |attachment, style|
@@ -26,4 +27,10 @@ class Work < ActiveRecord::Base
     end
   end
 
+private
+
+  def capitalize
+    self.title.capitalize!
+    self.description.capitalize!
+  end
 end
