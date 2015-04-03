@@ -7,11 +7,12 @@ class CMW.Works_list
 	constructor: ->
 		_changeView()
 		_changeViewViaUrl()
+		_gridHover()
 
 	_changeViewViaUrl = ->
 		if location.hash is "#grid"
 			$(".b-news__view_change__item_grid").trigger "click"
-		else
+		else if location.hash is "#list"
 			$(".b-news__view_change__item_list").trigger "click"
 		return
 
