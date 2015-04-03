@@ -1,0 +1,69 @@
+= render partial: "components/errors"
+.b-page.b-page__news.b-page__news_last
+  h1.b-page__title.b-page__title_2.b-news-showen Показаны
+  .b-prompt data-hook="prompt-what"
+    .b-prompt__current свежие
+    .b-prompt__modal
+      .b-prompt__modal__line.b-prompt__active data-hook="prompt-default" data-state="newest" свежие
+      .b-prompt__modal__line data-state="best" лучшие
+      .b-prompt__modal__line data-state="most_critical" самые критикуемые материалы за
+  .b-prompt data-hook="prompt-where"
+    .b-prompt__current всё время
+    .b-prompt__modal
+      .b-prompt__modal__line.b-prompt__active data-hook="prompt-default" data-state="all"
+        | всё время
+      .b-prompt__modal__line data-state="month"
+        | этот месяц
+      .b-prompt__modal__line data-state="week"
+        | эту неделю
+      .b-prompt__modal__line data-state="today"
+        | сегодня
+  .b-news__view_change
+    .b-news__view_change__item.b-news__view_change__item_list.b-news__view_active
+    .b-news__view_change__item.b-news__view_change__item_grid
+  - @type="list" # list or grid. For manual testing. Rendering via server
+  //- if @type=="grid"
+  //    @times=12
+  //- else
+  //    @times=4
+  .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper class="b-news_#{@type}"
+    - if @works.present?
+    - @works.each do |work|
+      .b-new.g-clearfix
+        .g-left.b-new__image
+          = link_to image_tag(work.image(:thumb), alt: work.title), show_work_path(work)
+        .g-left.b-new__content
+          h2.b-new__title
+            a href="#"  = link_to work.title, show_work_path(work)
+          .b-new__author
+            a.b-new__author__link href="#" = link_to work.user.name
+          .g-clearfix.b-new__description-wrapper
+            .g-left.b-new__description = work.description
+            .g-left.b-new__service
+              .b-new__service__item
+                .b-new__service__item__icon.b-new__service__item__icon_added
+                .b-new__service__item__content
+                  = work.created_at.to_time.strftime('%B %e at %l:%M %p')
+              .b-new__service__item
+                .b-new__service__item__icon.b-new__service__item__icon_comments
+                .b-new__service__item__content.b-new__service__item__content_comments
+                  a href="#"
+                    | 15
+                    span комментариев
+              .b-new__service__item.b-new__service__item_tags
+                .b-new__service__item__icon.b-new__service__item__icon_tags
+                .b-new__service__item__content
+                  a.b-tag href="#"  web-design
+                  a.b-tag href="#"  ui
+                  a.b-tag href="#"  flat
+              .b-new__service__item
+                .b-new__service__item__icon.b-new__service__item__icon_rating
+                .b-new__service__item__content.b-new__service__item__content_rating
+                  | 4,4
+                  span
+                  | /5,0
+              .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
+                .b-new__service__item__icon.b-new__service__item__icon_favourites
+                .b-new__service__item__content.b-new__service__item__content_favourites
+                  span В избранное!
+    .b-button.b-button_expanded.b-news__load-more Загрузить ещё

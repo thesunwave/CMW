@@ -1,0 +1,142 @@
+.b-page__news_last
+	position: relative
+
+.b-news
+	&__load-more
+		padding: 10px 22px
+	&-showen
+		font-weight: 300
+	&__view_change
+		position: absolute
+		right: 25px
+		top: 0
+		&__item
+			+box-model(25px, 25px)
+			+inline-block
+			+image-settings
+			margin-right: 6px
+			cursor: pointer
+			&_list
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAADFBMVEU4ODjHxsDNzcv39/VZLfz4AAAAH0lEQVR4AWOgPmBEB3AZJmZUwESJDKY9dHT1qKupDgC0AwIgwliwCwAAAABJRU5ErkJggg==)
+				&:hover, &.b-news__view_active
+					background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAADFBMVEXxxA/16bb27ML39/Xd67F8AAAAH0lEQVR4AWOgPmBEB3AZJmZUwESJDKY9dHT1qKupDgC0AwIgwliwCwAAAABJRU5ErkJggg==)
+			&_grid
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAABlBMVEU4ODg4ODj8Za9LAAAAAXRSTlMAQObYZgAAABtJREFUeAFjYMQFyJZhYECj6CUzFFw96mpcAABwugHritlYFgAAAABJRU5ErkJggg==)
+				&:hover, &.b-news__view_active
+					background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAABlBMVEXxxA/xxA+0cDsCAAAAAXRSTlMAQObYZgAAABtJREFUeAFjYMQFyJZhYECj6CUzFFw96mpcAABwugHritlYFgAAAABJRU5ErkJggg==)
+			&:last-child
+				margin-right: 0
+	&_list .b-new, &_grid .b-new
+		&__title
+			+inverted-link(true)
+			font-weight: 700
+			margin: -3px 0 7px 0
+		&__author
+			font-size: 16px
+			margin-bottom: 20px
+		&__description
+			width: 340px
+			margin-right: 20px
+			font-weight: 300
+		&__service
+			width: 150px
+			font-size: 0
+			&__item
+				margin-bottom: 10px
+				font-weight: 300
+				&_favourites-state
+					cursor: pointer
+					+inverted-link()
+				&_favourites .b-new__service__item__icon
+					+retina("newsIcons/favourites.png")
+				&_favouritesAdded .b-new__service__item__icon
+					+retina("newsIcons/favouritesAdded.png")
+				&:last-child
+					margin-bottom: 0
+				&__icon, &__content
+					+inline-block()
+				&_tags
+					margin-bottom: 5px
+					.b-new__service__item__icon, .b-new__service__item__content
+						vertical-align: top
+				&__content
+					width: 120px
+					font-size: 14px
+					&_comments
+						+inverted-link(true)
+				&__icon
+					+box-model(19px, 19px)
+					+image-settings
+					margin-right: 11px
+					&_added
+						+retina("newsIcons/added.png")
+					&_comments
+						+retina("newsIcons/comments.png")
+					&_tags
+						+retina("newsIcons/tags.png")
+					&_rating
+						+retina("newsIcons/rating.png")
+
+	&_grid
+		font-size: 0
+		.b-new
+			+box-model(270px, 270px)
+			+inline-block
+			margin-right: 22px
+			margin-bottom: 22px
+			padding: 27px
+			text-align: center
+			overflow: hidden
+			border: 1px solid $newWorkBorder
+			position: relative
+			&:nth-child(3n)
+				margin-right: 0
+			&__image
+				img
+					+box-model(217px, 217px)
+			&__service
+				width: auto
+				text-align: center
+				&__item
+					+inline-block
+					&__content
+						width: auto
+						max-width: 120px
+						font-size: 14px
+						&_comments, &_rating, &_favourites
+							span
+								display: none
+					&_icon
+						margin-right: 7px
+					&_tags
+						.b-new__service__item__content
+							text-align: left
+			&__content
+				+box-model(100%, 100%)
+				position: absolute
+				left: 0
+				top: 0
+				z-index: 200
+				background: $newWorkGridBg
+				padding: 35px 28px
+				display: none
+			&__title
+				font-size: 18px
+			&__author
+				font-size: 14px
+	&_list .b-new
+		padding: 20px
+		border: 1px solid $newWorkBorder
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+		&__image
+			width: 270px
+			overflow: hidden
+			margin-right: 25px
+			img
+				+box-model(270px, 270px)
+		&__content
+			width: 515px
+		&__title, &__author
+			text-align: center
