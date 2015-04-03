@@ -95,13 +95,14 @@
 				img
 					+box-model(217px, 217px)
 			&__service
-				width: auto
-				text-align: center
+				width: 217px
+				padding: 0 15px
+				text-align: left
 				&__item
 					+inline-block
 					&__content
 						width: auto
-						max-width: 120px
+						max-width: 155px
 						font-size: 14px
 						&_comments, &_rating, &_favourites
 							span
@@ -111,6 +112,14 @@
 					&_tags
 						.b-new__service__item__content
 							text-align: left
+						.b-tag
+							font-size: 11px
+					&_added
+						margin-right: 20px
+					&_rating
+						float: left
+					&_favourites
+						float: right
 			&__content
 				+box-model(100%, 100%)
 				position: absolute

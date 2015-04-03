@@ -1,7 +1,7 @@
 "use strict"
 
 class CMW.Works_list
-	
+
 	Common = new CMW.Common()
 
 	constructor: ->
@@ -20,12 +20,14 @@ class CMW.Works_list
 			.on "click", ".b-news__view_change__item_list", ->
 				_pathReplace()
 				_changeViewLogic $(@), location.pathname + "#list"
+				_changeDateView "list"
 				$(".b-news-wrapper").removeClass("b-news_grid").addClass "b-news_list"
 				$(".b-new").find(".b-new__content").show()
 				return
 			.on "click", ".b-news__view_change__item_grid", ->
 				_pathReplace()
 				_changeViewLogic $(@), location.pathname + "#grid"
+				_changeDateView "grid"
 				$(".b-news-wrapper").removeClass("b-news_list").addClass "b-news_grid"
 				_gridHover()
 				return
@@ -53,3 +55,12 @@ class CMW.Works_list
 					$(@).find(".b-new__content").stop().fadeOut 250
 				return
 		return
+
+	_changeDateView = (type) ->
+		$added = $ ".b-new__service__item__content_added"
+		if type is "list"
+			$added.html $added.data "list-date"
+		else
+			$added.html $added.data "grid-date"
+		return
+		
