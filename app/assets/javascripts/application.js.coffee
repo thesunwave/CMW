@@ -11,6 +11,7 @@
 
 #= require components/common
 #= require components/prompts
+#= require components/prompts_handlers
 #= require components/panel
 #= require components/settingsPage
 #= require components/comingSoon
