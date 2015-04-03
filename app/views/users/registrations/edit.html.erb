@@ -72,9 +72,22 @@
 			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.private_settings') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
+					<span class="b-input__title b-input__title_bold"><%= t('user_settings.email') %></span><span class="b-required-star">*</span>
+					<span class="b-input__title_bold b-input__title_help b-settings__input-help_yellow">(<span class="b-settings__input-help__link"><div class="b-prompt b-settings__prompt" data-hook="prompt-settings-privacy">
+							<div class="b-prompt__current">все могут писать через форму</div>
+							<div class="b-prompt__modal">
+								<div class="b-prompt__modal__line b-prompt__active">
+									все могут писать через форму
+								</div>
+								<div class="b-prompt__modal__line">
+									только мои подписчики
+								</div>
+								<div class="b-prompt__modal__line">
+									запретить для всех
+								</div>
+							</div>
+						</div></span>)</span>
 					<label>
-						<span class="b-input__title b-input__title_bold"><%= t('user_settings.email') %></span><span class="b-required-star">*</span>
-						<span class="b-input__title_bold b-input__title_help b-settings__input-help_yellow">(<span class="b-settings__input-help__link"><%= t('user_settings.email_helper') %></span>)</span>
 						<input type="text" class="b-input_text" name="user[email]" value="<%= resource.email %>" placeholder="" />
 					</label>
 					<div class="b-input__title b-input__title_bold">

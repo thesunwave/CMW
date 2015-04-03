@@ -4,7 +4,7 @@ class CMW.Prompts
 
 	self = @
 
-	constructor: (prompt, callback) ->
+	constructor: (prompt, callback = ->) ->
 		_init prompt
 		_select prompt, callback
 
@@ -50,6 +50,7 @@ class CMW.Prompts_handlers
 	PATH = "/"
 
 	constructor: ->
+		self::where = new CMW.Prompts $.hook("prompt-settings-privacy")
 		if location.pathname is PATH
 			self::what  = new CMW.Prompts $.hook("prompt-what"), _what
 			self::where = new CMW.Prompts $.hook("prompt-where"), _where
