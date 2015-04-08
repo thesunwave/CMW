@@ -92,7 +92,11 @@ auth_layout = ["sessions/new", "registrations/new", "registrations/create", "com
 				<%= yield %>
 <% end %>
 			</main>
+<% if !auth_layout.include?(page) %>
 			<%= render partial: "components/footer" %>
+<% else %>
+			<footer></footer>
+<% end %>
 		</section>
 		<%= javascript_include_tag 'application' %>
 		<script>

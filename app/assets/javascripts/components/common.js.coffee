@@ -24,4 +24,4 @@ class CMW.Common
 		else
 			document.title = title
 		return			
-		
+	

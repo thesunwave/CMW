@@ -11,8 +11,6 @@ class CMW.Initialize
 			Alerts    : true
 			Popups    : true
 			AjaxEnable: false
-
-		$.hook("panel").sticky()
 		return
 
 	loader: ->
