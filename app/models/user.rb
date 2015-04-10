@@ -1,4 +1,15 @@
 class User < ActiveRecord::Base
+  attr_accessor :slug
+  extend FriendlyId
+  friendly_id :username, :use => [:slugged, :finders]
+
+  def should_generate_new_friendly_id?
+    if !slug? || username_changed?
+      true
+    else
+      false
+    end
+  end
   #
   # Роли
   #

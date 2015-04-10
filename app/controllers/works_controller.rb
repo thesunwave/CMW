@@ -1,13 +1,13 @@
 class WorksController < ApplicationController
-  
+
   def list
     @works = Work.where(user_id: current_user.id).order(created_at: :desc)
   end
-  
+
   def new
     @work = Work.new
   end
-  
+
   def edit
     @work = Work.find(params[:id])
     respond_with(@work)
@@ -27,7 +27,7 @@ class WorksController < ApplicationController
       render action: 'new'
     end
   end
-  
+
   def update
     @work = Work.find(params[:id])
     if @work.update_attributes(work_params)
@@ -35,7 +35,7 @@ class WorksController < ApplicationController
       redirect_to show_work_path(@work), notice: 'Work was successfully updated.'
     end
   end
-  
+
   def destroy
     @work = Work.find(params[:id])
     if @work.destroy

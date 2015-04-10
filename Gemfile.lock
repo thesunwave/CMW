@@ -154,6 +154,8 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.8)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     guard (2.12.5)
@@ -388,6 +390,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   faker
+  friendly_id
   guard-rspec
   http_accept_language
   i18n-tasks (~> 0.7.4)
