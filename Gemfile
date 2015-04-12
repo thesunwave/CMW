@@ -3,7 +3,7 @@ ruby '2.1.5'
 
 gem 'rails', '4.2.0'                            # Ruby on Rails gem
 gem 'sass-rails', '~> 5.0.1'                    # SASS support
-gem 'compass-rails'                             # use Compass for SASS
+gem 'compass-rails', '~> 2.0.4'                 # use Compass for SASS
 gem 'uglifier', '>= 1.3.0'                      # JavaScript parser / mangler / compressor / beautifier
 gem 'coffee-rails', '~> 4.1.0'                  # CoffeeScript support
 gem 'cancan'                                    # authorization engine
