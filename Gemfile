@@ -18,7 +18,6 @@ gem 'aws-sdk', '< 2.0'
 gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
 gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 gem 'http_accept_language'                      # set locale from accept-language URL header
-gem 'friendly_id'
 
 
 group :development do

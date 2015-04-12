@@ -36,7 +36,7 @@ CMW::Application.routes.draw do
     get 'index'           => 'root#index'
   end
 
-  get '/:id' => 'works#list'
+  get '/:username' => 'profile#show', as: "profile_show"
       # пользователь
   scope '/user' do
       # профиль
