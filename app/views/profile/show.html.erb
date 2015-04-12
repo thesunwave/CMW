@@ -48,7 +48,11 @@
 				</div>
 			</div>
 			<div class="b-profile__description">
-				Недлинная такая, но хорошо описывающая жизнь дизайнера краткая биография, а не какой-нибудь там “Lorem Ipsum”. Здесь дизайнер должен написать что-то о себе, вроде любимого блюда или имени собаки. А может и нет. Ну к чёрту, не буду рассуждать, лучше дальше рисовать буду!
+				<%= if @user.description.present?
+							@user.description
+						else
+							t('profile.blank')
+						end %>
 			</div>
 		</div>
 		<div class="b-news-wrapper b-news_grid">
