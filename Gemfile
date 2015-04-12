@@ -20,7 +20,6 @@ gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 gem 'http_accept_language'                      # set locale from accept-language URL header
 
 
-
 group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'

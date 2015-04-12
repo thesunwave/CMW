@@ -162,6 +162,11 @@ ru:
     view: Предварительный просмотр
     send: Отправить
     upload_description: <nobr>Просто перетащите файлы работы</nobr> <nobr>в эту область</nobr>
+    count:
+      zero: 'работ'
+      one: 'работа'
+      few: 'работы'
+      many: 'работ'
 
   # сообщения об ошибках
   errors: &errors

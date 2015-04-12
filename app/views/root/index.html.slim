@@ -1,14 +1,14 @@
 = render partial: "components/errors"
 .b-page.b-page__news.b-page__news_last
   h1.b-page__title.b-page__title_2.b-news-showen
-    | Показаны 
+    | Показаны&nbsp
     .b-prompt data-hook="prompt-what"
       .b-prompt__current свежие
       .b-prompt__modal
         .b-prompt__modal__line.b-prompt__active data-hook="prompt-default" data-state="newest" свежие
         .b-prompt__modal__line data-state="best" лучшие
         .b-prompt__modal__line data-state="most_critical" самые критикуемые
-    |  материалы за 
+    |  материалы за&nbsp
     .b-prompt data-hook="prompt-where"
       .b-prompt__current всё время
       .b-prompt__modal
@@ -38,7 +38,7 @@
           h2.b-new__title
             a href="#"  = link_to work.title, show_work_path(work)
           .b-new__author
-            a.b-new__author__link href="#" = link_to work.user.name
+            a.b-new__author__link href="#" = link_to work.user.name, profile_show_path(work.user.username)
           .g-clearfix.b-new__description-wrapper
             .g-left.b-new__description = work.description
             .g-left.b-new__service
@@ -50,7 +50,7 @@
                 .b-new__service__item__icon.b-new__service__item__icon_comments
                 .b-new__service__item__content.b-new__service__item__content_comments
                   a href="#"
-                    | 15 
+                    | 15
                     span комментариев
               .b-new__service__item.b-new__service__item_tags
                 .b-new__service__item__icon.b-new__service__item__icon_tags
@@ -61,7 +61,7 @@
               .b-new__service__item.b-new__service__item_rating
                 .b-new__service__item__icon.b-new__service__item__icon_rating
                 .b-new__service__item__content.b-new__service__item__content_rating
-                  | 4,4 
+                  | 4,4
                   span
                     | / 5,0
               .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
