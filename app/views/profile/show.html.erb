@@ -56,15 +56,16 @@
 			</div>
 		</div>
 		<div class="b-news-wrapper b-news_grid">
-<% 12.times do %>
+<% if @user.works.present? %>
+<% @user.works.each do |work| %>
 			<div class="b-new g-clearfix">
 				<div class="g-left b-new__image">
-					<a href="#"><img src="/images/news/270x270.png" alt="" /></a>
+					<%= link_to image_tag(work.image(:thumb)), show_work_path(work) %>
 				</div>
 				<div class="g-left b-new__content">
-					<h2 class="b-new__title"><a href="#">Designmodo Website</a></h2>
+					<h2 class="b-new__title"><%= link_to work.title, show_work_path(work) %></h2>
 					<div class="b-new__author">
-						<a href="#" class="b-new__author__link">Павел Зиновьев</a>
+						<%= link_to @user.name, profile_show_path(@user.username), class: "b-new__author__link" %>
 					</div>
 					<div class="g-clearfix b-new__description-wrapper">
 						<div class="g-left b-new__service">
@@ -104,6 +105,7 @@
 					</div>
 				</div>
 			</div>
+<% end %>
 <% end %>
 			<div class="b-button b-button_expanded b-news__load-more">Загрузить ещё</div>
 		</div>
