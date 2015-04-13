@@ -18,14 +18,14 @@ gem 'aws-sdk', '< 2.0'
 gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
 gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 gem 'http_accept_language'                      # set locale from accept-language URL header
-
+gem 'dotenv-rails'
 
 group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
-	gem 'capistrano', '~> 3.0.1'
+	gem 'capistrano', '~> 3.3.5'
 	gem 'capistrano-bundler'
-	gem 'capistrano-rails', '~> 1.1.0'
+	gem 'capistrano-rails', '~> 1.1.2'
 	gem 'capistrano-rails-console'
 	gem 'capistrano-rvm', '~> 0.1.1'
 	gem 'quiet_assets'
@@ -44,7 +44,6 @@ group :development, :test do
 	gem 'factory_girl_rails', require: false
 	gem 'guard-rspec'
 	gem 'seed-fu', '~> 2.3'
-	gem 'dotenv-rails'
 end
 
 group :test do
@@ -57,5 +56,5 @@ end
 
 
 group :production do
-	gem 'unicorn'
+	gem 'passenger', '~> 5.0.6'
 end
