@@ -7,7 +7,7 @@ class CMW.Prompts_handlers
 	PATH = "/"
 
 	constructor: ->
-		self::where = new CMW.Prompts $.hook("prompt-settings-privacy")
+		self::emailPolicy = new CMW.Prompts $.hook("prompt-settings-privacy"), _emailPolicy
 		if location.pathname is PATH
 			self::what  = new CMW.Prompts $.hook("prompt-what"), _what
 			self::where = new CMW.Prompts $.hook("prompt-where"), _where
@@ -26,6 +26,11 @@ class CMW.Prompts_handlers
 		url = self::where.getState $.hook "prompt-where"
 		url = "#{PATH}#{(Common.urlSegment(1) || "")}/#{url}/#{(location.hash || "")}"
 		_changeOther url
+		return
+
+	_emailPolicy = (who) ->
+		who = self::emailPolicy.getState $.hook "prompt-settings-privacy"
+		$.hook("email-policy").val who
 		return
 
 	window.onpopstate = ->

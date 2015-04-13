@@ -2,7 +2,7 @@
 <div class="b-page b-page__settings">
 	<h1 class="b-page__title b-page__title_1"><%= t('title.user_settings') %></h1>
 	<div class="b-page__cover b-page__cover_settings">
-		<form action="/auth/settings" accept-charset="UTF-8" method="post" data-hook="save-settings">
+		<form action="/auth/settings" accept-charset="UTF-8" method="post">
 			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.main_info') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
@@ -68,7 +68,7 @@
 			<input type="hidden" name="_method" value="put" />
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 		</form>
-		<form action="/auth/settings" accept-charset="UTF-8" method="post" data-hook="save-settings">
+		<form action="/auth/settings" accept-charset="UTF-8" method="post">
 			<h2 class="b-page__title b-page__title_2"><%= t('user_settings.private_settings') %></h2>
 			<div class="g-clearfix">
 				<div class="g-left">
@@ -76,17 +76,18 @@
 					<span class="b-input__title_bold b-input__title_help b-settings__input-help_yellow">(<span class="b-settings__input-help__link"><div class="b-prompt b-settings__prompt" data-hook="prompt-settings-privacy">
 							<div class="b-prompt__current">все могут писать через форму</div>
 							<div class="b-prompt__modal">
-								<div class="b-prompt__modal__line b-prompt__active">
+								<div class="b-prompt__modal__line b-prompt__active" data-state="all">
 									все могут писать через форму
 								</div>
-								<div class="b-prompt__modal__line">
+								<div class="b-prompt__modal__line" data-state="subs">
 									только мои подписчики
 								</div>
-								<div class="b-prompt__modal__line">
+								<div class="b-prompt__modal__line" data-state="nobody">
 									запретить для всех
 								</div>
 							</div>
 						</div></span>)</span>
+					<input type="hidden" name="" data-hook="email-policy" /> <!-- Из промпта выше при клике сюда могут отправляться: all, subs, nobody -->
 					<label>
 						<input type="text" class="b-input_text" name="user[email]" value="<%= resource.email %>" placeholder="" />
 					</label>
@@ -97,12 +98,22 @@
 <%# NotificationType.all.each do |notification| %>
 <%# checked = (current_user.has_notification? notification.name) ? (" checked=\"checked\"") : ("") %>
 <%# value   = (current_user.has_notification? notification.name) ? ("") : (" value=\"1\"") %>
-						<div>
+<!-- 						<div>
 							<input type="hidden" name="user[notifications][<%#= notification.name %>]" value="0" />
 							<label class="b-checkbox"><input name="user[notifications][<%#= notification.name %>]" type="checkbox"<%#= checked.html_safe + value.html_safe %> /><span class="b-checkbox__handler"></span></label>
 							<span><%#= t('notifications.' + notification.name) %></span>
 						</div>
-<%# end %>
+ --><%# end %>
+						<div>
+							<input type="hidden" name="user[notifications][<%#= notification.name %>]" value="0" />
+							<label class="b-checkbox"><input name="" type="checkbox" /><span class="b-checkbox__handler"></span></label>
+							<span>Какое-нибудь уведомление</span>
+						</div>
+						<div>
+							<input type="hidden" name="user[notifications][<%#= notification.name %>]" value="0" />
+							<label class="b-checkbox"><input name="" type="checkbox" /><span class="b-checkbox__handler"></span></label>
+							<span>Ищо</span>
+						</div>
 					</div>
 				</div>
 				<div class="g-right">
@@ -123,13 +134,9 @@
 								<span class="b-input__title b-input__title_bold"><%= t('user_settings.new_password_confirmation') %></span>
 								<input type="password" autocomplete="off" class="b-input_text" name="user[password_confirmation]" placeholder="" />
 							</label>
-							<label>
-								<span class="b-input__title b-input__title_bold"><%= t('user_settings.new_password_confirmation') %></span>
-								<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
-							</label>
 						</div>
 					</div>
-					<div class="b-input__title_bold b-input__title_help b-settings__input-help_centered">
+					<div class="b-input__title_bold b-input__title_help b-input__title_centered">
 						(<%= t('user_settings.new_password_helper') %>)
 					</div>
 				</div>
