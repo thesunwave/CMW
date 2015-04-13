@@ -36,7 +36,7 @@
 		+transition(background-color $transitionDuration ease)
 		line-height: 1
 		text-align: center
-		background: $buttonDefaultNormal
+		background-color: $buttonDefaultNormal
 		cursor: pointer
 		font-weight: 300
 		font-size: 18px
@@ -77,31 +77,37 @@
 		&_last
 			margin-bottom: 0
 		&:not(.b-button_bordered):hover, &:not(.b-button_bordered):focus
-			background: $buttonDefaultHover
+			background-color: $buttonDefaultHover
 			color: $asideLinksColor
 		&:not(.b-button_disabled):not(:disabled):active
 			+transition(none)
 		&:disabled, &_disabled
-			background: $buttonDefaultDisabled
+			background-color: $buttonDefaultDisabled
 			cursor: default
+		&_inverted
+			background-color: $buttonDefaultHover
+			color: $asideLinksColor
+			&:hover, &:focus
+				background-color: $buttonDefaultNormal !important
+				color: $whiteColor !important
 		&_primary
-			background: $buttonPrimaryNormal
+			background-color: $buttonPrimaryNormal
 			color: #fff
 			&:hover
-				background: $buttonPrimaryHover
+				background-color: $buttonPrimaryHover
 			&:disabled, &_disabled
-				background: $buttonPrimaryDisabled
+				background-color: $buttonPrimaryDisabled
 		&_success
-			background: $buttonSuccessNormal
+			background-color: $buttonSuccessNormal
 			color: #fff
 			&:hover
-				background: $buttonSuccessHover
+				background-color: $buttonSuccessHover
 			&:disabled, &_disabled
-				background: $buttonSuccessDisabled
+				background-color: $buttonSuccessDisabled
 		&_warning
-			background: $buttonWarningNormal
+			background-color: $buttonWarningNormal
 			color: #fff
 			&:hover
-				background: $buttonWarningHover
+				background-color: $buttonWarningHover
 			&:disabled, &_disabled
-				background: $buttonWarningDisabled
+				background-color: $buttonWarningDisabled

@@ -1,0 +1,104 @@
+<%= render partial: "components/errors" %>
+<div class="b-page b-page__news b-page__news_last">
+	<h1 class="b-page__title b-page__title_2 b-news-showen">Показаны
+		<div class="b-prompt" data-hook="prompt-what">
+			<div class="b-prompt__current">свежие</div>
+			<div class="b-prompt__modal">
+				<div class="b-prompt__modal__line b-prompt__active" data-hook="prompt-default" data-state="newest">
+					свежие
+				</div>
+				<div class="b-prompt__modal__line" data-state="best">
+					лучшие
+				</div>
+				<div class="b-prompt__modal__line" data-state="most_critical">
+					самые критикуемые
+				</div>
+			</div>
+		</div>
+		материалы за
+		<div class="b-prompt" data-hook="prompt-where">
+			<div class="b-prompt__current">всё время</div>
+			<div class="b-prompt__modal">
+				<div class="b-prompt__modal__line b-prompt__active" data-hook="prompt-default" data-state="all">
+					всё время
+				</div>
+				<div class="b-prompt__modal__line" data-state="month">
+					этот месяц
+				</div>
+				<div class="b-prompt__modal__line" data-state="week">
+					эту неделю
+				</div>
+				<div class="b-prompt__modal__line" data-state="today">
+					сегодня
+				</div>
+			</div>
+		</div>
+	</h1>
+	<div class="b-news__view_change">
+		<div class="b-news__view_change__item b-news__view_change__item_list b-news__view_active"></div>
+		<div class="b-news__view_change__item b-news__view_change__item_grid"></div>
+	</div>
+<%
+@type = "list" # list or grid. For manual testing. Rendering via server
+if @type == "grid"
+	@times = 12
+else
+	@times = 4
+end
+%>
+	<div class="b-page__cover b-page__cover_news b-page__cover_news-last b-news-wrapper b-news_<%=@type%>">
+<% @times.times do %>
+		<div class="b-new g-clearfix">
+			<div class="g-left b-new__image">
+				<a href="#"><img src="/images/news/270x270.png" alt="" /></a>
+			</div>
+			<div class="g-left b-new__content">
+				<h2 class="b-new__title"><a href="#">Designmodo Website</a></h2>
+				<div class="b-new__author">
+					<a href="#" class="b-new__author__link">Павел Зиновьев</a>
+				</div>
+				<div class="g-clearfix b-new__description-wrapper">
+					<div class="g-left b-new__description">
+						Краткое описание этой херни на картинке слева. Поставленная перед исполнителем задача, бюджет заказчика и вообще всё, что дизайнер может посчитать нужным включить в описание работы, вроде средств, с помощью которых он это делал, названия того, под чем он над этим трудился и прочую гадость. Вроде всё. А вообще, эту фигню можно и пошире сделать. Да-да, точно. А картинка пусть будет квадратная. Потому что всякие материалы бывают - и прямоугольные, и квадратные, и большие, и маленькие. Пусть лучше пользователь, как на бехансе, или в вк выберет КВАДРАТНУЮ миниатюру, 270х270. Всё.
+					</div>
+					<div class="g-left b-new__service">
+						<div class="b-new__service__item">
+							<div class="b-new__service__item__icon b-new__service__item__icon_added"></div>
+							<div class="b-new__service__item__content">
+								Сегодня, 16:54
+							</div>
+						</div>
+						<div class="b-new__service__item">
+							<div class="b-new__service__item__icon b-new__service__item__icon_comments"></div>
+							<div class="b-new__service__item__content b-new__service__item__content_comments">
+								<a href="#">15 <span>комментариев</span></a>
+							</div>
+						</div>
+						<div class="b-new__service__item b-new__service__item_tags">
+							<div class="b-new__service__item__icon b-new__service__item__icon_tags"></div>
+							<div class="b-new__service__item__content">
+								<a href="#" class="b-tag">web-design</a>
+								<a href="#" class="b-tag">ui</a>
+								<a href="#" class="b-tag">flat</a>
+							</div>
+						</div>
+						<div class="b-new__service__item">
+							<div class="b-new__service__item__icon b-new__service__item__icon_rating"></div>
+							<div class="b-new__service__item__content b-new__service__item__content_rating">
+								4,4 <span>/ 5,0</span>
+							</div>
+						</div>
+						<div class="b-new__service__item b-new__service__item_favourites-state b-new__service__item_favourites">
+							<div class="b-new__service__item__icon b-new__service__item__icon_favourites"></div>
+							<div class="b-new__service__item__content b-new__service__item__content_favourites">
+								<span>В избранное!</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<% end %>
+		<div class="b-button b-button_expanded b-news__load-more">Загрузить ещё</div>
+	</div>
+</div>

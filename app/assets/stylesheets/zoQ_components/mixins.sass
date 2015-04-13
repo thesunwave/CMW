@@ -1,21 +1,35 @@
-// $icons: sprite-map("sprite/**/*.png", $spacing: 0, $layout: smart)
-
-// @mixin image-size($path)
-// 	+boxModel(image-width($path), image-height($path))
-
 @mixin sprite($map, $link)
 	+sprite-dimensions($map, $link)
 	background-image: sprite-url($map)
 	background-position: sprite-position($map, $link)
 	background-repeat: no-repeat
 
-// @mixin spriteHover($link)
-// 	background-position: sprite-position($icons, $link)
-
 @mixin box-model($width, $height)
 	width: $width
 	height: $height
 
-@mixin retina
-	@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-		@content
+@mixin retina($image)
+	background-image: asset-url("@1x/"+$image)
+	@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
+		background-image: asset-url("@1.25x/"+$image)
+	@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)
+		background-image: asset-url("@1.3x/"+$image)
+	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+		background-image: asset-url("@1.5x/"+$image)
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+		background-image: asset-url("@2x/"+$image)
+
+@mixin image-settings
+	background-position: center
+	background-repeat: no-repeat
+
+@mixin inverted-link($link: false)
+	@if $link
+		a
+			color: $blackColor
+			&:hover
+				color: $yellowColor
+	@else
+		color: $blackColor
+		&:hover
+			color: $yellowColor

@@ -1,0 +1,67 @@
+.b-profile
+	&__info
+		margin-bottom: 49px
+	&__image-service, &__description
+		width: 100%
+		min-height: 187px
+		table-layout: fixed
+		display: table-cell
+		vertical-align: top
+	&__image-service
+		width: 498px
+	&__description
+		width: 352px
+		padding: 20px
+		background: $profileDescr
+		word-break: break-all
+	&__image
+		width: 149px
+		&__img
+			img
+				+box-model(149px, 149px)
+				border: 3px solid $blackColor
+		&__subscribe
+			padding: 13px 10px 13px 38px
+			font-size: 16px
+			display: block
+			background-position: 11px center
+			background-repeat: no-repeat
+			&_go
+				+retina("profileIcons/subscribeGo.png")
+			&_gone
+				+retina("profileIcons/subscribeGone.png")
+	&__service
+		width: 320px
+		margin-left: 29px
+		&__title
+			font-weight: 700
+			font-size: 26px
+		&__spec
+			font-size: 18px
+			font-weight: 300
+			color: rgba($blackColor, .7)
+			margin-top: 5px
+			margin-bottom: 15px
+		&__activity
+			font-size: 0
+			margin-bottom: 17px
+			&__item
+				+box-model(71px, 73px)
+				+inline-block
+				margin-right: 5px
+				border: 2px solid $blackColor
+				text-align: center
+				font-weight: 700
+				&:last-child
+					margin-right: 0
+				&__top
+					background: $whiteColor
+					font-size: 24px
+					height: 39px
+					line-height: 39px
+				&__bottom
+					height: 30px
+					line-height: 30px
+					font-size: 18px
+					background: $blackColor
+					color: #fff

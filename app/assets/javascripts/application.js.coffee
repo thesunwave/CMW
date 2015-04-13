@@ -10,9 +10,12 @@
 #= require init
 
 #= require components/common
+#= require components/prompts
+#= require components/prompts_handlers
 #= require components/panel
 #= require components/settingsPage
 #= require components/comingSoon
 #= require components/addWork
+#= require components/worksList
 
 #= require load
