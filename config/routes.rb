@@ -3,6 +3,8 @@ CMW::Application.routes.draw do
   get  'coming_soon'   => 'coming_soon#index'
   post 'coming_soon'   => 'coming_soon#create'
 
+  mount Commontator::Engine => '/commontator'
+
   # root to: 'coming_soon#index', as: "invite"
 
   # переключить локаль
@@ -36,9 +38,9 @@ CMW::Application.routes.draw do
     get 'index'           => 'root#index'
   end
 
-  get '/:username' => 'profile#show', as: "profile_show"
       # пользователь
-  scope '/user' do
+  get '/:username' => 'profile#show', as: "profile_show"
+  scope '/:username' do
       # профиль
     get 'profile'       => 'profile#index'
     # новости
