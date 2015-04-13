@@ -1,14 +1,14 @@
 = render partial: "components/errors"
 .b-page.b-page__news.b-page__news_last
   h1.b-page__title.b-page__title_2.b-news-showen
-    | Показаны&nbsp
+    | Показаны 
     .b-prompt data-hook="prompt-what"
       .b-prompt__current свежие
       .b-prompt__modal
         .b-prompt__modal__line.b-prompt__active data-hook="prompt-default" data-state="newest" свежие
         .b-prompt__modal__line data-state="best" лучшие
         .b-prompt__modal__line data-state="most_critical" самые критикуемые
-    |  материалы за&nbsp
+    |  материалы за 
     .b-prompt data-hook="prompt-where"
       .b-prompt__current всё время
       .b-prompt__modal
@@ -23,12 +23,7 @@
   .b-news__view_change
     .b-news__view_change__item.b-news__view_change__item_list.b-news__view_active
     .b-news__view_change__item.b-news__view_change__item_grid
-  - @type="list" # list or grid. For manual testing. Rendering via server
-  //- if @type=="grid"
-  //    @times=12
-  //- else
-  //    @times=4
-  .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper class="b-news_#{@type}"
+  .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper class="b-news_list"
     - if @works.present?
     - @works.each do |work|
       .b-new.g-clearfix
@@ -51,7 +46,7 @@
                 .b-new__service__item__content.b-new__service__item__content_comments
                   a href="#"
                     | 15
-                    span комментариев
+                    span  комментариев
               .b-new__service__item.b-new__service__item_tags
                 .b-new__service__item__icon.b-new__service__item__icon_tags
                 .b-new__service__item__content
@@ -61,7 +56,7 @@
               .b-new__service__item.b-new__service__item_rating
                 .b-new__service__item__icon.b-new__service__item__icon_rating
                 .b-new__service__item__content.b-new__service__item__content_rating
-                  | 4,4
+                  | 4,4 
                   span
                     | / 5,0
               .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
