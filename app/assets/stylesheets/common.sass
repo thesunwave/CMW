@@ -5,7 +5,7 @@
 
 .b-tag
 	+inline-block
-	padding: 5px 14px
+	padding: 2.5px 14px
 	background: $yellowColor
 	color: #fff
 	font-weight: 500
@@ -62,3 +62,110 @@
 		&_db
 		&:last-child
 			margin-right: 0
+
+.b-fav-link, .b-sub-link
+	+inline-block
+	background-position: left center
+	background-repeat: no-repeat
+	padding-left: 23px
+	line-height: 17px
+	font-weight: 300
+	&_done
+		color: $blackColor
+		span
+			color: $yellowColor
+
+.b-fav-link
+	&_do
+		+retina("newsIcons/favourites.png")
+	&_done
+		+retina("newsIcons/favouritesAdded.png")
+
+.b-sub-link
+	&_do
+		// +retina("newsIcons/favourites.png")
+	&_done
+		// +retina("newsIcons/favouritesAdded.png")
+
+.b-comments
+	padding: 0 25px
+	&__title
+		font-size: 22px
+		margin-top: 0
+		margin-bottom: 30px
+	&__write
+		border: 1px solid $yellowColor
+		margin-bottom: 27px
+		.b-input_textarea
+			border: 0
+			border-bottom: 1px solid $yellowColor
+			resize: none
+			min-height: 115px
+			font-weight: 100
+			font-size: 18px
+			margin-bottom: 0
+		&__service
+			background: $profileDescr
+			height: 39px
+			line-height: 36px
+			padding-left: 13px
+			font-size: 16px
+			font-weight: 500
+		&__author
+			margin-right: 60px
+		&__send
+			.b-button
+				padding: 10px 22px
+
+.b-comment
+	background: $profileDescr
+	padding: 10px
+	margin-bottom: 15px
+	&:last-child
+		margin-bottom: 0
+	&__head
+		height: 30px
+		margin-bottom: 10px
+	&__content
+		background: #fff
+		padding: 15px
+		font-weight: 100
+	&__avatar
+		+box-model(30px, 30px)
+		margin-right: 12px
+		img
+			+box-model(30px, 30px)
+	&__name-spec
+		width: 250px
+		text-align: center
+		margin-right: 40px
+	&__name
+		+inverted-link(true)
+		font-size: 16px
+		font-weight: 500
+	&__spec
+		+inverted-link(true)
+		font-size: 12px
+		font-weight: 500
+		a
+			color: rgba($blackColor, .6)
+	&__rating
+		padding-top: 6px
+		font-weight: 300
+	&__date
+		font-weight: 100
+		padding-top: 9px
+		padding-right: 5px
+
+.b-rating-text
+	color: rgba($blackColor, .75)
+	font-weight: 100
+	margin-right: 10px
+
+.b-icon
+	&_star
+		+inline-block
+		+box-model(17px, 16px)
+		+retina("newsIcons/rating.png")
+		margin-right: 5px
+		margin-bottom: 3px

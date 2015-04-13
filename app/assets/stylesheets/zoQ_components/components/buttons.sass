@@ -84,6 +84,12 @@
 		&:disabled, &_disabled
 			background-color: $buttonDefaultDisabled
 			cursor: default
+		&_inverted
+			background-color: $buttonDefaultHover
+			color: $asideLinksColor
+			&:hover, &:focus
+				background-color: $buttonDefaultNormal !important
+				color: $whiteColor !important
 		&_primary
 			background-color: $buttonPrimaryNormal
 			color: #fff

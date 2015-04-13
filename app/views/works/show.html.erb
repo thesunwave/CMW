@@ -1,0 +1,108 @@
+<%= render partial: "components/errors" %>
+<div class="b-page b-item">
+	<h1 class="b-page__title b-page__title_1"><%= @work.title %></h1>
+	<div class="b-page__cover b-page__cover_item">
+		<div class="b-item__images">
+			<%= image_tag @work.image(:medium) %>
+		</div>
+		<div class="b-item__info">
+			<div class="b-item__info__actions g-clearfix">
+				<div class="b-item__info__actions__one g-left">
+					<a href="#" class="b-fav-link b-fav-link_do">Добавить эту работу в избранное</a>
+					<!-- <a href="#" class="b-fav-link b-fav-link_done">В избранном (<span>убрать</span>)</a> -->
+				</div>
+				<div class="b-item__info__actions__one g-left">
+					<a href="#" class="b-sub-link b-sub-link_do">Подписаться на автора работы</a>
+					<!-- <a href="#" class="b-sub-link b-sub-link_done">Вы уже подписаны (<span>отписаться</span>)</a> -->
+				</div>
+			</div>
+			<div class="b-item__info__description">
+				Типа описание проекта в овер дофига символов. Как я уже говорил, тут может быть абсолютно всё, чего хочет сюда вложить десигнер, который рисовал материал сверху. Хоть душу. Только мы не дъявол, и души в расчёт не принимаем. Нам бы денежки лучше, а то душа - это как спасибо в нашем мире. Вроде приятно, что есть, а вроде и на хлеб не намажешь/в карман не положишь/в рот не возьмёшь. Такие дела...
+			</div>
+			<div class="b-item__service g-clearfix">
+				<div class="g-left b-item__service__author">
+					<div class="g-left b-item__service__author__avatar">
+						<a href="#"><img src="/images/avatar70x70.png" alt="" /></a>
+					</div>
+					<div class="g-left b-item__service__author__info">
+						<div class="b-item__service__author__info__title">
+							<a href="#">Клайд Холланд</a>
+						</div>
+						<div class="b-item__service__author__info__spec">
+							<a href="#">веб-дизайн</a>
+						</div>
+						<div class="b-item__service__author__info__date">
+							сегодня в 12:36
+						</div>
+					</div>
+				</div>
+				<div class="g-left b-item__service__tags">
+					<a href="#" class="b-tag">web-design</a>
+					<a href="#" class="b-tag">ui</a>
+					<a href="#" class="b-tag">flat</a>
+					<a href="#" class="b-tag">ui</a>
+					<a href="#" class="b-tag">flat</a>
+					<a href="#" class="b-tag">super</a>
+				</div>
+				<div class="g-left b-item__service__rating">
+					<div class="b-item__service__rating__item b-item__service__rating__item_rate">
+						4.7 <span>/</span> 5.0
+					</div>
+					<div class="b-item__service__rating__item b-item__service__rating__item_comments">
+						14 <span>комментариев</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="b-comments" id="comments">
+			<h2 class="b-comments__title">Комментарии</h2>
+			<div class="b-comments__write">
+				<form action="" method="">
+					<label>
+						<textarea name="" placeholder="Напишите комментарий для того, чтобы поставить оценку" class="b-comments__write__field b-input_textarea"></textarea>
+					</label>
+					<div class="b-comments__write__service g-clearfix">
+						<div class="g-left b-comments__write__author">
+							Михаил Кононенко
+						</div>
+						<div class="g-left b-comments__write__rating">
+							<span class="b-rating-text">моя оценка:</span>
+						</div>
+						<div class="g-right b-comments__write__send">
+							<input type="submit" class="b-button b-button_inverted" value="Отправить" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="b-comments-wrapper">
+<% 5.times do |comment| %>
+				<div class="b-comment" id="comment<%= comment %>">
+					<div class="b-comment__head g-clearfix">
+						<div class="g-left b-comment__avatar">
+							<a href="#"><img src="/images/avatar30x30.png" alt="" /></a>
+						</div>
+						<div class="g-left b-comment__name-spec">
+							<div class="b-comment__name">
+								<a href="#">Павел Зиновьев</a>
+							</div>
+							<div class="b-comment__spec">
+								<a href="#">веб-дизайн</a>
+							</div>
+						</div>
+						<div class="g-left b-comment__rating">
+							<span class="b-rating-text">оценка:</span> <span class="b-icon_star"></span> 4 / 5
+						</div>
+						<div class="g-right b-comment__date">
+							5 декабря 2015 16:54
+						</div>
+					</div>
+					<div class="b-comment__content">
+						Ну, что могу сказать... Сайт, конечно, неплох, но вот реклама, которую трудно убрать - значительный косяк. Шрифты вроде читаемые, подобраны неплохо, сочетаются. С цветами тоже всё в порядке, контрастируют хорошо, приятно на них смотреть. Видно, что сделано профессионально, но вот опять же реклама... Только из-за неё ставлю 4, а не 5.
+					</div>
+				</div>
+<% end %>
+			</div>
+			<div class="b-button b-button_expanded b-news__load-more b-item__load-more">Загрузить ещё</div>
+		</div>
+	</div>
+</div>
