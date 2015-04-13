@@ -33,10 +33,10 @@
     - @works.each do |work|
       .b-new.g-clearfix
         .g-left.b-new__image
-          = link_to image_tag(work.image(:thumb), alt: work.title), show_work_path(work)
+          = link_to image_tag(work.image(:thumb), alt: work.title), show_work_path(work.user.username, work)
         .g-left.b-new__content
           h2.b-new__title
-            a href="#"  = link_to work.title, show_work_path(work)
+            a href="#"  = link_to work.title, show_work_path(work.user.username, work)
           .b-new__author
             a.b-new__author__link href="#" = link_to work.user.name, profile_show_path(work.user.username)
           .g-clearfix.b-new__description-wrapper
