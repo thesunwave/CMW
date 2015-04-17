@@ -21,7 +21,7 @@ class WorksController < ApplicationController
     @work = Work.new work_params
     @work.user_id = current_user.id
     if @work.save
-      redirect_to show_work_path(@work), notice: 'Work was successfully created.'
+      redirect_to show_work_path(current_user.username, @work), notice: 'Work was successfully created.'
      else
       flash[:alert] = @work.errors.full_messages
       render action: 'new'

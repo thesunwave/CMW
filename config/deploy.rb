@@ -1,29 +1,23 @@
-set :application, 'CMW'
-set :repo_url, 'git@bitbucket.org:zoqteam/cmw.git'
-set :deploy_to, '/home/deploy/cmw'
-set :scm, :git
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :keep_releases, 3
-set :log_level, :info
-
+lock '>= 3.1.0'
+set :application, 'cmw'
+set :repo_url, 'git@bitbucket.org:thesunwave/cmw.git'
+# Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-
-# set :deploy_to, '/var/www/my_app'
-# set :scm, :git
-
-# set :format, :pretty
-# set :log_level, :debug
-# set :pty, true
-
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+# Default deploy_to directory is /var/www/my_app
+set :deploy_to, '/u/apps/cmw'
+# Use agent forwarding for SSH so you can deploy with the SSH key on your workstation.
+set :ssh_options,         forward_agent: true
+# Default value for :pty is false
+set :pty, true
+# Default value for :linked_files is []
+set :linked_files, %w(config/database.yml .rbenv-vars .ruby-version .env)
+# Default value for linked_dirs is []
+set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
+# Default value for default_env is {}
+set :default_env, path: '/opt/rbenv/shims:$PATH'
+# Default value for keep_releases is 5
 # set :keep_releases, 5
-
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -31,6 +25,5 @@ namespace :deploy do
     end
   end
 
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
-end
+after :publishing, :restart
+      end

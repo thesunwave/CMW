@@ -22,5 +22,5 @@ test:
 production:
   <<: *default
   database: cmw_prod
-  username: cmw
-  password: cmwdeploy
+  username: postgres
+  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
