@@ -1,0 +1,33 @@
+<%= render partial: "components/head" %>
+	<body class="z-unloaded">
+		<%= render partial: "components/icons" %>
+		<div class="z-actions">
+			<div class="z-actions__alerts"></div>
+			<div class="z-actions__popups"></div>
+		</div>
+		<section class="b-wrapper">
+			<header class="b-controller-name b-controller-name_auth<%= " b-controller_" + controller.controller_name + "-" + controller.action_name %>">
+				<div class="b-logo">
+					<div>
+						<a href="/" class="b-logo__image">
+							<svg class="b-logo__image__img">
+								<use xlink:href="#icon-bird"></use>
+							</svg>
+						</a>
+					</div>
+					<div>
+						<a href="/" class="b-logo__text">Criticize My Work</a>
+					</div>
+				</div>
+			</header>
+			<main class="b-wrapper__main">
+				<%= yield %>
+			</main>
+			<footer></footer>
+		</section>
+		<%= javascript_include_tag 'application' %>
+		<script>
+			<%= yield :scripts %>
+		</script>
+	</body>
+</html>

@@ -8,6 +8,17 @@
 			text-align: center
 			color: $profileDescr
 			line-height: 1.3
+	&__image
+		&__img, &__text
+			+inline-block
+		&__img
+			+box-model(69px, 69px)
+		&__text
+			font-size: 30px
+			text-transform: uppercase
+			color: $whiteColor
+			padding-top: 15px
+			padding-left: 10px
 	&__column
 		width: 245px
 		margin-right: 120px

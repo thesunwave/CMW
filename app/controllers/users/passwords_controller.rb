@@ -1,5 +1,6 @@
 class Users::PasswordsController < Devise::PasswordsController
   before_filter :show_main_forms!, :except => [:new]
+  layout "layouts/auth"
 
 
   def new
