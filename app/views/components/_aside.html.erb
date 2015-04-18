@@ -28,12 +28,42 @@
 		</div>
 	</div>
 	<div class="b-panel__content">
-		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs"><span class="b-panel__link_icon-notifs__count">2</span></a>
-		<a href="<%= add_work_path(current_user.username) %>" class="b-panel__link b-panel__link_icon-add-work">Добавить работу</a>
-		<a href="<%= settings_path%>" class="b-panel__link b-panel__link_icon-settings">Настройки профиля</a>
-		<a href="#" class="b-panel__link b-panel__link_icon-favour">Избранное</a>
-		<a href="<%= subscriptions_path %>" class="b-panel__link b-panel__link_icon-subscriptions">Подписки</a>
-		<a href="<%= destroy_user_session_path %>" class="b-panel__link b-panel__link_icon-logout">Выход</a>
+		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs">
+			<svg>
+				<use xlink:href="#icon-notif"></use>
+			</svg>
+			<span class="b-panel__link_icon-notifs__count">2</span>
+		</a>
+		<a href="<%= add_work_path(current_user.username) %>" class="b-panel__link b-panel__link_icon-add-work">
+<!-- 			<svg>
+				<use xlink:href="#icon-addWork"></use>
+			</svg>
+ -->			Добавить работу
+		</a>
+		<a href="<%= settings_path%>" class="b-panel__link b-panel__link_icon-settings">
+			<svg>
+				<use xlink:href="#icon-setts"></use>
+			</svg>
+			Настройки профиля
+		</a>
+		<a href="#" class="b-panel__link b-panel__link_icon-favour">
+			<svg>
+				<use xlink:href="#icon-fav"></use>
+			</svg>
+			Избранное
+		</a>
+		<a href="<%= subscriptions_path %>" class="b-panel__link b-panel__link_icon-subscriptions">
+			<svg>
+				<use xlink:href="#icon-subs"></use>
+			</svg>
+			Подписки
+		</a>
+		<a href="<%= destroy_user_session_path %>" class="b-panel__link b-panel__link_icon-logout">
+			<svg>
+				<use xlink:href="#icon-logout"></use>
+			</svg>
+			Выход
+		</a>
 	</div>
 </div>
 <% else %>

@@ -115,6 +115,7 @@ ru:
     signin: Вход
     via: С помощью
     email: Электронная почта
+    emailLogin: Логин или электронная почта
     password: Пароль
     password_confirmation: Подтверждение пароля
     forgot_password: Забыли пароль?

@@ -54,6 +54,8 @@
 		background-repeat: no-repeat
 		background-position: 13px center
 		margin-bottom: 6px
+		svg
+			float: left
 		&:hover, &:focus
 			background-color: $yellowColor
 			color: $asideLinksColor
@@ -75,37 +77,44 @@
 		&_icon-login
 			svg
 				+box-model(17px, 17px)
-				float: left
 		&_icon-register
 			svg
 				+box-model(15px, 19px)
-				float: left
 		&_icon-notifs
 			+box-model(40px, 42px)
-			background-image: asset-url("@1x/linkIcons/notifs.png")
-			background-position: center
 			margin-right: 9px
 			padding: 0
 			position: relative
+			svg
+				+box-model(19px, 21px)
+				+translate(-50%, -50%)
+				left: 50%
+				top: 50%
+				position: absolute
+				float: none
 		&_icon-add-work
 			background-image: asset-url("@1x/linkIcons/add.png")
 			width: 204px
 		&_icon-settings
-			background-image: asset-url("@1x/linkIcons/settings.png")
-			background-position: 11px center
+			svg
+				+box-model(20px, 20px)
+				margin-left: -3px
 		&_icon-favour
-			background-image: asset-url("@1x/linkIcons/favour.png")
-			background-position: 13px center
+			svg
+				+box-model(16px, 20px)
+				margin-left: -1px
 		&_icon-subscriptions
-			background-image: asset-url("@1x/linkIcons/subscriptions.png")
-			background-position: 12px center
+			svg
+				+box-model(20px, 13px)
+				margin-left: -3px
 		&_icon-logout
-			background-image: asset-url("@1x/linkIcons/logout.png")
 			margin-top: 9px
 			color: $redColor
 			&:hover
 				color: $redColor
-
+			svg
+				+box-model(20px, 20px)
+				margin-left: -2px
 .b-search
 	background: $searchFieldBg
 	height: 30px
