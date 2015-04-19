@@ -1,17 +1,16 @@
 module ApplicationHelper
+  def current_locale
+    current_user && current_user.lang == 'en' ? :en : :ru
+  end
+
   def quote_text(quote)
-    if current_user.lang == 'ru'
-      quote.text_rus
-    else
-      quote.text_eng
-    end
+    field = current_locale == :ru ? :text_rus : :text_eng
+    quote[field]
   end
 
   def quote_author(quote)
-    if current_user.lang == 'ru'
-      quote.author_rus
-    else
-      quote.author_eng
-    end
+    field = current_locale == :ru ? :author_rus : :author_eng
+    quote[field]
   end
+
 end
