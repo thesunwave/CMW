@@ -21,6 +21,7 @@ ru:
                 invalid: "введен неверно"
                 blank: "не может быть пустым"
                 already_in_use: "уже занят"
+                not_found: "введен не верно, попробуйте еще раз"
               terms_of_service:
                 accepted: "Необходимо согласиться с правилами"
               password:
