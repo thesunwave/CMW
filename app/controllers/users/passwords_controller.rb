@@ -11,20 +11,21 @@ class Users::PasswordsController < Devise::PasswordsController
     self.resource = resource_class.new
     self.resource = resource_class.send_reset_password_instructions(resource_params)
     yield resource if block_given?
-    
     if successfully_sent?(resource)
-      return
+      redirect_to :root
     else
-      return
+      flash[:alert] = self.resource.errors.full_messages
+      redirect_to :forgot
     end
   end
 
   # PUT /resource/password
   def update
+    super
     if params[:user].blank? || params[:user][:reset_password_token].blank?
       return
     end
-    
+
     self.resource = resource_class.new
     resource.reset_password_token = params[:user][:reset_password_token]
     self.resource = resource_class.reset_password_by_token(resource_params)
@@ -45,6 +46,7 @@ class Users::PasswordsController < Devise::PasswordsController
 
   # resource init moved to 'update' action for code consistency
   def edit
+    super
   end
 
 protected

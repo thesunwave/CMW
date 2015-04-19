@@ -74,6 +74,12 @@ class User < ActiveRecord::Base
   # Public методы
   #
 
+ after_create :send_welcome_mail
+
+  def send_welcome_mail
+    UserMailer.send_new_welcome_message(self).deliver_now
+  end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
