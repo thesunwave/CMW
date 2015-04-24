@@ -1,5 +1,5 @@
 
-ru:
+en:
   # заголовки старниц, выводимые в topbar'е
   title:
     index: Главная
@@ -99,6 +99,11 @@ ru:
     email_not_found: электронная почта не найдена
     email_invalid: ошибка в адресе электронной почты
 
+  works:
+    name: Job title
+    name_helper: 'for example: a new design CMW :'
+    tags_helper: separated by commas
+    upload_helper: Just drag&drop
   # сообщения об ошибках
   errors: &errors
     # error keys
