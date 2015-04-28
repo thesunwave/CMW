@@ -1,7 +1,8 @@
 <div class="b-panel">
 	<div class="b-search">
-		<form action="" method="get">
-			<input type="text" class="b-input_text-search" name="" placeholder="Поиск по работам..." />
+		<form action="/search" accept-charset="UTF-8" method="get">
+			<input name="utf8" type="hidden" value="✓">
+			<input type="text" class="b-input_text-search" name="q" id="q" placeholder="Поиск по работам..." />
 			<button type="submit" class="b-search__commit" name="">
 				<svg>
 					<use xlink:href="#icon-search"></use>
