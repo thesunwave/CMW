@@ -1,12 +1,56 @@
-h1 Search
-
-= form_for search_path, method: :get do |f|
-  = f.label 'Search'
-  = text_field_tag :q, params[:q]
-  = submit_tag 'Go', name: nil
-  
-ul
-  - @works.each do |work|
-    li
-      h3
-        = link_to work.title
+= render partial: "components/errors"
+.b-page.b-page__news.b-page__news_last
+  h1.b-page__title.b-page__title_2.b-news-showen
+    | Поиск
+  .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper class="b-news_list"
+    .b-panel.b-panel_extended
+      .b-search
+        form accept-charset="UTF-8" action="#{search_path}" method="get"
+          input name="utf8" type="hidden" value="✓" /
+          input.b-input_text-search.b-input_text-search_extended name="q" value="#{params[:q]}" placeholder=("Поиск по работам...") type="text" /
+          button.b-search__commit.b-search__commit_extended type="submit" 
+            svg
+              use xlink:href="#icon-search"
+    - if @works.present?
+    - @works.each do |work|
+      .b-new.g-clearfix
+        .g-left.b-new__image
+          / a href="#"  = link_to image_tag(work.image(:thumb), alt: work.title), show_work_path(work.user.username, work)
+          a href="#"  Тип картинка
+        .g-left.b-new__content
+          h2.b-new__title
+            / a href="#"  = link_to work.title, show_work_path(work.user.username, work)
+            a href="#"  = link_to work.title
+          .b-new__author
+            / a.b-new__author__link href="#" = link_to work.user.name, profile_show_path(work.user.username)
+            a.b-new__author__link href="#" Тип имя пользователя
+          .g-clearfix.b-new__description-wrapper
+            .g-left.b-new__description = work.description
+            .g-left.b-new__service
+              .b-new__service__item.b-new__service__item_added
+                .b-new__service__item__icon.b-new__service__item__icon_added
+                .b-new__service__item__content.b-new__service__item__content_added data-list-date="#{work.created_at.to_time.strftime('%B %e at %l:%M %p')}" data-grid-date="7.01.15, 16:54"
+                  = work.created_at.to_time.strftime('%B %e at %l:%M %p')
+              .b-new__service__item
+                .b-new__service__item__icon.b-new__service__item__icon_comments
+                .b-new__service__item__content.b-new__service__item__content_comments
+                  a href="#"
+                    | 15
+                    span  комментариев
+              .b-new__service__item.b-new__service__item_tags
+                .b-new__service__item__icon.b-new__service__item__icon_tags
+                .b-new__service__item__content
+                  a.b-tag href="#"  wow-such-tag-so-long
+                  a.b-tag href="#"  ui
+                  a.b-tag href="#"  flat
+              .b-new__service__item.b-new__service__item_rating
+                .b-new__service__item__icon.b-new__service__item__icon_rating
+                .b-new__service__item__content.b-new__service__item__content_rating
+                  | 4,4 
+                  span
+                    | / 5,0
+              .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
+                .b-new__service__item__icon.b-new__service__item__icon_favourites
+                .b-new__service__item__content.b-new__service__item__content_favourites
+                  span В избранное!
+    .b-button.b-button_expanded.b-news__load-more Загрузить ещё
