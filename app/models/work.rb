@@ -4,7 +4,7 @@ class Work < ActiveRecord::Base
   #has_many :imagefiles
 
   has_attached_file :image, styles: {
-    thumb: '200x200>',
+    thumb: '200x200#',
     square: '300x300#',
     medium: '768x768>'
   }

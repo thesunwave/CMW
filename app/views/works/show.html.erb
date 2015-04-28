@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div class="b-item__info__description">
-				Типа описание проекта в овер дофига символов. Как я уже говорил, тут может быть абсолютно всё, чего хочет сюда вложить десигнер, который рисовал материал сверху. Хоть душу. Только мы не дъявол, и души в расчёт не принимаем. Нам бы денежки лучше, а то душа - это как спасибо в нашем мире. Вроде приятно, что есть, а вроде и на хлеб не намажешь/в карман не положишь/в рот не возьмёшь. Такие дела...
+				<%= @work.description %>
 			</div>
 			<div class="b-item__service g-clearfix">
 				<div class="g-left b-item__service__author">
@@ -26,10 +26,10 @@
 					</div>
 					<div class="g-left b-item__service__author__info">
 						<div class="b-item__service__author__info__title">
-							<a href="#">Клайд Холланд</a>
+							<a href="<%= profile_show_path(@work.user.username) %>"><%= @work.user.name %></a>
 						</div>
 						<div class="b-item__service__author__info__spec">
-							<a href="#">веб-дизайн</a>
+							<a href="<%= profile_show_path(@work.user.username) %>"><%= @work.user.spec %></a>
 						</div>
 						<div class="b-item__service__author__info__date">
 							сегодня в 12:36
@@ -54,6 +54,7 @@
 				</div>
 			</div>
 		</div>
+		<% if signed_in? %>
 		<div class="b-comments" id="comments">
 			<h2 class="b-comments__title">Комментарии</h2>
 			<div class="b-comments__write">
@@ -63,7 +64,7 @@
 					</label>
 					<div class="b-comments__write__service g-clearfix">
 						<div class="g-left b-comments__write__author">
-							Михаил Кононенко
+							<%= current_user.name if current_user.present? %>
 						</div>
 						<div class="g-left b-comments__write__rating">
 							<span class="b-rating-text">моя оценка:</span>
@@ -74,6 +75,9 @@
 					</div>
 				</form>
 			</div>
+		<% else %>
+			<h2 class="b-comments__title"><%= link_to 'Войдите', new_user_session_path %> на сайт или <%= link_to 'зарегистрируйтесь', register_path %>, чтобы оставлять комментарии</h2>
+		<% end %>
 			<div class="b-comments-wrapper">
 <% 5.times do |comment| %>
 				<div class="b-comment" id="comment<%= comment %>">

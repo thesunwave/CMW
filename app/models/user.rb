@@ -92,8 +92,7 @@ class User < ActiveRecord::Base
   # вычисляемое свойство name
   def name
     if first_name.present? || last_name.present?
-      space = (first_name.present? && last_name.present?) ? ' ' : ''
-      first_name + space + last_name
+      [first_name, last_name].compact.join(' ')
     else
       id_to_s
     end
