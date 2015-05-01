@@ -1,7 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: 'no-replay@cmw.su'
+  default from: 'no-reply@cmw.su'
 
-  def email
-    mail(to: 'zombiqwerty@yandex.ru', subject: 'Mailer')
+  def send_new_welcome_message(user)
+      @user = user
+      mail(to: user.email, :subject => "New User created please review and enable.",
+        template: "send_new_welcome_message")
   end
 end

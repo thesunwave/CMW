@@ -1,6 +1,6 @@
 class ComingSoonController < ApplicationController
-
   before_filter :show_main_forms!
+  layout "layouts/auth"
 
   def index
     @soon_user = SoonUser.new

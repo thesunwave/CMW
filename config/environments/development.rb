@@ -18,18 +18,18 @@ CMW::Application.configure do
   # All our mail sends trought yandex smtp servers
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              Rails.application.secrets.email_provider_smtp,
-    port:                 Rails.application.secrets.email_provider_port,
-    domain:               Rails.application.secrets.domain_name,
-    user_name:            Rails.application.secrets.email_provider_username,
-    password:             Rails.application.secrets.email_provider_password,
-    authentication:       Rails.application.secrets.email_authentication_type,
+    address:              'smtp.mandrillapp.com',
+    port:                   '587',
+    user_name:          ENV['MANDRILL_USERNAME'],
+    password:             ENV['MANDRILL_PASSWORD'],
     enable_starttls_auto: true
   }
-  config.action_mailer.default_url_options = {
-    host:       Rails.application.secrets.domain_name,
-    replay_to:  Rails.application.secrets.email_bot_address
-  }
+#  config.action_mailer.default_url_options = {
+#   host:       Rails.application.secrets.domain_name,
+#   replay_to:  Rails.application.secrets.email_bot_address
+# }
+
+config.action_mailer. default_url_options = { host: 'localhost:3000' }
 
   # Send email
   config.action_mailer.perform_deliveries = true

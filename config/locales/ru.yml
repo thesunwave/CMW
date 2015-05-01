@@ -21,6 +21,7 @@ ru:
                 invalid: "введен неверно"
                 blank: "не может быть пустым"
                 already_in_use: "уже занят"
+                not_found: "введен не верно, попробуйте еще раз"
               terms_of_service:
                 accepted: "Необходимо согласиться с правилами"
               password:
@@ -115,6 +116,7 @@ ru:
     signin: Вход
     via: С помощью
     email: Электронная почта
+    emailLogin: Логин или электронная почта
     password: Пароль
     password_confirmation: Подтверждение пароля
     forgot_password: Забыли пароль?

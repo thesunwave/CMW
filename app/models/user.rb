@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+  # Авторизация пользователя по username
+  attr_accessor :login
   #
   # Роли
   #
@@ -14,29 +15,28 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
   # devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
-  #Удаляем перед валидацией пробелы с начала и конца имени и фамилии
+  # Удаляем перед валидацией пробелы с начала и конца имени и фамилии
   before_validation :trim
 
   #
   # Связи
   #
-  belongs_to  :avatar, dependent: :destroy
-  has_many    :works, dependent: :destroy
-  #has_many    :images, through: :image_file
-  has_many    :notifications, dependent: :destroy
-  has_many    :notification_types, through: :notifications
-
+  belongs_to :avatar, dependent: :destroy
+  has_many :works, dependent: :destroy
+  # has_many    :images, through: :image_file
+  has_many :notifications, dependent: :destroy
+  has_many :notification_types, through: :notifications
 
   #
   # Валидации полей
   #
   # почта проверяется на валидность в модели Devise
-  validates_format_of  :email, presence: true,
-                    with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
-                    message: I18n.t('errors.messages.invalid')
+  validates_format_of :email, presence: true,
+                              with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
+                              message: I18n.t('errors.messages.invalid')
 
   # соглашение с условиями
   validates :terms_of_service, acceptance: true
@@ -48,19 +48,19 @@ class User < ActiveRecord::Base
   # Имя
   #
   validates :first_name, presence: true, length: { maximum: 30 },
-          format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
+                         format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
 
   #
   # Фамилия
   #
   validates :last_name, presence: true, length: { maximum: 40 },
-          format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
+                        format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
 
   #
   # Язык
   #
   validates_presence_of :lang, inclusion: {
-    in: I18n.available_locales.collect { |l| l.to_s },
+    in: I18n.available_locales.collect(&:to_s),
     message: I18n.t('errors.messages.invalid')
   }
 
@@ -68,18 +68,31 @@ class User < ActiveRecord::Base
   # url (username)
   #
   validates_length_of :username, in: 3...25
-  validate  :validate_username
-
+  validate :validate_username
 
   #
   # Public методы
   #
 
+ after_create :send_welcome_mail
+
+  def send_welcome_mail
+    UserMailer.send_new_welcome_message(self).deliver_now
+  end
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_hash).where(['username = :value OR lower(email) = :value', { value: login.downcase }]).first
+    else
+      where(conditions.to_hash).first
+    end
+  end
+
   # вычисляемое свойство name
   def name
     if first_name.present? || last_name.present?
-      space = (first_name.present? && last_name.present?) ? ' ' : ''
-      first_name + space + last_name
+      [first_name, last_name].compact.join(' ')
     else
       id_to_s
     end
@@ -87,42 +100,38 @@ class User < ActiveRecord::Base
 
   # возвращает роль с наивысшим приорететом
   def role
-    I18n.t('role.' + Role.find(roles.maximum("id")).name.to_s)
+    I18n.t('role.' + Role.find(roles.maximum('id')).name.to_s)
   end
 
   # возвращает расширенный объект настроек пользователя
   def get_settings
     # получаем данные, исключаем ненужные поля
-    settings = self.as_json(except: [:created_at, :updated_at])
+    settings = as_json(except: [:created_at, :updated_at])
     # добавить уведомления
     user_notifications = []
-    self.notification_types.each { |n| user_notifications.push(n.name) } unless self.notification_types.nil?
-    settings.merge!({ notifications: user_notifications })
+    notification_types.each { |n| user_notifications.push(n.name) } unless notification_types.nil?
+    settings.merge!(notifications: user_notifications)
   end
 
   # добавить уведомление
   def add_notification(name)
     notification_type = NotificationType.find_by_name(name)
-    if notification_type
-      self.notification_types << notification_type
-    end
+    notification_types << notification_type if notification_type
   end
   # удалить уведомление
   def remove_notification(name)
     notification_type = NotificationType.find_by_name(name)
-    if notification_type
-      self.notification_types.delete notification_type
-    end
+    notification_types.delete notification_type if notification_type
   end
 
   # проверить, подписан ли пользователь на определенный тип уведомлений
   def has_notification?(name)
-    return false if self.notifications.empty?
+    return false if notifications.empty?
 
     notification = NotificationType.find_by_name name
     return false if notification.nil?
 
-    self.notification_types.exists? notification.id
+    notification_types.exists? notification.id
   end
 
   # Валидация поля username
@@ -133,15 +142,15 @@ class User < ActiveRecord::Base
   def self.valid_username?(username, instance = nil)
     unless username.blank?
       # проверяет на валидность имя пользователя
-      unless (username =~ /\A[a-z0-9][-a-z0-9]{2,24}\z/i)
-        instance.errors.add(:username, I18n.t('errors.messages.invalid')) and return unless instance.nil?
+      unless username =~ /\A[a-z0-9][-a-z0-9]{2,24}\z/i
+        instance.errors.add(:username, I18n.t('errors.messages.invalid')) && return unless instance.nil?
         return false if instance.nil?
       end
 
       # проверяет на наличие в black-листе
-      wrong_names = ['admin','administartion','administrator','help','adm','cmwsu','cmw.su','cmw_su','cmw-su','cmw']
+      wrong_names = ['admin', 'administartion', 'administrator', 'help', 'adm', 'cmwsu', 'cmw.su', 'cmw_su', 'cmw-su', 'cmw']
       if wrong_names.include?(username)
-        instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return unless instance.nil?
+        instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) && return unless instance.nil?
         return false if instance.nil?
       end
 
@@ -149,7 +158,7 @@ class User < ActiveRecord::Base
       if exist = User.find_by_username(username)
         unless instance.nil?
           if exist.id != instance.id
-            instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) and return
+            instance.errors.add(:username, I18n.t('errors.messages.already_in_use')) && return
           end
         else
           return false
@@ -159,12 +168,11 @@ class User < ActiveRecord::Base
     return true if instance.nil?
   end
 
-
-private
+  private
 
   def trim
-    self.first_name.strip!
-    self.last_name.strip!
+    first_name.strip!
+    last_name.strip!
   end
 
   #
@@ -195,19 +203,17 @@ private
 
   # Преобразовать идентификатор в строку
   def id_to_s
-    "id#{id.to_s}" if self.persisted?
+    "id#{id}" if self.persisted?
   end
-
 
   #
   # Валидация имени пользователя
   #
   def validate_username
-    unless self.username.blank?
+    unless username.blank?
       # перевести username в нижний регистр
-      self.username.downcase!
-      User.valid_username?(self.username, self)
+      username.downcase!
+      User.valid_username?(username, self)
     end
   end
-
 end   # class User

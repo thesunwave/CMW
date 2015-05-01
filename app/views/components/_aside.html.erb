@@ -2,7 +2,11 @@
 	<div class="b-search">
 		<form action="" method="get">
 			<input type="text" class="b-input_text-search" name="" placeholder="Поиск по работам..." />
-			<input type="submit" class="b-search__commit" name="" value="Искать" />
+			<button type="submit" class="b-search__commit" name="">
+				<svg>
+					<use xlink:href="#icon-search"></use>
+				</svg>
+			</button>
 		</form>
 	</div>
 </div>
@@ -15,7 +19,7 @@
 		<div class="g-right b-panel__info">
 			<div class="b-panel__info-wrapper">
 				<div class="b-panel__info_name">
-					<a href="<%= list_path(current_user.username) %>"><%= "#{current_user.first_name} #{current_user.last_name}" %></a>
+					<a href="<%= list_path(current_user.username) %>"><%= "#{current_user.name}" %></a>
 				</div>
 				<div class="b-panel__info_spec">
 					<%= link_to current_user.spec, profile_show_path(current_user.username) %>
@@ -24,12 +28,42 @@
 		</div>
 	</div>
 	<div class="b-panel__content">
-		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs"><span class="b-panel__link_icon-notifs__count">2</span></a>
-		<a href="<%= add_work_path(current_user.username) %>" class="b-panel__link b-panel__link_icon-add-work">Добавить работу</a>
-		<a href="<%= settings_path%>" class="b-panel__link b-panel__link_icon-settings">Настройки профиля</a>
-		<a href="#" class="b-panel__link b-panel__link_icon-favour">Избранное</a>
-		<a href="<%= subscriptions_path %>" class="b-panel__link b-panel__link_icon-subscriptions">Подписки</a>
-		<a href="<%= destroy_user_session_path %>" class="b-panel__link b-panel__link_icon-logout">Выход</a>
+		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs">
+			<svg>
+				<use xlink:href="#icon-notif"></use>
+			</svg>
+			<span class="b-panel__link_icon-notifs__count">2</span>
+		</a>
+		<a href="<%= add_work_path(current_user.username) %>" class="b-panel__link b-panel__link_icon-add-work">
+<!-- 			<svg>
+				<use xlink:href="#icon-addWork"></use>
+			</svg>
+ -->			Добавить работу
+		</a>
+		<a href="<%= settings_path%>" class="b-panel__link b-panel__link_icon-settings">
+			<svg>
+				<use xlink:href="#icon-setts"></use>
+			</svg>
+			Настройки профиля
+		</a>
+		<a href="#" class="b-panel__link b-panel__link_icon-favour">
+			<svg>
+				<use xlink:href="#icon-fav"></use>
+			</svg>
+			Избранное
+		</a>
+		<a href="<%= subscriptions_path %>" class="b-panel__link b-panel__link_icon-subscriptions">
+			<svg>
+				<use xlink:href="#icon-subs"></use>
+			</svg>
+			Подписки
+		</a>
+		<a href="<%= destroy_user_session_path %>" class="b-panel__link b-panel__link_icon-logout">
+			<svg>
+				<use xlink:href="#icon-logout"></use>
+			</svg>
+			Выход
+		</a>
 	</div>
 </div>
 <% else %>
@@ -38,14 +72,26 @@
 		Чтобы <a href="#">оценивать</a> работы других пользователей, <a href="#">комментировать</a> их и <a href="#">выкладывать</a> свои работы на рассмотрение профессионального сообщества дизайнеров - вам нужно
 	</div>
 	<div class="b-panel__content">
-		<a href="<%= new_user_session_path %>" class="b-panel__link b-panel__link_icon-login">Войти как пользователь</a>
+		<a href="<%= new_user_session_path %>" class="b-panel__link b-panel__link_icon-login">
+			<svg class="b-svg-icon">
+				<use xlink:href="#icon-login"></use>
+			</svg>
+			Войти как пользователь
+		</a>
 		<div class="b-panel__or-devider">
 			или
 		</div>
-		<a href="<%= register_path %>" class="b-panel__link b-panel__link_icon-register">Зарегистрироваться</a>
+		<a href="<%= register_path %>" class="b-panel__link b-panel__link_icon-register">
+			<svg class="b-svg-icon">
+				<use xlink:href="#icon-register"></use>
+			</svg>
+			Зарегистрироваться
+		</a>
 	</div>
 </div>
 <% end %>
 <div class="b-top z-hover_yes" data-hook="scroll-top">
-	<div class="b-top__icon"></div>
+	<svg class="b-top__icon">
+		<use xlink:href="#icon-to-top"></use>
+	</svg>
 </div>

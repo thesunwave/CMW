@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :update_sanitized_params, if: :devise_controller?
   before_filter :show_main_forms!, :except => [:edit, :update]
+  layout "layouts/auth"
   
   # POST /resource
   # Регистрация нового пользователя

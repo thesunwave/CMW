@@ -1,106 +1,51 @@
-<%
-page = controller_name + "/" + controller.action_name
-auth_layout = ["sessions/new", "registrations/new", "registrations/create", "coming_soon/index", "coming_soon/create", "passwords/new"]
-%>
-<!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<title><%= content_for?(:title) ? yield(:title) : "CMW" %></title>
-		<%= stylesheet_link_tag 'application' %>
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
-		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192" />
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-		<link rel="manifest" href="/manifest.json" />
-		<meta name="msapplication-TileColor" content="#303025" />
-		<meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-		<meta name="theme-color" content="#ffffff" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-		<meta name="HandheldFriendly" content="true" />
-		<meta name="description" content="" />
-		<%= csrf_meta_tags %>
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" async></script>
-			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" async></script>
-		<![endif]-->
-		<!--[if lt IE 8]>
-			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js" async></script>
-		<![endif]-->
-	</head>
-	<body class="z-unloaded">
-		<div class="z-actions">
-			<div class="z-actions__alerts"></div>
-			<div class="z-actions__popups"></div>
-		</div>
-		<section class="b-wrapper">
-			<header class="b-controller-name<%= " b-controller-name_auth" if auth_layout.include?(page) %><%= " b-controller_" + controller.controller_name + "-" + controller.action_name %>">
-				<div class="b-logo">
-					<div>
-						<a href="/" class="b-logo__image">
-							<object data="/images/logo.svg">
-							    <img src="/images/logo.png" />
-							</object>
-							<div class="b-logo__pointer"></div>
-						</a>
-					</div>
-					<div>
-						<a href="/" class="b-logo__text">Criticize My Work</a>
-					</div>
-<% if !auth_layout.include?(page) %>
-					<div class="b-logo__quote">
-						<% if Quote.present? %>
-							<% Quote.get_random_quote.each do |quote| %>
-								«<%= quote.text_rus %>» <span class="b-logo__quote-normal">&mdash; <%= quote.author_rus %></span>
-<!-- 						<div class="b-logo__quote_text">
-							«<%= quote.text_rus %>»
-						</div>
-						<div class="b-logo__quote-normal">
-							<%= quote.author_rus %>
-						</div>
-
- -->	<% end %>
- <% end %>
+<%= render partial: "components/head" %>
+<body class="z-unloaded">
+	<%= render partial: "components/icons" %>
+	<div class="z-actions">
+		<div class="z-actions__alerts"></div>
+		<div class="z-actions__popups"></div>
+	</div>
+	<section class="b-wrapper">
+		<header class="b-controller-name<%= " b-controller_" + controller.controller_name + "-" + controller.action_name %>">
+			<div class="b-logo">
+				<div>
+					<a href="/" class="b-logo__image">
+						<svg class="b-logo__image__img">
+							<use xlink:href="#icon-bird"></use>
+						</svg>
+					</a>
+				</div>
+				<div>
+					<a href="/" class="b-logo__text">Criticize My Work</a>
+				</div>
+				<div class="b-logo__quote">
+					<% if Quote.present? %>
+						<% Quote.get_random_quote.each do |quote| %>
+							«<%= quote_text(quote) %>» <span class="b-logo__quote-normal">&mdash; <%= quote_author(quote) %></span>
+						<% end %>
+					<% else %>
 						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr>
-					</div>
-<% end %>
+					<% end %>
 				</div>
-			</header>
-			<main class="b-wrapper__main">
-<% if !auth_layout.include?(page) %>
-				<div class="b-cover g-clearfix">
-					<div class="g-left b-content">
-						<%= yield %>
-					</div>
-					<div class="g-right b-aside">
-						<div class="b-fixed-aside" data-hook="panel">
-							<%= render partial: "components/aside" %>
-						</div>
-					</div>
-				</div>
-<% else %>
+			</div>
+		</header>
+		<main class="b-wrapper__main">
+		<div class="b-cover g-clearfix">
+			<div class="g-left b-content">
 				<%= yield %>
-<% end %>
-			</main>
-<% if !auth_layout.include?(page) %>
-			<%= render partial: "components/footer" %>
-<% else %>
-			<footer></footer>
-<% end %>
-		</section>
-		<%= javascript_include_tag 'application' %>
-		<script>
-			<%= yield :scripts %>
-		</script>
-	</body>
+			</div>
+			<div class="g-right b-aside">
+				<div class="b-fixed-aside" data-hook="panel">
+					<%= render partial: "components/aside" %>
+				</div>
+			</div>
+		</div>
+		</main>
+		<%= render partial: "components/footer" %>
+	</section>
+	<%= javascript_include_tag 'application' %>
+	<script>
+		<%= yield :scripts %>
+	</script>
+</body>
 </html>

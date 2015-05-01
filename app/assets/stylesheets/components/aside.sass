@@ -1,5 +1,3 @@
-$topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
-
 .b-panel
 	width: 289px
 	padding: 18px
@@ -51,12 +49,13 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 		background: $asideLinksColor
 		text-align: center
 		padding: 13px
-		padding-left: 42px
 		font-size: 16px
 		font-weight: 100
 		background-repeat: no-repeat
 		background-position: 13px center
 		margin-bottom: 6px
+		svg
+			float: left
 		&:hover, &:focus
 			background-color: $yellowColor
 			color: $asideLinksColor
@@ -76,35 +75,46 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 			left: 20px
 			top: 9px
 		&_icon-login
-			background-image: asset-url("@1x/linkIcons/login.png")
+			svg
+				+box-model(17px, 17px)
 		&_icon-register
-			background-image: asset-url("@1x/linkIcons/register.png")
+			svg
+				+box-model(15px, 19px)
 		&_icon-notifs
 			+box-model(40px, 42px)
-			background-image: asset-url("@1x/linkIcons/notifs.png")
-			background-position: center
 			margin-right: 9px
 			padding: 0
 			position: relative
+			svg
+				+box-model(19px, 21px)
+				+translate(-50%, -50%)
+				left: 50%
+				top: 50%
+				position: absolute
+				float: none
 		&_icon-add-work
 			background-image: asset-url("@1x/linkIcons/add.png")
 			width: 204px
 		&_icon-settings
-			background-image: asset-url("@1x/linkIcons/settings.png")
-			background-position: 11px center
+			svg
+				+box-model(20px, 20px)
+				margin-left: -3px
 		&_icon-favour
-			background-image: asset-url("@1x/linkIcons/favour.png")
-			background-position: 13px center
+			svg
+				+box-model(16px, 20px)
+				margin-left: -1px
 		&_icon-subscriptions
-			background-image: asset-url("@1x/linkIcons/subscriptions.png")
-			background-position: 12px center
+			svg
+				+box-model(20px, 13px)
+				margin-left: -3px
 		&_icon-logout
-			background-image: asset-url("@1x/linkIcons/logout.png")
 			margin-top: 9px
 			color: $redColor
 			&:hover
 				color: $redColor
-
+			svg
+				+box-model(20px, 20px)
+				margin-left: -2px
 .b-search
 	background: $searchFieldBg
 	height: 30px
@@ -113,12 +123,11 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 		+box-model(45px, 30px)
 		+inline-block
 		background-color: $searchCommitBg
-		background-image: asset-url("@1x/ui/search.png")
-		background-repeat: no-repeat
-		background-position: center
-		overflow: hidden
-		font-size: 0
 		cursor: pointer
+		border: 0
+		padding: 0
+		svg
+			+box-model(16px, 16px)
 
 .b-top
 	+box-shadow(0 0 1px rgba($blackColor, 0.3))
@@ -127,11 +136,15 @@ $topBtn: sprite-map("@1x/topBtn/*.png", $spacing: 0, $layout: smart)
 	position: relative
 	background: $topBtnColor
 	&__icon
-		+sprite($topBtn, "normal")
+		+box-model(60px, 34px)
 		+translate(-50%, -50%)
 		position: absolute
 		left: 50%
 		top: 50%
+		fill: rgba(#383838, .4)
 	&:hover &__icon
-		+sprite($topBtn, "hover")
+		fill: #383838
+	&:hover
+		background: #fdfdfd
+
 
