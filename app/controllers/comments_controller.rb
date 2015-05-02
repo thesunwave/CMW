@@ -9,6 +9,8 @@ class CommentsController < ApplicationController
     @comment.work_id = @work.id
     if @comment.save
       redirect_to :back, notice: 'Comment was successfully created.'
+    else
+      redirect_to :back, alert: "Comment don't be empty"
     end
   end
 
