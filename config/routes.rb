@@ -3,7 +3,6 @@ CMW::Application.routes.draw do
   get  'coming_soon'   => 'coming_soon#index'
   post 'coming_soon'   => 'coming_soon#create'
 
-  mount Commontator::Engine => '/commontator'
 
   # root to: 'coming_soon#index', as: "invite"
 
