@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  has_many :comments, dependent: :destroy
+  accepts_nested_attributes_for :comments
   # Авторизация пользователя по username
   attr_accessor :login
   #

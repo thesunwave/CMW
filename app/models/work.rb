@@ -1,6 +1,8 @@
 class Work < ActiveRecord::Base
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  accepts_nested_attributes_for :comments
   #has_many :imagefiles
 
   has_attached_file :image, styles: {

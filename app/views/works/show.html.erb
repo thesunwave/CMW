@@ -58,9 +58,11 @@
 		<div class="b-comments" id="comments">
 			<h2 class="b-comments__title">Комментарии</h2>
 			<div class="b-comments__write">
-				<form action="" method="">
+				<!-- <form action="" method=""> -->
+				<%= form_for Comment.new, method: :post do |f| %>
 					<label>
-						<textarea name="" placeholder="Напишите комментарий для того, чтобы поставить оценку" class="b-comments__write__field b-input_textarea"></textarea>
+						<%= hidden_field_tag :work_id, @work.id %>
+						<textarea name="comment[text]" id="comment_text" placeholder="Напишите комментарий для того, чтобы поставить оценку" class="b-comments__write__field b-input_textarea"></textarea>
 					</label>
 					<div class="b-comments__write__service g-clearfix">
 						<div class="g-left b-comments__write__author">
@@ -68,18 +70,27 @@
 						</div>
 						<div class="g-left b-comments__write__rating">
 							<span class="b-rating-text">моя оценка:</span>
+							<select name="comment[rating]" id="comment_rating">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 						</div>
 						<div class="g-right b-comments__write__send">
-							<input type="submit" class="b-button b-button_inverted" value="Отправить" />
+							<input type="submit" class="b-button b-button_inverted" name="commit" value="Отправить" />
 						</div>
 					</div>
+					<% end %>
 				</form>
 			</div>
 		<% else %>
 			<h2 class="b-comments__title"><%= link_to 'Войдите', new_user_session_path %> на сайт или <%= link_to 'зарегистрируйтесь', register_path %>, чтобы оставлять комментарии</h2>
 		<% end %>
 			<div class="b-comments-wrapper">
-<% 5.times do |comment| %>
+
+<% @comments.each do |comment| %>
 				<div class="b-comment" id="comment<%= comment %>">
 					<div class="b-comment__head g-clearfix">
 						<div class="g-left b-comment__avatar">
@@ -87,21 +98,21 @@
 						</div>
 						<div class="g-left b-comment__name-spec">
 							<div class="b-comment__name">
-								<a href="#">Павел Зиновьев</a>
+								<%= link_to get_user(comment).name, profile_show_path( get_user(comment).username) %>
 							</div>
 							<div class="b-comment__spec">
-								<a href="#">веб-дизайн</a>
+								<%= link_to get_user(comment).spec, profile_show_path( get_user(comment).username) %>
 							</div>
 						</div>
 						<div class="g-left b-comment__rating">
-							<span class="b-rating-text">оценка:</span> <span class="b-icon_star"></span> 4 / 5
+							<span class="b-rating-text">оценка:</span> <span class="b-icon_star"></span> <%= comment.rating %> / 5
 						</div>
 						<div class="g-right b-comment__date">
-							5 декабря 2015 16:54
+							<%= time_ago_in_words(comment.created_at.to_time) %>
 						</div>
 					</div>
 					<div class="b-comment__content">
-						Ну, что могу сказать... Сайт, конечно, неплох, но вот реклама, которую трудно убрать - значительный косяк. Шрифты вроде читаемые, подобраны неплохо, сочетаются. С цветами тоже всё в порядке, контрастируют хорошо, приятно на них смотреть. Видно, что сделано профессионально, но вот опять же реклама... Только из-за неё ставлю 4, а не 5.
+						<%= comment.text %>
 					</div>
 				</div>
 <% end %>

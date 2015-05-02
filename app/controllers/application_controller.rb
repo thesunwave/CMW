@@ -20,6 +20,20 @@ class ApplicationController < ActionController::Base
     render json: { error_key: 'invalid_token' }, status: :unprocessable_entity
   end
 
+  def require_user
+    access_denied('You must be logged in to do that!') unless current_user
+  end
+
+   def access_denied(message = 'Access Denied')
+    if request.xhr?
+      render :text => message, :status => :unauthorized
+    else
+      flash[:error] = message
+      redirect_to new_user_session_path
+    end
+    return false
+  end
+
 protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, :password, :password_confirmation, :lang, :terms_of_service)}
