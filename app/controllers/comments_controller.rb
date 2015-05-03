@@ -3,11 +3,10 @@ class CommentsController < ApplicationController
   before_filter :require_user, :only => [:edit, :update, :destroy]
 
   def create
-    @work = Work.find params[:work_id]
-    @comment = Comment.new comments_params
-    @comment.user_id = current_user.id
-    @comment.work_id = @work.id
-    if @comment.save
+    work = Work.find(params[:work_id])
+    comment = work.comments.build(comments_params)
+    comment.user = current_user
+    if comment.save
       redirect_to :back, notice: 'Comment was successfully created.'
     else
       redirect_to :back, alert: "Comment don't be empty"
