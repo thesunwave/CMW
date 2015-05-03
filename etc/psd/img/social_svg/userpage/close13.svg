@@ -2,11 +2,12 @@
 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="289.5 292.5 21 15" enable-background="new 289.5 292.5 21 15" xml:space="preserve">
+	 viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve">
+<rect x="-1" y="-1" fill="#303030" width="260" height="260"/>
 <g>
-	<path fill="#F7F7F7" d="M300,303l-2.5-2.3l-7.5,6.3c0.3,0.3,0.6,0.4,1,0.4h18c0.5,0,0.8-0.1,1.1-0.4l-7.5-6.3L300,303z"/>
-	<path fill="#F7F7F7" d="M310.1,293c-0.3-0.3-0.6-0.5-1.1-0.5h-18c-0.5,0-0.8,0.1-1,0.5l10,8.5L310.1,293z"/>
-	<polygon fill="#F7F7F7" points="289.5,293.9 289.5,306.3 296.7,300.1 	"/>
-	<polygon fill="#F7F7F7" points="303.3,300.1 310.5,306.3 310.5,293.9 	"/>
+	<path fill="#F7F7F7" d="M130,149.5L113.2,134l-50.5,42.4c2,2,4,2.7,6.7,2.7h121.1c3.4,0,5.4-0.7,7.4-2.7L147.5,134L130,149.5z"/>
+	<path fill="#F7F7F7" d="M197.9,82.2c-2-2-4-3.4-7.4-3.4H69.5c-3.4,0-5.4,0.7-6.7,3.4l67.3,57.2L197.9,82.2z"/>
+	<polygon fill="#F7F7F7" points="59.4,88.3 59.4,171.7 107.8,130 	"/>
+	<polygon fill="#F7F7F7" points="152.2,130 200.6,171.7 200.6,88.3 	"/>
 </g>
 </svg>
