@@ -54,11 +54,10 @@
 				</div>
 			</div>
 		</div>
-		<% if signed_in? %>
 		<div class="b-comments" id="comments">
+<% if signed_in? %>
 			<h2 class="b-comments__title">Комментарии</h2>
 			<div class="b-comments__write">
-				<!-- <form action="" method=""> -->
 				<%= form_for Comment.new, method: :post do |f| %>
 					<label>
 						<%= hidden_field_tag :work_id, @work.id %>
@@ -85,11 +84,10 @@
 					<% end %>
 				</form>
 			</div>
-		<% else %>
+<% else %>
 			<h2 class="b-comments__title"><%= link_to 'Войдите', new_user_session_path %> на сайт или <%= link_to 'зарегистрируйтесь', register_path %>, чтобы оставлять комментарии</h2>
-		<% end %>
+<% end %>
 			<div class="b-comments-wrapper">
-
 <% @comments.each do |comment| %>
 				<div class="b-comment" id="comment<%= comment %>">
 					<div class="b-comment__head g-clearfix">

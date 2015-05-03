@@ -17,5 +17,6 @@
 #= require components/comingSoon
 #= require components/addWork
 #= require components/worksList
+#= require components/comments
 
 #= require load
