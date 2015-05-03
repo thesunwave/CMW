@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :require_user, :only => [:edit, :update, :destroy]
+  before_action :require_user, :only => [:edit, :update, :destroy]
 
   def create
     work = Work.find(params[:work_id])
