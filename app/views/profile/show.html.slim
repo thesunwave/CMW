@@ -22,7 +22,7 @@
                 | работ
             .b-profile__service__activity__item
               .b-profile__service__activity__item__top
-                | 102
+                = @user.comments.count
               .b-profile__service__activity__item__bottom
                 | комм.
           .b-social.b-social_line
