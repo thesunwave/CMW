@@ -60,8 +60,8 @@ CMW::Application.routes.draw do
       # просмотр работы
       get '/:id' => 'works#show', as: "show_work"
     end
+      resources :favorite_works, only: [:create, :destroy]
   end
-
   devise_scope :user do
 
     get '/auth' => redirect('/auth/login')

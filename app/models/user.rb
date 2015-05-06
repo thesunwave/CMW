@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
   # has_many    :images, through: :image_file
   has_many :notifications, dependent: :destroy
   has_many :notification_types, through: :notifications
+  has_many :favorites
+  has_many :favorite_works, through: :favorites, source: :favorited, source_type: 'Work'
 
   #
   # Валидации полей

@@ -398,6 +398,7 @@ DEPENDENCIES
   guard-rspec
   http_accept_language
   i18n-tasks (~> 0.7.4)
+  jquery-rails
   oily_png
   paperclip (~> 4.1)
   passenger (~> 5.0.6)

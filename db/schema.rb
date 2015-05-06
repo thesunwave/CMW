@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413141529) do
+ActiveRecord::Schema.define(version: 20150506193715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "work_id"
+    t.text     "text"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "commontator_comments", force: :cascade do |t|
     t.string   "creator_type"
@@ -73,6 +82,17 @@ ActiveRecord::Schema.define(version: 20150413141529) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "favorited_id"
+    t.string   "favorited_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "favorites", ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "image_files", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -180,4 +200,5 @@ ActiveRecord::Schema.define(version: 20150413141529) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "favorites", "users"
 end
