@@ -1,14 +1,14 @@
 = render partial: "components/errors"
 .b-page.b-page__news.b-page__news_last
   h1.b-page__title.b-page__title_2.b-news-showen
-    | Показаны 
+    | Показаны
     .b-prompt data-hook="prompt-what"
       .b-prompt__current свежие
       .b-prompt__modal
         .b-prompt__modal__line.b-prompt__active data-hook="prompt-default" data-state="newest" свежие
         .b-prompt__modal__line data-state="best" лучшие
         .b-prompt__modal__line data-state="most_critical" самые критикуемые
-    |  материалы за 
+    |  материалы за
     .b-prompt data-hook="prompt-where"
       .b-prompt__current всё время
       .b-prompt__modal
@@ -45,7 +45,7 @@
                 .b-new__service__item__icon.b-new__service__item__icon_comments
                 .b-new__service__item__content.b-new__service__item__content_comments
                   a href="#"
-                    | 15
+                    = work.comments.count
                     span  комментариев
               .b-new__service__item.b-new__service__item_tags
                 .b-new__service__item__icon.b-new__service__item__icon_tags
@@ -56,7 +56,7 @@
               .b-new__service__item.b-new__service__item_rating
                 .b-new__service__item__icon.b-new__service__item__icon_rating
                 .b-new__service__item__content.b-new__service__item__content_rating
-                  | 4,4 
+                  = work.average
                   span
                     | / 5,0
               .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites

@@ -20,6 +20,7 @@ class CMW.Initialize
 		new CMW.Coming_soon()
 		new CMW.Add_work()
 		new CMW.Works_list()
+		new CMW.Comments()
 		return
 
 $ ->

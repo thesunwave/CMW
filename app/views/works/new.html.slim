@@ -16,6 +16,7 @@
             span.b-required-star *
             span.b-input__title.b-input__title_bold.b-input__title_help = " (" + t('works.tags_helper') + ")"
           #tagBox
+          / = hidden_field :work, :tag_list
       label
         span.b-input__title.b-input__title_bold = t('works.upload')
         span.b-required-star *

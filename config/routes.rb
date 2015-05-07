@@ -3,9 +3,10 @@ CMW::Application.routes.draw do
   get  'coming_soon'   => 'coming_soon#index'
   post 'coming_soon'   => 'coming_soon#create'
 
-  mount Commontator::Engine => '/commontator'
 
   # root to: 'coming_soon#index', as: "invite"
+
+  resources :comments, only: [:create]
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -59,6 +60,10 @@ CMW::Application.routes.draw do
       delete '/:id' => 'works#destroy', as: "destroy_work"
       # просмотр работы
       get '/:id' => 'works#show', as: "show_work"
+
+      scope '/:id' do
+        resources :comments, except: %w( index update edit )
+      end
     end
   end
 

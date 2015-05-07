@@ -19,7 +19,6 @@ gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
 gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 gem 'http_accept_language'                      # set locale from accept-language URL header
 gem 'dotenv-rails'                                    #env files management
-gem 'commontator', '~> 4.10.4'                #comment system
 
 group :development do
   gem 'better_errors'
