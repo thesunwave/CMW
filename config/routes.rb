@@ -49,6 +49,7 @@ CMW::Application.routes.draw do
     # подписки
     get 'subscriptions' => 'subscriptions#index'
     # работы
+    get '/works', to: redirect('/%{username}')
     scope '/works' do
       # список
       get '/list'       => 'works#list'

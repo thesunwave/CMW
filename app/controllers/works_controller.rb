@@ -42,8 +42,12 @@ class WorksController < ApplicationController
 
   def destroy
     @work = Work.find(params[:id])
-    if @work.destroy
-      redirect_to list_path, notice: 'Work was successfully deleted.'
+    unless current_user.id != @work.user.id
+      if @work.destroy
+        redirect_to profile_show_path, notice: 'Work was successfully deleted.'
+      end
+    else
+      redirect_to :back, alert: 'You have not permission'
     end
   end
 
