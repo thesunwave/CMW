@@ -3,9 +3,10 @@ CMW::Application.routes.draw do
   get  'coming_soon'   => 'coming_soon#index'
   post 'coming_soon'   => 'coming_soon#create'
 
-  mount Commontator::Engine => '/commontator'
 
   # root to: 'coming_soon#index', as: "invite"
+
+  resources :comments, only: [:create]
 
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
@@ -48,6 +49,7 @@ CMW::Application.routes.draw do
     # подписки
     get 'subscriptions' => 'subscriptions#index'
     # работы
+    get '/works', to: redirect('/%{username}')
     scope '/works' do
       # список
       get '/list'       => 'works#list'
@@ -59,9 +61,13 @@ CMW::Application.routes.draw do
       delete '/:id' => 'works#destroy', as: "destroy_work"
       # просмотр работы
       get '/:id' => 'works#show', as: "show_work"
-    end
-  end
 
+      scope '/:id' do
+        resources :comments, except: %w( index update edit )
+      end
+    end
+      resources :favorite_works, only: [:create, :destroy]
+  end
   devise_scope :user do
 
     get '/auth' => redirect('/auth/login')

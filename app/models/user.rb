@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  has_many :comments, dependent: :destroy
+  accepts_nested_attributes_for :comments
   # Авторизация пользователя по username
   attr_accessor :login
   #
@@ -29,6 +32,8 @@ class User < ActiveRecord::Base
   # has_many    :images, through: :image_file
   has_many :notifications, dependent: :destroy
   has_many :notification_types, through: :notifications
+  has_many :favorites
+  has_many :favorite_works, through: :favorites, source: :favorited, source_type: 'Work'
 
   #
   # Валидации полей

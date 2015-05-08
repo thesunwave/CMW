@@ -3,6 +3,7 @@ ruby '2.1.5'
 
 gem 'rails', '4.2.0'                            # Ruby on Rails gem
 gem 'sass-rails', '~> 5.0.1'                    # SASS support
+gem 'jquery-rails'
 gem 'compass-rails', '~> 2.0.4'                 # use Compass for SASS
 gem 'uglifier', '>= 1.3.0'                      # JavaScript parser / mangler / compressor / beautifier
 gem 'coffee-rails', '~> 4.1.0'                  # CoffeeScript support
@@ -19,7 +20,6 @@ gem 'delayed_job_active_record', '~> 4.0.1'     # background jobs worker
 gem 'daemons', '~> 1.1.9'                       # deamon for delayed::job
 gem 'http_accept_language'                      # set locale from accept-language URL header
 gem 'dotenv-rails'                                    #env files management
-gem 'commontator', '~> 4.10.4'                #comment system
 
 group :development do
   gem 'better_errors'

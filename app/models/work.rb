@@ -1,6 +1,8 @@
 class Work < ActiveRecord::Base
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  accepts_nested_attributes_for :comments
   #has_many :imagefiles
 
   has_attached_file :image, styles: {
@@ -14,18 +16,18 @@ class Work < ActiveRecord::Base
 
   validates :title, :description, :image, presence: true
 
-  before_create :normalize_filename
+#  before_create :normalize_filename
   before_create :capitalize
 
-  def normalize_filename
-    Paperclip.interpolates :normalized_filename do |attachment, style|
-      attachment.instance.normalized_filename
-    end
-
-    def normalized_filename
-      "#{user.username}-#{self.id}"
-    end
-  end
+#  def normalize_filename
+#    Paperclip.interpolates :normalized_filename do |attachment, style|
+#      attachment.instance.normalized_filename
+#    end
+#
+#    def normalized_filename
+#      "#{user.username}-#{self.id}"
+#    end
+#  end
 
 private
 

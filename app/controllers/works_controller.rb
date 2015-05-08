@@ -1,5 +1,7 @@
 class WorksController < ApplicationController
 
+  before_filter :require_user, :only => [:edit, :update, :destroy]
+
   def list
     @works = Work.where(user_id: current_user.id).order(created_at: :desc)
   end
@@ -15,6 +17,8 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find(params[:id])
+    @comments = @work.comments.where(work_id: params[:id]).order(created_at: :desc)
+    @comment = @work.comments.build
   end
 
   def create
@@ -38,8 +42,12 @@ class WorksController < ApplicationController
 
   def destroy
     @work = Work.find(params[:id])
-    if @work.destroy
-      redirect_to list_path, notice: 'Work was successfully deleted.'
+    unless current_user.id != @work.user.id
+      if @work.destroy
+        redirect_to profile_show_path, notice: 'Work was successfully deleted.'
+      end
+    else
+      redirect_to :back, alert: 'You have not permission'
     end
   end
 

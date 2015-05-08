@@ -29,12 +29,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def edit
+    render layout: "layouts/application"
+  end
+
   # PUT /resource
   # Обновление настроек пользователя
   # Мы используем копию объекта пользователя, так как мы не хотим чтобы
   # объект пользователя менялся сразу без проверок и подтверждений
   def update
     super
+    # render layout: "layouts/application"
     self.resource = resource_class.to_adapter.get!([current_user.id])
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
     # определяем необходимость наличия текущего пароля:

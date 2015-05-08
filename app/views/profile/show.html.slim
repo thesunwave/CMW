@@ -22,7 +22,7 @@
                 | работ
             .b-profile__service__activity__item
               .b-profile__service__activity__item__top
-                | 102
+                = @user.comments.count
               .b-profile__service__activity__item__bottom
                 | комм.
           .b-social.b-social_line
@@ -57,7 +57,7 @@
                   .b-new__service__item__icon.b-new__service__item__icon_comments
                   .b-new__service__item__content.b-new__service__item__content_comments
                     a href="#" 
-                      | 15 
+                      = work.comments.count
                       span комментариев
                 .b-new__service__item.b-new__service__item_tags
                   .b-new__service__item__icon.b-new__service__item__icon_tags
@@ -68,7 +68,7 @@
                 .b-new__service__item_rating.b-new__service__item
                   .b-new__service__item__icon.b-new__service__item__icon_rating
                   .b-new__service__item__content.b-new__service__item__content_rating
-                    | 4,4 
+                    = work.average
                     span
                     | / 5,0
                 .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites

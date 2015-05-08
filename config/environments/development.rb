@@ -16,7 +16,7 @@ CMW::Application.configure do
   # ActionMailer Config
   # Delivery method :smtp (default), :sendmail, :file and :test.
   # All our mail sends trought yandex smtp servers
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.smtp_settings = {
     address:              'smtp.mandrillapp.com',
     port:                   '587',
