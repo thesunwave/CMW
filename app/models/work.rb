@@ -16,18 +16,18 @@ class Work < ActiveRecord::Base
 
   validates :title, :description, :image, presence: true
 
-  before_create :normalize_filename
+#  before_create :normalize_filename
   before_create :capitalize
 
-  def normalize_filename
-    Paperclip.interpolates :normalized_filename do |attachment, style|
-      attachment.instance.normalized_filename
-    end
-
-    def normalized_filename
-      "#{user.username}-#{self.id}"
-    end
-  end
+#  def normalize_filename
+#    Paperclip.interpolates :normalized_filename do |attachment, style|
+#      attachment.instance.normalized_filename
+#    end
+#
+#    def normalized_filename
+#      "#{user.username}-#{self.id}"
+#    end
+#  end
 
 private
 
