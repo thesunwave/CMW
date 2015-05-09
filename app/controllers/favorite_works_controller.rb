@@ -1,15 +1,21 @@
 class FavoriteWorksController < ApplicationController
-  before_action :set_work
+  before_action :set_work, only: [:create, :destroy]
 
   def index
-    @favorites = Favorite.where(user_id: current_user.id)
+    user = User.where(username: params[:username]).first
+    if user.nil?
+      redirect_to '/404.html', alert: 'Bad request'
+    else
+      @favorites = user.favorite_works
+    end
   end
 
   def create
     if Favorite.create(favorited: @work, user: current_user)
       redirect_to :back, notice: 'Work has been favorited'
     else
-      redirect_to show_work_path(current_user.username, @work), alert: 'Something went wrong...*sad panda*'
+      redirect_to show_work_path(current_user.username, @work),
+                  alert: 'Something went wrong...*sad panda*'
     end
   end
 
