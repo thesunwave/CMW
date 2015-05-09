@@ -13,4 +13,14 @@ module ApplicationHelper
     quote[field]
   end
 
+  def get_user_spec
+    unless current_user.nil?
+      if current_user.spec.blank?
+        link_to 'http://cmw.su/' + "#{current_user.username}", profile_show_path(current_user.username)
+      else
+        link_to current_user.spec, profile_show_path(current_user.username)
+      end
+    end
+  end
+
 end
