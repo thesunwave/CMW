@@ -22,7 +22,7 @@
 					<a href="<%= list_path(current_user.username) %>"><%= "#{current_user.name}" %></a>
 				</div>
 				<div class="b-panel__info_spec">
-					<%= link_to current_user.spec, profile_show_path(current_user.username) %>
+					<%= get_user_spec %>
 				</div>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 			</svg>
 			Настройки профиля
 		</a>
-		<a href="#" class="b-panel__link b-panel__link_icon-favour">
+		<a href="<%= favorite_works_path(current_user.username) %>" class="b-panel__link b-panel__link_icon-favour">
 			<svg>
 				<use xlink:href="#icon-fav"></use>
 			</svg>

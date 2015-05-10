@@ -66,7 +66,7 @@ CMW::Application.routes.draw do
         resources :comments, except: %w( index update edit )
       end
     end
-      resources :favorite_works, only: [:create, :destroy]
+      resources :favorite_works, only: [:index, :create, :destroy]
   end
   devise_scope :user do
 

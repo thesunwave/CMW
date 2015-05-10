@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
 
-  before_filter :require_user, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: %w( list work show)
 
   def list
     @works = Work.where(user_id: current_user.id).order(created_at: :desc)

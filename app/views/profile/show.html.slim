@@ -6,7 +6,7 @@
         .g-left.b-profile__image
           .b-profile__image__img
             img alt="" src="/images/avatar149x149.png" /
-          .b-profile__image__subscribe.b-profile__image__subscribe_go.b-button data-text-go="Подписаться" data-text-gone="Отписаться" 
+          .b-profile__image__subscribe.b-profile__image__subscribe_go.b-button data-text-go="Подписаться" data-text-gone="Отписаться"
             | Подписаться
         .g-left.b-profile__service
           .b-profile__service__title
@@ -56,7 +56,7 @@
                 .b-new__service__item
                   .b-new__service__item__icon.b-new__service__item__icon_comments
                   .b-new__service__item__content.b-new__service__item__content_comments
-                    a href="#" 
+                    a href="#"
                       = work.comments.count
                       span комментариев
                 .b-new__service__item.b-new__service__item_tags
@@ -74,5 +74,5 @@
                 .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
                   .b-new__service__item__icon.b-new__service__item__icon_favourites
                   .b-new__service__item__content.b-new__service__item__content_favourites
-                    span В избранное!
+                    span = add_to_favs(work)
       .b-button.b-button_expanded.b-news__load-more Загрузить ещё
