@@ -1,2 +1,50 @@
-= @favorites.each do |fav|
-end
+= render partial: "components/errors"
+.b-page.b-page__news.b-page__news_last
+  h1.b-page__title.b-page__title_2.b-news-showen
+    | Избранные работы
+  .b-news__view_change
+    .b-news__view_change__item.b-news__view_change__item_list.b-news__view_active
+    .b-news__view_change__item.b-news__view_change__item_grid
+  .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper class="b-news_list"
+    - if @favorites.present?
+    - @favorites.each do |fav|
+      .b-new.g-clearfix
+        .g-left.b-new__image
+          / a href="#"  = link_to image_tag(fav.image(:thumb), alt: fav.title), show_fav_path(fav.user.username, fav)
+          a href="#"  Тип картинка
+        .g-left.b-new__content
+          h2.b-new__title
+            / a href="#"  = link_to fav.title, show_fav_path(fav.user.username, fav)
+            a href="#"  = link_to fav.title
+          .b-new__author
+            a.b-new__author__link href="#" = link_to fav.user.name, profile_show_path(fav.user.username)
+          .g-clearfix.b-new__description-wrapper
+            .g-left.b-new__description = fav.description
+            .g-left.b-new__service
+              .b-new__service__item.b-new__service__item_added
+                .b-new__service__item__icon.b-new__service__item__icon_added
+                .b-new__service__item__content.b-new__service__item__content_added data-list-date="#{fav.created_at.to_time.strftime('%B %e at %l:%M %p')}" data-grid-date="7.01.15, 16:54"
+                  = fav.created_at.to_time.strftime('%B %e at %l:%M %p')
+              .b-new__service__item
+                .b-new__service__item__icon.b-new__service__item__icon_comments
+                .b-new__service__item__content.b-new__service__item__content_comments
+                  a href="#"
+                    | 15
+                    span  комментариев
+              .b-new__service__item.b-new__service__item_tags
+                .b-new__service__item__icon.b-new__service__item__icon_tags
+                .b-new__service__item__content
+                  a.b-tag href="#"  wow-such-tag-so-long
+                  a.b-tag href="#"  ui
+                  a.b-tag href="#"  flat
+              .b-new__service__item.b-new__service__item_rating
+                .b-new__service__item__icon.b-new__service__item__icon_rating
+                .b-new__service__item__content.b-new__service__item__content_rating
+                  | 4,4 
+                  span
+                    | / 5,0
+              .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
+                .b-new__service__item__icon.b-new__service__item__icon_favourites
+                .b-new__service__item__content.b-new__service__item__content_favourites
+                  span В избранное!
+    .b-button.b-button_expanded.b-news__load-more Загрузить ещё

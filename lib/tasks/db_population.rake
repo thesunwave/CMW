@@ -15,7 +15,7 @@ namespace :db do
       Work.create!(user_id: user.id,
                   image_file_id: image[r.rand(2)],
                   title: "Fake gen work" + n.to_s,
-                  desc: "Fake work description" + n.to_s)
+                  description: "Fake work description" + n.to_s)
     end
   end
 end
