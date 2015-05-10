@@ -5,6 +5,8 @@
 	&__empty
 		text-align: center
 		font-size: 14px
+		&_count
+			padding-top: 15px
 	&__load-more
 		padding: 10px 22px
 	&-showen
@@ -47,13 +49,19 @@
 			&__item
 				margin-bottom: 10px
 				font-weight: 300
-				&_favourites-state
-					+inverted-link()
-					cursor: pointer
-				&_favourites .b-new__service__item__icon
-					+retina("newsIcons/favourites.png")
-				&_favouritesAdded .b-new__service__item__icon
-					+retina("newsIcons/favouritesAdded.png")
+				&_favourites
+					&__remove
+						font-size: 12px
+						font-weight: 300
+						text-align: center
+					&-state
+						+inverted-link()
+						cursor: pointer
+					&-added
+						&:hover
+							color: $blackColor
+						span
+							+inline-block
 				&:last-child
 					margin-bottom: 0
 				&__icon, &__content
@@ -68,17 +76,9 @@
 					&_comments
 						+inverted-link(true)
 				&__icon
-					+box-model(19px, 19px)
-					+image-settings
 					margin-right: 11px
-					&_added
-						+retina("newsIcons/added.png")
-					&_comments
-						+retina("newsIcons/comments.png")
-					&_tags
-						+retina("newsIcons/tags.png")
-					&_rating
-						+retina("newsIcons/rating.png")
+					&, svg
+						+box-model(19px, 19px)
 	&_grid
 		font-size: 0
 		.b-new

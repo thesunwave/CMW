@@ -22,29 +22,43 @@
             .g-clearfix.b-new__description-wrapper
               .g-left.b-new__description = fav.description
               .g-left.b-new__service
+              .g-left.b-new__service
                 .b-new__service__item.b-new__service__item_added
                   .b-new__service__item__icon.b-new__service__item__icon_added
+                    svg
+                      use xlink:href="#icon-post__date"
                   .b-new__service__item__content.b-new__service__item__content_added data-list-date="#{fav.created_at.to_time.strftime('%B %e at %l:%M %p')}" data-grid-date="7.01.15, 16:54"
                     = fav.created_at.to_time.strftime('%B %e at %l:%M %p')
                 .b-new__service__item
                   .b-new__service__item__icon.b-new__service__item__icon_comments
+                    svg
+                      use xlink:href="#icon-post__comments"
                   .b-new__service__item__content.b-new__service__item__content_comments
-                    = link_to "#{fav.comments.count} комментариев", show_work_path(fav.user.username, fav, anchor: "comments")
+                    a href="#"
+                      = fav.comments.count
+                      span  комментариев
                 .b-new__service__item.b-new__service__item_tags
                   .b-new__service__item__icon.b-new__service__item__icon_tags
+                    svg
+                      use xlink:href="#icon-post__tags"
                   .b-new__service__item__content
                     a.b-tag href="#"  wow-such-tag-so-long
                     a.b-tag href="#"  ui
                     a.b-tag href="#"  flat
                 .b-new__service__item.b-new__service__item_rating
                   .b-new__service__item__icon.b-new__service__item__icon_rating
+                    svg
+                      use xlink:href="#icon-post__rating"
                   .b-new__service__item__content.b-new__service__item__content_rating
-                    | 4,4
+                    = fav.average
                     span
                       | / 5,0
-                .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
+                .b-new__service__item.b-new__service__item_favourites-state class="#{check_fav(fav)}"
                   .b-new__service__item__icon.b-new__service__item__icon_favourites
+                    svg
+                      use xlink:href="##{check_fav(fav)}"
                   .b-new__service__item__content.b-new__service__item__content_favourites
-                    span = add_to_favs(fav)
+                      span = add_to_favs(fav).html_safe
+      .b-news__empty.b-news__empty_count  Показано #{@favorites.length} работ.
     - if @favorites.present? and @favorites.count > 12
       .b-button.b-button_expanded.b-news__load-more Загрузить ещё
