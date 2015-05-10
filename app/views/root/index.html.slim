@@ -24,6 +24,8 @@
     .b-news__view_change__item.b-news__view_change__item_list.b-news__view_active
     .b-news__view_change__item.b-news__view_change__item_grid
   .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper class="b-news_list"
+    - if !@subscriptions.present?
+      .b-news__empty  Нет доступных работ.
     - if @works.present?
     - @works.each do |work|
       .b-new.g-clearfix
@@ -63,5 +65,5 @@
                 .b-new__service__item__icon.b-new__service__item__icon_favourites
                 .b-new__service__item__content.b-new__service__item__content_favourites
                     span = add_to_favs(work)
-
-    .b-button.b-button_expanded.b-news__load-more Загрузить ещё
+    - if @subscriptions.present? and @subscriptions.count > 12
+      .b-button.b-button_expanded.b-news__load-more Загрузить ещё

@@ -33,7 +33,6 @@ $socialIcons: sprite-map("@1x/socialIcon/*.png", $spacing: 0, $layout: smart)
 			font-size: 16px
 			font-weight: 300
 		&__social
-			font-size: 0
 			margin-bottom: 29px
 			&__via, &__link
 				+inline-block(baseline)
@@ -41,17 +40,17 @@ $socialIcons: sprite-map("@1x/socialIcon/*.png", $spacing: 0, $layout: smart)
 				font-size: 20px
 				font-weight: 300
 				margin-right: 13px
-			&__link
-				overflow: hidden
-				color: transparent
 			&__link_vk
-				+sprite($socialIcons, "vk")
 				margin-right: 13px
+				svg
+					+box-model(32px, 17px)
 			&__link_fb
-				+sprite($socialIcons, "fb")
 				margin-right: 15px
+				svg
+					+box-model(15px, 25px)
 			&__link_tw
-				+sprite($socialIcons, "tw")
+				svg
+					+box-model(26px, 20px)
 		&__service, &__form-commit
 			.g-left, .g-right
 				width: 50%

@@ -1,0 +1,11 @@
+= render partial: "components/errors"
+.b-page.b-page__news.b-page__news_last
+  h1.b-page__title.b-page__title_2.b-news-showen
+    | Подписки
+  .b-page__cover.b-page__cover_news.b-page__cover_news-last.b-news-wrapper.b-news_list
+    - if !@subscriptions.present?
+      .b-news__empty  Вы пока не подписаны ни на одного дизайнера.
+    - if @subscriptions.present?
+    / - @subscriptions.each do |sub|
+    - if @subscriptions.present? and @subscriptions.count > 10
+      .b-button.b-button_expanded.b-news__load-more Загрузить ещё

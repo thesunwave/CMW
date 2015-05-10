@@ -7,12 +7,7 @@
 		<div class="b-auth__toRegister">
 			<a href="<%= new_user_session_path %>">Войти как пользователь</a>
 		</div>
-		<div class="b-auth__social">
-			<span class="b-auth__social__via"><%= t('auth.via') %></span>
-			<a href="#" class="b-auth__social__link b-auth__social__link_vk">vk</a>
-			<a href="#" class="b-auth__social__link b-auth__social__link_fb">facebook</a>
-			<a href="#" class="b-auth__social__link b-auth__social__link_tw">twitter</a>
-		</div>
+		<%= render partial: "users/social" %>
 		<div class="b-auth__form">
 			<form action="<%= register_path %>" accept-charset="UTF-8" method="post">
 				<input name="utf8" type="hidden" value="&#x2713;" />
@@ -34,9 +29,6 @@
 							<span class="b-checkbox__handler"></span>
 						</label>
 						<span class="b-auth__agreement__text"><%= t('auth.agreement_text') %> <a href="#" class="b-auth__agreement__link"><nobr><%= t('auth.agreement_link') %></nobr></a></span>
-						<%#= form_for @user, url: { action: "create" } do |f| %>
-							<%#= check_box_tag :terms_of_service %>
-						<%# end %>
 					</div>
 				</div>
 				<div class="g-clearfix b-auth__form-commit">

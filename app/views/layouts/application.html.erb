@@ -21,7 +21,7 @@
 				<div class="b-logo__quote">
 					<% if Quote.present? %>
 						<% Quote.get_random_quote.each do |quote| %>
-							«<%= quote_text(quote) %>» <span class="b-logo__quote-normal">&mdash; <%= quote_author(quote) %></span>
+							«<%= quote_text(quote).html_safe %>» <span class="b-logo__quote-normal">&mdash; <nobr><%= quote_author(quote) %></nobr></span>
 						<% end %>
 					<% else %>
 						<nobr>«Невозможно создать хороший продукт, основываясь на опросах людей или пользуясь фокус-группами. Люди</nobr> <nobr>сами не знают чего они хотят, пока им это не покажешь.» <span class="b-logo__quote-normal">&mdash; Стив Джобс</span></nobr>

@@ -7,12 +7,7 @@
 		<div class="b-auth__toRegister">
 			<a href="<%= register_path %>"><%= t('auth.not_user_yet') %></a>
 		</div>
-		<div class="b-auth__social">
-			<span class="b-auth__social__via"><%= t('auth.via') %></span>
-			<a href="#" class="b-auth__social__link b-auth__social__link_vk">vk</a>
-			<a href="#" class="b-auth__social__link b-auth__social__link_fb">facebook</a>
-			<a href="#" class="b-auth__social__link b-auth__social__link_tw">twitter</a>
-		</div>
+		<%= render partial: "users/social" %>
 		<div class="b-auth__form">
 			<form action="<%= new_user_session_path %>" accept-charset="UTF-8" method="post">
 				<input name="utf8" type="hidden" value="&#x2713;" />

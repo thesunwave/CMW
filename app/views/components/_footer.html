@@ -2,7 +2,7 @@
 	<div class="g-clearfix b-footer__wrapper">
 		<div class="g-left b-footer__logo">
 			<div class="b-footer__logo__image">
-				<a href="#">
+				<a href="/">
 					<svg class="b-footer__image__img">
 						<use xlink:href="#icon-bird"></use>
 					</svg>
@@ -12,7 +12,7 @@
 				</a>
 			</div>
 			<div class="b-footer__logo__email">
-				Почта администратора:<br />
+				Email администратора:<br />
 				<a href="mailto:admin@cmw.su">admin@cmw.su</a>
 			</div>
 		</div>
@@ -32,16 +32,16 @@
 		</div>
 		<div class="g-left b-footer__column">
 			<div class="b-footer__column__link">
-				<a href="#">Добавить работу</a>
+				<a href="<%= add_work_path(current_user.username) %>">Добавить работу</a>
 			</div>
 			<div class="b-footer__column__link">
-				<a href="#">Настройки профиля</a>
+				<a href="<%= settings_path %>">Настройки профиля</a>
 			</div>
 			<div class="b-footer__column__link">
-				<a href="#">Избранное</a>
+				<a href="<%= favorite_works_path(current_user.username) %>">Избранное</a>
 			</div>
 			<div class="b-footer__column__link">
-				<a href="#">Подписки</a>
+				<a href="<%= subscriptions_path %>">Подписки</a>
 			</div>
 		</div>
 	</div>

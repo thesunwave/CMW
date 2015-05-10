@@ -14,12 +14,12 @@
 <div class="b-panel">
 	<div class="b-panel__header g-clearfix">
 		<div class="g-left b-panel__image">
-			<a href="<%= list_path(current_user.username) %>"><img src="/images/avatar70x70.png" alt="" /></a>
+			<a href="<%= profile_show_path(current_user.username) %>"><img src="/images/avatar70x70.png" alt="" /></a>
 		</div>
 		<div class="g-right b-panel__info">
 			<div class="b-panel__info-wrapper">
 				<div class="b-panel__info_name">
-					<a href="<%= list_path(current_user.username) %>"><%= "#{current_user.name}" %></a>
+					<a href="<%= profile_show_path(current_user.username) %>"><%= "#{current_user.name}" %></a>
 				</div>
 				<div class="b-panel__info_spec">
 					<%= get_user_spec %>
@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div class="b-panel__content">
-		<a href="#" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs">
+		<a href="<%= feed_path current_user.username %>" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs">
 			<svg>
 				<use xlink:href="#icon-notif"></use>
 			</svg>
@@ -40,7 +40,7 @@
 			</svg>
 			Добавить работу
 		</a>
-		<a href="<%= settings_path%>" class="b-panel__link b-panel__link_icon-settings">
+		<a href="<%= settings_path %>" class="b-panel__link b-panel__link_icon-settings">
 			<svg>
 				<use xlink:href="#icon-setts"></use>
 			</svg>
