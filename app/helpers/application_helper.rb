@@ -23,4 +23,20 @@ module ApplicationHelper
     end
   end
 
+  def add_work_helper
+    unless  current_user.nil?
+      add_work_path(current_user.username)
+    else
+      new_user_session_path
+    end
+  end
+
+  def favorite_works_helper
+    unless current_user.nil?
+      favorite_works_path(current_user.username)
+    else
+      new_user_session_path
+    end
+  end
+
 end
