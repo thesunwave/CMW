@@ -1,6 +1,14 @@
 class Api::V1::CommonApiController < Api::BaseApiController
   before_action :authenticate_user!, only: [:check_username]
 
+  def user_signed
+    if current_user.nil?
+      render json: { user: :nil }, status: :unauthorized
+    else
+      render json: { user: current_user }, status: :ok
+    end
+  end
+
   # проверка наличия почты в БД
   #     если почты нет в БД   -> возвращает 1
   #     если почта есть в БД  -> возвращает 0
@@ -16,7 +24,7 @@ class Api::V1::CommonApiController < Api::BaseApiController
   #     если валидно    -> возвращает 1
   #     если не валидно -> возвращает 0
   def check_username
-    unless params[:username].blank?     
+    unless params[:username].blank?
       render json: { result: (User.valid_username?(params[:username])) ? 1 : 0 } and return
     else
       render json: { error_key: 'invalid_data', errors: { username: t('errors.messages.blank') } }, status: :unprocessable_entity and return

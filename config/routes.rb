@@ -17,6 +17,7 @@ CMW::Application.routes.draw do
       scope '/check' do
         post  'email'       => 'common_api#check_email'
         post  'username'    => 'common_api#check_username'
+        get 'signed' => 'common_api#user_signed'
       end
 
       # пользователи
