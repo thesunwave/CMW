@@ -9,7 +9,7 @@ class Api::V1::UsersController < Api::BaseApiController
   def show
     # @user = User.find(params[:id])
   end
-  
+
   def update
     # authorize! :update, @user, :message => 'Not authorized as an administrator.'
     # @user = User.find(params[:id])
@@ -19,7 +19,7 @@ class Api::V1::UsersController < Api::BaseApiController
     #   redirect_to users_path, :alert => "Unable to update user."
     # end
   end
-    
+
   def destroy
     # authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
     # user = User.find(params[:id])
@@ -30,9 +30,9 @@ class Api::V1::UsersController < Api::BaseApiController
     #   redirect_to users_path, :notice => "Can't delete yourself."
     # end
   end
-  
+
   def settings
     render json: { user: current_user.get_settings } and return
   end
-  
+
 end
