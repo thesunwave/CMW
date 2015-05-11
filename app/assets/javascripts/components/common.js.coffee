@@ -23,5 +23,4 @@ class CMW.Common
 			document.title = "Загрузка. Подождите пожалуйста."
 		else
 			document.title = title
-		return			
-	
+		return

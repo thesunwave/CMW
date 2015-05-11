@@ -25,12 +25,24 @@
               .b-profile__service__activity__item__bottom
                 | комм.
           .b-social.b-social_line
-            a.b-social__item.b-social__item_message href=(@user.vk) title=("Отправить сообщение")  Отправить сообщение
-            a.b-social__item.b-social__item_vk href="#" title="ВКонтакте"  ВКонтакте
-            a.b-social__item.b-social__item_fb href="#" title="Facebook"  Facebook
-            a.b-social__item.b-social__item_tw href="#" title="Twitter"  Twitter
-            a.b-social__item.b-social__item_be href="#" title="Behance"  Behance
-            a.b-social__item.b-social__item_db href="#" title="Dribbble"  Dribbble
+            a.b-social__item.b-social__item_message href=(@user.vk) title="Отправить сообщение"
+              svg
+                use xlink:href="#icon-social-big_message"
+            a.b-social__item.b-social__item_vk href="#" title="ВКонтакте"
+              svg
+                use xlink:href="#icon-social-big_vk"
+            a.b-social__item.b-social__item_fb href="#" title="Facebook"
+              svg
+                use xlink:href="#icon-social-big_fb"
+            a.b-social__item.b-social__item_tw href="#" title="Twitter"
+              svg
+                use xlink:href="#icon-social-big_tw"
+            a.b-social__item.b-social__item_be href="#" title="Behance"
+              svg
+                use xlink:href="#icon-social-big_be"
+            a.b-social__item.b-social__item_db href="#" title="Dribbble"
+              svg
+                use xlink:href="#icon-social-big_db"
       .b-profile__description
         - if @user.description.present?
           = @user.description
