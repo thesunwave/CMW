@@ -218,7 +218,7 @@ ActiveRecord::Schema.define(version: 20150506193715) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.float    "average"
+    t.float    "average",            default: 0.0
   end
 
   add_foreign_key "favorites", "users"

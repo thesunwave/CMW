@@ -15,7 +15,6 @@
             = link_to image_tag(fav.image(:thumb), alt: fav.title), show_work_path(fav.user.username, fav)
           .g-left.b-new__content
             h2.b-new__title
-              / a href="#"  = link_to fav.title, show_fav_path(fav.user.username, fav)
               = link_to fav.title, show_work_path(fav.user.username, fav)
             .b-new__author
               a.b-new__author__link href="#" = link_to fav.user.name, profile_show_path(fav.user.username)
