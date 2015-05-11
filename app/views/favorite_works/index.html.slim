@@ -33,9 +33,7 @@
                     svg
                       use xlink:href="#icon-post__comments"
                   .b-new__service__item__content.b-new__service__item__content_comments
-                    a href="#"
-                      = fav.comments.count
-                      span  комментариев
+                    = link_to "#{fav.comments.count} комментариев", show_work_path(fav.user.username, fav, anchor: "comments")
                 .b-new__service__item.b-new__service__item_tags
                   .b-new__service__item__icon.b-new__service__item__icon_tags
                     svg

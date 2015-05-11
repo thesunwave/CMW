@@ -7,19 +7,16 @@
 		</div>
 		<div class="b-item__info">
 			<div class="b-item__info__actions g-clearfix">
-				<div class="b-item__info__actions__one g-left">
-					<a href="#" class="b-fav-link b-fav-link_do"><%= add_to_favs(@work) %></a>
-					<!-- <a href="#" class="b-fav-link b-fav-link_done">В избранном (<span>убрать</span>)</a> -->
+				<div class="b-item__info__actions__one b-fav-link b-fav-link_do g-left <%= check_fav(@work) %>">
+					<%= add_to_favs(@work).html_safe %>
 				</div>
 				<div class="b-item__info__actions__one g-left">
 					<a href="#" class="b-sub-link b-sub-link_do">Подписаться на автора работы</a>
 					<!-- <a href="#" class="b-sub-link b-sub-link_done">Вы уже подписаны (<span>отписаться</span>)</a> -->
 				</div>
-				<div class="b-item__info__actions__one g-left">
-					<a href="#" class="b-sub-link b-sub-link_do"><%= delete_work(@work) %></a>
-					<!-- <a href="#" class="b-sub-link b-sub-link_done">Вы уже подписаны (<span>отписаться</span>)</a> -->
-				</div>
-
+<%#				<div class="b-item__info__actions__one g-left">
+					<a href="#" class="b-sub-link b-sub-link_do"><%= delete_work(@work) % ></a>
+				</div> %>
 			</div>
 			<div class="b-item__info__description">
 				<%= @work.description %>
@@ -54,7 +51,7 @@
 						<%= @work.average %> <span>/</span> 5.0
 					</div>
 					<div class="b-item__service__rating__item b-item__service__rating__item_comments">
-						<%= @work.comments.count %> <span>комментариев</span>
+						<%= link_to "#{@work.comments.count} комментариев", show_work_path(@work.user.username, @work, anchor: "comments") %>
 					</div>
 				</div>
 			</div>

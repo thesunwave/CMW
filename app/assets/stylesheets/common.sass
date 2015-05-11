@@ -73,16 +73,16 @@
 	padding-left: 23px
 	line-height: 17px
 	font-weight: 300
-	&_done
+	&.b-new__service__item_favourites-added
 		color: $blackColor
-		span
-			color: $yellowColor
 
 .b-fav-link
-	&_do
+	&.b-new__service__item_favourites
 		+retina("newsIcons/favourites.png")
-	&_done
+	&.b-new__service__item_favourites-added
 		+retina("newsIcons/favouritesAdded.png")
+		.b-new__service__item_favourites__remove
+			display: inline
 
 .b-sub-link
 	&_do

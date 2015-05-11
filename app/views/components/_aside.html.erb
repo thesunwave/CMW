@@ -28,11 +28,13 @@
 		</div>
 	</div>
 	<div class="b-panel__content">
-		<a href="<%= feed_path current_user.username %>" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs">
+		<a href="<%= feed_path current_user.username %>" class="b-panel__link b-panel__link_icon b-panel__link_icon-notifs" title="Лента новостей">
 			<svg>
 				<use xlink:href="#icon-notif"></use>
 			</svg>
-			<span class="b-panel__link_icon-notifs__count">2</span>
+<% if @count.present? and @count > 0 %>
+			<span class="b-panel__link_icon-notifs__count"><%= @count %></span>
+<% end %>
 		</a>
 		<a href="<%= add_work_path(current_user.username) %>" class="b-panel__link b-panel__link_icon-add-work">
  			<svg>
