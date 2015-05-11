@@ -3,9 +3,12 @@
 class CMW.Add_work
 
 	constructor: ->
-		Dropzone.autoDiscover = false
-		_tags()
-		_upload()
+		$("#uploadImage").on "change", ->
+			_readURL this
+			return
+		# Dropzone.autoDiscover = false
+		# _tags()
+		# _upload()
 
 	_tags = ->
 		$("#tagBox").tagging
@@ -35,3 +38,13 @@ class CMW.Add_work
 			timeout: 10000
 		CMW.Panel::goTop()
 		return
+
+	_readURL = (input) ->
+		if input.files and input.files[0]
+			reader = new FileReader
+			reader.onload = (e) ->
+				$('#image').attr 'src', e.target.result
+				return
+			reader.readAsDataURL input.files[0]
+		return
+

@@ -93,6 +93,11 @@
 			position: relative
 			&:nth-child(3n)
 				margin-right: 0
+			&__title-wrap
+				+translate(-50%, -50%)
+				position: absolute
+				left: 50%
+				top: 50%
 			&__image
 				img
 					+box-model(217px, 217px)
@@ -100,6 +105,7 @@
 				width: 217px
 				padding: 0 15px
 				text-align: left
+				display: none
 				&__item
 					+inline-block
 					&__content

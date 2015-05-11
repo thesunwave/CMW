@@ -3,7 +3,8 @@
 class CMW.Comments
 
 	constructor: ->
-		_init()
+		# _init()
+		_send()
 		
 	_init = ->
 		$(".b-comments__form1").on "submit", (event) ->
@@ -24,5 +25,14 @@ class CMW.Comments
 			.always (data) ->
 				console.log data
 				return
+			return
+		return
+
+	_send = ->
+		$("#comment_text").on "keyup", ->
+			if $(@).val() != ""
+				$("#comment_rating").removeAttr "disabled"
+			else
+				$("#comment_rating").attr "disabled", ""
 			return
 		return

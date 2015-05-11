@@ -3,7 +3,8 @@
 		setTimeout(function(){
 			z_.alert({
 				type   : 'info',
-				message: '<%= notice %>'
+				message: '<%= notice %>',
+				timeout: 5000
 			});
 		}, 100);
 	<% end %>
@@ -11,7 +12,8 @@
 		setTimeout(function(){
 			z_.alert({
 				type   : 'warning',
-				message: '<%= alert %>'
+				message: '<%= alert %>',
+				timeout: 5000
 			});
 		}, 100);
 	<% end %>

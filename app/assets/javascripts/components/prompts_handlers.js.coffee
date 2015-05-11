@@ -8,10 +8,10 @@ class CMW.Prompts_handlers
 
 	constructor: ->
 		self::emailPolicy = new CMW.Prompts $.hook("prompt-settings-privacy"), _emailPolicy
-		if location.pathname is PATH
-			self::what  = new CMW.Prompts $.hook("prompt-what"), _what
-			self::where = new CMW.Prompts $.hook("prompt-where"), _where
-			$.hook("prompt-default").trigger "click"
+		# if location.pathname is PATH
+			# self::what  = new CMW.Prompts $.hook("prompt-what"), _what
+			# self::where = new CMW.Prompts $.hook("prompt-where"), _where
+			# $.hook("prompt-default").trigger "click"
 
 	_what = (what) ->
 		url = self::what.getState $.hook "prompt-what"

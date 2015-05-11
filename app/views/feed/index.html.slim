@@ -6,6 +6,6 @@
     - if !@feed.present?
       .b-news__empty  В Вашей ленте новостей пока нет записей.
     - if @feed.present?
-    / - @subscriptions.each do |sub|
+    / - @feed.each do |sub|
     - if @feed.present? and @feed.count > 10
       .b-button.b-button_expanded.b-news__load-more Загрузить ещё

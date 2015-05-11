@@ -20,6 +20,19 @@ $uploadDescrColor: rgba(#383838, 0.3)
 			font-weight: 900
 			font-size: 30px
 			color: $uploadDescrColor
+		#uploadImage
+			+box-model(100%, 100%)
+			+opacity(0)
+			z-index: 100
+			left: 0
+			top: 0
+			position: absolute
+		#image
+			+box-model(108.5px, 108.5px)
+			position: absolute
+			left: 10px
+			top: 10px
+			z-index: 200
 	.b-submit-wrapper
 		font-size: 0
 		text-align: center

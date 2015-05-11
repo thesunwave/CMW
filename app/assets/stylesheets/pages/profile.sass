@@ -8,14 +8,17 @@
 		display: table-cell
 		vertical-align: top
 	&__image-service
-		width: 498px
+		width: 349px
+		// width: 498px
 	&__description
-		width: 352px
+		// width: 352px
 		padding: 20px
 		background: $profileDescr
 		word-break: break-all
 	&__image
 		width: 149px
+		margin-right: 29px
+		display: none
 		&__img
 			img
 				+box-model(149px, 149px)
@@ -32,7 +35,6 @@
 				+retina("profileIcons/subscribeGone.png")
 	&__service
 		width: 320px
-		margin-left: 29px
 		&__title
 			font-weight: 700
 			font-size: 26px

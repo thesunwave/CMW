@@ -23,22 +23,26 @@
 			</div>
 			<div class="b-item__service g-clearfix">
 				<div class="g-left b-item__service__author">
-					<div class="g-left b-item__service__author__avatar">
+<!-- 					<div class="g-left b-item__service__author__avatar">
 						<a href="#"><img src="/images/avatar70x70.png" alt="" /></a>
 					</div>
-					<div class="g-left b-item__service__author__info">
+ -->					<div class="g-left b-item__service__author__info">
 						<div class="b-item__service__author__info__title">
 							<a href="<%= profile_show_path(@work.user.username) %>"><%= @work.user.name %></a>
 						</div>
-						<div class="b-item__service__author__info__spec">
+<!-- 						<div class="b-item__service__author__info__spec">
 							<a href="<%= profile_show_path(@work.user.username) %>"><%= @work.user.spec %></a>
 						</div>
-						<div class="b-item__service__author__info__date">
+ --><!-- 						<div class="b-item__service__author__info__date">
 							сегодня в 12:36
 						</div>
-					</div>
+ -->					</div>
 				</div>
-				<div class="g-left b-item__service__tags">
+				<div class="g-left b-item__service__author__info__date" style="margin-left: 30px; margin-right: 80px;">
+					сегодня в 12:36
+				</div>
+
+<!-- 				<div class="g-left b-item__service__tags">
 					<a href="#" class="b-tag">web-design</a>
 					<a href="#" class="b-tag">ui</a>
 					<a href="#" class="b-tag">flat</a>
@@ -46,10 +50,12 @@
 					<a href="#" class="b-tag">flat</a>
 					<a href="#" class="b-tag">super</a>
 				</div>
-				<div class="g-left b-item__service__rating">
+ -->			<div class="g-left b-item__service__rating">
 					<div class="b-item__service__rating__item b-item__service__rating__item_rate">
 						<%= @work.average %> <span>/</span> 5.0
 					</div>
+				</div>
+				<div class="g-left b-item__service__rating">
 					<div class="b-item__service__rating__item b-item__service__rating__item_comments">
 						<%= link_to "#{@work.comments.count} комментариев", show_work_path(@work.user.username, @work, anchor: "comments") %>
 					</div>
@@ -71,7 +77,7 @@
 						</div>
 						<div class="g-left b-comments__write__rating">
 							<span class="b-rating-text">моя оценка:</span>
-							<select name="comment[rating]" id="comment_rating">
+							<select name="comment[rating]" id="comment_rating" disabled>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -90,7 +96,8 @@
 			<h2 class="b-comments__title"><%= link_to 'Войдите', new_user_session_path %> на сайт или <%= link_to 'зарегистрируйтесь', register_path %>, чтобы оставлять комментарии</h2>
 <% end %>
 			<div class="b-comments-wrapper">
-<% @comments.each do |comment| %>
+<% if @comments.present? %>
+	<% @comments.each do |comment| %>
 				<div class="b-comment" id="comment<%= comment.created_at.to_i %><%= comment.work.id %>">
 					<div class="b-comment__head g-clearfix">
 						<div class="g-left b-comment__avatar">
@@ -115,9 +122,13 @@
 						<%= comment.text %>
 					</div>
 				</div>
+	<% end %>
+<% else %>
+			<h2 class="b-comments__title">Комментариев нет... Будьте первым!</h2>
+
 <% end %>
 			</div>
-			<div class="b-button b-button_expanded b-news__load-more b-item__load-more">Загрузить ещё</div>
+			<!-- <div class="b-button b-button_expanded b-news__load-more b-item__load-more">Загрузить ещё</div> -->
 		</div>
 	</div>
 </div>
