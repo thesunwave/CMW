@@ -104,9 +104,9 @@
 	<% @comments.each do |comment| %>
 				<div class="b-comment" id="comment<%= comment.created_at.to_i %><%= comment.work.id %>">
 					<div class="b-comment__head g-clearfix">
-						<div class="g-left b-comment__avatar">
-							<a href="#"><img src="/images/avatar30x30.png" alt="" /></a>
-						</div>
+						<!-- <div class="g-left b-comment__avatar"> -->
+							<!-- <a href="#"><img src="/images/avatar30x30.png" alt="" /></a> -->
+						<!-- </div> -->
 						<div class="g-left b-comment__name-spec">
 							<div class="b-comment__name">
 								<%= link_to get_user(comment).name, profile_show_path( get_user(comment).username) %>
