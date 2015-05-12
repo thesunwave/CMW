@@ -4,7 +4,8 @@ class SearchController < ApplicationController
     if params[:q].nil?
       @works = []
     else
-      @works = Work.search params[:q]
+      response = Work.search params[:q]
+      @works = response.records.to_a
     end
   end
 

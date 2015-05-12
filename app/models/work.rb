@@ -42,15 +42,20 @@ class Work < ActiveRecord::Base
       query: {
         multi_match: {
           query: query,
-          fields: ['description^10', 'title']
+          fuzziness: 0.005,
+          prefix_length: 2,
+          operator: "and",
+          max_expansions: 999,
+          fields: ['description', 'title']
           }
       },
       highlight: {
       pre_tags: ['<em>'],
       post_tags: ['</em>'],
       fields: {
+        title: {},
         description: {}
-      }
+      },
     }
   })
   end

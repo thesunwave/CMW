@@ -8,22 +8,21 @@
         form accept-charset="UTF-8" action="#{search_path}" method="get"
           input name="utf8" type="hidden" value="✓" /
           input.b-input_text-search.b-input_text-search_extended name="q" value="#{params[:q]}" placeholder=("Поиск по работам...") type="text" /
-          button.b-search__commit.b-search__commit_extended type="submit" 
+          button.b-search__commit.b-search__commit_extended type="submit"
             svg
               use xlink:href="#icon-search"
     - if @works.present?
     - @works.each do |work|
       .b-new.g-clearfix
         .g-left.b-new__image
-          / a href="#"  = link_to image_tag(work.image(:thumb), alt: work.title), show_work_path(work.user.username, work)
-          a href="#"  Тип картинка
+          = link_to image_tag(work.image(:thumb), alt: work.title), show_work_path(work.user.username, work)
         .g-left.b-new__content
           h2.b-new__title
             / a href="#"  = link_to work.title, show_work_path(work.user.username, work)
-            a href="#"  = link_to work.title
+            a href="#"  = link_to work.title, show_work_path(work.user.username ,work.id)
           .b-new__author
             / a.b-new__author__link href="#" = link_to work.user.name, profile_show_path(work.user.username)
-            a.b-new__author__link href="#" Тип имя пользователя
+            a.b-new__author__link href="#" = link_to work.user.username, profile_show_path(work.user.username)
           .g-clearfix.b-new__description-wrapper
             .g-left.b-new__description = work.description
             .g-left.b-new__service
@@ -35,7 +34,7 @@
                 .b-new__service__item__icon.b-new__service__item__icon_comments
                 .b-new__service__item__content.b-new__service__item__content_comments
                   a href="#"
-                    | 15
+                    = link_to work.comments_count, show_work_path(work.user.username ,work.id)
                     span  комментариев
               .b-new__service__item.b-new__service__item_tags
                 .b-new__service__item__icon.b-new__service__item__icon_tags
@@ -46,11 +45,14 @@
               .b-new__service__item.b-new__service__item_rating
                 .b-new__service__item__icon.b-new__service__item__icon_rating
                 .b-new__service__item__content.b-new__service__item__content_rating
-                  | 4,4 
+                  = work.average
+                  | &nbsp
                   span
                     | / 5,0
-              .b-new__service__item.b-new__service__item_favourites-state.b-new__service__item_favourites
-                .b-new__service__item__icon.b-new__service__item__icon_favourites
-                .b-new__service__item__content.b-new__service__item__content_favourites
-                  span В избранное!
+              .b-new__service__item.b-new__service__item_favourites-state class="#{check_fav(work)}"
+                  .b-new__service__item__icon.b-new__service__item__icon_favourites
+                    svg
+                      use xlink:href="##{check_fav(work)}"
+                  .b-new__service__item__content.b-new__service__item__content_favourites
+                      span = add_to_favs(work).html_safe
     .b-button.b-button_expanded.b-news__load-more Загрузить ещё
