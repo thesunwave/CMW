@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   # turn devise to json
   respond_to :html, :json
 
+  before_action :authenticate_user!
+
   # set locale in session or/and store it in db
   before_filter :set_locale
 
