@@ -58,7 +58,7 @@ private
 
   def show_main_forms!
     if user_signed_in?
-      redirect_to index_path
+      redirect_to root_path
     end
   end
 
