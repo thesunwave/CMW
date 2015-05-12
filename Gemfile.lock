@@ -145,6 +145,19 @@ GEM
       json
       thread
       thread_safe
+    elasticsearch (1.0.8)
+      elasticsearch-api (= 1.0.7)
+      elasticsearch-transport (= 1.0.7)
+    elasticsearch-api (1.0.7)
+      multi_json
+    elasticsearch-model (0.1.7)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.7)
+    elasticsearch-transport (1.0.7)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -154,6 +167,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
     formatador (0.2.5)
     globalid (0.3.5)
@@ -172,6 +187,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hashie (3.4.1)
     highline (1.7.1)
     hike (1.2.3)
     hitimes (1.2.2)
@@ -205,6 +221,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
+    multipart-post (2.0.0)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -388,6 +405,8 @@ DEPENDENCIES
   devise (~> 3.4.1)
   devise-async (~> 0.9.0)
   dotenv-rails
+  elasticsearch-model
+  elasticsearch-rails
   execjs
   factory_girl_rails
   faker

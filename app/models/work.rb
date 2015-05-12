@@ -1,4 +1,8 @@
+require 'elasticsearch/model'
+
 class Work < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   belongs_to :user
   has_many :comments, dependent: :destroy
@@ -28,6 +32,33 @@ class Work < ActiveRecord::Base
 #      "#{user.username}-#{self.id}"
 #    end
 #  end
+
+  # elasticsearch method for autosync
+  Work.import
+
+  def self.search(query)
+  __elasticsearch__.search(
+    {
+      query: {
+        multi_match: {
+          query: query,
+          fuzziness: 0.005,
+          prefix_length: 2,
+          operator: "and",
+          max_expansions: 999,
+          fields: ['description', 'title']
+          }
+      },
+      highlight: {
+      pre_tags: ['<em>'],
+      post_tags: ['</em>'],
+      fields: {
+        title: {},
+        description: {}
+      },
+    }
+  })
+  end
 
 private
 

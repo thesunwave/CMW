@@ -8,6 +8,8 @@ CMW::Application.routes.draw do
 
   resources :comments, only: [:create]
 
+  get '/search' => 'search#search'
+
   # переключить локаль
   get '/lang/:locale' => 'api/v1/common_api#switch_locale'
 
