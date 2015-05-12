@@ -39,7 +39,7 @@
  -->					</div>
 				</div>
 				<div class="g-left b-item__service__author__info__date" style="margin-left: 30px; margin-right: 80px;">
-					сегодня в 12:36
+					<%= time_ago_in_words(@work.created_at) %>
 				</div>
 
 <!-- 				<div class="g-left b-item__service__tags">
@@ -75,6 +75,9 @@
 						<div class="g-left b-comments__write__author">
 							<%= current_user.name if current_user.present? %>
 						</div>
+						<% if @work.comments.where(user_id: current_user.id).present? %>
+							<input style="display:none" name="comment[rating]" id="comment_rating" disabled value='0'></input>
+						<% else %>
 						<div class="g-left b-comments__write__rating">
 							<span class="b-rating-text">моя оценка:</span>
 							<select name="comment[rating]" id="comment_rating" disabled>
@@ -85,6 +88,7 @@
 								<option value="5">5</option>
 							</select>
 						</div>
+						<% end %>
 						<div class="g-right b-comments__write__send">
 							<input type="submit" class="b-button b-button_inverted" name="commit" value="Отправить" />
 						</div>
@@ -112,7 +116,9 @@
 							</div>
 						</div>
 						<div class="g-left b-comment__rating">
+							<% unless comment.rating.nil? %>
 							<span class="b-rating-text">оценка:</span> <span class="b-icon_star"></span> <%= comment.rating %> / 5
+							<% end %>
 						</div>
 						<div class="g-right b-comment__date">
 							<%= time_ago_in_words(comment.created_at.to_time) %>

@@ -219,7 +219,7 @@ ru:
         few: около %{count} часов
         many: около %{count} часов
         one: около %{count} часа
-        other: около %{count} часа
+        other: около %{count} часов
       about_x_months:
         few: около %{count} месяцев
         many: около %{count} месяцев
