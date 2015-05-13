@@ -22,6 +22,7 @@ gem 'http_accept_language'                      # set locale from accept-languag
 gem 'dotenv-rails'                                    #env files management
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'devise_invitable', '~> 1.3.4'
 
 group :development do
   gem 'better_errors'

@@ -2,12 +2,16 @@ h2 style=("margin:0;padding:0;margin-bottom:25px;display:block;font-family:'Open
   | Добро пожаловать на <a href="http://stage.cmw.su">cmw.su</a>
   br
 p style=("margin:0;padding:0;font-family:'Open Sans'),Helvetica,Arial;font-size:12px;color:#383838;line-height:130%;")
-  - if @user.id.nil?
-    = @user.first_name.capitalize
+  - if @resource.present?
+    = @resource.email
   |, вы давали согласие на участие в закрытом бета тестировании нашего сервиса. С нетерпением готовы заявить, что бета-
   | версия ждет Вашего активного участия.
 
   br
+p style=("margin:0;padding:0;font-family:'Open Sans'),Helvetica,Arial;font-size:12px;color:#383838;line-height:130%;")
+  | Чтобы зарегистрироваться, перейдите по ссылке:
+
+  = accept_invitation_url(@resource, :invitation_token => @token)
 
 p style=("margin:0;padding:0;font-family:'Open Sans'),Helvetica,Arial;font-size:12px;color:#383838;line-height:130%;")
   | С уважением, команда CMW.

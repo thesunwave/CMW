@@ -41,6 +41,9 @@ protected
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, :password, :password_confirmation, :lang, :terms_of_service)}
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation)}
+    devise_parameter_sanitizer.for(:accept_invitation) { |u| u.permit(:first_name, :last_name, :spec,
+                                    :description, :vk, :behance, :facebook, :twitter, :dribble, :lang,:email,
+                                    :website, :username, :password, :password_confirmation, :invitation_token) }
   end
 
 private

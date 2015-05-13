@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
-  # devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+  # devise :invitable, :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   # Удаляем перед валидацией пробелы с начала и конца имени и фамилии
   before_validation :trim
@@ -38,6 +38,9 @@ class User < ActiveRecord::Base
   #
   # Валидации полей
   #
+  # валидация токена при регистрации
+  validates :invitation_token, presence: true, on: :create
+
   # почта проверяется на валидность в модели Devise
   validates_format_of :email, presence: true,
                               with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
@@ -82,7 +85,11 @@ class User < ActiveRecord::Base
   after_save :send_welcome_mail
 
   def send_welcome_mail
-    UserMailer.send_new_welcome_message(self).deliver_now
+    if self.username.nil?
+      return false
+    else
+      UserMailer.send_new_welcome_message(self).deliver_now
+    end
   end
 
   def self.find_for_database_authentication(warden_conditions)
@@ -176,8 +183,10 @@ class User < ActiveRecord::Base
   private
 
   def trim
-    first_name.strip!
-    last_name.strip!
+    if first_name.present? && last_name.present?
+      first_name.strip!
+      last_name.strip!
+    end
   end
 
   #
