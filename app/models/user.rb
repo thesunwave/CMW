@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
   # Public методы
   #
 
- after_create :send_welcome_mail
+  after_save :send_welcome_mail
 
   def send_welcome_mail
     UserMailer.send_new_welcome_message(self).deliver_now
