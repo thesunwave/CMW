@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
   # Public методы
   #
 
-  after_save :send_welcome_mail
+  #after_save :send_welcome_mail
 
   def send_welcome_mail
     if self.username.nil?
