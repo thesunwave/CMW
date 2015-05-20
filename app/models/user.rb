@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  #include Urlable
+  require 'uri'
+  include ActiveModel::Validations
 
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :comments
@@ -63,6 +66,9 @@ class User < ActiveRecord::Base
   #
   validates :last_name, presence: true, length: { maximum: 40 },
                         format: { with: /\A[\p{L}]*\Z/i, message: I18n.t('errors.messages.invalid') }
+
+
+  validates :vk, :facebook, :dribble, :behance, :twitter, :website, url: true
 
   #
   # Язык
