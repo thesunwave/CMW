@@ -30,23 +30,23 @@
                 svg
                   use xlink:href="#icon-social-big_message"
             - if @user.vk.present?
-              a.b-social__item.b-social__item_vk href="#{@user.vk}" title="ВКонтакте"
+              a.b-social__item.b-social__item_vk href="#{@user.vk}" title="ВКонтакте" target="_blank"
                 svg
                   use xlink:href="#icon-social-big_vk"
             - if @user.facebook.present?
-              a.b-social__item.b-social__item_fb href="#{@user.facebook}" title="Facebook"
+              a.b-social__item.b-social__item_fb href="#{@user.facebook}" title="Facebook" target="_blank"
                 svg
                   use xlink:href="#icon-social-big_fb"
             - if @user.twitter.present?
-              a.b-social__item.b-social__item_tw href="#{@user.twitter}" title="Twitter"
+              a.b-social__item.b-social__item_tw href="#{@user.twitter}" title="Twitter" target="_blank"
                 svg
                   use xlink:href="#icon-social-big_tw"
             - if @user.behance.present?
-              a.b-social__item.b-social__item_be href="#{@user.behance}" title="Behance"
+              a.b-social__item.b-social__item_be href="#{@user.behance}" title="Behance" target="_blank"
                 svg
                   use xlink:href="#icon-social-big_be"
             - if @user.dribble.present?
-              a.b-social__item.b-social__item_db href="#{@user.dribble}" title="Dribbble"
+              a.b-social__item.b-social__item_db href="#{@user.dribble}" title="Dribbble" target="_blank"
                 svg
                   use xlink:href="#icon-social-big_db"
       .b-profile__description

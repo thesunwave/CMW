@@ -24,6 +24,10 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'devise_invitable', '~> 1.3.4'
 
+gem 'addressable'
+gem 'simpleidn'
+gem 'faraday'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
