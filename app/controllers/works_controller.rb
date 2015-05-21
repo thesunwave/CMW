@@ -3,7 +3,8 @@ class WorksController < ApplicationController
   before_action :authenticate_user!, except: %w( list work show)
 
   def list
-    @works = Work.where(user_id: current_user.id).order(created_at: :desc)
+    user = User.where(username: params[:username]).first
+    @works = Work.where(user_id: user.id).order(created_at: :desc)
   end
 
   def new

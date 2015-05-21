@@ -71,6 +71,7 @@ CMW::Application.routes.draw do
     end
       resources :favorite_works, only: [:index, :create, :destroy]
   end
+      get '/works/list', to: redirect('/')
   devise_scope :user do
 
     get '/auth' => redirect('/auth/login')
