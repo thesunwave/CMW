@@ -5,7 +5,7 @@ class UrlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     if record.present?
       unless value.blank?
-        url = URI(value)
+        url = URI.parse(URI.encode(value))
         if url.host.present?
           return
         else
