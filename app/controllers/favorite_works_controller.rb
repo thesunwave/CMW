@@ -6,7 +6,7 @@ class FavoriteWorksController < ApplicationController
     if user.nil?
       redirect_to '/404.html', alert: 'Bad request'
     else
-      @favorites = user.favorite_works
+      @favorites = user.favorite_works.order('created_at ASC')
     end
   end
 

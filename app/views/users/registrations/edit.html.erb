@@ -117,6 +117,12 @@
 							<span>Ищо</span>
 						</div>
 					</div> -->
+									<div class="g-right g-right_smaller">
+					<label>
+						<span class="b-input__title b-input__title_bold"><%= t('user_settings.current_password') %></span>
+						<input type="password" autocomplete="off" class="b-input_text" name="user[current_password]" placeholder="" />
+					</label>
+				</div>
 				</div>
 				<div class="g-right">
 					<label>
@@ -146,7 +152,6 @@
 			<div class="b-settings__commit b-settings__commit_last">
 				<input type="submit" class="b-button b-button_yellow b-button_last b-button_long b-button_margined b-settings__commit-button" name="commit" value="<%= t('common.to_save') %>" />
 			</div>
-			<input type="password" name="user[current_password]" data-hook="settings-current" />
 			<input type="hidden" name="utf8" value="&#x2713;" />
 			<input type="hidden" name="_method" value="put" />
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
