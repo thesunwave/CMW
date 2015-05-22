@@ -23,6 +23,7 @@ gem 'dotenv-rails'                                    #env files management
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'devise_invitable', '~> 1.3.4'
+gem 'string_master'
 
 gem 'addressable'
 gem 'simpleidn'
