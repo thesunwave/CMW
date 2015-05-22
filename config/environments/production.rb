@@ -108,6 +108,9 @@ CMW::Application.configure do
 
   Paperclip.options[:command_path] = "/usr/bin/convert"
 
+  #Skylight config
+  config.skylight.probes = %w(net_http redis)
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end

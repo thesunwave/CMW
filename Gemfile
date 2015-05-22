@@ -66,4 +66,5 @@ end
 
 group :production do
   gem 'passenger', '~> 5.0.6'
+  gem "skylight"
 end
