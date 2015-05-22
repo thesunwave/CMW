@@ -125,7 +125,7 @@
 						</div>
 					</div>
 					<div class="b-comment__content">
-						<%= comment.text %>
+						<%= comment.text.prep.newlines_to_br.html_escape %>
 					</div>
 				</div>
 	<% end %>
